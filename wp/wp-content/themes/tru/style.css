@@ -1,0 +1,48 @@
+/*
+Theme Name:     TRU Theme
+Theme URI:      
+Description:    TRU Theme - a TwentyTwelve Child
+Author:         Erik Mitchell
+Author URI:     http://erikmitchell.net
+Template:       twentytwelve
+Version:        0.1.0
+*/
+
+@import url("../twentytwelve/style.css");
+
+body,
+body.custom-background-empty {
+	background: #ccc;
+}
+#page {
+	margin-top: 20px;
+}
+.site-header {
+	padding-top: 0;
+}
+.site-header hgroup {
+	background: url('images/header.jpg') no-repeat;
+	height: 175px;
+	color: #fff;
+}
+.site-header h1 {
+	padding: 60px 0 0 40px;
+	font-size: 30px;
+}
+.site-header h1 a,
+.site-header h1 a:hover {
+	color: #fff;
+}
+.main-navigation {
+	margin-top: 0;
+}
+.main-navigation ul.nav-menu, 
+.main-navigation div.nav-menu > ul {
+	padding: 0 10px;
+}
+.site-content {
+	padding-left: 20px;
+}
+footer[role="contentinfo"] {
+	padding: 24px 10px;
+}
