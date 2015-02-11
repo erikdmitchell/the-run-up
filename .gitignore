@@ -1,0 +1,10 @@
+.DS_Store
+favicon.ico
+wp/index.php
+wp/license.txt
+wp/readme.html
+wp/wp-config.php
+wp/wp-content/index.php
+wp/wp-content/themes/wpbootstrap
+wp/wp-content/themes/index.php
+wp/wp-content/plugins/index.php
