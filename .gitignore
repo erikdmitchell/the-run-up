@@ -23,3 +23,12 @@ ccc/wp-content/plugins/hello.php
 ccc/wp-content/plugins/index.php
 ccc/wp-content/themes/index.php
 ccc/wp-content/themes/twentythirteen
+ccc/wp-cron.php
+ccc/wp-links-opml.php
+ccc/wp-load.php
+ccc/wp-login.php
+ccc/wp-mail.php
+ccc/wp-settings.php
+ccc/wp-signup.php
+ccc/wp-trackback.php
+ccc/xmlrpc.php

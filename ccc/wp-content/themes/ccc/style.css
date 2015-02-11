@@ -1,0 +1,34 @@
+/*
+ Theme Name:   Chester County Classics
+ Theme URI:
+ Description:  A theme for my CCC rides.
+ Author:       Erik Mitchell
+ Author URI:   http://erikmitchell.net
+ Template:     twentythirteen
+ Version:      1.0.0
+ Text Domain:  twentythirteen-child
+*/
+
+#masthead.site-header {
+	background: url('images/header-bg.jpg') no-repeat;
+	background-size: 100%;
+}
+.site-title {
+	font-size: 50px;
+	font-weight: bold;
+	line-height: 1;
+	margin: 0;
+	padding: 58px 0 10px;
+	float: right;
+}
+
+/* full width
+------------- */
+.full-width .entry-header,
+.full-width .entry-content,
+.full-width .entry-summary,
+.full-width .entry-meta {
+	margin: 0 auto;
+	max-width: 1040px;
+	width: 100%;
+}
