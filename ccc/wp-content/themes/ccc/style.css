@@ -32,3 +32,50 @@
 	max-width: 1040px;
 	width: 100%;
 }
+
+/* 3 column
+---------- */
+.three-col {
+	clear: both;
+	overflow: hidden;
+}
+.three-col .col {
+	float: left;
+	width: 33%;
+}
+
+/* home page
+------------ */
+.left-col {
+	float: left;
+	width: 48%;
+	padding-right: 2%;
+}
+.right-col {
+	float: left;
+	width: 48%;
+	padding-left: 2%;
+}
+
+.upcoming-rides h3 {
+	margin-top: 0;
+}
+.upcoming-rides-list {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.upcoming-rides-list li {
+
+}
+.upcoming-rides-list li .date {
+	font-weight: bold;
+}
+ul.three-col {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+ul.three-col li {
+
+}
