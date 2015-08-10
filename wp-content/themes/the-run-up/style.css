@@ -1,0 +1,64 @@
+/*
+ Theme Name:   The Run Up Theme
+ Theme URI:    http://therunup.com
+ Description:  WordPress Theme for TRU
+ Author:       Erik Mitchell
+ Author URI:   http://erikmitchell.net
+ Template:     mdw-wp-theme
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+.home {
+	background: url('images/bg.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/**
+ * header
+ */
+.primary-nav {
+	border-bottom: 3px solid #fff;
+}
+.navbar {
+	margin-bottom: 0;
+}
+.navbar-brand.logo {
+	width: 150px;
+	height: 150px;
+}
+/**
+ * single page
+ */
+.coming-soon-inner {
+	padding: 36px 0;
+  text-align: center;
+}
+.coming-soon-inner h1,
+.coming-soon-inner h2 {
+	font-family: 'Arvo', serif;
+	font-weight: 700;
+}
+.links {
+	margin: 40px 0;
+	padding: 0;
+	list-style-type: none;
+
+}
+.links a:link,
+.links a:visited {
+	text-decoration: none;
+	color: #000;
+}
+
+/**
+ * footer
+ */
+footer {
+  text-align: center;
+  color: #000;
+}
