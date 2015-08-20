@@ -23,11 +23,11 @@
 
   </head>
 
-  <body <?php body_class('mdw-theme-single-page'); ?>>
+  <body <?php body_class('mdw-theme-single-page'); ?> data-spy="scroll" data-target=".navbar" data-offset="50">
 
 		<div class="container-fluid primary-nav">
 			<div class="container">
-				<nav class="navbar navbar-default" role="navigation">
+				<nav id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".mdw-wp-theme-mobile-menu">
 							<span class="sr-only">Toggle navigation</span>
