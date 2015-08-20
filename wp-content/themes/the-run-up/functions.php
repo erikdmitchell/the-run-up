@@ -10,4 +10,12 @@ function tru_footer_template($template) {
 	return get_stylesheet_directory(__FILE__).'/footer.php';
 }
 //add_filter('mdw_theme_single_page_footer_template','tru_footer_template');
+
+function get_partners() {
+	$html=null;
+
+	$html.='partners list';
+
+	return $html;
+}
 ?>

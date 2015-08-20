@@ -25,31 +25,29 @@
 
   <body <?php body_class('mdw-theme-single-page'); ?> data-spy="scroll" data-target=".navbar" data-offset="50">
 
-		<div class="container-fluid primary-nav">
-			<div class="container">
 				<nav id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".mdw-wp-theme-mobile-menu">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<?php mdw_theme_navbar_brand(); ?>
+					<div class="container">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".mdw-wp-theme-mobile-menu">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<?php mdw_theme_navbar_brand(); ?>
+						</div>
+						<?php mdw_secondary_navigation_setup(); ?>
+						<div class="collapse navbar-collapse primary-menu">
+							<?php
+							wp_nav_menu(array(
+								'theme_location' => 'primary',
+								'container' => false,
+								'menu_class' => 'nav navbar-nav pull-right',
+								'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+								'walker' => new wp_bootstrap_navwalker()
+							));
+							?>
+						</div> <!-- .primary-menu -->
+						<?php mdw_mobile_navigation_setup(); ?>
 					</div>
-					<?php mdw_secondary_navigation_setup(); ?>
-					<div class="collapse navbar-collapse primary-menu">
-						<?php
-						wp_nav_menu(array(
-							'theme_location' => 'primary',
-							'container' => false,
-							'menu_class' => 'nav navbar-nav pull-right',
-							'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-							'walker' => new wp_bootstrap_navwalker()
-						));
-						?>
-					</div> <!-- .primary-menu -->
-					<?php mdw_mobile_navigation_setup(); ?>
 				</nav>
-			</div><!-- .container -->
-		</div><!-- .navigation -->

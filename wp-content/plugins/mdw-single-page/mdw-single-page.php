@@ -172,5 +172,5 @@ class MDWThemeSinglePage {
 
 }
 
-new MDWThemeSinglePage();
+$MDWThemeSinglePage = new MDWThemeSinglePage();
 ?>

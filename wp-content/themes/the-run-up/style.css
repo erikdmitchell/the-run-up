@@ -12,7 +12,7 @@
 
 body {
 	position: relative;
-	padding-top: 70px;
+	padding-top: 50px;
 }
 
 /**
@@ -57,31 +57,24 @@ body {
 /**
  * single page
  */
-.coming-soon-inner {
-	padding: 36px 0;
-  text-align: center;
+.section-1 {
+	padding-top: 20px;
 }
-.coming-soon-inner h1,
-.coming-soon-inner h2 {
-	font-family: 'Arvo', serif;
-	font-weight: 700;
-}
-.links {
-	margin: 40px 0;
-	padding: 0;
-	list-style-type: none;
+.content-block.home {
 
-}
-.links a:link,
-.links a:visited {
-	text-decoration: none;
-	color: #000;
 }
 
 /**
  * footer
  */
+.mdw-back-to-top {
+	background-color: #a4a4a4;
+}
 footer {
   text-align: center;
-  color: #000;
+  color: #fff;
+  margin-top: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background: #333;
 }
