@@ -150,7 +150,7 @@ echo "tp: $template_page<br>";
 		else :
 			$new_template=$plugin_template_folder.'/single-page.php';
 		endif;
-
+echo "new: $new_template<br>";
 		return $new_template;
 	}
 

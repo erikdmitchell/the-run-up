@@ -44,6 +44,7 @@ class SinglePageContent {
 							<?php
 							// check for a custom page template, otherwise load standard content //
 							if ($template=$this->get_custom_page_template($post_id)) :
+echo "temp: $template<br>";
 								locate_template($template,true,false);
 							else :
 								echo apply_filters('the_content',$post->post_content);
@@ -70,16 +71,17 @@ class SinglePageContent {
 		global $MDWThemeSinglePage;
 
 		$template_slug=get_page_template_slug($post_id);
-		$user_template_folder=get_stylesheet_directory().'/'.$MDWThemeSinglePage->template_folder_override_name;
+		//$user_template_folder=get_stylesheet_directory().'/'.$MDWThemeSinglePage->template_folder_override_name;
 
 		if (!$template_slug)
 			return false;
 
 		// check for custom user files //
-		if (file_exists($user_template_folder.'/'.$template_slug)) :
-			$template=$MDWThemeSinglePage->template_folder_override_name.'/'.$template_slug;
+		if (file_exists(get_stylesheet_directory().'/'.$template_slug)) :
+			echo 't:'.$template=get_stylesheet_directory().'/'.$template_slug;
 			if (locate_template($template))
-				return $template;
+				echo 'a';
+				//return $template;
 		endif;
 
 		return false;
