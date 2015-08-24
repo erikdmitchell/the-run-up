@@ -13,6 +13,13 @@ function theme_scripts_styles() {
 }
 add_action('wp_enqueue_scripts','theme_scripts_styles');
 
+function admin_scripts_styles($hook) {
+	wp_enqueue_script('tru-admin-script',get_stylesheet_directory_uri().'/js/admin.js',array('jquery'));
+
+	wp_enqueue_style('tru-admin-style',get_stylesheet_directory_uri().'/css/admin.css');
+}
+add_action('admin_enqueue_scripts','admin_scripts_styles');
+
 function tru_footer_template($template) {
 	return get_stylesheet_directory(__FILE__).'/footer.php';
 }
@@ -50,6 +57,12 @@ function get_partners() {
 	return $html;
 }
 
+/**
+ * get_schedule function.
+ *
+ * @access public
+ * @return void
+ */
 function get_schedule() {
 	$html=null;
 	$args=array(
@@ -96,4 +109,36 @@ function get_schedule() {
 
 	return $html;
 }
+
+/**
+ * tru_mdw_google_maps_admin_post_types function.
+ *
+ * add 'races' to maps meta
+ *
+ * @access public
+ * @param mixed $post_types
+ * @param mixed $post_type_args
+ * @return void
+ */
+function tru_mdw_google_maps_admin_post_types($post_types,$post_type_args) {
+    $post_types['races']='races';
+
+    return $post_types;
+}
+add_filter('mdw_google_maps_admin_post_types','tru_mdw_google_maps_admin_post_types',10,2);
+
+function tru_mdw_gmaps_get_post_meta($meta,$post_id) {
+	$address=get_post_meta($post_id,'_race_details_location',true);
+
+	$meta=array(
+		'address' => $address['line1'].' '.$address['line2'],
+		'city' => $address['city'],
+		'state' => $address['state'],
+		'lat' => get_post_meta($post_id,'_race_details_latitude',true),
+		'lng' => get_post_meta($post_id,'_race_details_longitude',true),
+	);
+
+	return $meta;
+}
+add_filter('mdw_gmaps_get_post_meta','tru_mdw_gmaps_get_post_meta',10,2);
 ?>

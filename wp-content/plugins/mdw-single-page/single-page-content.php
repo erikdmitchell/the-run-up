@@ -37,7 +37,6 @@ class SinglePageContent {
 						<?php
 						// check for a custom page template, otherwise load standard content //
 						if ($template=$this->get_custom_page_template($post_id)) :
-							//$content="template: $template<br />";
 							locate_template($template,true,false);
 						else :
 							echo apply_filters('the_content',$post->post_content);
