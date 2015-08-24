@@ -21,19 +21,15 @@ function get_mdw_single_page_footer() {
 	load_template($template);
 }
 
-function mdw_single_page_content() {
-	echo get_mdw_single_page_content();
-}
-
 /**
- * get_mdw_single_page_content function.
+ * mdw_single_page_content function.
  *
  * @access public
  * @return void
  */
-function get_mdw_single_page_content() {
+function mdw_single_page_content() {
 	$spc=new SinglePageContent();
 
-	return $spc->generate_content();
+	$spc->generate_content();
 }
 ?>

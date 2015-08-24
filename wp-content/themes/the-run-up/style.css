@@ -65,6 +65,16 @@ body {
 }
 
 /**
+ * schedule
+ */
+.races .row.header {
+	font-weight: bold;
+}
+.races .row.race:nth-child(odd) {
+	background: #ccc;
+}
+
+/**
  * footer
  */
 .mdw-back-to-top {

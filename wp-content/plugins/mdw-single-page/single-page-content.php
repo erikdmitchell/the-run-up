@@ -14,14 +14,13 @@ class SinglePageContent {
 			$menu_items=wp_get_nav_menu_items($menu_id);
 
 			foreach ($menu_items as $item) :
-				$html.=$this->get_content_block($item->object_id,$section);
+				$this->get_content_block($item->object_id,$section); // echos the content
 				$section++;
 			endforeach;
 		endif;
-
-		return $html;
 	}
 
+	// cannot due a return due to locate_template //
 	protected function get_content_block($post_id=0,$section=0) {
 		if (!$post_id)
 			return false;
@@ -29,21 +28,26 @@ class SinglePageContent {
 		$html=null;
 		$post=get_post($post_id);
 
-		//if ($template=$this->get_custom_page_template($post_id))
-			//return locate_template($template,true,false);
-
-		$html.='<section class="content-block '.$post->post_name.' section-'.$section.'" id="'.$post->post_name.'">';
-			$html.='<div class="container">';
-				$html.='<div class="row">';
-					$html.='<div class="col-md-12">';
-						$html.='<h2 class="page-title">'.get_the_title($post->ID).'</h2>';
-						$html.=apply_filters('the_content',$post->post_content);
-					$html.='</div>';
-				$html.='</div><!-- .row -->';
-			$html.='</div><!-- .container -->';
-		$html.='</section><!-- .section -->';
-
-		return $html;
+		?>
+		<section class="content-block <?php echo $post->post_name; ?> section-<?php echo $section; ?>" id="<?php echo $post->post_name; ?>">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="page-title"><?php echo get_the_title($post->ID); ?></h2>
+						<?php
+						// check for a custom page template, otherwise load standard content //
+						if ($template=$this->get_custom_page_template($post_id)) :
+							//$content="template: $template<br />";
+							locate_template($template,true,false);
+						else :
+							echo apply_filters('the_content',$post->post_content);
+						endif;
+						?>
+					</div>
+				</div><!-- .row -->
+			</div><!-- .container -->
+		</section><!-- .section -->
+		<?php
 	}
 
 	protected function get_menu_id($menu_name=false) {
