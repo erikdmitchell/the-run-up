@@ -1,4 +1,5 @@
 <?php
+add_image_size('home-thumbnail',585,425,true);
 
 /**
  * theme_scripts_styles function.
@@ -149,4 +150,76 @@ function tru_mdw_gmaps_get_post_meta($meta,$post_id) {
 	return $meta;
 }
 add_filter('mdw_gmaps_get_post_meta','tru_mdw_gmaps_get_post_meta',10,2);
+
+/**
+ * get_home_content function.
+ *
+ * @access public
+ * @param int $limit (default: 3)
+ * @return void
+ */
+function get_home_content($limit=3) {
+	$html=null;
+	$args=array(
+		'posts_per_page' => $limit
+	);
+	$posts=get_posts($args);
+
+	if (!count($posts))
+		return false;
+
+	$html.='<div class="home-posts">';
+		foreach ($posts as $post) :
+			if (has_post_thumbnail($post->ID)) :
+				$thumb=get_the_post_thumbnail($post->ID,'home-thumbnail',array('class' => 'img-responsive'));
+			else :
+				$thumb='';
+			endif;
+
+			$html.='<article id="post-'.$post->ID.'" class="post row">';
+				$html.='<div class="col-xs-6">';
+					$html.='<a href="">'.$thumb.'</a>';
+				$html.='</div>';
+				$html.='<div class="col-xs-6">';
+					$html.='<h3 class="title"><a href="">'.get_the_title($post->ID).'</a></h3>';
+					$html.='<div class="excerpt">'.pippin_excerpt_by_id($post->ID,100,'<a><em><strong>','<a href=""> &raquo;</a>').'</div>';
+				$html.='</div>';
+			$html.='</article>';
+		endforeach;
+	$html.='</div><!-- .home-posts -->';
+
+	return $html;
+}
+
+/*
+* Gets the excerpt of a specific post ID or object
+* @param - $post - object/int - the ID or object of the post to get the excerpt of
+* @param - $length - int - the length of the excerpt in words
+* @param - $tags - string - the allowed HTML tags. These will not be stripped out
+* @param - $extra - string - text to append to the end of the excerpt
+*/
+function pippin_excerpt_by_id($post, $length = 10, $tags = '<a><em><strong>', $extra = ' . . .') {
+
+	if(is_int($post)) {
+		// get the post object of the passed ID
+		$post = get_post($post);
+	} elseif(!is_object($post)) {
+		return false;
+	}
+
+	if(has_excerpt($post->ID)) {
+		$the_excerpt = $post->post_excerpt;
+		return apply_filters('the_content', $the_excerpt);
+	} else {
+		$the_excerpt = $post->post_content;
+	}
+
+	$the_excerpt = strip_shortcodes(strip_tags($the_excerpt), $tags);
+	$the_excerpt = preg_split('/\b/', $the_excerpt, $length * 2+1);
+	$excerpt_waste = array_pop($the_excerpt);
+	$the_excerpt = implode($the_excerpt);
+	$the_excerpt .= $extra;
+
+	return apply_filters('the_content', $the_excerpt);
+}
 ?>
