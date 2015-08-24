@@ -127,6 +127,14 @@ function tru_mdw_google_maps_admin_post_types($post_types,$post_type_args) {
 }
 add_filter('mdw_google_maps_admin_post_types','tru_mdw_google_maps_admin_post_types',10,2);
 
+/**
+ * tru_mdw_gmaps_get_post_meta function.
+ *
+ * @access public
+ * @param mixed $meta
+ * @param mixed $post_id
+ * @return void
+ */
 function tru_mdw_gmaps_get_post_meta($meta,$post_id) {
 	$address=get_post_meta($post_id,'_race_details_location',true);
 
@@ -141,4 +149,13 @@ function tru_mdw_gmaps_get_post_meta($meta,$post_id) {
 	return $meta;
 }
 add_filter('mdw_gmaps_get_post_meta','tru_mdw_gmaps_get_post_meta',10,2);
+
+/*
+function schedule_container_classes($classes) {
+	$classes=array('container-fulid');
+
+	return $classes;
+}
+add_filter('mdw_single_page_section_container_classes_default_post-12','schedule_container_classes');
+*/
 ?>

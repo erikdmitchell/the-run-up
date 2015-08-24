@@ -14,6 +14,9 @@ body {
 	position: relative;
 	padding-top: 50px;
 }
+.container-fluid {
+	padding: 0;
+}
 
 /**
  * header
@@ -67,6 +70,9 @@ body {
 /**
  * schedule
  */
+.mdw-gmap {
+	margin-bottom: 20px;
+}
 .races .row.header {
 	font-weight: bold;
 }

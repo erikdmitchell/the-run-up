@@ -27,26 +27,34 @@ class SinglePageContent {
 
 		$html=null;
 		$post=get_post($post_id);
+		$section_classes_default=apply_filters('mdw_single_page_section_classes_default',array('content-block',$post->post_name,'section-'.$section));
+		$section_classes=apply_filters("mdw_single_page_section_classes_post-{$post_id}",$section_classes_default);
+		$section_container_classes_default=apply_filters('mdw_single_page_section_container_classes_default',array('container'));
+		$section_container_classes=apply_filters("mdw_single_page_section_container_classes_default_post-{$post_id}",$section_container_classes_default);
 
+		if ($template=$this->get_custom_page_template($post_id)) :
+			locate_template($template,true,false);
+		else :
 		?>
-		<section class="content-block <?php echo $post->post_name; ?> section-<?php echo $section; ?>" id="<?php echo $post->post_name; ?>">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h2 class="page-title"><?php echo get_the_title($post->ID); ?></h2>
-						<?php
-						// check for a custom page template, otherwise load standard content //
-						if ($template=$this->get_custom_page_template($post_id)) :
-							locate_template($template,true,false);
-						else :
-							echo apply_filters('the_content',$post->post_content);
-						endif;
-						?>
-					</div>
-				</div><!-- .row -->
-			</div><!-- .container -->
-		</section><!-- .section -->
+			<section class="<?php echo implode(' ',$section_classes); ?>" id="<?php echo $post->post_name; ?>">
+				<div class="<?php echo implode(' ',$section_container_classes); ?>">
+					<div class="row">
+						<div class="col-md-12">
+							<h2 class="page-title"><?php echo get_the_title($post->ID); ?></h2>
+							<?php
+							// check for a custom page template, otherwise load standard content //
+							if ($template=$this->get_custom_page_template($post_id)) :
+								locate_template($template,true,false);
+							else :
+								echo apply_filters('the_content',$post->post_content);
+							endif;
+							?>
+						</div>
+					</div><!-- .row -->
+				</div><!-- .container -->
+			</section><!-- .section -->
 		<?php
+		endif;
 	}
 
 	protected function get_menu_id($menu_name=false) {
