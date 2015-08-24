@@ -175,6 +175,16 @@ class MDWGoogleMapsAdmin {
 					$html.='</div><!-- .row -->';
 				$html.='</div><!-- .section -->';
 
+					$html.='<div class="row">';
+						$html.='<div class="label col-xs-2">';
+							$html.='Disable Scroll Wheel';
+						$html.='</div><!-- .label -->';
+						$html.='<div class="input col-xs-9">';
+							$html.='<input type="checkbox" name="gmaps[scrollwheel]" id="scrollwheel" value="0" '.checked($this->settings['scrollwheel'],0,false).'> Mouse scroll wheel will no longer zoom in/out';
+						$html.='</div><!-- .input -->';
+					$html.='</div><!-- .row -->';
+				$html.='</div><!-- .section -->';
+
 				$html.='<div class="map-shortcode section">';
 					$html.='<h3>Map Shortcode</h3>';
 
@@ -257,6 +267,7 @@ class MDWGoogleMapsAdmin {
 			),
 			'zoom' => 5,
 			'defaultControls' => 0,
+			'scrollwheel' => 1
 			//'custom' => array(
 				//'address_field' => false
 			//),

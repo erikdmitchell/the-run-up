@@ -8,9 +8,7 @@
 	</div><!-- .container -->
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-12">
-				<?php echo do_shortcode('[mdw-gmap /]'); ?>
-			</div>
+			<?php echo do_shortcode('[mdw-gmap /]'); ?>
 		</div>
 	</div><!-- .container-fluid -->
 	<div class="container">

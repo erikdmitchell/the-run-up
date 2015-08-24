@@ -18,7 +18,8 @@
 	    map : false,
 	    bounds : '',
 	    mapControls : '',
-	    defaultControls : 0
+	    defaultControls : 0,
+	    scrollwheel : 1
 		}, options, wp_map_options);
 
 		var activeWindow;
@@ -26,6 +27,7 @@
 
 		// force ints //
 		opts.defaultControls=parseInt(opts.defaultControls);
+		opts.scrollwheel=parseInt(opts.scrollwheel);
 
 console.log(opts);
 
@@ -51,7 +53,8 @@ console.log(opts);
 	      mapTypeId: google.maps.MapTypeId[opts.mapType],
 	      //mapTypeControl: true,
 	      //mapTypeControlOptions: opts.mapControls
-	      disableDefaultUI: opts.defaultControls
+	      disableDefaultUI: opts.defaultControls,
+	      scrollwheel: opts.scrollwheel
 	    };
 
 	    opts.map = new google.maps.Map(opts.$elem.get(0),mapOptions);

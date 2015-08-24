@@ -14,8 +14,8 @@ body {
 	position: relative;
 	padding-top: 50px;
 }
-.container-fluid {
-	padding: 0;
+body.admin-bar .navbar {
+	top: 32px;
 }
 
 /**
