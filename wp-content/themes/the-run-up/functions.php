@@ -173,17 +173,13 @@ function get_home_content($limit=3) {
 			if (has_post_thumbnail($post->ID)) :
 				$thumb=get_the_post_thumbnail($post->ID,'home-thumbnail',array('class' => 'img-responsive'));
 			else :
-				$thumb='';
+				$thumb='<img src="'.get_stylesheet_directory_uri().'/images/runup-black.png" class="img-responsive" />';
 			endif;
 
-			$html.='<article id="post-'.$post->ID.'" class="post row">';
-				$html.='<div class="col-xs-6">';
-					$html.='<a href="">'.$thumb.'</a>';
-				$html.='</div>';
-				$html.='<div class="col-xs-6">';
-					$html.='<h3 class="title"><a href="">'.get_the_title($post->ID).'</a></h3>';
-					$html.='<div class="excerpt">'.pippin_excerpt_by_id($post->ID,100,'<a><em><strong>','<a href=""> &raquo;</a>').'</div>';
-				$html.='</div>';
+			$html.='<article id="post-'.$post->ID.'" class="post col-xs-12 col-sm-4 col-md-4">';
+				$html.='<a href="'.get_permalink($post->ID).'">'.$thumb.'</a>';
+				$html.='<h3 class="title"><a href="'.get_permalink($post->ID).'">'.get_the_title($post->ID).'</a></h3>';
+				$html.='<div class="excerpt">'.pippin_excerpt_by_id($post->ID,50,'<a><em><strong>','<a href="'.get_permalink($post->ID).'"> more &raquo;</a>').'</div>';
 			$html.='</article>';
 		endforeach;
 	$html.='</div><!-- .home-posts -->';

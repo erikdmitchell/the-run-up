@@ -21,6 +21,17 @@ body.admin-bar .navbar {
 /**
  * header
  */
+.bg-header {
+	background: url('images/jontrike.jpg') no-repeat top center fixed;
+	background-size: cover;
+	height: 500px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	color: white;
+	text-align: center;
+	font-size: 50px;
+}
 .primary-nav {
 
 }
@@ -28,6 +39,8 @@ body.admin-bar .navbar {
 	margin-top: 0;
 	margin-bottom: 0;
 	background: #333;
+	//border-top: 3px solid #000;
+	//border-bottom: 3px solid #000;
 }
 .navbar-brand,
 .navbar-nav > li > a {
@@ -69,9 +82,22 @@ body.admin-bar .navbar {
 /**
  * home
  */
-.home-posts .post .title {
-	margin-top: 0;
+.home-posts article {
+	border-bottom: 0;
+	padding-bottom: 0;
 }
+.home-posts .post .title {
+	margin-top: 10px;
+}
+.home-posts .post .excerpt a,
+.home-posts .post .title a {
+	color: #333;
+}
+.home-posts .post .excerpt a,
+.home-posts .post .title a:hover {
+	text-decoration: none;
+}
+
 /**
  * schedule
  */

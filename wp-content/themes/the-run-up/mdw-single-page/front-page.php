@@ -1,3 +1,4 @@
+<div class="bg-header"></div>
 <section class="content-block home section-1" id="home">
 	<div class="container">
 		<div class="row">
