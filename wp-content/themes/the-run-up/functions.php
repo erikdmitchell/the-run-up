@@ -149,13 +149,4 @@ function tru_mdw_gmaps_get_post_meta($meta,$post_id) {
 	return $meta;
 }
 add_filter('mdw_gmaps_get_post_meta','tru_mdw_gmaps_get_post_meta',10,2);
-
-/*
-function schedule_container_classes($classes) {
-	$classes=array('container-fulid');
-
-	return $classes;
-}
-add_filter('mdw_single_page_section_container_classes_default_post-12','schedule_container_classes');
-*/
 ?>

@@ -162,7 +162,16 @@ class MDWGoogleMapsAdmin {
 									$html.='<option value="'.$i.'" '.selected($this->settings['zoom'],$i,false).'>'.$i.'</option>';
 								endfor;
 							$html.='</select>';
+						$html.='</div><!-- .input -->';
+					$html.='</div><!-- .row -->';
+
+					$html.='<div class="row">';
+						$html.='<div class="label col-xs-2">';
+							$html.='Disable Default Controls';
 						$html.='</div><!-- .label -->';
+						$html.='<div class="input col-xs-9">';
+							$html.='<input type="checkbox" name="gmaps[defaultControls]" id="default-controls" value="1" '.checked($this->settings['defaultControls'],1,false).'>';
+						$html.='</div><!-- .input -->';
 					$html.='</div><!-- .row -->';
 				$html.='</div><!-- .section -->';
 
@@ -247,6 +256,7 @@ class MDWGoogleMapsAdmin {
 				'mapTypeIds' => array(),
 			),
 			'zoom' => 5,
+			'defaultControls' => 0,
 			//'custom' => array(
 				//'address_field' => false
 			//),

@@ -17,12 +17,18 @@
 	    markers : false,
 	    map : false,
 	    bounds : '',
-	    mapControls : ''
+	    mapControls : '',
+	    defaultControls : 0
 		}, options, wp_map_options);
 
 		var activeWindow;
     opts.$elem=$(this);
-//console.log(opts);
+
+		// force ints //
+		opts.defaultControls=parseInt(opts.defaultControls);
+
+console.log(opts);
+
 		var init = function() {
 			opts.$elem.css({
 				width : opts.width,
@@ -41,11 +47,11 @@
 	    var _latlng = new google.maps.LatLng(opts.lat,opts.lng);
 	    var mapOptions = {
 	      zoom: parseInt(opts.zoom),
-
 	      center: _latlng,
 	      mapTypeId: google.maps.MapTypeId[opts.mapType],
-	      mapTypeControl: true,
-	      mapTypeControlOptions: opts.mapControls
+	      //mapTypeControl: true,
+	      //mapTypeControlOptions: opts.mapControls
+	      disableDefaultUI: opts.defaultControls
 	    };
 
 	    opts.map = new google.maps.Map(opts.$elem.get(0),mapOptions);
