@@ -135,21 +135,23 @@ class MDWThemeSinglePage {
 		if (!$MDWWPThemeOptions->options['single_page']['active'])
 			return $template;
 
-		//$template_arr=explode('/',$template);
-		//$template_filename=end($template_arr);
+		$new_template=false;
+		$template_arr=explode('/',$template);
+		$template_page=end($template_arr);
 		//$org_template_filename=get_page_template_slug($post->ID);
 		$plugin_template_folder=plugin_dir_path(__FILE__).$this->template_folder_name;
 		$user_template_folder=get_stylesheet_directory().'/'.$this->template_folder_override_name;
-		$template_page='/single-page.php';
 
 		// check for custom user files //
-		if (file_exists($user_template_folder.$template_page)) :
-			$template=$user_template_folder.$template_page;
+		if (file_exists($user_template_folder.'/'.$template_page)) :
+			$new_template=$user_template_folder.'/'.$template_page;
+		elseif (file_exists($plugin_template_folder.'/'.$template_page)) :
+			$new_template=$plugin_template_folder.'/'.$template_page;
 		else :
-			$template=$plugin_template_folder.$template_page;
+			$new_template=$plugin_template_folder.'/single-page.php';
 		endif;
 
-		return $template;
+		return $new_template;
 	}
 
 	// clear the styling (bootstrap) classes //
