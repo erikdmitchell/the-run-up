@@ -141,7 +141,7 @@ class MDWThemeSinglePage {
 		//$org_template_filename=get_page_template_slug($post->ID);
 		$plugin_template_folder=plugin_dir_path(__FILE__).$this->template_folder_name;
 		$user_template_folder=get_stylesheet_directory().'/'.$this->template_folder_override_name;
-echo "tp: $template_page<br>";
+//echo "tp: $template_page<br>";
 		// check for custom user files //
 		if (file_exists($user_template_folder.'/'.$template_page)) :
 			$new_template=$user_template_folder.'/'.$template_page;
@@ -150,7 +150,7 @@ echo "tp: $template_page<br>";
 		else :
 			$new_template=$plugin_template_folder.'/single-page.php';
 		endif;
-echo "new: $new_template<br>";
+//echo "new: $new_template<br>";
 		return $new_template;
 	}
 

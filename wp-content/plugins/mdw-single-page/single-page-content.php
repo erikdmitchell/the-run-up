@@ -14,10 +14,12 @@ class SinglePageContent {
 			$menu_items=wp_get_nav_menu_items($menu_id);
 
 			foreach ($menu_items as $item) :
-				$this->get_content_block($item->object_id,$section); // echos the content
+				$html.=$this->get_content_block($item->object_id,$section); // echos the content
 				$section++;
 			endforeach;
 		endif;
+
+		return $html;
 	}
 
 	// cannot due a return due to locate_template //
@@ -32,30 +34,18 @@ class SinglePageContent {
 		$section_container_classes_default=apply_filters('mdw_single_page_section_container_classes_default',array('container'));
 		$section_container_classes=apply_filters("mdw_single_page_section_container_classes_default_post-{$post_id}",$section_container_classes_default);
 
-		if ($template=$this->get_custom_page_template($post_id)) :
-			locate_template($template,true,false);
-		else :
-		?>
-			<section class="<?php echo implode(' ',$section_classes); ?>" id="<?php echo $post->post_name; ?>">
-				<div class="<?php echo implode(' ',$section_container_classes); ?>">
-					<div class="row">
-						<div class="col-md-12">
-							<h2 class="page-title"><?php echo get_the_title($post->ID); ?></h2>
-							<?php
-							// check for a custom page template, otherwise load standard content //
-							if ($template=$this->get_custom_page_template($post_id)) :
-echo "temp: $template<br>";
-								locate_template($template,true,false);
-							else :
-								echo apply_filters('the_content',$post->post_content);
-							endif;
-							?>
-						</div>
-					</div><!-- .row -->
-				</div><!-- .container -->
-			</section><!-- .section -->
-		<?php
-		endif;
+		$html.='<section class="'.implode(' ',$section_classes).'" id="'.$post->post_name.'">';
+			$html.='<div class="'.implode(' ',$section_container_classes).'">';
+				$html.='<div class="row">';
+					$html.='<div class="col-md-12">';
+						$html.='<h2 class="page-title">'.get_the_title($post->ID).'</h2>';
+						$html.=apply_filters('the_content',$post->post_content);
+					$html.='</div>';
+				$html.='</div><!-- .row -->';
+			$html.='</div><!-- .container -->';
+		$html.='</section><!-- .section -->';
+
+		return $html;
 	}
 
 	protected function get_menu_id($menu_name=false) {
@@ -65,27 +55,6 @@ echo "temp: $template<br>";
 		$nav_locations=get_nav_menu_locations();
 
 		return $nav_locations[$menu_name];
-	}
-
-	protected function get_custom_page_template($post_id) {
-		global $MDWThemeSinglePage;
-
-		$template_slug=get_page_template_slug($post_id);
-		//$user_template_folder=get_stylesheet_directory().'/'.$MDWThemeSinglePage->template_folder_override_name;
-
-		if (!$template_slug)
-			return false;
-
-		// check for custom user files //
-		if (file_exists(get_stylesheet_directory().'/'.$template_slug)) :
-			echo 't:'.$template=get_stylesheet_directory().'/'.$template_slug;
-			if (locate_template($template))
-				echo 'a';
-				//return $template;
-		endif;
-
-		return false;
-
 	}
 
 }

@@ -28,8 +28,18 @@ function get_mdw_single_page_footer() {
  * @return void
  */
 function mdw_single_page_content() {
+	echo get_mdw_single_page_content();
+}
+
+/**
+ * get_mdw_single_page_content function.
+ *
+ * @access public
+ * @return void
+ */
+function get_mdw_single_page_content() {
 	$spc=new SinglePageContent();
 
-	$spc->generate_content();
+	return $spc->generate_content();
 }
 ?>
