@@ -11,6 +11,7 @@ class MDWThemeSinglePage {
 	public $version='0.1.2';
 	public $template_folder_name='templates';
 	public $template_folder_override_name='mdw-single-page';
+	public $debug=false;
 
 	/**
 	 * __construct function.
@@ -153,7 +154,10 @@ class MDWThemeSinglePage {
 		else :
 			$new_template=$plugin_template_folder.'/single-page.php';
 		endif;
-//echo "new: $new_template<br>";
+
+		if ($this->debug)
+			echo "new: $new_template<br>";
+
 		return $new_template;
 	}
 
