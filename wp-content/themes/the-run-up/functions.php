@@ -22,10 +22,29 @@ function admin_scripts_styles($hook) {
 }
 add_action('admin_enqueue_scripts','admin_scripts_styles');
 
+/**
+ * tru_footer_template function.
+ *
+ * @access public
+ * @param mixed $template
+ * @return void
+ */
 function tru_footer_template($template) {
-	return get_stylesheet_directory(__FILE__).'/footer.php';
+	return get_stylesheet_directory(__FILE__).'/mdw-single-page/footer.php';
 }
-//add_filter('mdw_theme_single_page_footer_template','tru_footer_template');
+add_filter('mdw_theme_single_page_footer_template','tru_footer_template');
+
+/**
+ * tru_header_template function.
+ *
+ * @access public
+ * @param mixed $template
+ * @return void
+ */
+function tru_header_template($template) {
+	return get_stylesheet_directory(__FILE__).'/mdw-single-page/header.php';
+}
+add_filter('mdw_theme_single_page_header_template','tru_header_template');
 
 /**
  * get_partners function.
@@ -184,6 +203,25 @@ function get_home_content($limit=3) {
 			$html.='</article>';
 		endforeach;
 	$html.='</div><!-- .home-posts -->';
+
+	return $html;
+}
+
+function get_display_social_media($classes=array()) {
+	$html=null;
+	$social_media_options=get_option("social_media_options");
+
+	$html.='<div class="social-media-wrap '.implode(' ',$classes).'">';
+		$html.='<h3 class="sm-title">Follow Us</h3>';
+		$html.='<ul class="social-media">';
+			foreach ($social_media_options as $id => $option) :
+				if (empty($option['url']))
+					continue;
+
+				$html.='<li class="sm-'.$id.'"><a href="'.$option['url'].'"><i class="fa '.$option['icon'].'"></i></a></li>';
+			endforeach;
+		$html.='</ul>';
+	$html.='</div>';
 
 	return $html;
 }

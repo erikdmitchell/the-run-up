@@ -112,6 +112,37 @@ body.admin-bar .navbar {
 }
 
 /**
+ * social media
+ */
+.social-media-wrap {
+	overflow: hidden;
+}
+.social-media-wrap.header .sm-title {
+	display: none;
+}
+.social-media {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+.social-media-wrap.header .social-media {
+	margin-top: 8px;
+	margin-left: 30px;
+}
+.social-media li {
+	float: left;
+	color: #fff;
+	font-size: 24px;
+	margin-right: 5px;
+}
+.social-media li a {
+	color: #fff;
+}
+.social-media-wrap .sm-title {
+	font-size: 18px;
+}
+
+/**
  * footer
  */
 .mdw-back-to-top {
