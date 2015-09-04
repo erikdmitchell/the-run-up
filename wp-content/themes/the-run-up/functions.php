@@ -199,7 +199,7 @@ function get_home_content($limit=3) {
 			$html.='<article id="post-'.$post->ID.'" class="post col-xs-12 col-sm-4 col-md-4">';
 				$html.='<a href="'.get_permalink($post->ID).'">'.$thumb.'</a>';
 				$html.='<h3 class="title"><a href="'.get_permalink($post->ID).'">'.get_the_title($post->ID).'</a></h3>';
-				$html.='<div class="excerpt">'.pippin_excerpt_by_id($post->ID,50,'<a><em><strong>','<a href="'.get_permalink($post->ID).'"> more &raquo;</a>').'</div>';
+				$html.='<div class="excerpt">'.pippin_excerpt_by_id($post->ID,50,'<a><em><strong>',' ... <a href="'.get_permalink($post->ID).'"> more &raquo;</a>').'</div>';
 			$html.='</article>';
 		endforeach;
 	$html.='</div><!-- .home-posts -->';
