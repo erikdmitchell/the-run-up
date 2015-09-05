@@ -14,10 +14,24 @@ body {
 	position: relative;
 	padding-top: 50px;
 }
+body.admin-bar .navbar {
+	top: 32px;
+}
 
 /**
  * header
  */
+.bg-header {
+	background: url('images/sfcx-run-up-2014.jpg') no-repeat top center fixed;
+	background-size: cover;
+	height: 600px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	color: white;
+	text-align: center;
+	font-size: 50px;
+}
 .primary-nav {
 
 }
@@ -25,6 +39,8 @@ body {
 	margin-top: 0;
 	margin-bottom: 0;
 	background: #333;
+	//border-top: 3px solid #000;
+	//border-bottom: 3px solid #000;
 }
 .navbar-brand,
 .navbar-nav > li > a {
@@ -62,6 +78,68 @@ body {
 }
 .content-block.home {
 
+}
+/**
+ * home
+ */
+.home-posts article {
+	border-bottom: 0;
+	padding-bottom: 0;
+}
+.home-posts .post .title {
+	margin-top: 10px;
+}
+.home-posts .post .excerpt a,
+.home-posts .post .title a {
+	color: #333;
+}
+.home-posts .post .excerpt a,
+.home-posts .post .title a:hover {
+	text-decoration: none;
+}
+
+/**
+ * schedule
+ */
+.mdw-gmap {
+	margin-bottom: 20px;
+}
+.races .row.header {
+	font-weight: bold;
+}
+.races .row.race:nth-child(odd) {
+	background: #ccc;
+}
+
+/**
+ * social media
+ */
+.social-media-wrap {
+	overflow: hidden;
+}
+.social-media-wrap.header .sm-title {
+	display: none;
+}
+.social-media {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+.social-media-wrap.header .social-media {
+	margin-top: 8px;
+	margin-left: 30px;
+}
+.social-media li {
+	float: left;
+	color: #fff;
+	font-size: 24px;
+	margin-right: 5px;
+}
+.social-media li a {
+	color: #fff;
+}
+.social-media-wrap .sm-title {
+	font-size: 18px;
 }
 
 /**

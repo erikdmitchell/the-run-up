@@ -2,12 +2,20 @@ jQuery(document).ready(function($) {
 
 	// swap out or nav normal links to internal //
 	$('#menu-primary-navigation li a').each(function() {
-		var linkSlug=$(this).attr('title').toLowerCase();
-		$(this).attr('href','#'+linkSlug);
+		if ($('body').hasClass('home')) {
+			var linkSlug=$(this).attr('title').toLowerCase();
+			$(this).attr('href','#'+linkSlug);
+		} else {
+			var linkSlug=$(this).attr('title').toLowerCase();
+			$(this).attr('href','/#'+linkSlug);
+		}
 	});
 
 	// tweak nav with a scroll to //
 	$('#menu-primary-navigation li a').click(function(e) {
+		if (!$('body').hasClass('home'))
+			return;
+
 		e.preventDefault();
 
 		var linkSlug=$(this).attr('title').toLowerCase();
