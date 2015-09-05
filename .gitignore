@@ -216,3 +216,11 @@ wp-content/themes/twentythirteen/tag.php
 wp-content/themes/twentythirteen/taxonomy-post_format.php
 ccc
 wp/.htaccess
+error_log
+wp-config-sample.php
+wp-content/plugins/debug-bar
+wp-content/plugins/regenerate-thumbnails
+wp-content/plugins/social
+wp-content/themes/twentyfourteen
+wp-content/themes/twentythirteen
+wp-content/uploads
