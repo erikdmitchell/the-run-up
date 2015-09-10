@@ -1,6 +1,6 @@
 <?php
 add_image_size('home-thumbnail',585,425,true);
-add_image_size('posts-full-featured',1140,425,true);
+add_image_size('posts-full-featured',1140,475,true);
 
 /**
  * theme_scripts_styles function.

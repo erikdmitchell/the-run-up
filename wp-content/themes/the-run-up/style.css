@@ -112,6 +112,13 @@ body.admin-bar .navbar {
 }
 
 /**
+ * single post
+ */
+.single .post-thumbnail > img {
+	margin: 0 auto;
+}
+
+/**
  * social media
  */
 .social-media-wrap {
