@@ -1,4 +1,9 @@
-<?php get_mdw_single_page_header(); ?>
+<?php
+/**
+ * Template Name: Front Page
+**/
+?>
+<?php get_header(); ?>
 
 <div class="bg-header"></div>
 <section class="content-block home section-1" id="home">
@@ -44,4 +49,4 @@
 	</div><!-- .container -->
 </section><!-- .section -->
 
-<?php get_mdw_single_page_footer(); ?>
+<?php get_footer(); ?>

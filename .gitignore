@@ -224,3 +224,6 @@ wp-content/plugins/social
 wp-content/themes/twentyfourteen
 wp-content/themes/twentythirteen
 wp-content/uploads
+.htaccess
+wp-content/plugins/show-current-template
+wp-content/plugins/uci-curl-wp-plugin

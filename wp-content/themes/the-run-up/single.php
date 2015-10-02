@@ -1,4 +1,4 @@
-<?php get_mdw_single_page_header(); ?>
+<?php get_header(); ?>
 
 <div class="container">
 	<div class="row">
@@ -21,4 +21,4 @@
 	</div>
 </div><!-- .container -->
 
-<?php get_mdw_single_page_footer(); ?>
+<?php get_footer(); ?>

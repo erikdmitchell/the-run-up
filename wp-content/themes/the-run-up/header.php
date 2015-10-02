@@ -23,7 +23,7 @@
 
   </head>
 
-  <body <?php body_class('mdw-theme-single-page'); ?> data-spy="scroll" data-target=".navbar" data-offset="50">
+  <body <?php body_class(); ?> data-spy="scroll" data-target=".navbar" data-offset="50">
 		<nav id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
 			<div class="container">
 				<div class="navbar-header">

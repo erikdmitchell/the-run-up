@@ -5,7 +5,7 @@
  Author:       Erik Mitchell
  Author URI:   http://erikmitchell.net
  Template:     mdw-wp-theme
- Version:      1.0.0
+ Version:      1.1.0
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -39,8 +39,6 @@ body.admin-bar .navbar {
 	margin-top: 0;
 	margin-bottom: 0;
 	background: #333;
-	//border-top: 3px solid #000;
-	//border-bottom: 3px solid #000;
 }
 .navbar-brand,
 .navbar-nav > li > a {
