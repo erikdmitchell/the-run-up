@@ -80,6 +80,13 @@ body.admin-bar .navbar {
 /**
  * home
  */
+.home-featured {
+	max-height: 300px;
+	overflow: hidden;
+}
+.home-featured .featured h2 {
+	margin-top: 0;
+}
 .home-posts article {
 	border-bottom: 0;
 	padding-bottom: 0;
