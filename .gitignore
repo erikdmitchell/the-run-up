@@ -227,3 +227,5 @@ wp-content/uploads
 .htaccess
 wp-content/plugins/show-current-template
 wp-content/plugins/uci-curl-wp-plugin
+srdbm
+wp-content/plugins/wordpress-seo
