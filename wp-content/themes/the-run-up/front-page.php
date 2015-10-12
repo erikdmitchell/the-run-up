@@ -18,29 +18,6 @@
 		</div><!-- .row -->
 	</div><!-- .container -->
 </section><!-- .section -->
-<!--
-<section class="content-block schedule section-2" id="schedule">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h2 class="page-title"><?php echo get_the_title(12); ?></h2>
-			</div>
-		</div>
-	</div>
-	<div class="container-fluid">
-		<div class="row">
-			<?php echo do_shortcode('[mdw-gmap /]'); ?>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<?php echo get_schedule(); ?>
-			</div>
-		</div>
-	</div>
-</section>
--->
 
 <section class="content-block partners section-3" id="partners">
 	<div class="container">
