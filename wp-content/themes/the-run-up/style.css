@@ -88,11 +88,15 @@ body.admin-bar .navbar {
  * home
  */
 .home-featured {
-	max-height: 300px;
-	overflow: hidden;
+	//max-height: 300px;
+	//overflow: hidden;
 }
 .home-featured .featured h2 {
-	margin-top: 0;
+	//margin-top: 0;
+}
+.home-featured .featured img {
+	max-height: 300px;
+	margin: 0 auto;
 }
 .home-posts article {
 	border-bottom: 0;

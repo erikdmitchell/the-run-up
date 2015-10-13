@@ -194,10 +194,16 @@ function get_home_content($limit=3) {
 	return $html;
 }
 
+/**
+ * get_home_featured function.
+ *
+ * @access public
+ * @return void
+ */
 function get_home_featured() {
 	$html=null;
 	$args=array(
-		'posts_per_page' => 1,
+		'posts_per_page' => 2,
 		'category' => 13
 	);
 	$posts=get_posts($args);
@@ -213,22 +219,13 @@ function get_home_featured() {
 				$thumb='<img src="'.get_stylesheet_directory_uri().'/images/runup-black.png" class="img-responsive" />';
 			endif;
 
-			$html.='<div id="post-'.$post->ID.'" class="row featured">';
-				$html.='<div class="col-md-12">';
-					$html.='<div class="row">';
-						$html.='<div class="col-md-6">';
-							$html.=$thumb;
-						$html.='</div>';
-						$html.='<div class="col-md-6">';
-							$html.='<h2 class="page-title">'.get_the_title($post->ID).'</h2>';
-							//$html.=pippin_excerpt_by_id($post->ID,50,'<a><em><strong>',' ... <a href="'.get_permalink($post->ID).'"> more &raquo;</a>');
-							$html.=apply_filters('the_content',$post->post_content);
-						$html.='</div>';
-					$html.='</div>';
-				$html.='</div>';
-			$html.='</div>';
+			$html.='<div id="post-'.$post->ID.'" class="featured col-md-6">';
+				$html.=$thumb;
+				$html.='<h2 class="page-title">'.get_the_title($post->ID).'</h2>';
+				$html.=pippin_excerpt_by_id($post->ID,75,'<a><em><strong>',' ... <a href="'.get_permalink($post->ID).'"> more &raquo;</a>');
+			$html.='</div><!-- .featured -->';
 		endforeach;
-	$html.='</div><!-- .home-posts -->';
+	$html.='</div><!-- .home-featured -->';
 
 	return $html;
 }
