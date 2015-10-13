@@ -1,6 +1,7 @@
 <?php
 add_image_size('home-thumbnail',585,425,true);
 add_image_size('posts-full-featured',1140,475,true);
+add_image_size('home-thumbnail',555,300,true);
 
 /**
  * theme_scripts_styles function.
@@ -214,14 +215,14 @@ function get_home_featured() {
 	$html.='<div class="home-featured row">';
 		foreach ($posts as $post) :
 			if (has_post_thumbnail($post->ID)) :
-				$thumb=get_the_post_thumbnail($post->ID,'full',array('class' => 'img-responsive'));
+				$thumb=get_the_post_thumbnail($post->ID,'home-thumbnail',array('class' => 'img-responsive'));
 			else :
 				$thumb='<img src="'.get_stylesheet_directory_uri().'/images/runup-black.png" class="img-responsive" />';
 			endif;
 
 			$html.='<div id="post-'.$post->ID.'" class="featured col-md-6">';
-				$html.=$thumb;
-				$html.='<h2 class="page-title">'.get_the_title($post->ID).'</h2>';
+				$html.='<a href="'.get_permalink($post->ID).'">'.$thumb.'</a>';
+				$html.='<h2 class="title"><a href="'.get_permalink($post->ID).'">'.get_the_title($post->ID).'</a></h2>';
 				$html.=pippin_excerpt_by_id($post->ID,75,'<a><em><strong>',' ... <a href="'.get_permalink($post->ID).'"> more &raquo;</a>');
 			$html.='</div><!-- .featured -->';
 		endforeach;

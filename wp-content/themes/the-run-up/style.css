@@ -88,10 +88,10 @@ body.admin-bar .navbar {
  */
 .home-featured {
 	padding-top: 20px;
+	margin-bottom: 15px;
 }
 .home-featured .featured img {
 	max-height: 300px;
-	margin: 0 auto;
 }
 .home-posts article {
 	border-bottom: 0;
@@ -100,10 +100,14 @@ body.admin-bar .navbar {
 .home-posts .post .title {
 	margin-top: 10px;
 }
+.featured a,
+.featured .title a,
 .home-posts .post .excerpt a,
 .home-posts .post .title a {
 	color: #333;
 }
+.featured a,
+.featured .title a:hover,
 .home-posts .post .excerpt a,
 .home-posts .post .title a:hover {
 	text-decoration: none;
