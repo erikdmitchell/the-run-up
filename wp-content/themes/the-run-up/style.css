@@ -83,6 +83,16 @@ body.admin-bar .navbar {
 .home .partners h2 {
 	color: #fff;
 }
+.home .entry-meta {
+	margin-bottom: 10px;
+}
+.home .entry-date {
+	margin-right: 15px;
+}
+.home .entry-date > span,
+.home .byline > span {
+	margin-right: 5px;
+}
 /**
  * home
  */
@@ -92,6 +102,7 @@ body.admin-bar .navbar {
 }
 .home-featured .featured img {
 	max-height: 300px;
+	max-width: 100%;
 }
 .home-posts article {
 	border-bottom: 0;
@@ -102,12 +113,15 @@ body.admin-bar .navbar {
 }
 .featured a,
 .featured .title a,
+.home-posts a,
 .home-posts .post .excerpt a,
 .home-posts .post .title a {
 	color: #333;
 }
 .featured a,
 .featured .title a:hover,
+.home-posts a,
+.home-posts a:hover,
 .home-posts .post .excerpt a,
 .home-posts .post .title a:hover {
 	text-decoration: none;
