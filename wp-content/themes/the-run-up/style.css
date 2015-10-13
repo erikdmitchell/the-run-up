@@ -179,13 +179,21 @@ body.admin-bar .navbar {
 }
 
 /**
+ * single
+ */
+footer.entry-meta {
+	background: none;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+/**
  * footer
  */
 .mdw-back-to-top {
 	background-color: #a4a4a4;
 }
 footer {
-  text-align: center;
   color: #fff;
   margin-top: 25px;
   padding-top: 25px;
