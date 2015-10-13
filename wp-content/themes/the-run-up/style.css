@@ -69,30 +69,25 @@ body.admin-bar .navbar {
 	color: #fff;
 }
 /**
- * single page
+ * front page
  */
-.section-1 {
-	padding-top: 20px;
+.home .results-rankings {
+	background: #e7e7e7;
+	padding-bottom: 15px;
 }
-.content-block.home {
-
-}
-.content-block.partners {
+.home .partners {
 	background: #a4a4a4;
 	padding-bottom: 25px;
+	margin-top: 15px;
 }
-.content-block.partners h2 {
+.home .partners h2 {
 	color: #fff;
 }
 /**
  * home
  */
 .home-featured {
-	//max-height: 300px;
-	//overflow: hidden;
-}
-.home-featured .featured h2 {
-	//margin-top: 0;
+	padding-top: 20px;
 }
 .home-featured .featured img {
 	max-height: 300px;
