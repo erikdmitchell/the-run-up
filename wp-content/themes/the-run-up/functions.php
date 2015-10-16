@@ -278,6 +278,13 @@ function get_home_rider_diaries($limit=3) {
 	return $html;
 }
 
+/**
+ * get_display_social_media function.
+ *
+ * @access public
+ * @param array $classes (default: array())
+ * @return void
+ */
 function get_display_social_media($classes=array()) {
 	$html=null;
 	$social_media_options=get_option("social_media_options");
@@ -296,6 +303,19 @@ function get_display_social_media($classes=array()) {
 
 	return $html;
 }
+
+
+
+function add_loginout_link( $items, $args ) {
+    if (is_user_logged_in() && $args->theme_location == 'primary') {
+        $items .= '<li><a href="'. wp_logout_url() .'">Log Out</a></li>';
+    }
+    elseif (!is_user_logged_in() && $args->theme_location == 'primary') {
+        $items .= '<li><a href="'. site_url('wp-login.php') .'">Log In</a></li>';
+    }
+    return $items;
+}
+add_filter( 'wp_nav_menu_items', 'add_loginout_link', 10, 2 );
 
 /*
 * Gets the excerpt of a specific post ID or object
