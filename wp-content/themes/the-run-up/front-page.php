@@ -48,7 +48,7 @@
 						<div class="row">
 							<div class="rank col-md-1"><?php echo $rider->rank; ?></div>
 							<div class="rider col-md-5"><a href="<?php echo single_rider_link($rider->rider,$season); ?>"><?php echo $rider->rider; ?></a></div>
-							<div class="nat col-md-1"><a href="<?php echo single_country_link($rider->nat,$season); ?>"><?php echo $rider->nat; ?></a></div>
+							<div class="nat col-md-1"><a href="<?php echo single_country_link($rider->nat,$season); ?>"><?php echo fc_get_country_flag($rider->nat); ?></a></div>
 							<div class="total col-md-1"><?php echo number_format($rider->total,3); ?></div>
 						</div>
 					<?php endforeach; ?>
@@ -70,7 +70,7 @@
 						<div class="row">
 							<div class="name col-md-7"><a href="<?php echo single_race_link($race->code); ?>"><?php echo $race->name; ?></a></div>
 							<div class="date col-md-3"><?php echo $race->date; ?></div>
-							<div class="nat col-md-1"><?php echo $race->nat; ?></div>
+							<div class="nat col-md-1"><?php echo fc_get_country_flag($race->nat); ?></div>
 							<div class="class col-md-1"><?php echo $race->class; ?></div>
 						</div>
 					<?php endforeach; ?>
