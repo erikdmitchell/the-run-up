@@ -29,7 +29,7 @@
 		opts.defaultControls=parseInt(opts.defaultControls);
 		opts.scrollwheel=parseInt(opts.scrollwheel);
 
-console.log(opts);
+//console.log(opts);
 
 		var init = function() {
 			opts.$elem.css({
