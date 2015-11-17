@@ -12,7 +12,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );	?>
+		<?php	the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<div class="entry-meta">
 			<?php	edit_post_link( __( 'Edit', 'mdw-theme' ), '<span class="edit-link"><span class="glyphicon glyphicon-pencil"></span>', '</span>' );	?>
