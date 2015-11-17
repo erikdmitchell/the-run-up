@@ -81,15 +81,16 @@
 		</div><!-- .row -->
 	</div><!-- .container -->
 </div><!-- .container-fluid -->
-
+<!--
 <div class="container rider-diaries-wrap">
 	<div class="row">
 		<div class="col-md-12">
 			<h2 class="page-title">Rider Diaries</h2>
-			<?php echo get_home_rider_diaries(); ?>
+			<?php //echo get_home_rider_diaries(); ?>
 		</div>
-	</div><!-- .row -->
-</div><!-- .container -->
+	</div>
+</div>
+-->
 
 <div class="container-fluid partners">
 	<div class="container">
