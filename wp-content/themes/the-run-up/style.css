@@ -232,41 +232,9 @@ footer {
 	color: #000;
 }
 /**
- * TML login/register page
+ * register page
  */
-.post-215 .entry-title,
-.post-213 .entry-title {
-	display: none;
-}
-.login-register-page {
-	overflow: hidden;
-}
-.login-register-page .error {
-	color: red;
-}
-.login-register-page .tml-action-links {
-	list-style-type: none;
-	margin: 0;
-}
-/* login page */
-.post-213 .register .error {
-	display: none;
-}
-/* register page */
-.post-215 .login .error {
-	display: none;
-}
-/* lost password */
-.tml-lostpassword .tml-action-links {
-	list-style-type: none;
-	margin: 0;
-}
-.tml-lostpassword .tml-action-links li {
-	float: left;
-	padding-right: 15px;
-	margin-right: 15px;
-	border-right: 1px solid #000;
-}
-.tml-lostpassword .tml-action-links li:last-child {
-	border-right-width: 0;
+#custom_registration_form label {
+	display: inline-block;
+	width: 125px;
 }
