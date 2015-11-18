@@ -1,5 +1,6 @@
 jQuery(document).ready(function($) {
 
+/*
 	$('#_race_details_geocode').mdwGoogleMapGeoCode({
 	    addressFieldID : '#_race_details_location_line1',
 	    cityFieldID : '#_race_details_location_city',
@@ -8,5 +9,6 @@ jQuery(document).ready(function($) {
 			latFieldID : '#_race_details_latitude',
 			lngFieldID : '#_race_details_longitude',
 	});
+*/
 
 });
