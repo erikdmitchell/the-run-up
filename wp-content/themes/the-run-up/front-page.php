@@ -20,8 +20,11 @@
 			global $RiderStats,$RaceStats;
 
 			$season=get_query_var('season','2015/2016');
-			$rider_results=$RiderStats->get_riders(array(
-				'per_page' => 10
+			$current_week=uci_get_current_week($season);
+			$rider_results=$RiderStats->get_riders_from_weekly_rank(array(
+				'per_page' => 10,
+				'season' => $season,
+				'week' => $current_week
 			));
 			$race_results=$RaceStats->get_races(array(
 				'per_page' => 10,
