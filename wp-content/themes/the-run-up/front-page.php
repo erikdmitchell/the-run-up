@@ -48,7 +48,7 @@
 					<?php foreach ($rider_results as $rider) : ?>
 						<div class="row">
 							<div class="rank col-md-1"><?php echo $rider->rank; ?></div>
-							<div class="rider col-md-5"><a href="<?php echo single_rider_link($rider->rider,$season); ?>"><?php echo $rider->rider; ?></a></div>
+							<div class="rider col-md-5"><a href="<?php echo single_rider_link($rider->name,$season); ?>"><?php echo $rider->name; ?></a></div>
 							<div class="nat col-md-1"><a href="<?php echo single_country_link($rider->nat,$season); ?>"><?php echo get_country_flag($rider->nat); ?></a></div>
 							<div class="total col-md-1"><?php echo number_format($rider->total,3); ?></div>
 						</div>
