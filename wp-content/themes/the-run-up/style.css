@@ -234,6 +234,7 @@ footer {
 /**
  * fantasy landing page
  */
+
 .fc-posts .post {
 	overflow: hidden;
 }
@@ -242,9 +243,40 @@ footer {
 	margin: 0 10px 0px 0;
 }
 /**
+ * fantasy login page
+ */
+.post-252 .entry-title {
+	text-align: center;
+}
+.emcl-login-form {
+	margin: 0 auto;
+	width: 315px;
+}
+#custom_login_form label {
+	display: inline-block;
+	width: 125px;
+}
+/**
  * fantasy register page
  */
+.post-253 .entry-title {
+	text-align: center;
+}
+.emcl-registration {
+	margin: 0 auto;
+	width: 315px;
+}
 #custom_registration_form label {
 	display: inline-block;
 	width: 125px;
+}
+/**
+ * randomness
+ */
+/* hides team from menu if not logged in */
+#menu-item-267 {
+	display: none;
+}
+.logged-in #menu-item-267 {
+	display: block;
 }
