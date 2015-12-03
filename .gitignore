@@ -235,3 +235,6 @@ wp-content/plugins/display-template-name
 wp-content/plugins/gravityforms
 wp-content/plugins/mailchimp-for-wp
 wp-content/plugins/em-custom-login
+wp-content/db.php
+wp-content/plugins/mce-table-buttons
+wp-content/plugins/query-monitor
