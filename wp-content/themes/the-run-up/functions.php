@@ -227,7 +227,7 @@ function get_home_featured() {
 				$html.='<h2 class="title"><a href="'.get_permalink($post->ID).'">'.get_the_title($post->ID).'</a></h2>';
 				$html.='<div class="entry-meta">';
 					$html.='<span class="entry-date"><span class="glyphicon glyphicon-time"></span><a href="'.get_permalink($post->ID).'" rel="bookmark"><time class="entry-date" datetime="'.get_the_date('c',$post->ID).'">'.get_the_date('',$post->ID).'</time></a></span>';
-					$html.='<span class="byline"><span class="glyphicon glyphicon-user"></span><span class="author vcard"><a class="url fn n" href="'.get_author_posts_url( get_the_author_meta( 'ID' ) ).'" rel="author">'.get_the_author().'</a></span></span>';
+					//$html.='<span class="byline"><span class="glyphicon glyphicon-user"></span><span class="author vcard"><a class="url fn n" href="'.get_author_posts_url( get_the_author_meta( 'ID' ) ).'" rel="author">'.get_the_author().'</a></span></span>';
 				$html.='</div>';
 				$html.=pippin_excerpt_by_id($post->ID,75,'<a><em><strong>',' ... <a href="'.get_permalink($post->ID).'"> more &raquo;</a>');
 			$html.='</div><!-- .featured -->';

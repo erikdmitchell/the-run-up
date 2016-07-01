@@ -280,3 +280,6 @@ footer {
 .logged-in #menu-item-267 {
 	display: block;
 }
+.logged-in #menu-item-306 {
+	display: none;
+}
