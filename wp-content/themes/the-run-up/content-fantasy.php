@@ -12,7 +12,7 @@ $post_slug=$post->post_name;
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php if ($post_slug=='create-team') : ?>
-			<?php if (fc_check_if_roster_edit()) : ?>
+			<?php if (fc_check_if_roster_edit_simple()) : ?>
 				<h1 class="entry-title">Edit Roster</h1>
 			<?php else : ?>
 				<h1 class="entry-title">Add Roster</h1>
