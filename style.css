@@ -76,10 +76,14 @@ body {
 }
 
 /* sign in */
-.emcl-login-form  .custom-login-extras {
+.emcl-login-form .custom-login-extras {
 	padding: 0;
 }
-
+.emcl-login-form label,
+.emcl-registration label {
+	display: inline-block;
+	width: 120px;
+}
 
 
 
