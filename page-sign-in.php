@@ -6,7 +6,7 @@
 <?php get_header(); ?>
 
 <div class="container">
-	<div class="row content">
+	<div class="row">
 		<div class="col-md-12">
 			<?php koksijde_theme_post_thumbnail(); ?>
 		</div>
