@@ -16,7 +16,7 @@
     <?php wp_head(); ?>
   </head>
 
-  <body <?php body_class(); ?>>
+  <body <?php body_class('tru'); ?>>
 
 
 				<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -28,8 +28,8 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<!-- <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logos/tru-logo-sm.png " height="" width="" alt="the run up logo" /> -->
-						<?php koksijde_theme_navbar_brand(); ?>
+						<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logos/tru-logo-header.png " height="" width="" alt="the run up logo" />
+						<?php //koksijde_theme_navbar_brand(); ?>
 					</div>
 					<?php koksijde_secondary_navigation_setup(); ?>
 					<div class="collapse navbar-collapse primary-menu">
