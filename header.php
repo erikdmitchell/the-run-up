@@ -18,9 +18,9 @@
 
   <body <?php body_class(); ?>>
 
-		<div class="container-fluid primary-nav">
-			<div class="container">
-				<nav class="navbar navbar-default" role="navigation">
+
+				<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+					<div class="container">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".mdw-wp-theme-mobile-menu">
 							<span class="sr-only">Toggle navigation</span>
@@ -28,6 +28,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
+						<!-- <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logos/tru-logo-sm.png " height="" width="" alt="the run up logo" /> -->
 						<?php koksijde_theme_navbar_brand(); ?>
 					</div>
 					<?php koksijde_secondary_navigation_setup(); ?>
@@ -42,7 +43,6 @@
 						));
 						?>
 					</div> <!-- .primary-menu -->
-					<?php koksijde_mobile_navigation_setup(); ?>
+					<?php //koksijde_mobile_navigation_setup(); ?>
+					</div>
 				</nav>
-			</div><!-- .container -->
-		</div><!-- .navigation -->
