@@ -11,7 +11,7 @@
 			</p>
 			<p>
 				<input type="hidden" name="custom_login_nonce" value="<?php echo wp_create_nonce('custom-login-nonce'); ?>" />
-				<input id="custom_login_submit" type="submit" value="Login" />
+				<input id="custom_login_submit" class="btn-tru" type="submit" value="Login" />
 			</p>
 		</fieldset>
 	</form>

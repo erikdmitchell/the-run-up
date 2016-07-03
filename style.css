@@ -13,6 +13,12 @@
 body {
 	padding-top: 150px;
 }
+.btn-tru {
+	color: #fff;
+    background-color: #18A9E1;
+    border-color: #1a84e1;
+    padding: 5px 10px;
+}
 
 .jumbotron.home {
     background: #333;
@@ -84,7 +90,11 @@ body {
 	display: inline-block;
 	width: 120px;
 }
-
+.emcl-registration input[type="text"],
+.emcl-registration input[type="email"],
+.emcl-registration input[type="password"] {
+	width: 200px;
+}
 
 
 /* footer */

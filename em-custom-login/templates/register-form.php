@@ -35,7 +35,7 @@
 			<?php endif; ?>
 			<p>
 				<input type="hidden" name="custom_register_nonce" value="<?php echo wp_create_nonce('custom-register-nonce'); ?>"/>
-				<input type="submit" value="<?php _e('Register'); ?>"/>
+				<input type="submit" class="btn-tru" value="<?php _e('Register'); ?>"/>
 			</p>
 		</fieldset>
 	</form>
