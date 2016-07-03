@@ -20,6 +20,12 @@ body {
     padding: 5px 10px;
 }
 
+/* navigation */
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #000;
+    background-color: #18A9E1;
+}
+
 .jumbotron.home {
     background: #333;
     text-align: center;
