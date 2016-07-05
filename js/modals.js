@@ -7,6 +7,14 @@ jQuery(document).ready(function($) {
 		launchLoginModal();
 	});
 
+	// register button in login modal //
+	$('#login-modal .wp-register a').click(function(e) {
+		e.preventDefault();
+
+		closeLoginModal();
+		launchRegistrationModal();
+	});
+
 	// join now button click //
 	$('#join-now-button').click(function(e) {
 		e.preventDefault();
@@ -26,6 +34,22 @@ function launchLoginModal() {
 	jQuery('#login-modal').modal('show');
 }
 
+/**
+ * closeLoginModal function.
+ *
+ * @access public
+ * @return void
+ */
+function closeLoginModal() {
+	jQuery('#login-modal').modal('hide');
+}
+
+/**
+ * launchRegistrationModal function.
+ *
+ * @access public
+ * @return void
+ */
 function launchRegistrationModal() {
 	jQuery('#register-modal').modal('show');
 }

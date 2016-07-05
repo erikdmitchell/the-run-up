@@ -43,7 +43,7 @@
 								<div class="g-recaptcha" data-sitekey="<?php echo get_option('emcl-recaptcha-site-key',''); ?>"></div>
 							</p>
 						<?php endif; ?>
-						<p>
+						<p class="buttons">
 							<input type="hidden" name="custom_register_nonce" value="<?php echo wp_create_nonce('custom-register-nonce'); ?>"/>
 							<input type="submit" class="btn-tru" value="<?php _e('Register'); ?>"/>
 						</p>

@@ -128,7 +128,8 @@ footer .social > li > i {
 	margin: 0 auto;
 	width: 80%;
 }
-#login-modal .modal-body .buttons {
+#login-modal .modal-body .buttons,
+#register-modal .modal-body .buttons {
 	text-align: center;
 }
 #login-modal .modal-body .btn-tru {
@@ -141,6 +142,10 @@ footer .social > li > i {
 
 @media (min-width: 768px) {
 	#login-modal .modal-dialog {
+		width: 400px;
+	}
+
+	#register-modal .modal-dialog {
 		width: 400px;
 	}
 }
