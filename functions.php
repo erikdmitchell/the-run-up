@@ -26,6 +26,14 @@ function tru_add_modals() {
 }
 add_action('wp_footer', 'tru_add_modals');
 
+/**
+ * tru_loginout_menu_link function.
+ *
+ * @access public
+ * @param mixed $items
+ * @param mixed $args
+ * @return void
+ */
 function tru_loginout_menu_link( $items, $args ) {
    if ($args->theme_location == 'primary') {
       if (is_user_logged_in()) {

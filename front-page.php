@@ -12,7 +12,11 @@
 		<div class="slogan">Create the Ultimate Cyclocross Team</div>
 
 		<div class="join-now-button">
-			<button id="join-now-button" class="join-now button btn-primary">Join Now</button>
+			<?php if (is_user_logged_in()) : ?>
+				<button id="my-team-button" class="my-team button btn-primary">My Team</button>
+			<?php else: ?>
+				<button id="join-now-button" class="join-now button btn-primary">Join Now</button>
+			<?php endif; ?>
 		</div>
 	</div>
 </div>
