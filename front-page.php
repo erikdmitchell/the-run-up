@@ -12,7 +12,7 @@
 		<div class="slogan">Create the Ultimate Cyclocross Team</div>
 
 		<div class="join-now-button">
-			<button class="join-now button btn-primary">Join Now</button>
+			<button id="join-now-button" class="join-now button btn-primary">Join Now</button>
 		</div>
 	</div>
 </div>

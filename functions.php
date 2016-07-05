@@ -22,6 +22,7 @@ add_action('wp_enqueue_scripts', 'tru_scripts_styles');
  */
 function tru_add_modals() {
 	get_template_part('modal', 'login');
+	get_template_part('modal', 'register');
 }
 add_action('wp_footer', 'tru_add_modals');
 ?>

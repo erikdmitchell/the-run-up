@@ -7,10 +7,27 @@ jQuery(document).ready(function($) {
 		launchLoginModal();
 	});
 
+	// join now button click //
+	$('#join-now-button').click(function(e) {
+		e.preventDefault();
+
+		launchRegistrationModal();
+	});
+
 });
 
+/**
+ * launchLoginModal function.
+ *
+ * @access public
+ * @return void
+ */
 function launchLoginModal() {
 	jQuery('#login-modal').modal('show');
+}
+
+function launchRegistrationModal() {
+	jQuery('#register-modal').modal('show');
 }
 
 /**
