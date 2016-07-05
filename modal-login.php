@@ -17,7 +17,7 @@
 						<label for="custom_user_pass">Password</label>
 						<input name="custom_user_pass" id="custom_user_pass" class="required" type="password" />
 					</p>
-					<p>
+					<p class="buttons">
 						<input type="hidden" name="custom_login_nonce" value="<?php echo wp_create_nonce('custom-login-nonce'); ?>" />
 						<input id="custom_login_submit" class="btn-tru" type="submit" value="Login" />
 					</p>
