@@ -25,4 +25,16 @@ function tru_add_modals() {
 	get_template_part('modal', 'register');
 }
 add_action('wp_footer', 'tru_add_modals');
+
+function tru_loginout_menu_link( $items, $args ) {
+   if ($args->theme_location == 'primary') {
+      if (is_user_logged_in()) {
+         $items .= '<li class="logout"><a href="'. wp_logout_url() .'">'. __("Log Out") .'</a></li>';
+      } else {
+         $items .= '<li class="sign-in"><a href="'. wp_login_url(get_permalink()) .'">'. __("Sign In") .'</a></li>';
+      }
+   }
+   return $items;
+}
+add_filter( 'wp_nav_menu_items', 'tru_loginout_menu_link', 10, 2 );
 ?>

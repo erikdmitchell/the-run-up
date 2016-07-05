@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
 
 	// sign in menu link click //
-	$('.menu-item.login-modal').click(function(e) {
+	$('.nav .sign-in').click(function(e) {
 		e.preventDefault();
 
 		launchLoginModal();
