@@ -21,11 +21,19 @@ body {
 }
 
 /* navigation */
+.navbar-default .navbar-nav>li>a {
+	color: #000;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #B3B4B4;
+    background-color: transparent;
+}
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
     color: #000;
     background-color: #18A9E1;
 }
 
+/* front page */
 .jumbotron.home {
     background: #333;
     text-align: center;
