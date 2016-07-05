@@ -44,5 +44,23 @@ function tru_loginout_menu_link( $items, $args ) {
    }
    return $items;
 }
-add_filter( 'wp_nav_menu_items', 'tru_loginout_menu_link', 10, 2 );
+add_filter( 'wp_nav_menu_items', 'tru_loginout_menu_link', 10, 2);
+
+/**
+ * tru_primary_nav_menu_args function.
+ *
+ * @access public
+ * @param string $args (default: '')
+ * @return void
+ */
+function tru_primary_nav_menu_args( $args = '' ) {
+	if ( is_user_logged_in() ) {
+		$args['menu'] = 'Primary Nav Logged In';
+	} else {
+		$args['menu'] = 'Primary Nav Logged Out';
+	}
+
+	return $args;
+}
+add_filter('wp_nav_menu_args', 'tru_primary_nav_menu_args');
 ?>
