@@ -51,6 +51,7 @@
 				</form>
 				<?php emcl_login_extras(array('loginout' => false,'register' => false,'password' => false)); ?>
 			</div>
+        </div>
 
       </div>
     </div><!-- /.modal-content -->
