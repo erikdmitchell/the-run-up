@@ -15,6 +15,14 @@ jQuery(document).ready(function($) {
 		launchRegistrationModal();
 	});
 
+	// lost password link in login modal //
+	$('#login-modal .lost-password a').click(function(e) {
+		e.preventDefault();
+
+		closeLoginModal();
+		launchForgotPasswordModal();
+	});
+
 	// join now button click //
 	$('#join-now-button').click(function(e) {
 		e.preventDefault();
@@ -52,6 +60,16 @@ function closeLoginModal() {
  */
 function launchRegistrationModal() {
 	jQuery('#register-modal').modal('show');
+}
+
+/**
+ * launchForgotPasswordModal function.
+ *
+ * @access public
+ * @return void
+ */
+function launchForgotPasswordModal() {
+	jQuery('#lost-password-modal').modal('show');
 }
 
 /**
