@@ -15,5 +15,7 @@
 			</p>
 		</fieldset>
 	</form>
+
 	<?php emcl_login_extras(array('register' => false)); ?>
+
 </div>

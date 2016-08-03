@@ -96,21 +96,22 @@ body {
 	padding-bottom: 30px;
 }
 
-/* sign in */
+/* sign in, registration, password */
 .emcl-login-form .custom-login-extras {
 	padding: 0;
 }
 .emcl-login-form label,
-.emcl-registration label {
+.emcl-registration label,
+.em-lost-password label {
 	display: inline-block;
 	width: 120px;
 }
+.em-lost-password input[type="text"],
 .emcl-registration input[type="text"],
 .emcl-registration input[type="email"],
 .emcl-registration input[type="password"] {
 	width: 200px;
 }
-
 
 /* footer */
 footer {
