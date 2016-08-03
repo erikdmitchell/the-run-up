@@ -113,6 +113,19 @@ body {
 	width: 200px;
 }
 
+/* faq page */
+.tru-faqs-list {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.tru-faqs-list .faq {
+
+}
+.tru-faqs-list .faq-title {
+	font-size: 25px;
+}
+
 /* footer */
 footer {
 	margin-top: 30px;

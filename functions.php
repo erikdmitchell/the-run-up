@@ -78,4 +78,34 @@ function tru_after_user_reg_create_team($user_id, $params) {
 	fantasy_cycling_create_team($user_id, $params['tru_team_name']);
 }
 add_action('emcl_after_user_registration', 'tru_after_user_reg_create_team', 10, 2);
+
+/**
+ * tru_faqs_shortcode function.
+ *
+ * @access public
+ * @param string $atts (default: '')
+ * @return void
+ */
+function tru_faqs_shortcode($atts='') {
+	$html='';
+	$posts=get_posts(array(
+		'posts_per_page' => -1,
+		'post_type' => 'faq',
+		'orderby' => 'menu_order',
+	));
+
+	$html.='<div class="tru-faqs">';
+		$html.='<ul class="tru-faqs-list">';
+			foreach ($posts as $post) :
+				$html.='<li id="faq-'.$post->ID.'" class="faq">';
+					$html.='<h2 class="faq-title">'.$post->post_title.'</h2>';
+					$html.='<div class="faq-content">'.apply_filters('the_content', $post->post_content).'</div>';
+				$html.='</li>';
+			endforeach;
+		$html.='</ul>';
+	$html.='</div>';
+
+	return $html;
+}
+add_shortcode('tru_faqs', 'tru_faqs_shortcode');
 ?>
