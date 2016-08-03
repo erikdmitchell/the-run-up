@@ -6,6 +6,10 @@
 				<input name="custom_user_login_reg" id="custom_user_login_reg" class="required" type="text"/>
 			</p>
 			<p>
+				<label for="tru_team_name"><?php _e('Team Name', 'tru'); ?></label>
+				<input name="tru_team_name" id="tru_team_name" class="required" type="text"/>
+			</p>
+			<p>
 				<label for="custom_user_email"><?php _e('Email'); ?></label>
 				<input name="custom_user_email" id="custom_user_email" class="required" type="email"/>
 			</p>

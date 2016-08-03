@@ -8,27 +8,33 @@ jQuery(document).ready(function($) {
 	});
 
 	// register button in login modal //
+/*
 	$('#login-modal .wp-register a').click(function(e) {
 		e.preventDefault();
 
 		closeLoginModal();
 		launchRegistrationModal();
 	});
+*/
 
 	// lost password link in login modal //
+/*
 	$('#login-modal .lost-password a').click(function(e) {
 		e.preventDefault();
 
 		closeLoginModal();
 		launchForgotPasswordModal();
 	});
+*/
 
 	// join now button click //
+/*
 	$('#join-now-button').click(function(e) {
 		e.preventDefault();
 
 		launchRegistrationModal();
 	});
+*/
 
 });
 

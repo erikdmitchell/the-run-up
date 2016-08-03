@@ -15,7 +15,7 @@
 			<?php if (is_user_logged_in()) : ?>
 				<button id="my-team-button" class="my-team button btn-primary">My Team</button>
 			<?php else: ?>
-				<button id="join-now-button" class="join-now button btn-primary">Join Now</button>
+				<a href="/register/"><button id="join-now-button" class="join-now button btn-primary">Join Now</button></a>
 			<?php endif; ?>
 		</div>
 	</div>

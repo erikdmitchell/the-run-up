@@ -10,7 +10,7 @@
 		<div class="col-md-12">
 			<?php koksijde_theme_post_thumbnail(); ?>
 
-			<div class="col-md-offset-4 col-md-4">
+			<div class="col-md-offset-3 col-md-6">
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 					<?php get_template_part('content', 'register'); ?>
 				<?php endwhile; else: ?>
