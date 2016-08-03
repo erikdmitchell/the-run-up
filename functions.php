@@ -65,4 +65,17 @@ function tru_primary_nav_menu_args( $args = '' ) {
 	return $args;
 }
 add_filter('wp_nav_menu_args', 'tru_primary_nav_menu_args');
+
+/**
+ * tru_after_user_reg_create_team function.
+ *
+ * @access public
+ * @param mixed $user_id
+ * @param mixed $params
+ * @return void
+ */
+function tru_after_user_reg_create_team($user_id, $params) {
+	fantasy_cycling_create_team($user_id, $params['tru_team_name']);
+}
+add_action('emcl_after_user_registration', 'tru_after_user_reg_create_team', 10, 2);
 ?>
