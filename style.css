@@ -15,9 +15,12 @@ body {
 }
 .btn-tru {
 	color: #fff;
-    background-color: #18A9E1;
-    border-color: #1a84e1;
-    padding: 5px 10px;
+  background-color: #18A9E1;
+  border-color: #1a84e1;
+  padding: 5px 10px;
+}
+.btn-tru:focus {
+	outline: none;
 }
 
 /* navigation */
