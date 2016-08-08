@@ -157,6 +157,9 @@ body {
 }
 
 /* footer */
+footer .footer-col {
+	margin-bottom: 1em;
+}
 footer {
 	margin-top: 30px;
 	padding-top: 30px;
@@ -192,16 +195,6 @@ footer .social > li > i {
 	margin-left: 62px;
 }
 
-
-@media (min-width: 768px) {
-	#login-modal .modal-dialog {
-		width: 400px;
-	}
-
-	#register-modal .modal-dialog {
-		width: 400px;
-	}
-}
 
 @media (min-width: 768px) {
 	#login-modal .modal-dialog {

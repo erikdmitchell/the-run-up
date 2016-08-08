@@ -2,13 +2,13 @@
 			<div class="footer-widgets">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-4">
+						<div class="col-xs-6 col-sm-4 footer-col">
 							<?php dynamic_sidebar('footer-1'); ?>
 						</div>
-						<div class="col-md-4">
+						<div class="col-xs-6 col-sm-4 footer-col">
 							<?php dynamic_sidebar('footer-2'); ?>
 						</div>
-						<div class="col-md-4">
+						<div class="col-xs-12 col-sm-4 footer-col">
 							<?php //dynamic_sidebar('footer-3'); ?>
 							<h3>The Run Up</h3>
 							<div class="copy">&copy <?php echo date('Y'); ?></div>
