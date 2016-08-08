@@ -41,9 +41,9 @@ $user_team=fantasy_cycling_get_user_team();
 
 			<div class="row stats header">
 				<div class="col-xs-2 rank">Rank</div>
-				<div class="col-xs-3 points">Points</div>
+				<div class="col-xs-2 points">Points</div>
 				<div class="col-xs-3 last-year">Last Year</div>
-				<div class="col-xs-4 last-race">Last Race</div>
+				<div class="col-xs-5 last-race">Last Race</div>
 			</div>
 
 			<?php if (count($riders)) :	foreach ($riders as $rider) : ?>
@@ -63,10 +63,10 @@ $user_team=fantasy_cycling_get_user_team();
 
 					<div class="row stats">
 						<div class="col-xs-2 rank"><?php echo $rider->rank; ?></div>
-						<div class="col-xs-3 points"><?php echo $rider->points; ?></div>
+						<div class="col-xs-2 points"><?php echo $rider->points; ?></div>
 						<div class="col-xs-3 last-year"><?php echo $last_year_result->place; ?></div>
-						<div class="col-xs-4 last-race">
-							<span><?php echo $last_race->place; ?></span> <?php echo fc_trim_string($last_race->event); ?>
+						<div class="col-xs-5 last-race">
+							<?php echo $last_race->place; ?> (<?php echo fc_trim_string($last_race->event, 16); ?>)
 						</div>
 					</div>
 				</div>
