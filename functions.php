@@ -56,6 +56,9 @@ add_filter( 'wp_nav_menu_items', 'tru_loginout_menu_link', 10, 2);
  * @return void
  */
 function tru_primary_nav_menu_args( $args = '' ) {
+	if ($args['theme_location']!='primary')
+		return $args;
+
 	if ( is_user_logged_in() ) {
 		$args['menu'] = 'Primary Nav Logged In';
 	} else {
