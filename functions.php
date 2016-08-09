@@ -111,4 +111,69 @@ function tru_faqs_shortcode($atts='') {
 	return $html;
 }
 add_shortcode('tru_faqs', 'tru_faqs_shortcode');
+
+/**
+ * tru_add_rider_modal_navigation function.
+ *
+ * @access public
+ * @param mixed $html
+ * @param mixed $args
+ * @return void
+ */
+function tru_add_rider_modal_navigation($html, $args) {
+	$html=null;
+	$prev_link=null;
+	$next_link=null;
+
+	// prev link //
+	$prev_link.='<div class="prev-link">';
+
+		if ($args['prev_page']!=0) :
+			$prev_link.='<a href="'.$args['prev_page'].'"><button class="tru-add-riders-btn">'.$args['prev_text'].'</button></a>';
+		else :
+			$prev_link.='&nbsp;';
+		endif;
+
+	$prev_link.='</div>';
+
+	// next link //
+	$next_link.='<div class="next-link">';
+
+		if ($args['next_page']<=$args['total']) :
+			$next_link.='<a href="'.$args['next_page'].'"><button class="tru-add-riders-btn">'.$args['next_text'].'</button></a>';
+		else :
+			$next_link.='&nbsp;';
+		endif;
+
+	$next_link.='</div>';
+
+	$html.='<div class="tru-add-riders-pagination add-riders-modal-pagination">';
+		$html.=$prev_link;
+		$html.=$next_link;
+	$html.='</div>';
+
+	return $html;
+}
+add_filter('fantasy_cycling_add_riders_modal_pagination', 'tru_add_rider_modal_navigation', 10, 2);
+
+/**
+ * tru_fantasy_cycling_display_add_remove function.
+ *
+ * @access public
+ * @param mixed $html
+ * @param mixed $plus
+ * @param mixed $minus
+ * @return void
+ */
+function tru_fantasy_cycling_display_add_remove($html, $plus, $minus) {
+	$html=null;
+
+	$html.='<a href="">';
+		$html.='<i class="fa add-rider'.$plus.'" aria-hidden="true"><button class="tru-add-riders-btn">Add Rider</button></i>';
+		$html.='<i class="fa fa-minus'.$minus.'" aria-hidden="true"></i>';
+	$html.='</a>';
+
+	return $html;
+}
+add_filter('fantasy_cycling_display_add_remove', 'tru_fantasy_cycling_display_add_remove', 10, 3);
 ?>

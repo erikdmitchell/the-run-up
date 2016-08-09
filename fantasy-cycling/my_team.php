@@ -38,12 +38,12 @@ endif;
 
 	<div class="my-team-list">
 		<div class="row header">
-				<div class="col-xs-8 col-sm-3 name">Name</div>
-				<div class="col-xs-2 col-sm-1 proj-place">Proj.</div>
-				<div class="col-xs-2 col-sm-1 rank">Rank</div>
-				<div class="hidden-xs col-sm-1 points">Points</div>
-				<div class="hidden-xs col-sm-2 last-year">Last Year</div>
-				<div class="hidden-xs col-sm-3 last-race">Last Race</div>
+			<div class="col-xs-8 col-sm-3 name">Name</div>
+			<div class="col-xs-2 col-sm-1 proj-place">Proj.</div>
+			<div class="col-xs-2 col-sm-1 rank">Rank</div>
+			<div class="hidden-xs col-sm-1 points">Points</div>
+			<div class="hidden-xs col-sm-2 last-year">Last Year</div>
+			<div class="hidden-xs col-sm-3 last-race">Last Race</div>
 		</div>
 
 		<?php foreach ($user_team->riders as $key => $rider) : ?>
