@@ -256,6 +256,14 @@ body {
 .fantasy-cycling-my-team .rider .add-remove .fa-minus-circle {
 	font-size: 30px;
 }
+.fantasy-cycling-race .race-results .header,
+.fantasy-cycling-race .race-results .rider {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.fantasy-cycling-race .race-results .rider:nth-child(even) {
+	background: #eee;
+}
 
 /* footer */
 footer .footer-col {
