@@ -23,7 +23,7 @@ $race=$ucicurl_races->get_race(get_query_var('race_code'));
 		<h1 class="page-title"><?php echo $race->event; ?><span class="flag"><?php echo uci_results_get_country_flag($race->nat); ?></span></h1>
 
 		<div class="row race-details">
-			<div class="col-xs-5 col-sm-2 race-date"><?php echo date(get_option('date_format'), strtotime($race->date)); ?></div>
+			<div class="col-xs-5 col-sm-2 race-date"><?php echo date('M j, Y', strtotime($race->date)); ?></div>
 			<div class="col-xs-2 col-sm-1 race-class">(<?php echo $race->class; ?>)</div>
 		</div>
 
