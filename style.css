@@ -229,31 +229,13 @@ body {
 	.fantasy-cycling-my-team .rider .proj {
 	margin: 5px 0 0 0;
 }
-.fantasy-cycling-my-team .rider .actions {
+.fantasy-cycling-my-team .rider {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
 .fantasy-cycling-my-team .rider .add-remove .fa-minus-circle {
 	font-size: 30px;
 }
-/*
-.fantasy-cycling-my-team .rider .rider-nc {
-	overflow: hidden;
-}
-.fantasy-cycling-my-team .rider .rider-nc > div {
-	float: left;
-}
-.fantasy-cycling-my-team .my-team-list .rider .add-remove {
-  padding-left: 0;
-}
-.fantasy-cycling-my-team .rider .add-remove .add-rider {
-	padding-top: 18px;
-}
-
-.fantasy-cycling-my-team .rider .name {
-	margin-top: -3px;
-}
-*/
 
 /* footer */
 footer .footer-col {

@@ -38,45 +38,46 @@ endif;
 
 	<div class="my-team-list">
 		<div class="row header">
-			<div class="col-xs-2">&nbsp;</div>
-			<div class="col-xs-8 name">Name</div>
-			<div class="col-xs-2 last-year">Proj.</div>
+			<div class="col-xs-2 col-sm-1">&nbsp;</div>
+			<div class="col-xs-8 col-sm-4 name">Name</div>
+			<div class="col-xs-2 col-sm-1 proj">Proj.</div>
+			<div class="hidden-xs col-sm-1 rank">Rank</div>
+			<div class="hidden-xs col-sm-1 points">Points</div>
+			<div class="hidden-xs col-sm-1 last-year">Last Year</div>
+			<div class="hidden-xs col-sm-3 last-race">Last Race</div>
 		</div>
 
 		<?php foreach ($user_team->riders as $key => $rider) : ?>
 			<?php $last_year_result=fantasy_cycling_get_race_result($rider->id, $next_race->last_year_code); ?>
 			<?php $last_race=fantasy_cycling_last_result($rider->id); ?>
 
-			<div id="rider-row-<?php echo $key; ?>" class="rider">
+			<div id="rider-row-<?php echo $key; ?>" class="row rider">
+				<?php if ($rider->id) : ?>
 
-				<div class="row actions">
-					<?php if ($rider->id) : ?>
-
-						<div class="col-xs-2 add-remove">
-							<?php fantasy_cycling_display_add_remove($rider, $add_remove_class); ?>
-						</div>
-						<div class="col-xs-8 name">
-							<a href="<?php fantasy_cycling_rider_link($rider->slug); ?>"><?php echo $rider->name; ?></a>
-							<span class="country"><?php fantasy_cycling_flag($rider->nat); ?></span>
-						</div>
-						<div class="col-xs-2 proj"></div>
-
-					<?php else :?>
-
-						<div class="col-xs-12 add-remove">
-							<?php fantasy_cycling_display_add_remove($rider, $add_remove_class); ?>
-						</div>
-
-					<?php endif; ?>
-				</div>
-
-				<div class="hidden-xs row stats">
-					<div class="col-xs-2 rank"><?php echo $rider->rank->rank; ?><?php echo $rider->rank->prev_icon; ?></div>
-					<div class="col-xs-2 points"><?php echo $rider->rank->points; ?></div>
-					<div class="col-xs-3 last-year"><?php echo $last_year_result->place; ?></div>
-					<div class="col-xs-5 last-race">
-						<?php echo $last_race->place; ?> <a href="<?php echo fantasy_cycling_race_link($last_race->code); ?>"><?php echo fc_trim_string($last_race->event, 16); ?></a>
+					<div class="col-xs-2 col-sm-1 add-remove">
+						<?php fantasy_cycling_display_add_remove($rider, $add_remove_class); ?>
 					</div>
+					<div class="col-xs-8 col-sm-4 name">
+						<a href="<?php fantasy_cycling_rider_link($rider->slug); ?>"><?php echo $rider->name; ?></a>
+						<span class="country"><?php fantasy_cycling_flag($rider->nat); ?></span>
+					</div>
+					<div class="col-xs-2 col-sm-1 proj"></div>
+
+				<?php else :?>
+
+					<div class="col-xs-12 add-remove">
+						<?php fantasy_cycling_display_add_remove($rider, $add_remove_class); ?>
+					</div>
+
+				<?php endif; ?>
+
+				<div class="hidden-xs col-sm-1 rank"><?php echo $rider->rank->rank; ?><?php echo $rider->rank->prev_icon; ?></div>
+				<div class="hidden-xs col-sm-1 points"><?php echo $rider->rank->points; ?></div>
+				<div class="hidden-xs col-sm-1 last-year"><?php echo $last_year_result->place; ?></div>
+				<div class="hidden-xs col-sm-3 last-race">
+					<?php if ($last_race->code) : ?>
+						<?php echo $last_race->place; ?> (<a href="<?php echo fantasy_cycling_race_link($last_race->code); ?>"><?php echo fc_trim_string($last_race->event, 18); ?></a>)
+					<?php endif; ?>
 				</div>
 
 				<input type="hidden" class="rider-id" value="<?php echo $rider->id; ?>" />
