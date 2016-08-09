@@ -191,17 +191,37 @@ body {
 .fc-add-riders-modal-content .rider:nth-child(odd) .row {
 	background: #eee;
 }
+.fc-add-riders-modal-content .riders .header {
+	font-weight: bold;
+}
 .fc-add-riders-modal-content .riders .stats.header {
 	font-weight: bold;
 	border-top-width: 0;
+}
+.fc-add-riders-modal-content .riders .header.smplus,
+.fc-add-riders-modal-content .riders .rider .smplus {
+	border-bottom: 1px solid #000;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 .fc-add-riders-modal-content .rider a.add-rider {
 	font-size: 26px;
 	padding-left: 6px;
 }
+.fc-add-riders-modal-content .rider .empty-add-rider {
+	font-size: 26px;
+	padding-left: 6px;
+	opacity: 0;
+}
 .fc-add-riders-modal-content .rider .name,
 .fc-add-riders-modal-content .rider .cost {
 	margin-top: 8px;
+}
+.fc-add-riders-modal-content .rider .smplus > div {
+	margin-top: 8px;
+}
+.fc-add-riders-modal-content .rider .smplus > div:first-child {
+	margin-top: 0;
 }
 .tru-add-riders-pagination {
 	overflow: hidden;

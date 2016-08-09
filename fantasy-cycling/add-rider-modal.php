@@ -32,18 +32,28 @@ $user_team=fantasy_cycling_get_user_team();
 		</div>
 
 		<div class="row budget">
-			<div class="col-xs-3 text">Budget:</div>
-			<div class="col-xs-offset-6 col-xs-3 amount"><?php echo fantasy_cycling_format_cost($user_team->budget); ?></div>
+			<div class="col-xs-3 col-sm-offset-7 col-sm-2 text">Budget:</div>
+			<div class="col-xs-offset-6 col-xs-3 col-sm-offset-0 amount"><?php echo fantasy_cycling_format_cost($user_team->budget); ?></div>
 		</div>
 
-		<!-- table headers -->
 		<div class="riders">
 
-			<div class="row stats header">
+			<div class="hidden-sm hidden-md hidden-lg row stats header">
 				<div class="col-xs-2 rank">Rank</div>
 				<div class="col-xs-2 points">Points</div>
 				<div class="col-xs-3 last-year">Last Year</div>
 				<div class="col-xs-5 last-race">Last Race</div>
+			</div>
+
+			<div class="hidden-xs row header smplus">
+				<div class="col-sm-1">&nbsp;</div>
+				<div class="col-sm-4 name">Name</div>
+				<div class="col-sm-1 proj">Proj.</div>
+				<div class="col-sm-1 rank">Rank</div>
+				<div class="col-sm-1 points">Points</div>
+				<div class="col-sm-1 last-year">Last Year</div>
+				<div class="col-sm-1 last-race">Last Race</div>
+				<div class="col-sm-2 cost">Cost</div>
 			</div>
 
 			<?php if (count($riders)) :	foreach ($riders as $rider) : ?>
@@ -51,17 +61,17 @@ $user_team=fantasy_cycling_get_user_team();
 				<?php $last_race=fantasy_cycling_last_result($rider->id); ?>
 
 				<div id="rider-<?php echo $rider->id; ?>" class="rider">
-					<div class="row actions">
+					<div class="hidden-sm hidden-md hidden-lg row actions">
 						<div class="col-xs-2">
 							<?php if (!fantasy_cycling_is_rider_on_team($rider->id, fantasy_cycling_get_user_team_id())) : ?>
 								<a href="#" class="add-rider" data-id="<?php echo $rider->id; ?>"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
 							<?php endif; ?>
 						</div>
-						<div class="col-xs-7 name"><?php echo $rider->name; ?></div>
+						<div class="col-xs-7 name"><?php echo $rider->name; ?> <?php fantasy_cycling_flag($rider->nat); ?></div>
 						<div class="col-xs-3 cost"><?php echo fantasy_cycling_rider_cost($rider->id, false, false); ?></div>
 					</div>
 
-					<div class="row stats">
+					<div class="hidden-sm hidden-md hidden-lg row stats">
 						<div class="col-xs-2 rank"><?php echo $rider->rank; ?></div>
 						<div class="col-xs-2 points"><?php echo $rider->points; ?></div>
 						<div class="col-xs-3 last-year"><?php echo $last_year_result->place; ?></div>
@@ -69,6 +79,24 @@ $user_team=fantasy_cycling_get_user_team();
 							<?php echo $last_race->place; ?> (<?php echo fc_trim_string($last_race->event, 16); ?>)
 						</div>
 					</div>
+
+					<div class="row hidden-xs smplus">
+						<div class="col-sm-1">
+							<?php if (!fantasy_cycling_is_rider_on_team($rider->id, fantasy_cycling_get_user_team_id())) : ?>
+								<a href="#" class="add-rider" data-id="<?php echo $rider->id; ?>"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+							<?php else : ?>
+								<div class="empty-add-rider">N</div>
+							<?php endif; ?>
+						</div>
+						<div class="col-sm-4 name"><?php echo $rider->name; ?> <?php fantasy_cycling_flag($rider->nat); ?></div>
+						<div class="col-sm-1 proj"></div>
+						<div class="col-sm-1 rank"><?php echo $rider->rank; ?></div>
+						<div class="col-sm-1 points"><?php echo $rider->points; ?></div>
+						<div class="col-sm-1 last-year"><?php echo $last_year_result->place; ?></div>
+						<div class="col-sm-1 last-race"><?php echo $last_race->place; ?></div>
+						<div class="col-sm-2 cost"><?php echo fantasy_cycling_rider_cost($rider->id, false, false); ?></div>
+					</div>
+
 				</div>
 
 			<?php endforeach; endif; ?>
