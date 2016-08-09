@@ -170,7 +170,7 @@ function tru_fantasy_cycling_display_add_remove($html, $plus, $minus) {
 
 	$html.='<a href="">';
 		$html.='<i class="fa add-rider'.$plus.'" aria-hidden="true"><button class="tru-add-riders-btn">Add Rider</button></i>';
-		$html.='<i class="fa fa-minus'.$minus.'" aria-hidden="true"></i>';
+		$html.='<i class="fa fa-minus-circle'.$minus.'" aria-hidden="true"></i>';
 	$html.='</a>';
 
 	return $html;
