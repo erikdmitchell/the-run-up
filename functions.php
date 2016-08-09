@@ -176,4 +176,39 @@ function tru_fantasy_cycling_display_add_remove($html, $plus, $minus) {
 	return $html;
 }
 add_filter('fantasy_cycling_display_add_remove', 'tru_fantasy_cycling_display_add_remove', 10, 3);
+
+/**
+ * tru_group_results_by_season function.
+ *
+ * @access public
+ * @param string $results (default: '')
+ * @return void
+ */
+function tru_group_results_by_season($results='') {
+	$seasons=array();
+	$results_by_season=array();
+
+	// return if empty //
+	if (empty($results))
+		return $results;
+
+	// get seasons //
+	foreach ($results as $result) :
+		$seasons[]=$result->season;
+	endforeach;
+
+	// remove dups and reset vals //
+	$seasons=array_unique($seasons);
+	$seasons=array_values($seasons);
+
+	// add by seasons //
+	foreach ($seasons as $season) :
+		foreach ($results as $result) :
+			if ($result->season==$season)
+				$results_by_season[$season][]=$result;
+		endforeach;
+	endforeach;
+
+	return $results_by_season;
+}
 ?>

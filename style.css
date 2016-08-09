@@ -264,6 +264,12 @@ body {
 .fantasy-cycling-race .race-results .rider:nth-child(even) {
 	background: #eee;
 }
+.fc-rider .header {
+	font-weight: bold;
+}
+.fantasy-cycling-rider .rider-results .race .race-name {
+  padding-left: 15px;
+}
 
 /* footer */
 footer .footer-col {
