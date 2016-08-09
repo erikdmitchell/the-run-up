@@ -115,7 +115,7 @@ get_header(); ?>
 							<div id="result-<?php echo $result->id; ?>" class="row<?php echo $class; ?> race">
 								<div class="col-xs-6 col-sm-7 race-name">
 									<span class="hidden-sm hidden-md hidden-lg"><?php fantasy_cycling_flag($result->nat); ?></span>
-									<?php echo $result->event; ?>
+									<a href="<?php echo fantasy_cycling_race_link($result->code); ?>"><?php echo $result->event; ?></a>
 									<span class="hidden-xs"><?php fantasy_cycling_flag($result->nat); ?></span>
 								</div>
 								<div class="col-xs-2 col-sm-1 race-class"><?php echo $result->class; ?></div>
