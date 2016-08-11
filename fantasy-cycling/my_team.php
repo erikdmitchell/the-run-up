@@ -61,8 +61,7 @@ endif;
 						<a href="<?php fantasy_cycling_rider_link($rider->slug); ?>"><?php echo $rider->name; ?></a>
 						<span class="country"><?php fantasy_cycling_flag($rider->nat); ?></span>
 					</div>
-					<div class="col-xs-2 col-sm-1 proj"></div>
-
+					<div class="col-xs-2 col-sm-1 proj"><?php echo fantasy_cycling_get_rider_place_prediction($next_race->id, $rider->id); ?></div>
 				<?php else :?>
 
 					<div class="col-xs-12 add-remove">

@@ -89,7 +89,7 @@ $user_team=fantasy_cycling_get_user_team();
 							<?php endif; ?>
 						</div>
 						<div class="col-sm-4 name"><?php echo $rider->name; ?> <?php fantasy_cycling_flag($rider->nat); ?></div>
-						<div class="col-sm-1 proj"></div>
+						<div class="col-sm-1 proj"><?php echo fantasy_cycling_get_rider_place_prediction($next_race->id, $rider->id); ?></div>
 						<div class="col-sm-1 rank"><?php echo $rider->rank; ?></div>
 						<div class="col-sm-1 points"><?php echo $rider->points; ?></div>
 						<div class="col-sm-1 last-year"><?php echo $last_year_result->place; ?></div>
