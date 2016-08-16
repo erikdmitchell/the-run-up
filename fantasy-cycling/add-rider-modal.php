@@ -14,6 +14,8 @@ $args=array(
 $fc_uci_results_riders_query=$uci_results_api->request('resultsquery', 'q', $args);
 $fc_uci_results_riders_query->ajax_paged=$paged;
 $riders=$fc_uci_results_riders_query->posts;
+$season=$fc_uci_results_riders_query->query_vars->season;
+$week=$fc_uci_results_riders_query->query_vars->week;
 $next_race=fantasy_cycling_get_next_race();
 $user_team=fantasy_cycling_get_user_team();
 ?>
@@ -94,7 +96,7 @@ $user_team=fantasy_cycling_get_user_team();
 						<div class="col-sm-1 points"><?php echo $rider->points; ?></div>
 						<div class="col-sm-1 last-year"><?php echo $last_year_result->place; ?></div>
 						<div class="col-sm-1 last-race"><?php echo $last_race->place; ?></div>
-						<div class="col-sm-2 cost"><?php echo fantasy_cycling_rider_cost($rider->id, false, false); ?></div>
+						<div class="col-sm-2 cost"><?php echo fantasy_cycling_rider_cost($rider->id, $season, false, false); ?></div>
 					</div>
 
 				</div>
