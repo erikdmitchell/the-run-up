@@ -6,7 +6,6 @@
 get_header();
 
 $user_team=fantasy_cycling_get_user_team();
-$next_race=fantasy_cycling_get_next_race();
 
 if (get_option('fc_lock_teams')) :
 	$add_remove_class='disabled';
@@ -48,9 +47,6 @@ endif;
 		</div>
 
 		<?php foreach ($user_team->riders as $key => $rider) : ?>
-			<?php $last_year_result=fantasy_cycling_get_race_result($rider->id, $next_race->last_year_code); ?>
-			<?php $last_race=fantasy_cycling_last_result($rider->id); ?>
-
 			<div id="rider-row-<?php echo $key; ?>" class="row rider">
 				<?php if ($rider->id) : ?>
 
@@ -61,7 +57,7 @@ endif;
 						<a href="<?php fantasy_cycling_rider_link($rider->slug); ?>"><?php echo $rider->name; ?></a>
 						<span class="country"><?php fantasy_cycling_flag($rider->nat); ?></span>
 					</div>
-					<div class="col-xs-2 col-sm-1 proj"><?php echo fantasy_cycling_get_rider_place_prediction($next_race->id, $rider->id); ?></div>
+					<div class="col-xs-2 col-sm-1 proj"><?php echo fantasy_cycling_get_rider_place_prediction('', $rider->id); ?></div>
 				<?php else :?>
 
 					<div class="col-xs-12 add-remove">
@@ -72,10 +68,10 @@ endif;
 
 				<div class="hidden-xs col-sm-1 rank"><?php echo $rider->rank->rank; ?><?php echo $rider->rank->prev_icon; ?></div>
 				<div class="hidden-xs col-sm-1 points"><?php echo $rider->rank->points; ?></div>
-				<div class="hidden-xs col-sm-1 last-year"><?php echo $last_year_result->place; ?></div>
+				<div class="hidden-xs col-sm-1 last-year"><?php echo $rider->last_year_result->place; ?></div>
 				<div class="hidden-xs col-sm-3 last-race">
-					<?php if ($last_race->code) : ?>
-						<?php echo $last_race->place; ?> (<a href="<?php echo fantasy_cycling_race_link($last_race->code); ?>"><?php echo fc_trim_string($last_race->event, 18); ?></a>)
+					<?php if ($rider->last_race->code) : ?>
+						<?php echo $rider->last_race->place; ?> (<a href="<?php echo fantasy_cycling_race_link($rider->last_race->code); ?>"><?php echo fc_trim_string($rider->last_race->event, 18); ?></a>)
 					<?php endif; ?>
 				</div>
 
