@@ -10,7 +10,7 @@
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-body {
+body.home {
 	padding-top: 150px;
 }
 .btn-tru {
@@ -24,6 +24,12 @@ body {
 }
 
 /* navigation */
+.home .navbar-default {
+	background-color: #fff;
+}
+.tru-header-nav {
+	margin-top: 4px;
+}
 .navbar-default .navbar-nav>li>a {
 	color: #000;
 }

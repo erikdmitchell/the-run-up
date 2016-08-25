@@ -18,7 +18,7 @@
 
   <body <?php body_class('tru'); ?>>
 
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<nav class="navbar navbar-default <?php tru_navbar_classes(); ?>" role="navigation">
 		<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".mdw-wp-theme-mobile-menu">

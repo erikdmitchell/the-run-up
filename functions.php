@@ -211,4 +211,14 @@ function tru_group_results_by_season($results='') {
 
 	return $results_by_season;
 }
+
+function tru_navbar_classes($classes='') {
+	if (is_front_page()) :
+		$classes.=' navbar-fixed-top';
+	else :
+		$classes.=' tru-header-nav';
+	endif;
+
+	echo $classes;
+}
 ?>
