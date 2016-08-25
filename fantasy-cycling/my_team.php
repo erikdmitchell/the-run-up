@@ -30,7 +30,7 @@ endif;
 		<div class="col-xs-12 col-sm-8">
 			<div class="next-race">
 				<span class="title">Next Race:</span>
-				<?php fantasy_cycling_next_race_display(); ?>
+				<span class="name"><?php echo $fantasy_cycling_next_race->name; ?></span><span class="date"><?php echo date(get_option('date_format'), strtotime($fantasy_cycling_next_race->date)); ?></span>
 			</div>
 		</div>
 	</div>
@@ -58,7 +58,7 @@ endif;
 						<a href="<?php fantasy_cycling_rider_link($rider->slug); ?>"><?php echo $rider->name; ?></a>
 						<span class="country"><?php fantasy_cycling_flag($rider->nat); ?></span>
 					</div>
-					<div class="col-xs-2 col-sm-1 proj"><?php echo fantasy_cycling_get_rider_place_prediction($next_race->id, $rider->id); ?></div>
+					<div class="col-xs-2 col-sm-1 proj"><?php echo fantasy_cycling_get_rider_place_prediction($fantasy_cycling_next_race->id, $rider->id); ?></div>
 				<?php else :?>
 
 					<div class="col-xs-12 add-remove">
