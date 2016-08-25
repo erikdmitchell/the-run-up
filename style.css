@@ -93,10 +93,30 @@ body {
 	margin-bottom: 0;
 	margin-top: 20px;
 }
-.home .about {
+.home-about {
 	background-color: #18A9E1;
 	padding-top: 30px;
 	padding-bottom: 30px;
+}
+.home-about .section-title {
+	text-align: center;
+}
+.home-about h1 {
+	font-size: 24px;
+	font-weight: 400;
+	padding: 0 0 15px 0;
+	margin: 0 auto;
+	text-transform: uppercase;
+}
+.home-about .blurb h2 {
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 25px 0 10px;
+}
+.home-about .blurb p {
+	font-size: 1.2em;
+	line-height: 1.6em;
 }
 
 /* sign in, registration, password */

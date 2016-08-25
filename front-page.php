@@ -47,12 +47,15 @@
 	</div>
 </div>
 
-<div class="container-fluid about">
+<div class="container-fluid home-about">
 	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				About - something more detailed, something.
+		<div class="row section-title">
+			<div class="col-xs-12">
+				<h1>About The Run Up</h1>
 			</div>
+		</div>
+		<div class="row">
+			<?php get_template_part('content-home', 'about'); ?>
 		</div>
 	</div>
 </div>
