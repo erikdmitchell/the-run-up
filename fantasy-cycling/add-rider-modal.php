@@ -1,10 +1,6 @@
 <?php
 /**
  * template for add rider modal
- *
- * It can be overriden
- *
- * @since 0.1.0
  */
 ?>
 
@@ -23,4 +19,4 @@
   <input type="hidden" name="rider-row-id" id="rider-row-id" value="">
 </div><!-- /.modal -->
 
-<div id="my-team-page-loader"><div id="loader-gif"><img src="/wp-includes/images/wpspin-2x.gif"></div></div>
+<div id="my-team-page-loader"><div id="loader-gif"><img src="<?php echo includes_url('/images/wpspin-2x.gif'); ?>"></div></div>
