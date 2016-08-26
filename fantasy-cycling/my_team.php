@@ -4,33 +4,23 @@
  */
 
 get_header();
-
-$user_team=fantasy_cycling_get_user_team();
-
-if (get_option('fc_lock_teams')) :
-	$add_remove_class='disabled';
-	$my_team_message=__('You cannot edit your roster because there is a race in action', 'fantasy-cycling');
-else :
-	$add_remove_class='';
-	$my_team_message='';
-endif;
 ?>
 
-<div class="fantasy-cycling-my-team fc-template container team-id-<?php echo $user_team->id; ?>">
+<div class="fantasy-cycling-my-team fc-template container team-id-<?php echo $fantasy_cycling_user_team->id; ?>">
 
-	<h1 class="page-title"><?php echo $user_team->name; ?></h1>
+	<h1 class="page-title"><?php echo $fantasy_cycling_user_team->name; ?></h1>
 
 	<div class="row">
 		<div class="col-xs-12 col-sm-4">
-			<div class="budget">Budget: <span class="amount"><?php echo fantasy_cycling_format_cost($user_team->budget); ?></span></div>
+			<div class="budget">Budget: <span class="amount"><?php echo fantasy_cycling_format_cost($fantasy_cycling_user_team->budget); ?></span></div>
 
-			<div class="my-team-message warning"><?php echo $my_team_message; ?></div>
+			<?php fc_my_team_message(); ?>
 			<div id="my-team-ajax"></div>
 		</div>
 		<div class="col-xs-12 col-sm-8">
 			<div class="next-race">
 				<span class="title">Next Race:</span>
-				<span class="name"><?php echo $fantasy_cycling_next_race->name; ?></span><span class="date"><?php echo date(get_option('date_format'), strtotime($fantasy_cycling_next_race->date)); ?></span>
+				<?php fantasy_cycling_next_race_display(); ?>
 			</div>
 		</div>
 	</div>
@@ -46,13 +36,13 @@ endif;
 			<div class="hidden-xs col-sm-3 last-race">Last Race</div>
 		</div>
 
-		<?php foreach ($user_team->riders as $key => $rider) : ?>
+		<?php foreach ($fantasy_cycling_user_team->riders as $key => $rider) : ?>
 
 			<div id="rider-row-<?php echo $key; ?>" class="row rider">
 				<?php if ($rider->id) : ?>
 
 					<div class="col-xs-2 col-sm-1 add-remove">
-						<?php fantasy_cycling_display_add_remove($rider, $add_remove_class); ?>
+						<?php fantasy_cycling_display_add_remove($rider); ?>
 					</div>
 					<div class="col-xs-8 col-sm-4 name">
 						<a href="<?php fantasy_cycling_rider_link($rider->slug); ?>"><?php echo $rider->name; ?></a>
@@ -62,7 +52,7 @@ endif;
 				<?php else :?>
 
 					<div class="col-xs-12 add-remove">
-						<?php fantasy_cycling_display_add_remove($rider, $add_remove_class); ?>
+						<?php fantasy_cycling_display_add_remove($rider); ?>
 					</div>
 
 				<?php endif; ?>
@@ -71,8 +61,8 @@ endif;
 				<div class="hidden-xs col-sm-1 points"><?php echo $rider->rank->points; ?></div>
 				<div class="hidden-xs col-sm-1 last-year"><?php echo $rider->last_year_result->place; ?></div>
 				<div class="hidden-xs col-sm-3 last-race">
-					<?php if ($rider->last_race->code) : ?>
-						<?php echo $rider->last_race->place; ?> (<a href="<?php echo fantasy_cycling_race_link($rider->last_race->code); ?>"><?php echo fc_trim_string($rider->last_race->event, 18); ?></a>)
+					<?php if ($rider->last_result->code) : ?>
+						<?php echo $rider->last_result->place; ?> (<a href="<?php echo fantasy_cycling_race_link($rider->last_result->code); ?>"><?php echo fc_trim_string($rider->last_result->event, 18); ?></a>)
 					<?php endif; ?>
 				</div>
 
