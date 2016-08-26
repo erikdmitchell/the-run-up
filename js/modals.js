@@ -81,6 +81,7 @@ function launchForgotPasswordModal() {
 /**
  * Vertically center Bootstrap 3 modals so they aren't always stuck at the top
  */
+/*
 jQuery(function() {
     function reposition() {
         var modal = jQuery(this),
@@ -98,3 +99,4 @@ jQuery(function() {
         jQuery('.modal:visible').each(reposition);
     });
 });
+*/
