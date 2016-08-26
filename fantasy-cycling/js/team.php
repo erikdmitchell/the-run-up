@@ -3,43 +3,43 @@
  * template for add rider modal content
  * these are backbone tempaltes
  */
+
+global $fantasy_cycling_user_team;
 ?>
 
 <script type="text/template" id="tmpl-fc-rider-table">
-	<div class="container">
 
-		<div class="row budget">
-			<div class="col-xs-3 col-sm-offset-7 col-sm-2 text">Budget:</div>
-			<div class="col-xs-offset-6 col-xs-3 col-sm-offset-0 amount"><?php echo fantasy_cycling_format_cost($user_team->budget); ?></div>
+	<div class="row budget">
+		<div class="col-xs-3 col-sm-offset-7 col-sm-2 text">Budget:</div>
+		<div class="col-xs-offset-6 col-xs-3 col-sm-offset-0 amount"><?php echo fantasy_cycling_format_cost($fantasy_cycling_user_team->budget); ?></div>
+	</div>
+
+	<div class="riders-table">
+
+		<div class="hidden-sm hidden-md hidden-lg row stats header">
+			<div class="col-xs-2 rank">Rank</div>
+			<div class="col-xs-2 points">Points</div>
+			<div class="col-xs-3 last-year">Last Year</div>
+			<div class="col-xs-5 last-race">Last Race</div>
 		</div>
 
-		<div class="riders-table">
-
-			<div class="hidden-sm hidden-md hidden-lg row stats header">
-				<div class="col-xs-2 rank">Rank</div>
-				<div class="col-xs-2 points">Points</div>
-				<div class="col-xs-3 last-year">Last Year</div>
-				<div class="col-xs-5 last-race">Last Race</div>
-			</div>
-
-			<div class="hidden-xs row header smplus">
-				<div class="col-sm-1">&nbsp;</div>
-				<div class="col-sm-4 name">Name</div>
-				<div class="col-sm-1 proj">Proj.</div>
-				<div class="col-sm-1 rank">Rank</div>
-				<div class="col-sm-1 points">Points</div>
-				<div class="col-sm-1 last-year">Last Year</div>
-				<div class="col-sm-1 last-race">Last Race</div>
-				<div class="col-sm-2 cost">Cost</div>
-			</div>
-
-			<div class="rider-list"></div>
-
+		<div class="hidden-xs row header smplus">
+			<div class="col-sm-1">&nbsp;</div>
+			<div class="col-sm-4 name">Name</div>
+			<div class="col-sm-1 proj">Proj.</div>
+			<div class="col-sm-1 rank">Rank</div>
+			<div class="col-sm-1 points">Points</div>
+			<div class="col-sm-1 last-year">Last Year</div>
+			<div class="col-sm-1 last-race">Last Race</div>
+			<div class="col-sm-2 cost">Cost</div>
 		</div>
 
-		<div id="rider-list-loading-more">loading more...</div>
+		<div class="rider-list"></div>
 
 	</div>
+
+	<div id="rider-list-loading-more">loading more...</div>
+
 </script>
 
 <script type="text/template" id="tmpl-fc-rider-row">
