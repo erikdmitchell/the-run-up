@@ -46,11 +46,11 @@ global $fantasy_cycling_user_team;
 	<div id="rider-<%= id %>" class="rider">
 		<div class="hidden-sm hidden-md hidden-lg row actions">
 			<div class="col-xs-2">
-				<% if (onTeam) { %>
+				<% if (!onTeam) { %>
 					<a href="#" class="add-rider" data-id="<%= id %>"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
 				<% } %>
 			</div>
-			<div class="col-xs-7 name"><%= name %> FLAG</div>
+			<div class="col-xs-7 name"><%= name %> <%= flag %></div>
 			<div class="col-xs-3 cost"><%= cost %></div>
 		</div>
 
@@ -65,14 +65,14 @@ global $fantasy_cycling_user_team;
 
 		<div class="row hidden-xs smplus">
 			<div class="col-sm-1">
-				<% if (onTeam) { %>
+				<% if (!onTeam) { %>
 					<a href="#" class="add-rider" data-id="<%= id %>"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
 				<% } else { %>
 					<div class="empty-add-rider">N</div>
 				<% } %>
 			</div>
-			<div class="col-sm-4 name"><%= name %> FLAG</div>
-			<div class="col-sm-1 proj">PREDIC</div>
+			<div class="col-sm-4 name"><%= name %> <%= flag %></div>
+			<div class="col-sm-1 proj"><%= predictedPlace %></div>
 			<div class="col-sm-1 rank"><%= rank %></div>
 			<div class="col-sm-1 points"><%= points %></div>
 			<div class="col-sm-1 last-year"><%= lastYearResult.place %></div>
