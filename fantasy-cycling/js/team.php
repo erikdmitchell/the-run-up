@@ -48,7 +48,6 @@ global $fantasy_cycling_user_team;
 			<div class="col-xs-2">
 				<% if (!onTeam) { %>
 					<a href="#" class="add-rider" data-id="<%= id %>"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-<!-- 					<a href="#" class="add-rider" data-id="<%= id %>"><span><%= name %></span></a> <%= flag %> -->
 				<% } %>
 			</div>
 			<div class="col-xs-7 name"><span><%= name %></span> <%= flag %></div>
@@ -56,8 +55,8 @@ global $fantasy_cycling_user_team;
 		</div>
 
 		<div class="hidden-sm hidden-md hidden-lg row stats">
-			<div class="col-xs-2 rank"><%= rank %></div>
-			<div class="col-xs-2 points"><%= points %></div>
+			<div class="col-xs-2 rank"><%= rank.rank %></div>
+			<div class="col-xs-2 points"><%= rank.points %></div>
 			<div class="col-xs-3 last-year"><%= lastYearResult.place %></div>
 			<div class="col-xs-5 last-race">
 				<%= last_race.place %> (<a href="<%= last_race.url %>"><%= last_race.event %></a>)
@@ -68,15 +67,14 @@ global $fantasy_cycling_user_team;
 			<div class="col-sm-1">
 				<% if (!onTeam) { %>
 					<a href="#" class="add-rider" data-id="<%= id %>"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-<!-- 					<a href="#" class="add-rider" data-id="<%= id %>"><span><%= name %></span></a> <%= flag %> -->
 				<% } else { %>
 					<div class="empty-add-rider"></div>
 				<% } %>
 			</div>
 			<div class="col-sm-4 name"><%= name %> <%= flag %></div>
 			<div class="col-sm-1 proj"><%= predictedPlace %></div>
-			<div class="col-sm-1 rank"><%= rank %></div>
-			<div class="col-sm-1 points"><%= points %></div>
+			<div class="col-sm-1 rank"><%= rank.rank %></div>
+			<div class="col-sm-1 points"><%= rank.points %></div>
 			<div class="col-sm-1 last-year"><%= lastYearResult.place %></div>
 			<div class="col-sm-1 last-race"><%= last_race.place %></div>
 			<div class="col-sm-2 cost"><%= cost %></div>
@@ -142,7 +140,7 @@ global $fantasy_cycling_user_team;
 		<%= cost %>
 	</div>
 
-	<div class="col-xs-1 col-sm-1 proj"><%= projectedPlace %></div>
+	<div class="col-xs-1 col-sm-1 proj"><%= predictedPlace %></div>
 	<div class="hidden-xs col-sm-1 rank"><%= rank.rank %> <%= rank.prev_icon %></div>
 	<div class="hidden-xs col-sm-1 points"><%= rank.points %></div>
 	<div class="hidden-xs col-sm-1 last-year"><%= last_year_result.place %></div>
