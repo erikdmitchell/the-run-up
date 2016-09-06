@@ -28,7 +28,7 @@ get_header();
 
 	<div id="my-team-list" class="my-team-list"></div>
 
-	<div class="time-notice">* All times EST - current time is <?php echo date(get_option('time_format'), strtotime(current_time('mysql'))); ?></div>
+	<div class="time-notice">* All times EST. Current time is <?php echo date(get_option('time_format'), strtotime(current_time('mysql'))); ?></div>
 
 </div>
 
