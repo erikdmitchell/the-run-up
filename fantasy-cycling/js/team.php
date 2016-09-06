@@ -3,9 +3,16 @@
  * template for add rider modal content
  * these are backbone tempaltes
  */
+
+global $fantasy_cycling_user_team;
 ?>
 
 <script type="text/template" id="tmpl-fc-rider-table">
+
+	<div class="row budget">
+		<div class="col-xs-3 col-sm-offset-7 col-sm-2 text">Budget:</div>
+		<div class="col-xs-offset-6 col-xs-3 col-sm-offset-0 amount"><?php echo fantasy_cycling_format_cost($fantasy_cycling_user_team->budget); ?></div>
+	</div>
 
 	<div class="riders-table">
 
