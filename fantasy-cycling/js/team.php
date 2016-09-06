@@ -81,12 +81,12 @@
 	<div class="row header">
 		<div class="col-xs-2 col-sm-1">&nbsp;</div>
 		<div class="col-xs-6 col-sm-4 name">Name</div>
-		<div class="col-xs-2 cost">Cost</div>
+		<div class="col-xs-2 col-sm-1 cost">Cost</div>
 		<div class="col-xs-2 col-sm-1 proj">Proj.</div>
 		<div class="hidden-xs col-sm-1 rank">Rank</div>
 		<div class="hidden-xs col-sm-1 points">Points</div>
 		<div class="hidden-xs col-sm-1 last-year">Last Year</div>
-		<div class="hidden-xs col-sm-3 last-race">Last Race</div>
+		<div class="hidden-xs col-sm-2 last-race">Last Race</div>
 	</div>
 
 	<div id="team-riders"></div>
@@ -110,7 +110,7 @@
 			</span>
 		</div>
 
-		<div class="col-xs-6 col-sm-4 name">
+		<div class="col-xs-6 col-sm-3 name">
 			<a href="<%= url %>"><%= name %></a>
 			<span class="country"><%= flag %></span>
 		</div>
@@ -128,7 +128,7 @@
 		</div>
 	<% } %>
 
-	<div class="col-xs-2 cost">
+	<div class="col-xs-2 col-sm-1 cost">
 		<% if (cost) { %>
 			$
 		<% } %>
