@@ -297,7 +297,48 @@ body.home {
   padding-left: 15px;
 }
 /* fantasy main */
-
+.tru-fantasy-main .team {
+	text-align: center;
+	margin-bottom: 15px;
+}
+.tru-fantasy-main .team a {
+	display: inline-block;
+	font-size: 18px;
+	padding: 10px 15px;
+}
+.tru-fantasy-main .team a:hover {
+	text-decoration: none;
+	color: #fff;
+	background: #337ab7;
+}
+.tru-fantasy-main .team .team-standings {
+	margin-top: 10px;
+}
+.tru-fantasy-main .standings .row.header {
+	font-weight: bold;
+}
+.tru-fantasy-main .standings .row:nth-child(even) {
+	background: #eee;
+}
+.tru-fantasy-main .schedule .upcoming-races {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.tru-fantasy-main .schedule .upcoming-races li {
+	padding: 5px 10px;
+}
+.tru-fantasy-main .schedule .upcoming-races li:nth-child(odd) {
+	background: #eee;
+}
+.tru-fantasy-main .news .news-list {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.tru-fantasy-main .news .news-list li {
+	margin-bottom: 10px;
+}
 
 /* footer */
 footer .footer-col {

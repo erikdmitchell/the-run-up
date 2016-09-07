@@ -229,12 +229,9 @@ function tru_navbar_classes($classes='') {
 	echo $classes;
 }
 
-function shortcode_tru_fantasy_landing() {
-	ob_start();
+function tru_get_news() {
+	$posts=get_posts();
 
-  get_template_part('content', 'fantasy-landing');
-
-  return ob_get_clean();
+	return $posts;
 }
-add_shortcode('tru-fantasy-landing', 'shortcode_tru_fantasy_landing');
 ?>
