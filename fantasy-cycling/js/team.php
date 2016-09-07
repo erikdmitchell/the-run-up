@@ -148,24 +148,3 @@ global $fantasy_cycling_user_team;
 
 	<input type="hidden" class="rider-id" value="<%= id %>" />
 </script>
-
-<script type="text/template" id="tmpl-fc-rider-row">
-	<div id="rider-<%= id %>" class="row rider">
-		<div class="col-sm-3">
-			<span class="name">
-				<% if (onTeam) { %>
-				  <%= name %> <%= flag %>
-				<% } else { %>
-					<a href="#" class="add-rider" data-id="<%= id %>"><%= name %></a> <%= flag %>
-					<p><a href="<%= url %>" class="rider-more">more info</a></p>
-				<% } %>
-			</span>
-		</div>
-
-		<div class="col-sm-2 cost">$<%= cost %></div>
-		<div class="col-md-1 points"><%= points %></div>
-		<div class="col-sm-1 rank"><%= rank %></div>
-		<div class="col-sm-2 last-year"><%= lastYearResult.place %></div>
-		<div class="col-sm-3 last-race"><span><%= last_race.place %></span> <a href="<%= last_race.url %>"><%= last_race.event %></a></div>
-	</div>
-</script>
