@@ -212,6 +212,13 @@ function tru_group_results_by_season($results='') {
 	return $results_by_season;
 }
 
+/**
+ * tru_navbar_classes function.
+ *
+ * @access public
+ * @param string $classes (default: '')
+ * @return void
+ */
 function tru_navbar_classes($classes='') {
 	if (is_front_page()) :
 		$classes.=' navbar-fixed-top';
@@ -221,4 +228,13 @@ function tru_navbar_classes($classes='') {
 
 	echo $classes;
 }
+
+function shortcode_tru_fantasy_landing() {
+	ob_start();
+
+  get_template_part('content', 'fantasy-landing');
+
+  return ob_get_clean();
+}
+add_shortcode('tru-fantasy-landing', 'shortcode_tru_fantasy_landing');
 ?>

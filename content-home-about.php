@@ -7,7 +7,7 @@
 <?php
 $home_about_query=new WP_Query(array(
 	'nopaging' => true,
-	'category_name' => 'home-about'
+	'post_type' => 'homeabout'
 ));
 ?>
 
