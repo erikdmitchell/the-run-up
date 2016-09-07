@@ -314,6 +314,9 @@ body.home {
 .tru-fantasy-main .team .team-standings {
 	margin-top: 10px;
 }
+.tru-fantasy-main .news h3 {
+	margin-top: 0;
+}
 .tru-fantasy-main .standings .row.header {
 	font-weight: bold;
 }
