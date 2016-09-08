@@ -4,24 +4,26 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('tru-fantasy-main'); ?>>
 
-	<div class="col-md-8 main">
+	<div class="col-xs-12 col-md-8 main">
 
 		<h2 class="team-name"><?php echo $fantasy_cycling_user_team->name; ?></h2>
 
-		<div class="col-md-12 team">
+		<div class="row team">
+			<div class="col-xs-12">
 
-			<a href="<?php echo get_permalink($fantasy_cycling_pages['my_team']); ?>" class="btn-tru">
-				<?php tru_team_roster_button_text(); ?>
-			</a>
+				<a href="<?php echo get_permalink($fantasy_cycling_pages['my_team']); ?>" class="btn-tru">
+					<?php tru_team_roster_button_text(); ?>
+				</a>
 
-			<div class="team-standings">
-				Currently <?php echo $team_standings->rank; ?> overall with <?php echo $team_standings->overall_total; ?> points.
+				<div class="team-standings">
+					Currently <?php echo $team_standings->rank; ?> overall with <?php echo $team_standings->overall_total; ?> points.
+				</div>
+
 			</div>
-
 		</div>
 
-		<div class="standings">
-			<div class="col-md-12">
+		<div class="row standings">
+			<div class="col-xs-12">
 				<h3>Standings</h3>
 
 				<div class="standings">
@@ -51,37 +53,41 @@
 
 	</div>
 
-	<div class="col-md-4 right">
+	<div class="col-xs-12 col-md-4 right">
 
 		<div class="row news">
-			<?php $news=tru_get_news(); ?>
+			<div class="col-xs-12">
+				<?php $news=tru_get_news(); ?>
 
-			<h3>News</h3>
+				<h3>News</h3>
 
-			<ul class="news-list">
-				<?php foreach ($news as $post) : ?>
-					<li id="post-<?php echo $post->ID; ?>">
-						<div class="title"><?php echo $post->post_title; ?></div>
-					</li>
-				<?php endforeach; ?>
-			</ul>
+				<ul class="news-list">
+					<?php foreach ($news as $post) : ?>
+						<li id="post-<?php echo $post->ID; ?>">
+							<div class="title"><?php echo $post->post_title; ?></div>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
 		</div>
 
 		<div class="row schedule">
-			<?php $counter=0; ?>
+			<div class="col-xs-12">
+				<?php $counter=0; ?>
 
-			<h3>Upcoming Races</h3>
+				<h3>Upcoming Races</h3>
 
-			<ul class="upcoming-races">
-				<?php foreach ($fantasy_cycling_schedule as $race) : ?>
-					<li id="race-<?php echo $race->id; ?>">
-						<?php echo $race->name; ?> (<?php echo date('M. j, Y', strtotime($race->date)); ?>)
-					</li>
+				<ul class="upcoming-races">
+					<?php foreach ($fantasy_cycling_schedule as $race) : ?>
+						<li id="race-<?php echo $race->id; ?>">
+							<?php echo $race->name; ?> (<?php echo date('M. j, Y', strtotime($race->date)); ?>)
+						</li>
 
-					<?php $counter++; ?>
-					<?php if ($counter>=10) { break; } ?>
-				<?php endforeach; ?>
-			</ul>
+						<?php $counter++; ?>
+						<?php if ($counter>=10) { break; } ?>
+					<?php endforeach; ?>
+				</ul>
+			</div>
 		</div>
 	</div>
 
