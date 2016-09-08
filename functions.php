@@ -241,6 +241,12 @@ function tru_get_news() {
 	return $posts;
 }
 
+/**
+ * tru_team_roster_button_text function.
+ *
+ * @access public
+ * @return void
+ */
 function tru_team_roster_button_text() {
 	global $fantasy_cycling_user_team;
 
@@ -248,6 +254,23 @@ function tru_team_roster_button_text() {
 		echo 'Add riders to roster';
 	else :
 		echo 'Update roster';
+	endif;
+}
+
+/**
+ * tru_theme_posted_on function.
+ *
+ * @access public
+ * @return void
+ */
+function tru_theme_posted_on() {
+	if ( is_sticky() && is_home() && ! is_paged() ) {
+		echo '<span class="featured-post"><span class="glyphicon glyphicon-pushpin"></span>' . __( 'Sticky', 'koksijde' ) . '</span>';
+	}
+
+	// Set up and print post meta information. -- hide date if sticky
+	if (!is_sticky()) :
+		echo '<span class="entry-date"><span class="glyphicon glyphicon-time"></span><time class="entry-date" datetime="'.get_the_date('c').'">'.get_the_date().'</time></span>';
 	endif;
 }
 ?>

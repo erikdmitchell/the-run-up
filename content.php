@@ -17,14 +17,7 @@
 		<div class="entry-meta">
 			<?php
 			if ( 'post' == get_post_type() )
-				koksijde_theme_posted_on();
-
-				if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
-					<span class="comments-link"><span class="glyphicon glyphicon-comment"></span><?php comments_popup_link( __( 'Leave a comment', 'koksijde' ), __( '1 Comment', 'koksijde' ), __( '% Comments', 'koksijde' ) ); ?></span>
-				<?php
-				endif;
-
-				edit_post_link( __( 'Edit', 'koksijde' ), '<span class="edit-link"><span class="glyphicon glyphicon-pencil"></span>', '</span>' );
+				tru_theme_posted_on();
 			?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->

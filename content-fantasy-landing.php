@@ -64,7 +64,7 @@
 				<ul class="news-list">
 					<?php foreach ($news as $post) : ?>
 						<li id="post-<?php echo $post->ID; ?>">
-							<div class="title"><?php echo $post->post_title; ?></div>
+							<div class="title"><a href="<?php echo get_permalink($post->ID); ?>"><?php echo $post->post_title; ?></a></div>
 						</li>
 					<?php endforeach; ?>
 				</ul>
