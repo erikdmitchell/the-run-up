@@ -30,6 +30,9 @@ body.home {
 .tru-header-nav {
 	margin-top: 4px;
 }
+.navbar {
+	margin-top: 0;
+}
 .navbar-default .navbar-nav>li>a {
 	color: #000;
 }
