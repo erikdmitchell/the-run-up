@@ -229,9 +229,25 @@ function tru_navbar_classes($classes='') {
 	echo $classes;
 }
 
+/**
+ * tru_get_news function.
+ *
+ * @access public
+ * @return void
+ */
 function tru_get_news() {
 	$posts=get_posts();
 
 	return $posts;
+}
+
+function tru_team_roster_button_text() {
+	global $fantasy_cycling_user_team;
+
+	if (!isset($fantasy_cycling_user_team->rider_ids) || empty($fantasy_cycling_user_team->rider_ids)) :
+		echo 'Add riders to roster';
+	else :
+		echo 'Update roster';
+	endif;
 }
 ?>

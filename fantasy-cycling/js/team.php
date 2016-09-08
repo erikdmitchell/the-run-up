@@ -84,7 +84,6 @@ global $fantasy_cycling_user_team;
 
 <script type="text/template" id="tmpl-fc-my-team-list">
 	<div class="row header">
-		<div class="col-xs-2 col-sm-1">&nbsp;</div>
 		<div class="col-xs-6 col-sm-4 name">Name</div>
 		<div class="col-xs-2 col-sm-1 cost">Cost</div>
 		<div class="col-xs-2 col-sm-1 proj">Proj.</div>
@@ -144,7 +143,7 @@ global $fantasy_cycling_user_team;
 	<div class="hidden-xs col-sm-1 rank"><%= rank.rank %> <%= rank.prev_icon %></div>
 	<div class="hidden-xs col-sm-1 points"><%= rank.points %></div>
 	<div class="hidden-xs col-sm-1 last-year"><%= last_year_result.place %></div>
-	<div class="hidden-xs col-sm-3 last-race"><span><%= last_result.place %></span> <a href="<%= last_result.url %>"><%= last_result.event %></a></div>
+	<div class="hidden-xs col-sm-3 last-race"><a href="<%= last_result.url %>"><%= last_result.place %></a></div>
 
 	<input type="hidden" class="rider-id" value="<%= id %>" />
 </script>

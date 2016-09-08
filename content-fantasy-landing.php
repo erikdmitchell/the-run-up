@@ -6,9 +6,13 @@
 
 	<div class="col-md-8 main">
 
+		<h2 class="team-name"><?php echo $fantasy_cycling_user_team->name; ?></h2>
+
 		<div class="col-md-12 team">
 
-			<a href="<?php echo get_permalink($fantasy_cycling_pages['my_team']); ?>" class="btn-tru"><?php echo $fantasy_cycling_user_team->name; ?></a>
+			<a href="<?php echo get_permalink($fantasy_cycling_pages['my_team']); ?>" class="btn-tru">
+				<?php tru_team_roster_button_text(); ?>
+			</a>
 
 			<div class="team-standings">
 				Currently <?php echo $team_standings->rank; ?> overall with <?php echo $team_standings->overall_total; ?> points.
