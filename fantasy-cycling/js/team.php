@@ -26,11 +26,11 @@ global $fantasy_cycling_user_team;
 		<div class="hidden-xs row header smplus">
 			<div class="col-sm-1">&nbsp;</div>
 			<div class="col-sm-4 name">Name</div>
-			<div class="col-sm-1 proj">Proj.</div>
-			<div class="col-sm-1 rank">Rank</div>
-			<div class="col-sm-1 points">Points</div>
+			<div class="col-sm-2 proj">Projected Finish</div>
+			<div class="col-sm-2 rank">Current Rank</div>
+<!-- 			<div class="col-sm-1 points">Points</div> -->
 			<div class="col-sm-1 last-year">Last Year</div>
-			<div class="col-sm-1 last-race">Last Race</div>
+<!-- 			<div class="col-sm-1 last-race">Last Race</div> -->
 			<div class="col-sm-2 cost">Cost</div>
 		</div>
 
@@ -51,16 +51,17 @@ global $fantasy_cycling_user_team;
 				<% } %>
 			</div>
 			<div class="col-xs-7 name"><span><%= name %></span> <%= flag %></div>
-			<div class="col-xs-3 cost"><%= cost %></div>
+			<div class="col-xs-3 cost">$<%= cost %></div>
 		</div>
 
 		<div class="hidden-sm hidden-md hidden-lg row stats">
 			<div class="col-xs-2 rank"><%= rank.rank %></div>
-			<div class="col-xs-2 points"><%= rank.points %></div>
+<!-- 			<div class="col-xs-2 points"><%= rank.points %></div> -->
 			<div class="col-xs-3 last-year"><%= lastYearResult.place %></div>
-			<div class="col-xs-5 last-race">
+			<!-- <div class="col-xs-5 last-race">
 				<%= last_race.place %> (<a href="<%= last_race.url %>"><%= last_race.event %></a>)
 			</div>
+			-->
 		</div>
 
 		<div class="row hidden-xs smplus">
@@ -72,12 +73,12 @@ global $fantasy_cycling_user_team;
 				<% } %>
 			</div>
 			<div class="col-sm-4 name"><%= name %> <%= flag %></div>
-			<div class="col-sm-1 proj"><%= predictedPlace %></div>
-			<div class="col-sm-1 rank"><%= rank.rank %></div>
-			<div class="col-sm-1 points"><%= rank.points %></div>
+			<div class="col-sm-2 proj"><%= predictedPlace %></div>
+			<div class="col-sm-2 rank"><%= rank.rank %></div>
+<!-- 			<div class="col-sm-1 points"><%= rank.points %></div> -->
 			<div class="col-sm-1 last-year"><%= lastYearResult.place %></div>
-			<div class="col-sm-1 last-race"><%= last_race.place %></div>
-			<div class="col-sm-2 cost"><%= cost %></div>
+<!-- 			<div class="col-sm-1 last-race"><%= last_race.place %></div> -->
+			<div class="col-sm-2 cost">$<%= cost %></div>
 		</div>
 	</div>
 </script>

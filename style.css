@@ -220,6 +220,12 @@ body.home {
 .fc-add-riders-modal-content .rider:nth-child(odd) .row {
 	background: #eee;
 }
+.fc-add-riders-modal-content .riders-table .header {
+	font-size: 0.85em;
+	text-align: center;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
 .fc-add-riders-modal-content .riders .header {
 	font-weight: bold;
 }
@@ -233,6 +239,12 @@ body.home {
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
+.fc-add-riders-modal-content .rider .proj,
+.fc-add-riders-modal-content .rider .rank,
+.fc-add-riders-modal-content .rider .year,
+.fc-add-riders-modal-content .rider .cost {
+	text-align: center;
+}
 .fc-add-riders-modal-content .rider a.add-rider {
 	font-size: 26px;
 	padding-left: 6px;
@@ -245,6 +257,7 @@ body.home {
 .fc-add-riders-modal-content .rider .name,
 .fc-add-riders-modal-content .rider .cost {
 	margin-top: 8px;
+	padding-bottom: 8px;
 }
 .fc-add-riders-modal-content .rider .smplus > div {
 	margin-top: 8px;
@@ -252,19 +265,7 @@ body.home {
 .fc-add-riders-modal-content .rider .smplus > div:first-child {
 	margin-top: 0;
 }
-.tru-add-riders-pagination {
-	overflow: hidden;
-	margin-top: 15px;
-	margin-bottom: 10px;
-}
-.tru-add-riders-pagination .prev-link,
-.tru-add-riders-pagination .next-link {
-	float: left;
-	width: 50%;
-}
-.tru-add-riders-pagination .next-link {
-	text-align: right;
-}
+
 .tru-add-riders-btn {
 	color: #fff;
   background-color: #18A9E1;
