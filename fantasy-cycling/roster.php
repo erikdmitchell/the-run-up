@@ -9,8 +9,6 @@
 
 get_header(); ?>
 
-<?php $team=fantasy_cycling_get_team_roster(get_query_var('team_slug')); ?>
-
 <div class="fantasy-cycling-roster fc-template container">
 
 	<?php if ($team) : ?>

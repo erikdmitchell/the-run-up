@@ -9,8 +9,6 @@
 
 get_header(); ?>
 
-<?php $teams=fantasy_cycling_standings(); ?>
-
 <div class="fantasy-cycling-standings fc-template container">
 
 	<h1 class="page-title">Standings</h1>
