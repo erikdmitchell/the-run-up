@@ -88,12 +88,12 @@ global $fantasy_cycling_user_team;
 	<div class="row header">
 		<div class="col-xs-2 col-sm-1">&nbsp;</div>
 		<div class="col-xs-6 col-sm-3 name">Name</div>
-		<div class="col-xs-2 col-sm-1 cost">Cost</div>
-		<div class="col-xs-2 col-sm-1 proj">Proj.</div>
-		<div class="hidden-xs col-sm-1 rank">Rank</div>
-		<div class="hidden-xs col-sm-1 points">Points</div>
-		<div class="hidden-xs col-sm-1 last-year">Last Year</div>
-		<div class="hidden-xs col-sm-3 last-race">Last Race</div>
+		<div class="col-xs-2 col-sm-2 proj">Projected Finish</div>
+		<div class="hidden-xs col-sm-2 rank">Current Rank</div>
+		<div class="hidden-xs col-sm-2 last-year">Last Year</div>
+		<div class="col-xs-2 col-sm-2 cost">Cost</div>
+<!-- 		<div class="hidden-xs col-sm-1 points">Points</div> -->
+<!-- 		<div class="hidden-xs col-sm-3 last-race">Last Race</div> -->
 	</div>
 
 	<div id="team-riders"></div>
@@ -135,18 +135,18 @@ global $fantasy_cycling_user_team;
 		</div>
 	<% } %>
 
-	<div class="col-xs-2 col-sm-1 cost">
+	<div class="col-xs-2 col-sm-2 proj"><%= predictedPlace %></div>
+	<div class="hidden-xs col-sm-2 rank"><%= rank.rank %> <%= rank.prev_icon %></div>
+<!-- 	<div class="hidden-xs col-sm-1 points"><%= rank.points %></div> -->
+	<div class="hidden-xs col-sm-2 last-year"><%= last_year_result.place %></div>
+<!-- 	<div class="hidden-xs col-sm-3 last-race"><a href="<%= last_result.url %>"><%= last_result.place %></a></div> -->
+
+	<div class="col-xs-2 col-sm-2 cost">
 		<% if (cost) { %>
 			$
 		<% } %>
 		<%= cost %>
 	</div>
-
-	<div class="col-xs-1 col-sm-1 proj"><%= predictedPlace %></div>
-	<div class="hidden-xs col-sm-1 rank"><%= rank.rank %> <%= rank.prev_icon %></div>
-	<div class="hidden-xs col-sm-1 points"><%= rank.points %></div>
-	<div class="hidden-xs col-sm-1 last-year"><%= last_year_result.place %></div>
-	<div class="hidden-xs col-sm-3 last-race"><a href="<%= last_result.url %>"><%= last_result.place %></a></div>
 
 	<input type="hidden" class="rider-id" value="<%= id %>" />
 </script>

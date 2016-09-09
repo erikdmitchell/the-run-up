@@ -243,6 +243,7 @@ body.home {
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
+
 .fc-add-riders-modal-content .rider .proj,
 .fc-add-riders-modal-content .rider .rank,
 .fc-add-riders-modal-content .rider .year,
@@ -280,8 +281,21 @@ body.home {
 .tru-add-riders-btn:focus {
 	outline: none;
 }
+.fantasy-cycling-my-team .my-team-list .header {
+	text-align: center;
+}
+.fantasy-cycling-my-team .rider .proj,
+.fantasy-cycling-my-team .rider .rank,
+.fantasy-cycling-my-team .rider .year,
+.fantasy-cycling-my-team .rider .last-year,
+.fantasy-cycling-my-team .rider .cost {
+	text-align: center;
+}
 .fantasy-cycling-my-team .rider .name,
-	.fantasy-cycling-my-team .rider .proj {
+.fantasy-cycling-my-team .rider .proj,
+.fantasy-cycling-my-team .rider .rank,
+.fantasy-cycling-my-team .rider .last-year,
+.fantasy-cycling-my-team .rider .cost {
 	margin: 5px 0 0 0;
 }
 .fantasy-cycling-my-team .rider {
