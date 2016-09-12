@@ -5,8 +5,6 @@
 
 get_header(); ?>
 
-<?php $rider=fantasy_cycling_get_rider(array('rider_id' => get_query_var('rider_slug'))); ?>
-
 <div class="fc-template fantasy-cycling-rider container">
 
 	<?php if ($rider) : ?>
@@ -112,7 +110,7 @@ get_header(); ?>
 							endif;
 							?>
 
-							<div id="result-<?php echo $result->id; ?>" class="row<?php echo $class; ?> race">
+							<div id="result-<?php echo $result->race_id; ?>" class="row<?php echo $class; ?> race">
 								<div class="col-xs-6 col-sm-7 race-name">
 									<span class="hidden-sm hidden-md hidden-lg"><?php fantasy_cycling_flag($result->nat); ?></span>
 									<a href="<?php echo fantasy_cycling_race_link($result->code); ?>"><?php echo $result->event; ?></a>
