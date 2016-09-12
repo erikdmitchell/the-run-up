@@ -1,10 +1,6 @@
 <?php
 /**
- * template for my standings page
- *
- * It can be overriden
- *
- * @since 0.1.0
+ * template for standings page
  */
 
 get_header(); ?>

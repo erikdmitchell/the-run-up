@@ -394,6 +394,11 @@ body.home {
 	text-align: center;
 }
 
+/* fantasy cycling - standings */
+.fantasy-cycling-standings .fc-standings .row:nth-child(even) {
+	background: #eee;
+}
+
 /* footer */
 footer .footer-col {
 	margin-bottom: 1.2em;
