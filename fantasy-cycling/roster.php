@@ -17,7 +17,7 @@ get_header(); ?>
 
 		<div class="fc-roster">
 
-			<?php if (empty((array) $team->races)) : ?>
+			<?php //if (empty($team->races)) : ?>
 
 				<?php if (empty($team->active_roster)) : ?>
 					No roster found.
@@ -38,7 +38,7 @@ get_header(); ?>
 					</div>
 				<?php endif; ?>
 
-			<?php else : ?>
+			<?php //else : ?>
 
 				<?php if (!empty($team->races)) : foreach ($team->races as $race) : ?>
 
@@ -69,14 +69,14 @@ get_header(); ?>
 					</div>
 				<?php endforeach; endif; ?>
 
-			<?php endif; ?>
+			<?php //endif; ?>
 
 		</div>
 
 	<?php else : ?>
 		<h1 class="page-title">Not Found</h1>
 
-		<div class="not-found">Race not found.</div>
+		<div class="not-found">Roster not found.</div>
 	<?php endif; ?>
 
 </div>
