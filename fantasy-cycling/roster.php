@@ -55,7 +55,7 @@ get_header(); ?>
 								<div class="rider fc-row">
 									<div class="rider-name"><a href="<?php fantasy_cycling_rider_link($rider->slug); ?>"><?php echo $rider->name; ?></a></div>
 									<div class="rider-country"><?php fantasy_cycling_flag($rider->nat); ?></div>
-									<div class="rider-points"><?php echo $rider->points; ?></div>
+									<div class="rider-points"><?php echo $rider->race_result->points; ?></div>
 								</div>
 							<?php endforeach; ?>
 						</div>
