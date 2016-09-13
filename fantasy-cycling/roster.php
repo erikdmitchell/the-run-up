@@ -43,7 +43,7 @@ get_header(); ?>
 				<?php if (!empty($team->races)) : foreach ($team->races as $race) : ?>
 
 					<div id="race-<?php echo $race->id; ?>" class="race">
-						<h3 class="name"><?php echo $race->event; ?> <span class="flag"><?php echo ucicurl_get_country_flag($race->nat); ?></h3>
+						<h3 class="name"><?php echo $race->event; ?> <span class="flag"><?php echo fantasy_cycling_flag($race->nat); ?></h3>
 
 						<div class="race-details fc-row">
 							<div class="race-date"><?php fantasy_cycling_date($race->date); ?></div>
