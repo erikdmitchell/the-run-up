@@ -88,17 +88,16 @@ get_header(); ?>
 					<?php $rider_results=tru_group_results_by_season($rider->results); ?>
 
 					<?php foreach ($rider_results as $season => $results) : ?>
-
 						<div class="row">
 							<div class="col-md-12"><h4><?php echo $season; ?></h4></div>
 						</div>
 
 						<div class="row header">
-							<div class="col-xs-6 col-sm-7 race-name">Race</div>
+							<div class="col-xs-6 col-sm-6 race-name">Race</div>
 							<div class="col-xs-2 col-sm-1 race-class">Class</div>
 							<div class="hidden-xs col-sm-2 race-date">Date</div>
 							<div class="col-xs-2 col-sm-1 rider-place">Place</div>
-							<div class="col-xs-2 col-sm-1 rider-points">Pts.</div>
+							<div class="col-xs-2 col-sm-2 rider-points">UCI Pts</div>
 						</div>
 
 						<?php foreach ($results AS $result) : ?>
@@ -111,15 +110,15 @@ get_header(); ?>
 							?>
 
 							<div id="result-<?php echo $result->race_id; ?>" class="row<?php echo $class; ?> race">
-								<div class="col-xs-6 col-sm-7 race-name">
-									<span class="hidden-sm hidden-md hidden-lg"><?php fantasy_cycling_flag($result->nat); ?></span>
+								<div class="col-xs-6 col-sm-6 race-name">
+									<span class="hidden-sm hidden-md hidden-lg"><?php //fantasy_cycling_flag($result->nat); ?></span>
 									<a href="<?php echo fantasy_cycling_race_link($result->code); ?>"><?php echo $result->event; ?></a>
-									<span class="hidden-xs"><?php fantasy_cycling_flag($result->nat); ?></span>
+									<span class="hidden-xs"><?php //fantasy_cycling_flag($result->nat); ?></span>
 								</div>
 								<div class="col-xs-2 col-sm-1 race-class"><?php echo $result->class; ?></div>
-								<div class="hidden-xs col-sm-2 race-date"><?php echo date('M j, Y', strtotime($result->date)); ?></div>
+								<div class="hidden-xs col-sm-2 race-date"><?php echo date('M. j, Y', strtotime($result->date)); ?></div>
 								<div class="col-xs-2 col-sm-1 rider-place"><?php echo $result->place; ?></div>
-								<div class="col-xs-2 col-sm-1 rider-points"><?php echo $result->par; ?></div>
+								<div class="col-xs-2 col-sm-2 rider-points"><?php echo $result->par; ?></div>
 							</div>
 						<?php endforeach; ?>
 
@@ -139,7 +138,7 @@ get_header(); ?>
 	<?php else : ?>
 		<h1 class="page-title">Not Found</h1>
 
-		<div class="not-found">Race not found.</div>
+		<div class="not-found">Rider not found.</div>
 	<?php endif; ?>
 
 </div>

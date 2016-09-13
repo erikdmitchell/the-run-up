@@ -387,6 +387,13 @@ body.home {
 	margin-bottom: 10px;
 }
 
+/* fantasy cycling - single rider */
+.fantasy-cycling-rider .rider-results .race-class,
+.fantasy-cycling-rider .rider-results .rider-place,
+.fantasy-cycling-rider .rider-results .rider-points {
+	text-align: center;
+}
+
 /* footer */
 footer .footer-col {
 	margin-bottom: 1.2em;
