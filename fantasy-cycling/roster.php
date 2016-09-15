@@ -17,59 +17,56 @@ get_header(); ?>
 
 		<div class="fc-roster">
 
-			<?php //if (empty($team->races)) : ?>
+			<?php if (empty($team->active_roster)) : ?>
+				No roster found.
+			<?php else : ?>
+				<div class="active-roster">
+					<h3>Active Roster</h3>
+					<div class="active-roster-list">
 
-				<?php if (empty($team->active_roster)) : ?>
-					No roster found.
-				<?php else : ?>
-					<div class="active-roster">
-						<h3>Active Roster</h3>
-						<div class="active-roster-list">
-
-							<?php foreach ($team->active_roster as $rider) : ?>
-								<div class="row">
-									<div class="col-xs-12 rider-name">
-										<a href="<?php fantasy_cycling_rider_link($rider->slug); ?>"><?php echo $rider->name; ?></a>
-										<?php fantasy_cycling_flag($rider->nat); ?>
-									</div>
+						<?php foreach ($team->active_roster as $rider) : ?>
+							<div class="row">
+								<div class="col-xs-12 rider-name">
+									<a href="<?php fantasy_cycling_rider_link($rider->slug); ?>"><?php echo $rider->name; ?></a>
+									<?php fantasy_cycling_flag($rider->nat); ?>
 								</div>
-							<?php endforeach; ?>
-						</div>
+							</div>
+						<?php endforeach; ?>
 					</div>
-				<?php endif; ?>
+				</div>
+			<?php endif; ?>
 
-			<?php //else : ?>
+			<?php if (!empty($team->races)) : foreach ($team->races as $race) : ?>
 
-				<?php if (!empty($team->races)) : foreach ($team->races as $race) : ?>
+				<div id="race-<?php echo $race->id; ?>" class="race">
+					<h3 class="name"><?php echo $race->event; ?> <span class="flag"><?php echo fantasy_cycling_flag($race->nat); ?></h3>
 
-					<div id="race-<?php echo $race->id; ?>" class="race">
-						<h3 class="name"><?php echo $race->event; ?> <span class="flag"><?php echo fantasy_cycling_flag($race->nat); ?></h3>
-
-						<div class="race-details fc-row">
-							<div class="race-date"><?php fantasy_cycling_date($race->date); ?></div>
-							<div class="race-class"><?php echo $race->class; ?></div>
-						</div>
-
-						<div class="fc-results">
-							<?php foreach ($race->riders as $rider) : ?>
-								<div class="rider fc-row">
-									<div class="rider-name"><a href="<?php fantasy_cycling_rider_link($rider->slug); ?>"><?php echo $rider->name; ?></a></div>
-									<div class="rider-country"><?php fantasy_cycling_flag($rider->nat); ?></div>
-									<div class="rider-points"><?php echo $rider->race_result->points; ?></div>
-								</div>
-							<?php endforeach; ?>
-						</div>
-
-						<div class="totals header fc-row">
-							<div class="text rider-name">Total</div>
-							<div class="rider-country">&nbsp;</div>
-							<div class="number rider-points"><?php echo $race->total_points; ?></div>
-						</div>
-
+					<div class="race-details row">
+						<div class="col-xs-6 race-date"><span>Date: </span><?php fantasy_cycling_date($race->date); ?></div>
+						<div class="col-xs-6 race-class"><span> Class: </span><?php echo $race->class; ?></div>
 					</div>
-				<?php endforeach; endif; ?>
 
-			<?php //endif; ?>
+					<div class="fc-results">
+						<div class="row header">
+							<div class="col-xs-8 rider-name">Rider</div>
+							<div class="col-xs-4 rider-points">Points</div>
+						</div>
+
+						<?php foreach ($race->riders as $rider) : ?>
+							<div class="rider row">
+								<div class="col-xs-8 rider-name"><a href="<?php fantasy_cycling_rider_link($rider->slug); ?>"><?php echo $rider->name; ?></a> <?php fantasy_cycling_flag($rider->nat); ?></div>
+								<div class="col-xs-4 rider-points"><?php echo $rider->race_result->points; ?></div>
+							</div>
+						<?php endforeach; ?>
+					</div>
+
+					<div class="totals header row">
+						<div class="col-xs-8 race-total">Total</div>
+						<div class="col-xs-2 team-points"><?php echo $race->total_points; ?></div>
+					</div>
+
+				</div>
+			<?php endforeach; endif; ?>
 
 		</div>
 
