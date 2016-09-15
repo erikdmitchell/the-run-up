@@ -9,6 +9,7 @@
 function tru_scripts_styles() {
 	wp_enqueue_script('tru-modals', get_stylesheet_directory_uri().'/js/modals.js', array('jquery'), '0.1.0', true);
 	wp_enqueue_script('tru-front-page-script', get_stylesheet_directory_uri().'/js/front-page.js', array('jquery'), '0.1.0', true);
+	wp_enqueue_script('tru-team-script', get_stylesheet_directory_uri().'/js/team.js', array('jquery'), '0.1.0', true);
 
 	wp_enqueue_style('google-fonts-arvo', 'http://fonts.googleapis.com/css?family=Arvo:400,700,400italic');
 	wp_enqueue_style('parent-style', get_template_directory_uri().'/style.css');
