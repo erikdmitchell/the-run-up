@@ -3,8 +3,11 @@ jQuery(document).ready(function($) {
 	// when a rider is added to the roster //
 	$('body').on('FCupdateRiderOnTeam', function(e, riderID) {
 		var $rider = $('.rider-list #rider-'+riderID);
-console.log('FCupdateRiderOnTeam trigger');
-console.log(riderID);
+		var $wrap = $rider.find('.add-rider-wrap');
+		var emptyRider = '<div class="empty-add-rider"></div>';
+
+		// clear wrap and then add our add code //
+		$wrap.html(emptyRider);
 	});
 
 	// when a rider is removed from the roster //
