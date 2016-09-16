@@ -13,7 +13,7 @@ get_header(); ?>
 
 	<?php if ($team) : ?>
 
-		<h1 class="page-title"><?php echo $team->name; ?> (<span class="rank"><?php echo fantasy_cycling_get_team_rank($team->id); ?></span>)</h1>
+		<h1 class="page-title"><?php echo $team->name; ?> (<span class="rank"><?php echo $team->rank; ?></span>)</h1>
 
 		<div class="fc-roster">
 
@@ -36,7 +36,7 @@ get_header(); ?>
 				</div>
 			<?php endif; ?>
 
-			<?php if (!empty($team->races)) : foreach ($team->races as $race) : ?>
+			<?php if (!empty($team->prev_races)) : foreach ($team->prev_races as $race) : ?>
 
 				<div id="race-<?php echo $race->id; ?>" class="race">
 					<h3 class="name"><?php echo $race->event; ?> <span class="flag"><?php echo fantasy_cycling_flag($race->nat); ?></h3>
@@ -55,7 +55,7 @@ get_header(); ?>
 						<?php foreach ($race->riders as $rider) : ?>
 							<div class="rider row">
 								<div class="col-xs-8 rider-name"><a href="<?php fantasy_cycling_rider_link($rider->slug); ?>"><?php echo $rider->name; ?></a> <?php fantasy_cycling_flag($rider->nat); ?></div>
-								<div class="col-xs-4 rider-points"><?php echo $rider->race_result->points; ?></div>
+								<div class="col-xs-4 rider-points"><?php echo $rider->points; ?></div>
 							</div>
 						<?php endforeach; ?>
 					</div>
