@@ -47,7 +47,7 @@ global $fantasy_cycling_user_team;
 					<a href="#" class="add-rider" data-id="<%= id %>"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
 				<% } %>
 			</div>
-			<div class="col-xs-7 name"><span><%= name %></span> <%= flag %></div>
+			<div class="col-xs-7 name"><span><a href=""><%= name %></a></span> <%= flag %></div>
 			<div class="col-xs-3 cost">$<%= cost %></div>
 		</div>
 
@@ -65,7 +65,7 @@ global $fantasy_cycling_user_team;
 					<div class="empty-add-rider"></div>
 				<% } %>
 			</div>
-			<div class="col-sm-4 name"><%= name %> <%= flag %></div>
+			<div class="col-sm-4 name"><a href=""><%= name %></a> <%= flag %></div>
 			<div class="col-sm-2 proj"><%= predictedPlace %></div>
 			<div class="col-sm-2 rank"><%= rank.rank %></div>
 			<div class="col-sm-1 last-year"><%= lastYearResult.place %></div>
