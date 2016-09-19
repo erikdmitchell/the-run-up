@@ -406,6 +406,14 @@ body.home {
 	background: #eee;
 }
 
+/* fantasy cycling - schedule */
+.fantasy-cycling-schedule .fc-races {
+
+}
+.fantasy-cycling-schedule .fc-races .row:nth-child(even) {
+	background: #eee;
+}
+
 /* footer */
 footer .footer-col {
 	margin-bottom: 1.2em;

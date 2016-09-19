@@ -86,6 +86,8 @@
 						<?php $counter++; ?>
 						<?php if ($counter>=10) { break; } ?>
 					<?php endforeach; ?>
+
+					<a href="<?php fc_schedule_link(); ?>">View Full Schedule</a>
 				</ul>
 			</div>
 		</div>
