@@ -312,7 +312,8 @@ body.home {
 .fantasy-cycling-my-team .rider .rank,
 .fantasy-cycling-my-team .rider .year,
 .fantasy-cycling-my-team .rider .last-year,
-.fantasy-cycling-my-team .rider .cost {
+.fantasy-cycling-my-team .rider .cost,
+.fantasy-cycling-my-team .rider .value {
 	text-align: center;
 }
 .fantasy-cycling-my-team .rider .name,
