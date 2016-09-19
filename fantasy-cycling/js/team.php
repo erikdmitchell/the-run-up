@@ -81,7 +81,7 @@ global $fantasy_cycling_user_team;
 		<div class="col-xs-2 col-sm-2 proj">Projected Finish</div>
 		<div class="hidden-xs col-sm-2 rank">Current Rank</div>
 		<div class="hidden-xs col-sm-2 last-year">Last Year</div>
-		<div class="col-xs-2 col-sm-2 cost">Cost</div>
+		<div class="col-xs-2 col-sm-2 value">Value</div>
 	</div>
 
 	<div id="team-riders"></div>
@@ -127,7 +127,7 @@ global $fantasy_cycling_user_team;
 	<div class="hidden-xs col-sm-2 rank"><%= rank.rank %> <%= rank.prev_icon %></div>
 	<div class="hidden-xs col-sm-2 last-year"><%= last_year_result.place %></div>
 
-	<div class="col-xs-2 col-sm-2 cost">
+	<div class="col-xs-2 col-sm-2 value">
 		<% if (cost) { %>
 			$
 		<% } %>
