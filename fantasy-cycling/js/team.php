@@ -9,9 +9,14 @@ global $fantasy_cycling_user_team;
 
 <script type="text/template" id="tmpl-fc-rider-table">
 
-	<div class="row budget">
-		<div class="col-xs-3 col-sm-offset-7 col-sm-2 text">Budget:</div>
-		<div class="col-xs-offset-6 col-xs-3 col-sm-offset-0 amount"><?php echo fantasy_cycling_format_cost($fantasy_cycling_user_team->budget); ?></div>
+	<div class="row upper">
+
+		<div class="col-xs-4 note"><i class="startlist fa fa-flag" aria-hidden="true"></i> - On Startlist</div>
+
+		<span class="budget">
+			<div class="col-xs-offset-2 col-xs-3 col-sm-offset-3 col-sm-2 text">Budget:</div>
+			<div class="col-xs-3 col-sm-offset-0 amount"><?php echo fantasy_cycling_format_cost($fantasy_cycling_user_team->budget); ?></div>
+		</span>
 	</div>
 
 	<div class="riders-table">
@@ -24,7 +29,7 @@ global $fantasy_cycling_user_team;
 
 		<div class="hidden-xs row header smplus">
 			<div class="col-sm-1">&nbsp;</div>
-			<div class="col-sm-4 name">Name</div>
+			<div class="col-sm-4 name">Name </div>
 			<div class="col-sm-2 proj">Projected Finish</div>
 			<div class="col-sm-2 rank">Current Rank</div>
 			<div class="col-sm-1 last-year">Last Year</div>
@@ -47,7 +52,13 @@ global $fantasy_cycling_user_team;
 					<a href="#" class="add-rider" data-id="<%= id %>"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
 				<% } %>
 			</div>
-			<div class="col-xs-7 name"><span><a href=""><%= name %></a></span> <%= flag %></div>
+			<div class="col-xs-7 name">
+				<span><a href=""><%= name %></a></span>
+				<%= flag %>
+				<% if (startlist) { %>
+					<span class="startlist"><i class="fa fa-flag" aria-hidden="true"></i></span>
+				<% } %>
+			</div>
 			<div class="col-xs-3 cost">$<%= cost %></div>
 		</div>
 
@@ -65,7 +76,14 @@ global $fantasy_cycling_user_team;
 					<div class="empty-add-rider"></div>
 				<% } %>
 			</div>
-			<div class="col-sm-4 name"><a href=""><%= name %></a> <%= flag %></div>
+			<div class="col-sm-4 name">
+				<a href=""><%= name %></a>
+				<%= flag %>
+
+				<% if (startlist) { %>
+					<span class="startlist"><i class="fa fa-flag" aria-hidden="true"></i></span>
+				<% } %>
+			</div>
 			<div class="col-sm-2 proj"><%= predictedPlace %></div>
 			<div class="col-sm-2 rank"><%= rank.rank %></div>
 			<div class="col-sm-1 last-year"><%= lastYearResult.place %></div>
