@@ -55,6 +55,15 @@
 
 	<div class="col-xs-12 col-md-4 right">
 
+		<div class="row action">
+			<div class="col-xs-12">
+				<a href="/how-to-create-my-team/" class="btn-tru">How to Create My Team</a>
+			</div>
+			<div class="col-xs-12">
+				<a href="/fantasy-cycling-strategy-guide/" class="btn-tru">Strategy Guide</a>
+			</div>
+		</div>
+
 		<div class="row news">
 			<div class="col-xs-12">
 				<?php $news=tru_get_news(); ?>

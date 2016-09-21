@@ -28,7 +28,23 @@ get_header();
 
 	<div id="my-team-list" class="my-team-list"></div>
 
-	<div class="time-notice">* All times EST. Current time is <?php echo date(get_option('time_format'), strtotime(current_time('mysql'))); ?></div>
+	<div class="row time-notice">
+		<div class="col-xs-12">
+			* All times EST. Current time is <?php echo date(get_option('time_format'), strtotime(current_time('mysql'))); ?>
+		</div>
+	</div>
+
+	<div class="row help">
+		<div class="col-xs-12 col-sm-2 strong">
+			Helpful Links:
+		</div>
+		<div class="col-xs-12 col-sm-3 ">
+			<a href="/how-to-create-my-team/">How to Create My Team</a>
+		</div>
+		<div class="col-xs-12 col-sm-3 ">
+			<a href="/fantasy-cycling-strategy-guide/">Strategy Guide</a>
+		</div>
+	</div>
 
 </div>
 

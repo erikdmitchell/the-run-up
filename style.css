@@ -351,7 +351,22 @@ body.home {
 .fantasy-cycling-rider .rider-results .race .race-name {
   padding-left: 15px;
 }
+.fantasy-cycling-my-team .time-notice {
+	margin-top: 15px;
+}
+.fantasy-cycling-my-team .help {
+	margin-top: 15px;
+	border-top: 1px solid #000;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #000;
+}
+.fantasy-cycling-my-team .help .strong {
+	font-weight: bold;
+}
+
 /* fantasy main */
+
 .tru-fantasy-main .team {
 	text-align: center;
 	margin-bottom: 15px;
@@ -393,6 +408,22 @@ body.home {
 }
 .tru-fantasy-main .news .news-list li {
 	margin-bottom: 10px;
+}
+.tru-fantasy-main .action > div {
+	text-align: center;
+}
+.tru-fantasy-main .action .btn-tru {
+	display: inline-block;
+	margin-bottom: 15px;
+	padding: 10px 15px;
+	font-size: 16px;
+	width: 80%;
+	text-align: center;
+}
+.tru-fantasy-main .action .btn-tru:hover {
+  text-decoration: none;
+  color: #fff;
+  background: #337ab7;
 }
 
 /* fantasy cycling - single rider */
