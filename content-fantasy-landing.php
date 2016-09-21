@@ -1,6 +1,16 @@
-<?php global $fantasy_cycling_user_team, $fantasy_cycling_pages, $fantasy_cycling_schedule; ?>
-<?php	$teams=fantasy_cycling_standings(array('per_page' => 15)); ?>
-<?php $team_standings=$fantasy_cycling_user_team->standing; ?>
+<?php
+global $fantasy_cycling_user_team, $fantasy_cycling_pages, $fantasy_cycling_schedule, $fantasy_cycling_next_race;
+
+$teams=fantasy_cycling_standings(array(
+	'per_page' => 15,
+	'team_args' => array(
+		'race_ids' => $fantasy_cycling_next_race->id,
+		'show_empty' => false
+	)
+));
+$team_standings=$fantasy_cycling_user_team->standing;
+
+?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('tru-fantasy-main'); ?>>
 
