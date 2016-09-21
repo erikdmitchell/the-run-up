@@ -293,7 +293,8 @@ body.home {
 	padding-bottom: 8px;
 }
 .fc-add-riders-modal-content .startlist,
-.fc-add-riders-modal-content .rider .name .startlist {
+.fc-add-riders-modal-content .rider .name .startlist,
+.fantasy-cycling-my-team .rider .startlist {
 	color: green;
 }
 .fc-add-riders-modal-content .rider .smplus > div {

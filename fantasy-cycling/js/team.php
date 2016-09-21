@@ -126,6 +126,10 @@ global $fantasy_cycling_user_team;
 		<div class="col-xs-6 col-sm-3 name">
 			<a href="<%= url %>"><%= name %></a>
 			<span class="country"><%= flag %></span>
+
+			<% if (startlist) { %>
+				<span class="startlist"><i class="fa fa-flag" aria-hidden="true"></i></span>
+			<% } %>
 		</div>
 
 	<% } else { %>
