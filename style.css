@@ -444,6 +444,13 @@ body.home {
 .fantasy-cycling-roster .fc-roster .fc-results .row:nth-child(even) {
 	background: #eee;
 }
+.fantasy-cycling-roster .race-details {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.fantasy-cycling-roster .fc-results {
+	margin-bottom: 15px;
+}
 
 /* fantasy cycling - schedule */
 .fantasy-cycling-schedule .fc-races {

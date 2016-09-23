@@ -48,21 +48,27 @@ get_header(); ?>
 
 					<div class="fc-results">
 						<div class="row header">
-							<div class="col-xs-8 rider-name">Rider</div>
-							<div class="col-xs-4 rider-points">Points</div>
+							<div class="col-xs-8 col-sm-4 rider-name">Rider</div>
+							<div class="hidden-xs col-sm-2 rider-place">Finish</div>
+							<div class="hidden-xs col-xs-4 col-sm-2 rider-points">Points</div>
+							<div class="hidden-xs col-sm-2 rider-place-diff">Place Diff.</div>
+							<div class="col-xs-4 col-sm-2 rider-total">Total</div>
 						</div>
 
 						<?php foreach ($race->riders as $rider) : ?>
 							<div class="rider row">
-								<div class="col-xs-8 rider-name"><a href="<?php fantasy_cycling_rider_link($rider->slug); ?>"><?php echo $rider->name; ?></a> <?php fantasy_cycling_flag($rider->nat); ?></div>
-								<div class="col-xs-4 rider-points"><?php echo $rider->points; ?></div>
+								<div class="col-xs-8 col-sm-4 rider-name"><a href="<?php fantasy_cycling_rider_link($rider->slug); ?>"><?php echo $rider->name; ?></a> <?php fantasy_cycling_flag($rider->nat); ?></div>
+								<div class="hidden-xs col-sm-2 rider-place"><?php echo $rider->place; ?></div>
+								<div class="hidden-xs col-xs-4 col-sm-2 rider-points"><?php echo $rider->points; ?></div>
+								<div class="hidden-xs col-sm-2 rider-place-diff"><?php echo $rider->place_differential; ?></div>
+								<div class="col-xs-4 col-sm-2 rider-total"><?php echo $rider->total_points; ?></div>
 							</div>
 						<?php endforeach; ?>
 					</div>
 
 					<div class="totals header row">
-						<div class="col-xs-8 race-total">Total</div>
-						<div class="col-xs-2 team-points"><?php echo $race->total_points; ?></div>
+						<div class="col-xs-2 race-total">Total</div>
+						<div class="col-xs-2 col-xs-offset-6 col-sm-offset-8 team-points"><?php echo $race->total_points; ?></div>
 					</div>
 
 				</div>
