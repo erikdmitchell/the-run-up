@@ -5,8 +5,6 @@
 
 get_header(); ?>
 
-<?php $race=fantasy_cycling_get_race_uci_results(get_query_var('race_slug')); ?>
-
 <div class="fc-template fantasy-cycling-race container">
 
 	<?php if ($race) : ?>
