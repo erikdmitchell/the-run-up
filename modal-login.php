@@ -23,7 +23,7 @@
 					</p>
 				</fieldset>
 			</form>
-			<?php emcl_login_extras(); ?>
+			<?php if (function_exists('emcl_login_extras')) { emcl_login_extras(); } ?>
 		</div>
       </div>
     </div><!-- /.modal-content -->
