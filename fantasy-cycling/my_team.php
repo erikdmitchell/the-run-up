@@ -12,13 +12,13 @@ get_header();
 
 	<?php fc_my_team_message(); ?>
 
-	<div class="row">
-		<div class="col-xs-12 col-sm-4">
+	<div class="row info">
+		<div class="col-sm-4">
 			<div class="budget">Budget: <span class="amount"><?php echo fantasy_cycling_format_cost($fantasy_cycling_user_team->budget); ?></span></div>
 
 			<div id="my-team-ajax"></div>
 		</div>
-		<div class="col-xs-12 col-sm-8">
+		<div class="col-sm-8">
 			<div class="next-race">
 				<span class="title">Next Race:</span>
 				<?php fantasy_cycling_next_race_display(); ?>
