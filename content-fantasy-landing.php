@@ -49,7 +49,7 @@ $team_standings=$fantasy_cycling_user_team->standing;
 							<div id="team-<?php echo $team->slug; ?>" class="row">
 								<div class="col-xs-2 rank"><?php echo $team->rank; ?></div>
 								<div class="col-xs-8 team-name"><a href="<?php fantasy_cycling_team_link($team->slug); ?>"><?php echo $team->name; ?></a></div>
-								<div class="col-xs-2 team-points"><?php echo $team->overall_total; ?></div>
+								<div class="col-xs-2 team-points"><?php echo $team->race_total; ?></div>
 							</div>
 						<?php endforeach; ?>
 
