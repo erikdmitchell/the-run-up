@@ -40,7 +40,7 @@ global $fantasy_cycling_user_team;
 
 	</div>
 
-	<div id="rider-list-loading-more">loading more...</div>
+	<div id="rider-list-loading-more">loading riders...</div>
 
 </script>
 
@@ -53,7 +53,7 @@ global $fantasy_cycling_user_team;
 				<% } %>
 			</div>
 			<div class="col-xs-7 name">
-				<span><a href=""><%= name %></a></span>
+				<span><a href="<%= url %>"><%= name %></a></span>
 				<%= flag %>
 				<% if (startlist) { %>
 					<span class="startlist"><i class="fa fa-flag" aria-hidden="true"></i></span>
@@ -77,7 +77,7 @@ global $fantasy_cycling_user_team;
 				<% } %>
 			</div>
 			<div class="col-sm-4 name">
-				<a href=""><%= name %></a>
+				<a href="<%= url %>"><%= name %></a>
 				<%= flag %>
 
 				<% if (startlist) { %>
