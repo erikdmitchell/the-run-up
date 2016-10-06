@@ -20,8 +20,8 @@ get_header();
 		</div>
 		<div class="col-sm-8">
 			<div class="next-race">
-				<span class="title">Next Race:</span>
-				<?php fantasy_cycling_next_race_display(); ?>
+				<span class="title">This Weeks Races:</span>
+				<?php fc_races_this_week_display(); ?>
 			</div>
 		</div>
 	</div>
