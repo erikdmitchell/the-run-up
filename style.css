@@ -218,6 +218,9 @@ body.home {
 	font-size: 1.25em;
 	margin-top: 5px;
 }
+.fantasy-cycling-my-team .my-team-list .rider span.add-remove {
+	padding-left: 0;
+}
 #fc-add-rider-modal .modal-header {
 	padding-top: 20px;
 }
