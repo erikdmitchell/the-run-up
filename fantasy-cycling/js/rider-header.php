@@ -19,13 +19,13 @@
 	</div>
 
 	<div class="hidden-xs header smplus">
+		<div class="col-sm-1"></div>
 		<div class="col-sm-4 name">Name</div>
-		<div class="col-sm-2 fantasy-points">Fantasy Points</div>
-		<div class="col-sm-2 uci-points">UCI Points</div>
+		<div class="col-sm-1 fantasy-points">Fantasy Points</div>
 		<div class="col-sm-1 rank">Rank</div>
 		<div class="col-sm-1 last-race">Last Race</div>
-		<div class="col-sm-1 perc-owned">Percent Owned</div>
-		<div class="col-sm-1 cost">Cost</div>
+		<div class="col-sm-2 perc-owned">Percent Owned</div>
+		<div class="col-sm-2 cost">Cost</div>
 	</div>
 
 </script>
