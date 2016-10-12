@@ -324,7 +324,11 @@ body.home {
 .fantasy-cycling-my-team .rider .year,
 .fantasy-cycling-my-team .rider .last-year,
 .fantasy-cycling-my-team .rider .cost,
-.fantasy-cycling-my-team .rider .value {
+.fantasy-cycling-my-team .rider .value,
+.fantasy-cycling-my-team .rider .fantasy-points,
+.fantasy-cycling-my-team .rider .uci-points,
+.fantasy-cycling-my-team .rider .last-race,
+.fantasy-cycling-my-team .rider .perc-owned {
 	text-align: center;
 }
 .fantasy-cycling-my-team .rider .name,
