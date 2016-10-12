@@ -221,6 +221,9 @@ body.home {
 .fantasy-cycling-my-team .my-team-list .rider span.add-remove {
 	padding-left: 0;
 }
+#fc-add-rider-modal .actions {
+	margin-bottom: 0;
+}
 #fc-add-rider-modal .modal-header {
 	padding-top: 20px;
 }
@@ -232,14 +235,10 @@ body.home {
   font-size: 18px;
   margin-right: 15px;
 }
-.fc-add-riders-modal-content .upper {
-	border-top: 1px solid #000;
+.fc-add-riders-modal-content .actions {
 	border-bottom: 1px solid #000;
 	padding-top: 5px;
 	padding-bottom: 5px;
-}
-.fc-add-riders-modal-content .upper .note {
-	font-size: 0.9em;
 }
 .fc-add-riders-modal-content .riders .stats {
 	font-size: 11px;
@@ -258,7 +257,8 @@ body.home {
 }
 .fc-add-riders-modal-content .rider .row.stats {
 	font-size: 0.9em;
-	padding-bottom: 5px;
+	padding-bottom: 3px;
+	padding-top: 3px;
 }
 .fc-add-riders-modal-content .riders .header {
 	font-weight: bold;

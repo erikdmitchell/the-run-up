@@ -11,7 +11,7 @@
 
 <script type="text/template" id="tmpl-fc-rider-header">
 
-	<div class="hidden-sm hidden-md hidden-lg stats header">
+	<div class="hidden-sm hidden-md hidden-lg">
 		<div class="col-xs-3 fantasy-points">Fantasy Points</div>
 		<div class="col-xs-3 rank">Rank</div>
 		<div class="col-xs-3 last-race">Last Race</div>
