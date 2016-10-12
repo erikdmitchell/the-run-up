@@ -18,7 +18,7 @@
 		<div class="col-xs-3 perc-owned">Percent Owned</div>
 	</div>
 
-	<div class="hidden-xs header smplus">
+	<div class="hidden-xs">
 		<div class="col-sm-1"></div>
 		<div class="col-sm-4 name">Name</div>
 		<div class="col-sm-1 fantasy-points">Fantasy Points</div>

@@ -9,7 +9,7 @@ $this_weeks_races=fc_get_this_weeks_races();
 
 		<form id="rider-list-filter" name="rider-list-filter">
 
-			<div class="races-this-week col-xs-12">
+			<div class="races-this-week col-xs-12 col-sm-6">
 				<div class="sub-header">Races this Week</div>
 
 				<?php foreach ($this_weeks_races as $race) : ?>
@@ -18,7 +18,7 @@ $this_weeks_races=fc_get_this_weeks_races();
 
 			</div>
 
-			<div class="col-xs-12">
+			<div class="col-xs-12 col-sm-1">
 				<a href="#" class="clear">Clear</a>
 			</div>
 		</form>
