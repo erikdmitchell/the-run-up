@@ -8,20 +8,17 @@ $this_weeks_races=fc_get_this_weeks_races();
 
 		<form id="rider-list-filter" name="rider-list-filter">
 
-			<div class="races-this-week col-xs-12 col-sm-6">
+			<div class="search-rider col-xs-12 col-sm-5 col-sm-push-6">
+				<input type="text" name="search-rider" id="search-rider" value="" placeholder="Search for a rider">
+				<button class="button fc-btn" name="search-rider-btn" id="search-rider-btn">Search</button>
+			</div>
+
+			<div class="races-this-week col-xs-12 col-sm-6 col-sm-pull-5">
 				<div class="sub-header">Races this Week</div>
 
 				<?php foreach ($this_weeks_races as $race) : ?>
 					<input type="radio" name="startlist" class="startlist-filter" value="<?php echo $race->id; ?>"> <?php echo $race->name; ?>
 				<?php endforeach; ?>
-
-			</div>
-
-			<div class="search-rider col-sm-6">
-				<div class="sub-header">Search</div>
-
-				<input type="text" name="search-rider" id="search-rider" value="" placeholder="Search for a rider">
-				<button class="button fc-btn" name="search-rider-btn" id="search-rider-btn">Search</button>
 
 			</div>
 

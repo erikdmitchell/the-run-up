@@ -306,6 +306,15 @@ body.home {
 .fc-add-riders-modal-content .rider .smplus > div:first-child {
 	margin-top: 0;
 }
+.fc-btn {
+	color: #fff;
+  background-color: #18A9E1;
+  border-color: #1a84e1;
+  padding: 2px 5px;
+}
+#rider-list-filter > div {
+	margin-bottom: 5px;
+}
 
 .tru-add-riders-btn {
 	color: #fff;
