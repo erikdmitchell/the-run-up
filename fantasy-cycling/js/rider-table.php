@@ -1,5 +1,4 @@
 <?php
-global $fantasy_cycling_user_team;
 $this_weeks_races=fc_get_this_weeks_races();
 ?>
 
@@ -15,6 +14,14 @@ $this_weeks_races=fc_get_this_weeks_races();
 				<?php foreach ($this_weeks_races as $race) : ?>
 					<input type="radio" name="startlist" class="startlist-filter" value="<?php echo $race->id; ?>"> <?php echo $race->name; ?>
 				<?php endforeach; ?>
+
+			</div>
+
+			<div class="search-rider col-sm-6">
+				<div class="sub-header">Search</div>
+
+				<input type="text" name="search-rider" id="search-rider" value="" placeholder="Search for a rider">
+				<button class="button fc-btn" name="search-rider-btn" id="search-rider-btn">Search</button>
 
 			</div>
 
