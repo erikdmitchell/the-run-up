@@ -273,7 +273,10 @@ body.home {
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
-
+.view-rider-modal a:hover {
+	text-decoration: none;
+	color: #fff;
+}
 .fc-add-riders-modal-content .rider .proj,
 .fc-add-riders-modal-content .rider .rank,
 .fc-add-riders-modal-content .rider .year,

@@ -28,6 +28,12 @@ get_header();
 
 	<div id="my-team-list" class="my-team-list"></div>
 
+	<div class="row">
+		<div class="col-xs-12 view-rider-modal">
+			<a href="#" class="btn tru-add-riders-btn">View All Riders</a>
+		</div>
+	</div>
+
 	<div class="row time-notice">
 		<div class="col-xs-12">
 			* All times EST. Current time is <?php echo date(get_option('time_format'), strtotime(current_time('mysql'))); ?>
