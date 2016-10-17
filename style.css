@@ -281,14 +281,24 @@ body.home {
 .fc-add-riders-modal-content .rider .cost {
 	text-align: center;
 }
-.fc-add-riders-modal-content .rider a.add-rider {
+.fc-add-riders-modal-content .rider a.add-rider,
+.fc-add-riders-modal-content .rider a.remove-rider {
 	font-size: 26px;
 	padding-left: 6px;
 }
-.fc-add-riders-modal-content .rider .empty-add-rider {
-	font-size: 26px;
-	padding-left: 6px;
-	opacity: 0;
+.fc-add-riders-modal-content .rider .dollar {
+	font-size: 18px;
+	position: relative;
+	padding-left: 12px;
+	top: 9px;
+	color: green;
+}
+#fc-add-rider-modal .dollar:after {
+    color: red;
+    font-weight: 700;
+    font-size: 1.6em;
+    left: 13px;
+    top: -5px;
 }
 .fc-add-riders-modal-content .rider .name,
 .fc-add-riders-modal-content .rider .cost {

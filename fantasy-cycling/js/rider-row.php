@@ -3,9 +3,9 @@
 	<div id="rider-<%= id %>" class="rider">
 		<div class="hidden-sm hidden-md hidden-lg row actions">
 			<div class="col-xs-2 add-rider-wrap">
-				<% if (!onTeam) { %>
+					<i class="fa fa-usd dollar" aria-hidden="true"></i>
 					<a href="#" class="add-rider" data-id="<%= id %>"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-				<% } %>
+					<a href="#" class="remove-rider" data-id="<%= id %>"><i class="fa fa-minus-circle" aria-hidden="true"></i></a>
 			</div>
 			<div class="col-xs-7 name">
 				<span><a href="<%= url %>"><%= name %></a></span>
@@ -23,11 +23,9 @@
 
 		<div class="row hidden-xs smplus add-rider-wrap">
 			<div class="col-sm-1">
-				<% if (!onTeam) { %>
-					<a href="#" class="add-rider" data-id="<%= id %>"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-				<% } else { %>
-					<div class="empty-add-rider"></div>
-				<% } %>
+				<i class="fa fa-usd dollar" aria-hidden="true"></i>
+				<a href="#" class="add-rider" data-id="<%= id %>"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+				<a href="#" class="remove-rider" data-id="<%= id %>"><i class="fa fa-minus-circle" aria-hidden="true"></i></a>
 			</div>
 			<div class="col-sm-4 name">
 				<a href="<%= url %>"><%= name %></a>
