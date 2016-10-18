@@ -433,6 +433,13 @@ body.home {
 .tru-fantasy-main .schedule .upcoming-races li:nth-child(odd) {
 	background: #eee;
 }
+.tru-fantasy-main .schedule .upcoming-races li .race-date {
+	font-weight: bold;
+	font-size: 0.9em;
+}
+.tru-fantasy-main .schedule .upcoming-races li .race-name {
+	font-size: 1em;
+}
 .tru-fantasy-main .news .news-list {
 	margin: 0;
 	padding: 0;

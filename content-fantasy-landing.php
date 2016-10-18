@@ -99,7 +99,8 @@ $team_standings=$fantasy_cycling_user_team->standing;
 				<ul class="upcoming-races">
 					<?php foreach ($fantasy_cycling_schedule as $race) : ?>
 						<li id="race-<?php echo $race->id; ?>">
-							<?php echo $race->name; ?> (<?php echo date('M. j, Y', strtotime($race->date)); ?>)
+							<div class="race-date"><?php echo date('M. j, Y', strtotime($race->date)); ?></div>
+							<div class="race-name"><a href="<?php echo fantasy_cycling_get_race_link($race->code); ?>"><?php echo $race->name; ?></a></div>
 						</li>
 
 						<?php $counter++; ?>
