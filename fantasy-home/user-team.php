@@ -12,7 +12,7 @@ global $fantasy_cycling_user_team, $fantasy_cycling_pages;
 		</a>
 
 		<div class="team-standings">
-			Currently <?php echo $fantasy_cycling_user_team->standing->rank; ?> overall with <?php echo $fantasy_cycling_user_team->standing->total; ?> points.
+			Currently <?php echo tru_ordinal_number($fantasy_cycling_user_team->standing->rank); ?> overall with <?php echo $fantasy_cycling_user_team->standing->total; ?> points.
 		</div>
 
 	</div>

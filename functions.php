@@ -274,4 +274,19 @@ function tru_theme_posted_on() {
 		echo '<span class="entry-date"><span class="glyphicon glyphicon-time"></span><time class="entry-date" datetime="'.get_the_date('c').'">'.get_the_date().'</time></span>';
 	endif;
 }
+
+/**
+ * tru_ordinal_number function.
+ *
+ * @access public
+ * @param mixed $number
+ * @return void
+ */
+function tru_ordinal_number($number) {
+	$ends = array('th','st','nd','rd','th','th','th','th','th','th');
+	if ((($number % 100) >= 11) && (($number%100) <= 13))
+		return $number. 'th';
+	else
+		return $number. $ends[$number % 10];
+}
 ?>
