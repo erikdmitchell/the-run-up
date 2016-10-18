@@ -1,6 +1,7 @@
 <?php
 global $fantasy_cycling_user_team, $fantasy_cycling_pages, $fantasy_cycling_schedule, $fantasy_cycling_next_race;
 
+
 $teams=fantasy_cycling_standings(array(
 	'per_page' => 15,
 	'team_args' => array(
@@ -32,34 +33,7 @@ $team_standings=$fantasy_cycling_user_team->standing;
 			</div>
 		</div>
 
-		<div class="row standings">
-			<div class="col-xs-12">
-				<h3>Standings</h3>
-
-				<div class="standings">
-
-					<?php if ($teams) : ?>
-						<div class="header row">
-							<div class="col-xs-2 rank">Rank</div>
-							<div class="col-xs-8 team-name">Name</div>
-							<div class="col-xs-2 team-points">Points</div>
-						</div>
-
-						<?php foreach ($teams as $team) : ?>
-							<div id="team-<?php echo $team->slug; ?>" class="row">
-								<div class="col-xs-2 rank"><?php echo $team->rank; ?></div>
-								<div class="col-xs-8 team-name"><a href="<?php fantasy_cycling_team_link($team->slug); ?>"><?php echo $team->name; ?></a></div>
-								<div class="col-xs-2 team-points"><?php echo $team->race_total; ?></div>
-							</div>
-						<?php endforeach; ?>
-
-					<?php else : ?>
-						<div class="not-found">No current standings.</div>
-					<?php endif; ?>
-				</div>
-
-			</div>
-		</div>
+		<?php get_template_part('fantasy-home/overall-standings'); ?>
 
 	</div>
 
