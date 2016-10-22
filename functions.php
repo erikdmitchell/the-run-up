@@ -30,6 +30,17 @@ function tru_add_modals() {
 add_action('wp_footer', 'tru_add_modals');
 
 /**
+ * tru_theme_setup function.
+ *
+ * @access public
+ * @return void
+ */
+function tru_theme_setup() {
+    add_image_size('single', 1400, 480, true ); // (cropped)
+}
+add_action('after_setup_theme', 'tru_theme_setup');
+
+/**
  * tru_loginout_menu_link function.
  *
  * @access public

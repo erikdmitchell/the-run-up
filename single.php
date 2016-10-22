@@ -2,6 +2,12 @@
 
 <div class="container">
 	<div class="row">
+		<div class="col-md-12">
+			<?php koksijde_theme_post_thumbnail('single'); ?>
+		</div>
+	</div>
+
+	<div class="row">
 		<div class="col-xs-12">
 			<?php
 				// Start the Loop.
@@ -9,12 +15,12 @@
 					get_template_part('content');
 
 					// Previous/next post navigation.
-					koksijde_theme_post_nav();
+					//koksijde_theme_post_nav();
 
 					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) {
-						comments_template();
-					}
+					//if ( comments_open() || get_comments_number() ) {
+						//comments_template();
+					//}
 				endwhile;
 			?>
 		</div>
