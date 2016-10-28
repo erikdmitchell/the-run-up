@@ -12,7 +12,8 @@ body.login {
   color: #333;
 }
 .login input[type="text"],
-.login input[type="password"] {
+.login input[type="password"],
+.login input[type="email"] {
   background-color: #ffffff;
   color: #000;
   -webkit-border-radius: 4px;
@@ -51,4 +52,8 @@ p#backtoblog {
 .login #nav a:active {
 	color: #23527c;
   text-decoration: underline;
+}
+.login #are_you_human {
+	width: 35px;
+	margin-left: 10px;
 }
