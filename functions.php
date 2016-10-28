@@ -23,7 +23,7 @@ add_action('wp_enqueue_scripts', 'tru_scripts_styles');
  * @return void
  */
 function tru_custom_login_head() {
-	echo '<link rel="stylesheet" type="text/css" href="'.get_stylesheet_directory_uri().'/login/custom-login-styles.css" />';
+	echo '<link rel="stylesheet" type="text/css" href="'.get_stylesheet_directory_uri().'/css/custom-login-styles.css" />';
 
 	remove_action('login_head', 'wp_shake_js', 12); // remove shake when info is incorrect
 }
