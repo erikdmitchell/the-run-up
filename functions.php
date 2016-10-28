@@ -67,6 +67,40 @@ function tru_edit_password_email_text($text) {
 add_filter('gettext', 'tru_edit_password_email_text');
 
 /**
+ * tru_override_registration_complete_message function.
+ *
+ * @access public
+ * @param mixed $errors
+ * @param mixed $redirect_to
+ * @return void
+ */
+function tru_override_registration_complete_message($errors, $redirect_to) {
+	if (isset($errors->errors['registered'])) :
+		// Use the magic __get method to retrieve the errors array:
+    $tmp=$errors->errors;
+
+    // What text to modify:
+    $old='Registration complete. Please check your email.';
+    $new='Registration complete. Please log in.';
+
+    // Loop through the errors messages and modify the corresponding message:
+    foreach($tmp['registered'] as $index => $msg) :
+    	if($msg === $old)
+        $tmp['registered'][$index]=$new;
+    endforeach;
+
+    // Use the magic __set method to override the errors property:
+    $errors->errors = $tmp;
+
+    // Cleanup:
+    unset($tmp);
+  endif;
+
+  return $errors;
+}
+add_filter('wp_login_errors', 'tru_override_registration_complete_message', 10, 2);
+
+/**
  * tru_change_register_page_message function.
  *
  * @access public
