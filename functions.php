@@ -181,8 +181,8 @@ function tru_registration_errors($errors, $sanitized_user_login, $user_email) {
 		$errors->add('password_error', __('<strong>ERROR</strong>: You must include a password.', 'tru'));
 	}
 
-	if (empty($_POST['repeat_password']) || !empty($_POST['repeat_password']) && trim($_POST['repeat_password'])=='') {
-		$errors->add('repeat_password_error', __('<strong>ERROR</strong>: You must include a matching password.', 'tru'));
+	if (empty($_POST['repeat_password']) || (!empty($_POST['repeat_password']) && trim($_POST['repeat_password'])=='') || trim($_POST['password'])!=trim($_POST['repeat_password'])) {
+		$errors->add('repeat_password_error', __('<strong>ERROR</strong>: You passwords do not match.', 'tru'));
 	}
 
 	if ($_POST['are_you_human'] != 2) {
