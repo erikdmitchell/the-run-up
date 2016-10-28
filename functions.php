@@ -146,8 +146,8 @@ function tru_register_form() {
 	$html.='</p>';
 
 	$html.='<p>';
-		$html.='<label for="are_you_human">'.__('Sorry, but we must check if you are human. What is 1 + 1?', 'tru').'<br/>';
-		$html.='<input id="are_you_human" class="input" type="text" size="25" value="" name="are_you_human" />';
+		$html.='<label for="are_you_human">'.__('Are you human? What is 1 + 1?', 'tru');
+		$html.='<input id="are_you_human" class="input" type="text" value="" name="are_you_human" />';
 		$html.='</label>';
 	$html.='</p>';
 
@@ -481,4 +481,16 @@ function tru_ordinal_number($number) {
 	else
 		return $number. $ends[$number % 10];
 }
+
+/**
+ * bs_hide_admin_bar function.
+ *
+ * @access public
+ * @return void
+ */
+function tru_hide_admin_bar() {
+  if (!current_user_can('administrator') && !is_admin())
+		show_admin_bar(false);
+}
+add_action('after_setup_theme', 'tru_hide_admin_bar');
 ?>
