@@ -17,17 +17,211 @@ function tru_scripts_styles() {
 add_action('wp_enqueue_scripts', 'tru_scripts_styles');
 
 /**
- * tru_add_modals function.
+ * tru_custom_login_head function.
  *
  * @access public
  * @return void
  */
-function tru_add_modals() {
-	get_template_part('modal', 'login');
-	//get_template_part('modal', 'register');
-	//get_template_part('modal', 'lost-password');
+function tru_custom_login_head() {
+	echo '<link rel="stylesheet" type="text/css" href="'.get_stylesheet_directory_uri().'/login/custom-login-styles.css" />';
+
+	remove_action('login_head', 'wp_shake_js', 12); // remove shake when info is incorrect
 }
-add_action('wp_footer', 'tru_add_modals');
+add_action('login_head', 'tru_custom_login_head');
+
+/**
+ * tru_custom_login_logo_url function.
+ *
+ * @access public
+ * @return void
+ */
+function tru_custom_login_logo_url() {
+	return get_bloginfo('url');
+}
+add_filter('login_headerurl', 'tru_custom_login_logo_url');
+
+/**
+ * tru_custom_login_logo_url_title function.
+ *
+ * @access public
+ * @return void
+ */
+function tru_custom_login_logo_url_title() {
+	return get_bloginfo('description');
+}
+add_filter('login_headertitle', 'tru_custom_login_logo_url_title');
+
+/**
+ * tru_edit_password_email_text function.
+ *
+ * @access public
+ * @param mixed $text
+ * @return void
+ */
+function tru_edit_password_email_text($text) {
+	if ($text == 'Registration confirmation will be emailed to you.')
+		$text='If you leave password fields empty one will be generated for you. Password must be at least eight characters long.';
+
+	return $text;
+}
+add_filter('gettext', 'tru_edit_password_email_text');
+
+/**
+ * tru_change_register_page_message function.
+ *
+ * @access public
+ * @param mixed $message
+ * @return void
+ */
+function tru_change_register_page_message($message) {
+	if (strpos($message, 'Register For This Site') == true)
+		$message = '';
+
+	return $message;
+}
+add_filter('login_message', 'tru_change_register_page_message');
+
+
+/**
+ * tru_custom_login_redirect function.
+ *
+ * @access public
+ * @param mixed $redirect_to
+ * @param mixed $request
+ * @param mixed $user
+ * @return void
+ */
+function tru_custom_login_redirect($redirect_to, $request, $user) {
+	global $user;
+
+	if( isset( $user->roles ) && is_array( $user->roles ) ) {
+		if( in_array( "administrator", $user->roles ) ) {
+			return $redirect_to;
+		} else {
+			return home_url();
+		}
+	} else {
+		return $redirect_to;
+	}
+}
+add_filter('login_redirect', 'tru_custom_login_redirect', 10, 3);
+
+/**
+ * tru_register_form function.
+ *
+ * @access public
+ * @return void
+ */
+function tru_register_form() {
+	$html=null;
+	$team_name=(!empty($_POST['first_name'])) ? trim($_POST['first_name']) : '';
+	$first_name=(!empty($_POST['first_name'])) ? trim($_POST['first_name']) : '';
+	$last_name=(!empty($_POST['first_name'])) ? trim($_POST['first_name']) : '';
+
+  $html.='<p>';
+    $html.='<label for="team_name">'.__('Team Name', 'tru').'<br />';
+    $html.='<input type="text" name="team_name" id="team_name" class="input" value="'.esc_attr(wp_unslash($team_name)).'" size="25" /></label>';
+  $html.='</p>';
+
+  $html.='<p>';
+    $html.='<label for="first_name">'.__('First Name', 'tru').'<br />';
+    $html.='<input type="text" name="first_name" id="first_name" class="input" value="'.esc_attr(wp_unslash($first_name)).'" size="25" /></label>';
+  $html.='</p>';
+
+  $html.='<p>';
+    $html.='<label for="last_name">'.__('Last Name', 'tru').'<br />';
+    $html.='<input type="text" name="last_name" id="last_name" class="input" value="'.esc_attr(wp_unslash($last_name)).'" size="25" /></label>';
+  $html.='</p>';
+
+	$html.='<p>';
+		$html.='<label for="password">Password<br/>';
+		$html.='<input id="password" class="input" type="password" size="25" value="" name="password" />';
+		$html.='</label>';
+	$html.='</p>';
+
+	$html.='<p>';
+		$html.='<label for="repeat_password">Repeat password<br/>';
+		$html.='<input id="repeat_password" class="input" type="password" size="25" value="" name="repeat_password" />';
+		$html.='</label>';
+	$html.='</p>';
+
+	$html.='<p>';
+		$html.='<label for="are_you_human">'.__('Sorry, but we must check if you are human. What is 1 + 1?', 'tru').'<br/>';
+		$html.='<input id="are_you_human" class="input" type="text" size="25" value="" name="are_you_human" />';
+		$html.='</label>';
+	$html.='</p>';
+
+  echo $html;
+}
+add_action('register_form', 'tru_register_form');
+
+/**
+ * tru_registration_errors function.
+ *
+ * @access public
+ * @param mixed $errors
+ * @param mixed $sanitized_user_login
+ * @param mixed $user_email
+ * @return void
+ */
+function tru_registration_errors($errors, $sanitized_user_login, $user_email) {
+	if (empty($_POST['team_name']) || !empty($_POST['team_name']) && trim($_POST['team_name'])=='') {
+		$errors->add('team_name_error', __('<strong>ERROR</strong>: You must include a team name.', 'tru'));
+	}
+
+	if (empty($_POST['first_name']) || !empty($_POST['first_name']) && trim($_POST['first_name'])=='') {
+		$errors->add('first_name_error', __('<strong>ERROR</strong>: You must include a first name.', 'tru'));
+	}
+
+	if (empty($_POST['last_name']) || !empty($_POST['last_name']) && trim($_POST['last_name'])=='') {
+		$errors->add('last_name_error', __('<strong>ERROR</strong>: You must include a last name.', 'tru'));
+	}
+
+	if (empty($_POST['password']) || !empty($_POST['password']) && trim($_POST['password'])=='') {
+		$errors->add('password_error', __('<strong>ERROR</strong>: You must include a password.', 'tru'));
+	}
+
+	if (empty($_POST['repeat_password']) || !empty($_POST['repeat_password']) && trim($_POST['repeat_password'])=='') {
+		$errors->add('repeat_password_error', __('<strong>ERROR</strong>: You must include a matching password.', 'tru'));
+	}
+
+	if ($_POST['are_you_human'] != 2) {
+		$errors->add('are_you_human_error', __('<strong>ERROR</strong>: You may not be human.', 'tru'));
+	}
+
+	return $errors;
+}
+add_filter('registration_errors', 'tru_registration_errors', 10, 3);
+
+/**
+ * tru_user_register function.
+ *
+ * @access public
+ * @param mixed $user_id
+ * @return void
+ */
+function tru_user_register($user_id) {
+	$userdata=array();
+	$userdata['ID']=$user_id;
+
+	// add team name //
+	fantasy_cycling_create_team($user_id, $_POST['team_name']);
+
+	// setup more standard wp user fields //
+	if (!empty($_POST['first_name']))
+		$userdata['first_name']=trim($_POST['first_name']);
+
+	if (!empty($_POST['last_name']))
+		$userdata['last_name']=trim($_POST['last_name']);
+
+	if (!empty($_POST['password']))
+		$userdata['user_pass']=trim($_POST['password']);
+
+	// update user //
+	$new_user_id=wp_update_user($userdata);
+
+}
+add_action('user_register', 'tru_user_register');
 
 /**
  * tru_theme_setup function.
@@ -80,19 +274,6 @@ function tru_primary_nav_menu_args( $args = '' ) {
 	return $args;
 }
 add_filter('wp_nav_menu_args', 'tru_primary_nav_menu_args');
-
-/**
- * tru_after_user_reg_create_team function.
- *
- * @access public
- * @param mixed $user_id
- * @param mixed $params
- * @return void
- */
-function tru_after_user_reg_create_team($user_id, $params) {
-	fantasy_cycling_create_team($user_id, $params['tru_team_name']);
-}
-add_action('emcl_after_user_registration', 'tru_after_user_reg_create_team', 10, 2);
 
 /**
  * tru_faqs_shortcode function.
