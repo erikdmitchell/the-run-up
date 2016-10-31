@@ -276,6 +276,7 @@ add_action('after_setup_theme', 'tru_theme_setup');
  * @return void
  */
 function tru_loginout_menu_link( $items, $args ) {
+	// primary nav //
    if ($args->theme_location == 'primary') {
       if (is_user_logged_in()) {
          $items .= '<li class="logout"><a href="'. wp_logout_url() .'">'. __("Log Out") .'</a></li>';
@@ -283,9 +284,20 @@ function tru_loginout_menu_link( $items, $args ) {
          $items .= '<li class="sign-in"><a href="'. wp_login_url() .'">'. __("Sign In") .'</a></li>';
       }
    }
+
+  // footer 1 nav //
+  if ($args->menu->slug=='footer-1') :
+  	if (is_user_logged_in()) :
+  		$items.='<li class="logout"><a href="'. wp_logout_url() .'">'. __("Log Out") .'</a></li>';
+  	else :
+  		$items.='<li class="logout"><a href="'. wp_registration_url() .'">'. __("Sign Up") .'</a></li>';
+  		$items.='<li class="logout"><a href="'. wp_login_url() .'">'. __("Sign In") .'</a></li>';
+  	endif;
+  endif;
+
    return $items;
 }
-add_filter( 'wp_nav_menu_items', 'tru_loginout_menu_link', 10, 2);
+add_filter('wp_nav_menu_items', 'tru_loginout_menu_link', 10, 2);
 
 /**
  * tru_primary_nav_menu_args function.
