@@ -286,7 +286,7 @@ function tru_loginout_menu_link( $items, $args ) {
    }
 
   // footer 1 nav //
-  if ($args->menu->slug=='footer-1') :
+  if (isset($args->menu->slug) && $args->menu->slug=='footer-1') :
   	if (is_user_logged_in()) :
   		$items.='<li class="logout"><a href="'. wp_logout_url() .'">'. __("Log Out") .'</a></li>';
   	else :
