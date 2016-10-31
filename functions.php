@@ -7,7 +7,6 @@
  * @return void
  */
 function tru_scripts_styles() {
-	wp_enqueue_script('tru-modals', get_stylesheet_directory_uri().'/js/modals.js', array('jquery'), '0.1.0', true);
 	wp_enqueue_script('tru-front-page-script', get_stylesheet_directory_uri().'/js/front-page.js', array('jquery'), '0.1.0', true);
 	wp_enqueue_script('tru-team-script', get_stylesheet_directory_uri().'/js/team.js', array('jquery'), '0.1.0', true);
 
@@ -281,7 +280,7 @@ function tru_loginout_menu_link( $items, $args ) {
       if (is_user_logged_in()) {
          $items .= '<li class="logout"><a href="'. wp_logout_url() .'">'. __("Log Out") .'</a></li>';
       } else {
-         $items .= '<li class="sign-in"><a href="'. wp_login_url(get_permalink()) .'">'. __("Sign In") .'</a></li>';
+         $items .= '<li class="sign-in"><a href="'. wp_login_url() .'">'. __("Sign In") .'</a></li>';
       }
    }
    return $items;
