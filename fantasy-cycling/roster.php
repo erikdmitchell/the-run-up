@@ -26,7 +26,7 @@ get_header();
 								<div class="col-xs-6 col-sm-3 rider-name">Rider</div>
 								<div class="hidden-xs col-sm-1 rider-wins">Wins</div>
 								<div class="hidden-xs col-sm-2 rider-podiums">Podiums</div>
-								<div class="hidden-xs col-sm-1 col-md-2 rider-uci-rank">UCI Rank</div>
+								<div class="hidden-xs col-sm-1 col-md-2 rider-uci-points">UCI Points</div>
 								<div class="col-xs-2 col-sm-1 rider-points">Points</div>
 								<div class="col-xs-2 col-sm-2 rider-perc-owned">Owned</div>
 								<div class="col-xs-2 col-sm-2 col-md-1 rider-cost">Value</div>
@@ -37,7 +37,7 @@ get_header();
 								<div class="col-xs-6 col-sm-3 rider-name"><a href="<?php fantasy_cycling_rider_link($rider->slug); ?>"><?php echo $rider->name; ?></a> <span class="country"><?php //fantasy_cycling_flag($rider->nat); ?></span></div>
 								<div class="hidden-xs col-sm-1 rider-wins"><?php echo $rider->fantasy->wins; ?></div>
 								<div class="hidden-xs col-sm-2 rider-podiums"><?php echo $rider->fantasy->podiums; ?></div>
-								<div class="hidden-xs col-sm-1 col-md-2 rider-uci-rank"><?php echo $rider->uci_rank; ?></div>
+								<div class="hidden-xs col-sm-1 col-md-2 rider-uci-points"><?php echo $rider->uci_points ?></div>
 								<div class="col-xs-2 col-sm-1 rider-points"><?php echo $rider->fantasy->points; ?></div>
 								<div class="col-xs-2 col-sm-2 rider-perc-owned"><?php echo $rider->fantasy->perc_owned; ?></div>
 								<div class="col-xs-2 col-sm-2 col-md-1 rider-cost"><?php echo $rider->fantasy->cost; ?></div>
