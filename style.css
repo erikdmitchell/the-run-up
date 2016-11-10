@@ -370,11 +370,13 @@ body.home {
 .fantasy-cycling-race .race-results .header,
 .fantasy-cycling-race .race-results .rider,
 .fantasy-cycling-race .race-history .header,
-.fantasy-cycling-race .race-history .race {
+.fantasy-cycling-race .race-history .race,
+.fantasy-cycling-race .fantasy-results .team {
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
-.fantasy-cycling-race .race-results .rider:nth-child(even) {
+.fantasy-cycling-race .race-results .rider:nth-child(even),
+.fantasy-cycling-race .fantasy-results .team:nth-child(even) {
 	background: #eee;
 }
 .fc-rider .header {

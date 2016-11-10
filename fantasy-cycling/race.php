@@ -3,7 +3,8 @@
  * template for race page
  */
 
-get_header(); ?>
+get_header();
+?>
 
 <div class="fc-template fantasy-cycling-race container">
 
@@ -23,6 +24,29 @@ get_header(); ?>
 				<div class="col-xs-2 col-sm-1 header">Time:</div>
 				<div class="col-xs-4"><?php fc_race_time_formatted($race->time); ?></div>
 			</div>
+		</div>
+
+		<div class="fantasy-results">
+			<h3>Fantasy Results</h3>
+
+			<?php if ($race->fc_results) : ?>
+				<div class="row header team">
+					<div class="col-xs-2 col-sm-1 rank">Rank</div>
+					<div class="col-xs-5 col-sm-4 team-name">Name</div>
+					<div class="col-xs-3 col-sm-3 col-md-2 team-points">Points</div>
+				</div>
+
+				<?php foreach ($race->fc_results AS $team) : ?>
+					<div id="team-<?php echo $team->team_id; ?>" class="row team">
+						<div class="col-xs-2 col-sm-1 rank"><?php echo $team->rank; ?></div>
+						<div class="col-xs-5 col-sm-4 team-name"><a href="<?php echo fantasy_cycling_team_link($team->slug); ?>"><?php echo $team->name; ?></a></div>
+						<div class="col-xs-3 col-sm-3 col-md-2 team-points"><?php echo $team->points; ?></div>
+					</div>
+				<?php endforeach; ?>
+			<?php else : ?>
+				<div class="no-race-results">No fantasy results.</div>
+			<?php endif; ?>
+
 		</div>
 
 		<div class="race-results">
