@@ -11,22 +11,47 @@ get_header();
 	<?php if ($race) : ?>
 		<h1 class="page-title"><?php echo $race->name; ?> <span class="flag"><?php fantasy_cycling_flag($race->nat); ?></h1>
 
-		<div class="race-details">
-			<div class="row">
-				<div class="col-xs-2 col-sm-1 header">Class:</div>
-				<div class="col-xs-4"><?php echo $race->class; ?></div>
+		<div class="race-upper row">
+			<div class="col-md-6 race-details">
+				<div class="row">
+					<div class="col-xs-2 header">Class:</div>
+					<div class="col-xs-4"><?php echo $race->class; ?></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-2 header">Date:</div>
+					<div class="col-xs-4"><?php fc_race_date_formatted($race->date); ?></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-2 header">Time:</div>
+					<div class="col-xs-4"><?php fc_race_time_formatted($race->time); ?></div>
+				</div>
 			</div>
-			<div class="row">
-				<div class="col-xs-2 col-sm-1 header">Date:</div>
-				<div class="col-xs-4"><?php fc_race_date_formatted($race->date); ?></div>
+
+			<div class="col-md-6 race-links">
+				<?php if ($race->fc_results) : ?>
+					<div class="row">
+						<div class="col-xs-12"><a href="#fantasy-results">Fantasy Results</a></div>
+					</div>
+				<?php endif; ?>
+
+				<?php if (!empty($race->results)) : ?>
+					<div class="row">
+						<div class="col-xs-12"><a href="#race-results">Race Results</a></div>
+					</div>
+				<?php endif; ?>
+
+				<?php if (!empty($race->related)) : ?>
+					<div class="row">
+						<div class="col-xs-12"><a href="#race-history">Race History</a></div>
+					</div>
+				<?php endif; ?>
+
 			</div>
-			<div class="row">
-				<div class="col-xs-2 col-sm-1 header">Time:</div>
-				<div class="col-xs-4"><?php fc_race_time_formatted($race->time); ?></div>
-			</div>
+
 		</div>
 
 		<div class="fantasy-results">
+			<a name="fantasy-results"></a>
 			<h3>Fantasy Results</h3>
 
 			<?php if ($race->fc_results) : ?>
@@ -50,6 +75,7 @@ get_header();
 		</div>
 
 		<div class="race-results">
+			<a name="race-results"></a>
 			<h3>Race Results</h3>
 
 			<?php if (!empty($race->results)) : ?>
@@ -79,6 +105,7 @@ get_header();
 		</div>
 
 		<div class="race-history">
+			<a name="race-history"></a>
 			<h3>Race History</h3>
 
 			<?php if (!empty($race->related)) : ?>
