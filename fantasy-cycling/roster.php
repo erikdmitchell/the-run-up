@@ -1,13 +1,10 @@
 <?php
 /**
  * template for roster page
- *
- * It can be overriden
- *
- * @since 0.1.0
  */
 
-get_header(); ?>
+get_header();
+?>
 
 <div class="fantasy-cycling-roster fc-template container">
 
@@ -51,9 +48,8 @@ get_header(); ?>
 			<?php endif; ?>
 
 			<?php if (!empty($team->prev_races)) : foreach ($team->prev_races as $race) : ?>
-
 				<div id="race-<?php echo $race->id; ?>" class="race">
-					<h3 class="name"><?php echo $race->event; ?> <span class="flag"><?php fantasy_cycling_flag($race->nat); ?></h3>
+					<h3 class="name"><a href="<?php echo $race->url; ?>"><?php echo $race->event; ?></a> <span class="flag"><?php fantasy_cycling_flag($race->nat); ?></h3>
 
 					<div class="race-details row">
 						<div class="col-xs-4 race-date"><?php fc_race_date_formatted($race->date); ?></div>
