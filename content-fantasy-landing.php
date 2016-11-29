@@ -1,7 +1,6 @@
 <?php
 global $fantasy_cycling_schedule, $fantasy_cycling_next_race;
 
-
 $teams=fantasy_cycling_standings(array(
 	'per_page' => 15,
 	'team_args' => array(
@@ -16,6 +15,7 @@ $teams=fantasy_cycling_standings(array(
 	<div class="col-xs-12 col-md-8 main">
 		<?php get_template_part('fantasy-home/user-team'); ?>
 		<?php get_template_part('fantasy-home/overall-standings'); ?>
+		<?php get_template_part('fantasy-home/recent-results'); ?>
 	</div>
 
 	<div class="col-xs-12 col-md-4 right">
