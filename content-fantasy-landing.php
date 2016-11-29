@@ -55,7 +55,7 @@ $teams=fantasy_cycling_standings(array(
 					<?php foreach ($fantasy_cycling_schedule as $race) : ?>
 						<li id="race-<?php echo $race->id; ?>">
 							<div class="race-date"><?php echo date('M. j, Y', strtotime($race->date)); ?></div>
-							<div class="race-name"><a href="<?php echo fantasy_cycling_get_race_link($race->code); ?>"><?php echo $race->name; ?></a></div>
+							<div class="race-name"><a href="<?php echo fantasy_cycling_get_race_link($race->code); ?>"><?php echo stripslashes($race->name); ?></a></div>
 						</li>
 
 						<?php $counter++; ?>
