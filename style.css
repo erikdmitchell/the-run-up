@@ -418,10 +418,12 @@ body.home {
 .tru-fantasy-main .team .team-standings {
 	margin-top: 10px;
 }
-.tru-fantasy-main .standings .row.header {
+.tru-fantasy-main .standings .row.header,
+.tru-fantasy-main .races-recent-results .row.header {
 	font-weight: bold;
 }
-.tru-fantasy-main .standings .row:nth-child(even) {
+.tru-fantasy-main .standings .row:nth-child(even),
+.tru-fantasy-main .races-recent-results .row:nth-child(even) {
 	background: #eee;
 }
 .tru-fantasy-main .schedule .upcoming-races {
