@@ -1,14 +1,3 @@
-<?php
-/**
- * template for add rider modal content
- * these are backbone tempaltes
- *
- * It can be overriden
- *
- * @since 0.1.0
- */
-?>
-
 <script type="text/template" id="tmpl-fc-rider-header">
 
 	<div class="hidden-sm hidden-md hidden-lg">

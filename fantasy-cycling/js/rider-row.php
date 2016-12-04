@@ -11,7 +11,7 @@
 				<span><a href="<%= url %>"><%= name %></a></span>
 				<%= flag %>
 			</div>
-			<div class="col-xs-3 cost">$<%= cost %></div>
+			<div class="col-xs-3 cost"><%= cost %></div>
 		</div>
 
 		<div class="hidden-sm hidden-md hidden-lg row stats">
@@ -36,7 +36,7 @@
 			<div class="col-sm-1 rank"><%= rank %></div>
 			<div class="col-sm-1 last-race"><a href="<%= last_result.url %>"><%= last_result.place %></a></div>
 			<div class="col-sm-2 perc-owned"><%= perc_owned %></div>
-			<div class="col-sm-2 cost">$<%= cost %></div>
+			<div class="col-sm-2 cost"><%= cost %></div>
 		</div>
 	</div>
 

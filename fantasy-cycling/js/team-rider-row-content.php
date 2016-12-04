@@ -36,9 +36,6 @@
 	<div class="hidden-xs col-sm-1 last-race"><a href="<%= last_result.url %>"><%= last_result.place %></a></div>
 	<div class="hidden-xs col-sm-1 perc-owned"><%= perc_owned %></div>
 	<div class="col-xs-3 col-sm-1 value">
-		<% if (cost) { %>
-			$
-		<% } %>
 		<%= cost %>
 	</div>
 
