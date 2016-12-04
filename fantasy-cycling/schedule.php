@@ -22,7 +22,7 @@ get_header(); ?>
 						<?php fc_race_date_formatted($race->date); ?>
 					</div>
 					<div class="col-xs-8 race">
-						<a href="<?php echo fantasy_cycling_get_race_link($race->code); ?>"><?php echo $race->name; ?></a>
+						<a href="<?php echo fantasy_cycling_get_race_link($race->code); ?>"><?php echo stripslashes($race->name); ?></a>
 					</div>
 				</div>
 			<?php endforeach; ?>
