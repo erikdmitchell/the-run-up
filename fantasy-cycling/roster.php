@@ -10,7 +10,7 @@ get_header();
 
 	<?php if ($team) : ?>
 
-		<h1 class="page-title"><?php echo $team->name; ?> (<span class="rank"><?php echo $team->rank; ?></span>)</h1>
+		<h1 class="page-title"><?php echo $team->name; ?> (<span class="rank"><?php echo $team->standings->rank; ?></span>)</h1>
 
 		<div class="fc-roster">
 
