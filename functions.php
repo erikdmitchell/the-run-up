@@ -541,6 +541,13 @@ function tru_hide_admin_bar() {
 }
 add_action('after_setup_theme', 'tru_hide_admin_bar');
 
+/**
+ * tru_social_media_share_button function.
+ * 
+ * @access public
+ * @param string $args (default: '')
+ * @return void
+ */
 function tru_social_media_share_button($args='') {
 	$html='';
 	$default_args=array(
@@ -551,7 +558,7 @@ function tru_social_media_share_button($args='') {
 		'text' => 'The Run Up',
 	);
 	$args=wp_parse_args($args, $default_args);
-print_r($args);	
+
 	extract($args);
 	
 	switch ($type):
