@@ -547,24 +547,26 @@ function tru_social_media_share_button($args='') {
 		'type' => 'twitter',
 		'url' => ''	,
 		'size' => 'large',
+		'btn_text' => 'Tweet',
+		'text' => 'The Run Up',
 	);
 	$args=wp_parse_args($args, $default_args);
-	
+print_r($args);	
 	extract($args);
 	
 	switch ($type):
 		case 'facebook':
 			$html.='<div class="fb-share-button" data-href="'.$url.'" data-layout="button" data-size="'.$size.'" data-mobile-iframe="true">';
-				$html.='<a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a>';
+				$html.='<a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">'.$btn_text.'</a>';
 			$html.='</div>';
 			break;
 		case 'twitter':
-			$html.='<a class="twitter-share-button" href="'.$url.'" data-size="'.$size.'"> Tweet</a>';
+			$html.='<a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="'.$size.'" data-text="'.$text.'" data-url="'.$url.'"> '.$btn_text.'</a>';
 			break;
 		default:
 			$html='';
 	endswitch;
 	
-	return $html;
+	echo $html;
 }
 ?>
