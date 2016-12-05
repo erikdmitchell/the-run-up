@@ -9,6 +9,8 @@
 function tru_scripts_styles() {
 	wp_enqueue_script('tru-front-page-script', get_stylesheet_directory_uri().'/js/front-page.js', array('jquery'), '0.1.0', true);
 	wp_enqueue_script('tru-team-script', get_stylesheet_directory_uri().'/js/team.js', array('jquery'), '0.1.0', true);
+	wp_enqueue_script('tru-twitter-share-script', get_stylesheet_directory_uri().'/js/twitter-share.js', array(), '', true);
+	wp_enqueue_script('tru-facebook-share-script', get_stylesheet_directory_uri().'/js/fb-share.js', array(), '', true);	
 
 	wp_enqueue_style('google-fonts-arvo', 'https://fonts.googleapis.com/css?family=Arvo:400,700,400italic');
 	wp_enqueue_style('parent-style', get_template_directory_uri().'/style.css');
@@ -538,4 +540,31 @@ function tru_hide_admin_bar() {
 		show_admin_bar(false);
 }
 add_action('after_setup_theme', 'tru_hide_admin_bar');
+
+function tru_social_media_share_button($args='') {
+	$html='';
+	$default_args=array(
+		'type' => 'twitter',
+		'url' => ''	,
+		'size' => 'large',
+	);
+	$args=wp_parse_args($args, $default_args);
+	
+	extract($args);
+	
+	switch ($type):
+		case 'facebook':
+			$html.='<div class="fb-share-button" data-href="'.$url.'" data-layout="button" data-size="'.$size.'" data-mobile-iframe="true">';
+				$html.='<a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a>';
+			$html.='</div>';
+			break;
+		case 'twitter':
+			$html.='<a class="twitter-share-button" href="'.$url.'" data-size="'.$size.'"> Tweet</a>';
+			break;
+		default:
+			$html='';
+	endswitch;
+	
+	return $html;
+}
 ?>
