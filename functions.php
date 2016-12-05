@@ -568,7 +568,8 @@ function tru_social_media_share_button($args='') {
 			$html.='</div>';
 			break;
 		case 'twitter':
-			$html.='<a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="'.$size.'" data-text="'.$text.'" data-url="'.$url.'"> '.$btn_text.'</a>';
+			//$html.='<a class="twitter-btn" href="https://twitter.com/intent/tweet" data-size="'.$size.'" data-text="'.$text.'" data-url="'.$url.'"> '.$btn_text.'</a>';
+			$html.='<a class="twitter-btn" href="https://twitter.com/share?url='.$url.'&text='.$text.'" target="_blank"> '.$btn_text.'</a>';		
 			break;
 		default:
 			$html='';
