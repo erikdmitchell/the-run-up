@@ -338,6 +338,15 @@ body.home {
 .tru-add-riders-btn:focus {
 	outline: none;
 }
+.tru-social-media-share {
+	
+}
+.tru-social-media-share .fb-share-button {
+	margin-top: 0;
+}
+.tru-social-media-share .twitter-share-button {
+	color: black;
+}
 .fantasy-cycling-my-team .my-team-list .header {
 	text-align: center;
 }

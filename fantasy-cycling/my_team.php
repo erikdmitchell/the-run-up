@@ -52,6 +52,30 @@ get_header();
 		</div>
 	</div>
 
+	<div class="tru-social-media-share row">
+		<div class="col-xs-12">
+			<div class="col-xs-6 share-title">Share Your Team:</div>
+			<div class="col-xs-6 share-btns">
+				<?php tru_social_media_share_button(array('url' => fc_get_team_link($fantasy_cycling_user_team->slug), 'text' => 'Check out my team: ')); ?>
+				<?php tru_social_media_share_button(array(
+					'type' => 'facebook',
+					'url' => fc_get_team_link($fantasy_cycling_user_team->slug),
+					'btn_text' => 'Share',
+				)); ?>
+			</div>
+		</div>
+	</div>
+
 </div>
+
+<?php do_action( 'addthis_widget', get_permalink(), get_the_title(), array(
+    'type' => 'custom',
+    'size' => '16', // size of the icons.  Either 16 or 32
+    'services' => 'facebook,twitter,digg', // the services you want to always appear
+    'preferred' => '7', // the number of auto personalized services
+    'more' => true, // if you want to have a more button at the end
+    'counter' => 'bubble_style' // if you want a counter and the style of it
+    ));
+?>
 
 <?php get_footer(); ?>
