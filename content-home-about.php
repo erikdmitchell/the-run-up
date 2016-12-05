@@ -7,7 +7,9 @@
 <?php
 $home_about_query=new WP_Query(array(
 	'nopaging' => true,
-	'post_type' => 'homeabout'
+	'post_type' => 'homeabout',
+	'orderby' => 'menu_order',
+	'order' => 'ASC',
 ));
 ?>
 
