@@ -339,14 +339,18 @@ body.home {
 	outline: none;
 }
 .tru-social-media-share {
-	
+	padding-top: 15px;
+	padding-bottom: 15px;
+	overflow: hidden;
 }
-.tru-social-media-share .fb-share-button {
-	margin-top: 0;
+.info .tru-social-media-share {
+	padding-top: 0;
+	padding-bottom: 0;
 }
-.tru-social-media-share .twitter-share-button {
-	color: black;
+.tru-social-media-share .share-title {
+	font-weight: bold;
 }
+.tru-social-media-share .share-btns {]}
 .fantasy-cycling-my-team .my-team-list .header {
 	text-align: center;
 }
