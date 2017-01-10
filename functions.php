@@ -151,33 +151,33 @@ function tru_register_form() {
 	$first_name=(!empty($_POST['first_name'])) ? trim($_POST['first_name']) : '';
 	$last_name=(!empty($_POST['first_name'])) ? trim($_POST['first_name']) : '';
 
-  $html.='<p>';
-    $html.='<label for="team_name">'.__('Team Name', 'tru').'<br />';
-    $html.='<input type="text" name="team_name" id="team_name" class="input" value="'.esc_attr(wp_unslash($team_name)).'" size="25" /></label>';
-  $html.='</p>';
-
-  $html.='<p>';
-    $html.='<label for="first_name">'.__('First Name', 'tru').'<br />';
-    $html.='<input type="text" name="first_name" id="first_name" class="input" value="'.esc_attr(wp_unslash($first_name)).'" size="25" /></label>';
-  $html.='</p>';
-
-  $html.='<p>';
-    $html.='<label for="last_name">'.__('Last Name', 'tru').'<br />';
-    $html.='<input type="text" name="last_name" id="last_name" class="input" value="'.esc_attr(wp_unslash($last_name)).'" size="25" /></label>';
-  $html.='</p>';
+	$html.='<p>';
+		$html.='<label for="team_name">'.__('Team Name', 'tru').'<br />';
+		$html.='<input type="text" name="team_name" id="team_name" class="input" value="'.esc_attr(wp_unslash($team_name)).'" size="25" /></label>';
+	$html.='</p>';
+	
+	$html.='<p>';
+		$html.='<label for="first_name">'.__('First Name', 'tru').'<br />';
+		$html.='<input type="text" name="first_name" id="first_name" class="input" value="'.esc_attr(wp_unslash($first_name)).'" size="25" /></label>';
+	$html.='</p>';
+	
+	$html.='<p>';
+		$html.='<label for="last_name">'.__('Last Name', 'tru').'<br />';
+		$html.='<input type="text" name="last_name" id="last_name" class="input" value="'.esc_attr(wp_unslash($last_name)).'" size="25" /></label>';
+	$html.='</p>';
 
 	$html.='<p>';
 		$html.='<label for="password">Password<br/>';
 		$html.='<input id="password" class="input" type="password" size="25" value="" name="password" />';
 		$html.='</label>';
 	$html.='</p>';
-
+	
 	$html.='<p>';
 		$html.='<label for="repeat_password">Repeat password<br/>';
 		$html.='<input id="repeat_password" class="input" type="password" size="25" value="" name="repeat_password" />';
 		$html.='</label>';
 	$html.='</p>';
-
+	
 	$html.='<p>';
 		$html.='<label for="are_you_human">'.__('Are you human? What is 1 + 1?', 'tru');
 		$html.='<input id="are_you_human" class="input" type="text" value="" name="are_you_human" />';
@@ -474,7 +474,9 @@ function tru_navbar_classes($classes='') {
  * @return void
  */
 function tru_get_news() {
-	$posts=get_posts();
+	$posts=get_posts(array(
+		'category_name' => 'news'
+	));
 
 	return $posts;
 }
