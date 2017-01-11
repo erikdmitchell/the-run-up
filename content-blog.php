@@ -12,15 +12,33 @@ $blog_query=new WP_Query(array(
 			
 				<div class="row">
 					<div class="col-xs-12">
-						<?php the_post_thumbnail('blog-landing'); ?>
+						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('blog-landing'); ?></a>
 					</div>
 				</div>
 				
 				<div class="row">
-					<div class="col-xs-12">
+					<div class="col-xs-12 title">
 						<a href="<?php the_permalink(); ?>"><?php the_title('<h2>', '</h2>'); ?></a>
 					</div>
 				</div>
+
+				<div class="row">
+					<div class="col-xs-12 author">
+						<?php the_author(); ?>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-xs-12 date">
+						<?php the_time('F j, Y'); ?>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-12 excerpt">
+						<?php echo tru_excerpt_by_id(get_the_ID(), 75, '', '<a href="'.get_permalink(get_the_ID()).'">...more</a>'); ?>
+					</div>
+				</div>	
 			
 			<?php endwhile; ?>
 		<?php else : ?>
