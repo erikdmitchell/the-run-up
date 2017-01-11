@@ -553,35 +553,3 @@ footer .social > li > i {
 footer .primary-copyright {
 	text-align: center;
 }
-
-/* modals */
-#login-modal .modal-body {
-	margin: 0 auto;
-	width: 80%;
-}
-#login-modal .modal-body .buttons,
-#register-modal .modal-body .buttons {
-	text-align: center;
-}
-#login-modal .modal-body .btn-tru {
-	padding: 5px 15px;
-}
-#login-modal .modal-body .custom-login-extras {
-	margin-left: 62px;
-}
-
-
-@media (min-width: 768px) {
-	#login-modal .modal-dialog {
-		width: 400px;
-	}
-
-	#register-modal .modal-dialog {
-		width: 400px;
-	}
-
-	.uci-results-rider .top-results,
-	.uci-results-rider .championships {
-  	margin-top: 4em;
-	}
-}
