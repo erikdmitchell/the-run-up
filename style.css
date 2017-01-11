@@ -524,6 +524,15 @@ body.home {
 	background: #eee;
 }
 
+/* blog landing */
+.tru-blog-landing .title h2 {
+	font-size: 25px;
+}
+.tru-blog-landing .excerpt {
+	margin-top: 15px;
+	margin-bottom: 25px;
+}
+
 /* footer */
 footer .footer-col {
 	margin-bottom: 1.2em;

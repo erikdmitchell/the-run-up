@@ -4,7 +4,7 @@ $blog_query=new WP_Query(array(
 ));
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('tru-blog'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('tru-blog-landing'); ?>>
 
 	<div class="content container">
 		<?php if ($blog_query->have_posts()) : ?>
@@ -36,7 +36,7 @@ $blog_query=new WP_Query(array(
 
 				<div class="row">
 					<div class="col-xs-12 excerpt">
-						<?php echo tru_excerpt_by_id(get_the_ID(), 75, '', '<a href="'.get_permalink(get_the_ID()).'">...more</a>'); ?>
+						<?php echo tru_excerpt_by_id(get_the_ID(), 100, '', '<a href="'.get_permalink(get_the_ID()).'">...more</a>'); ?>
 					</div>
 				</div>	
 			
