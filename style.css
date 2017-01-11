@@ -533,6 +533,11 @@ body.home {
 	margin-bottom: 25px;
 }
 
+/* blog single */
+.tru-blog-single .entry-meta {
+	margin-bottom: 15px;
+}
+
 /* footer */
 footer .footer-col {
 	margin-bottom: 1.2em;
