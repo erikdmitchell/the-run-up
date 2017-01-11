@@ -12,7 +12,7 @@ $blog_query=new WP_Query(array(
 			
 				<div class="row">
 					<div class="col-xs-12">
-						<?php the_post_thumbnail(); ?>
+						<?php the_post_thumbnail('blog-landing'); ?>
 					</div>
 				</div>
 				

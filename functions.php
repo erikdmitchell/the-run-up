@@ -264,6 +264,7 @@ add_action('user_register', 'tru_user_register');
  */
 function tru_theme_setup() {
     add_image_size('single', 1400, 480, true ); // (cropped)
+    add_image_size('blog-landing', 1200, 400, true);
 }
 add_action('after_setup_theme', 'tru_theme_setup');
 
@@ -528,16 +529,4 @@ function tru_ordinal_number($number) {
 	else
 		return $number. $ends[$number % 10];
 }
-
-/**
- * bs_hide_admin_bar function.
- *
- * @access public
- * @return void
- */
-function tru_hide_admin_bar() {
-  if (!current_user_can('administrator') && !is_admin())
-		show_admin_bar(false);
-}
-add_action('after_setup_theme', 'tru_hide_admin_bar');
 ?>
