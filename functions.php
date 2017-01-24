@@ -160,9 +160,12 @@ add_action('register_form', 'tru_register_form');
  * @return void
  */
 function tru_registration_errors($errors, $sanitized_user_login, $user_email) {
-	if (empty($_POST['team_name']) || !empty($_POST['team_name']) && trim($_POST['team_name'])=='') {
+	if (empty($_POST['team_name']) || !empty($_POST['team_name']) && trim($_POST['team_name'])=='') :
 		$errors->add('team_name_error', __('<strong>ERROR</strong>: You must include a team name.', 'tru'));
-	}
+	elseif (tru_team_name_in_use($_POST['team_name'])) :
+		$errors->add('team_name_error', __('<strong>ERROR</strong>: Team name is in use.', 'tru'));
+	endif;
+	
 
 	if (empty($_POST['first_name']) || !empty($_POST['first_name']) && trim($_POST['first_name'])=='') {
 		$errors->add('first_name_error', __('<strong>ERROR</strong>: You must include a first name.', 'tru'));
@@ -187,6 +190,27 @@ function tru_registration_errors($errors, $sanitized_user_login, $user_email) {
 	return $errors;
 }
 add_filter('registration_errors', 'tru_registration_errors', 10, 3);
+
+/**
+ * tru_team_name_in_use function.
+ * 
+ * @access public
+ * @param string $team_name (default: '')
+ * @return void
+ */
+function tru_team_name_in_use($team_name='') {
+	global $wpdb;
+	
+	if (empty($team_name))
+		return true;
+	
+	$name=$wpdb->get_var("SELECT id FROM $wpdb->fantasy_cycling_teams WHERE name = '$team_name'");
+	
+	if ($name)
+		return true;
+		
+	return false;
+}
 
 /**
  * tru_user_register function.
