@@ -474,6 +474,7 @@ function tru_get_news() {
  * @access public
  * @return void
  */
+/*
 function tru_team_roster_button_text() {
 	global $fantasy_cycling_user_team;
 
@@ -483,6 +484,7 @@ function tru_team_roster_button_text() {
 		echo 'Update roster';
 	endif;
 }
+*/
 
 /**
  * tru_theme_posted_on function.
