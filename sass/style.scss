@@ -1,0 +1,70 @@
+/*
+ Theme Name:   The Run Up Theme
+ Theme URI:    http://therunup.com
+ Description:  WordPress Theme for TRU
+ Author:       Erik Mitchell
+ Author URI:   http://erikmitchell.net
+ Template:     koksijde
+ Version:      2.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+
+ This theme, like WordPress, is licensed under the GPL.
+ Use it to make something cool, have fun, and share what you've learned with others.
+
+ Normalizing styles have been helped along thanks to the fine work of
+ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "normalize";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "typography/typography";
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import "forms/forms";
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+@import "layout/layout";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "navigation/navigation";
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+@import "modules/accessibility";
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+@import "modules/alignments";
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+@import "modules/clearings";
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+@import "site/site";
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+@import "modules/infinite-scroll";

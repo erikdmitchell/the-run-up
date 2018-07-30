@@ -1,0 +1,46 @@
+// general colors
+$font-color: #000;
+$font-color-light: #fff;
+$white: #fff;
+
+$color__background-body: #fff;
+$color__background-screen: #f1f1f1;
+$color__background-hr: #808080;
+$color__background-button: #18A9E1;
+$color__background-secondary-button: #18A9E1;
+$color__background-pre: #e3e3e3;
+$color__background-ins: #22C5BE;
+
+$color__text-screen: #000;
+$color__text-input: #222;
+$color__text-input-focus: #111;
+$color__link: #0087CC;
+$color__link-visited: #0087CC;
+$color__link-hover: #0087CC;
+$color__text-main: #000;
+
+$color__border-button: #1a84e1;
+$color__border-button-hover: $color__background-button;
+$color__border-button-focus: $color__background-button;
+$color__border-secondary-button: $color__background-secondary-button;
+$color__border-secondary-button-hover: $color__background-secondary-button;
+$color__border-secondary-button-focus: $color__background-secondary-button;
+$color__border-input: #ccc;
+$color__border-abbr: #666;
+
+$color__default-menu-item: #000;
+$color__active-menu-item: #000;
+$color__submenu-background-color: #000;
+$color__default-sub-menu-item: $color__default-menu-item;
+$color__active-sub-menu-item: $color__active-menu-item;
+
+$color__footer-menu-item: #000;
+$color__footer-active-menu-item: #000;
+
+// check these
+$main_gradient_start: rgba(24, 173, 186, 0.8);
+$main_gradient_middle: rgba(34, 197, 190, 0.8);
+
+$main_gradient_start-transparent: rgba(24, 173, 186, 0.5);
+$main_gradient_middle-transparent: rgba(34, 197, 190, 0.5);
+$main_gradient_final-transparent: rgba(255, 255, 255, 0.5);
