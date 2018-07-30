@@ -37,7 +37,7 @@
 				'container' => false,
 				'menu_class' => 'nav navbar-nav pull-right',
 				'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-				'walker' => new wp_bootstrap_navwalker()
+				'walker' => new koksijde_wp_bootstrap_navwalker()
 			));
 			?>
 		</div> <!-- .primary-menu -->
