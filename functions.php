@@ -933,22 +933,22 @@ function koksijde_secondary_navigation_setup() {
 }
 
 /**
- * koksijde_back_to_top function.
+ * tru_back_to_top function.
  *
  * @access public
  * @return void
  */
-function koksijde_back_to_top() {
+function tru_back_to_top() {
 	$html=null;
 
-	$html.='<a href="#0" class="koksijde-back-to-top"></a>';
+	$html.='<a href="#0" class="tru-back-to-top"></a>';
 
-	echo apply_filters('koksijde_back_to_top', $html);
+	echo apply_filters('tru_back_to_top', $html);
 }
-add_action('wp_footer', 'koksijde_back_to_top');
+add_action('wp_footer', 'tru_back_to_top');
 
 /**
- * koksijde_wp_parse_args function.
+ * tru_wp_parse_args function.
  *
  * Similar to wp_parse_args() just a bit extended to work with multidimensional arrays
  *
@@ -957,14 +957,14 @@ add_action('wp_footer', 'koksijde_back_to_top');
  * @param mixed $b
  * @return void
  */
-function koksijde_wp_parse_args(&$a,$b) {
+function tru_wp_parse_args(&$a,$b) {
 	$a = (array) $a;
 	$b = (array) $b;
 	$result = $b;
 
 	foreach ( $a as $k => &$v ) {
 		if ( is_array( $v ) && isset( $result[ $k ] ) ) {
-			$result[ $k ] = koksijde_wp_parse_args( $v, $result[ $k ] );
+			$result[ $k ] = tru_wp_parse_args( $v, $result[ $k ] );
 		} else {
 			$result[ $k ] = $v;
 		}
@@ -1021,34 +1021,6 @@ function koksijde_theme_get_image_id_from_url($image_url) {
 	$attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url ));
 
 	return $attachment[0];
-}
-
-/**
- * koksijde_array_recursive_diff function.
- *
- * @access public
- * @param mixed $aArray1
- * @param mixed $aArray2
- * @return void
- */
-function koksijde_array_recursive_diff($aArray1, $aArray2) {
-  $aReturn = array();
-
-  foreach ($aArray1 as $mKey => $mValue) {
-    if (array_key_exists($mKey, $aArray2)) {
-      if (is_array($mValue)) {
-        $aRecursiveDiff = koksijde_array_recursive_diff($mValue, $aArray2[$mKey]);
-        if (count($aRecursiveDiff)) { $aReturn[$mKey] = $aRecursiveDiff; }
-      } else {
-        if ($mValue != $aArray2[$mKey]) {
-          $aReturn[$mKey] = $mValue;
-        }
-      }
-    } else {
-      $aReturn[$mKey] = $mValue;
-    }
-  }
-  return $aReturn;
 }
 
 /**
