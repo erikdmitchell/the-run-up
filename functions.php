@@ -224,7 +224,7 @@ function tru_user_register($user_id) {
 	$userdata['ID']=$user_id;
 
 	// add team name //
-	fantasy_cycling_create_team($user_id, $_POST['team_name']);
+	fc_create_team($user_id, $_POST['team_name']);
 
 	// setup more standard wp user fields //
 	if (!empty($_POST['first_name']))
@@ -474,7 +474,6 @@ function tru_get_news() {
  * @access public
  * @return void
  */
-/*
 function tru_team_roster_button_text() {
 	global $fantasy_cycling_user_team;
 
@@ -484,7 +483,6 @@ function tru_team_roster_button_text() {
 		echo 'Update roster';
 	endif;
 }
-*/
 
 /**
  * tru_theme_posted_on function.

@@ -1,0 +1,70 @@
+button,
+button.secondary,
+a.button,
+a.button.secondary,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: $color__border-button;
+	border-radius: 3px;
+	background: $color__background-button;
+	color: $white;
+	@include font-size(1);
+	line-height: 1;
+	padding: .4em 1em .4em;
+	text-transform: lowercase;
+
+	&:hover {
+		border-color: $color__border-button-hover;
+		padding: .4em 1em .4em;
+		background: transparent;
+		color: $color__border-button-hover;
+		border: 1px solid;
+	}
+
+	&:active,
+	&:focus {
+		border-color: $color__border-button-focus;
+	}
+	
+    &:after {
+        content: "";
+    }
+    	
+}
+
+// secondary button
+button.secondary,
+a.button.secondary {
+	border-color: $color__border-secondary-button;
+	background: $color__background-secondary-button;
+
+	&:hover {
+		border-color: $color__border-secondary-button-hover;
+		color: $color__border-secondary-button-hover;
+	}
+
+	&:active,
+	&:focus {
+		border-color: $color__border-secondary-button-focus;
+	}    	
+}
+
+// white button
+button.white,
+a.button.white {
+	border-color: $white;
+	background: transparent;
+	color: $white;
+
+	&:hover {
+		border-color: $white;
+		color: $white;
+	}
+
+	&:active,
+	&:focus {
+		border-color: $white;
+	}    	
+}
