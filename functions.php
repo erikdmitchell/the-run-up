@@ -19,11 +19,11 @@
 function tru_scripts_styles() {
 	global $wp_scripts;
 
-	// enqueue our scripts for bootstrap, slider and theme
+	// enqueue our scripts for theme
 	wp_enqueue_script('jquery');
-	wp_enqueue_script('bootstrap', get_template_directory_uri().'/inc/js/bootstrap.js', array('jquery'), '3.3.7', true);
-	wp_enqueue_script('jquery-actual', get_template_directory_uri().'/inc/js/jquery.actual.js', array('jquery'), '1.0.16', true);
-	wp_enqueue_script('koksijde-theme-script', get_template_directory_uri().'/inc/js/koksijde-theme.js', array('jquery'), '1.0.2', true);
+	wp_enqueue_script('koksijde-theme-script', get_template_directory_uri().'/inc/js/tru-theme.js', array('jquery'), '1.0.0', true);
+	wp_enqueue_script('tru-front-page-script', get_stylesheet_directory_uri().'/js/front-page.js', array('jquery'), '0.1.0', true);
+	wp_enqueue_script('tru-team-script', get_stylesheet_directory_uri().'/js/team.js', array('jquery'), '0.1.0', true);	
 
 	if ( is_singular() )
 		wp_enqueue_script( 'comment-reply' );
@@ -41,15 +41,9 @@ function tru_scripts_styles() {
 	wp_script_add_data('respond', 'conditional', 'lt IE 9');
 
 	// enqueue font awesome and our main stylesheet
+	wp_enqueue_style('google-fonts-arvo', 'https://fonts.googleapis.com/css?family=Arvo:400,700,400italic');	
 	wp_enqueue_style('font-awesome', get_template_directory_uri().'/inc/css/font-awesome.css', array(), '4.6.3');
-	wp_enqueue_style('bootstrap', get_template_directory_uri().'/inc/css/bootstrap.css', array(), '3.3.7');
-	wp_enqueue_style('koksijde-theme-style', get_stylesheet_uri());
-	    
-	wp_enqueue_script('tru-front-page-script', get_stylesheet_directory_uri().'/js/front-page.js', array('jquery'), '0.1.0', true);
-	wp_enqueue_script('tru-team-script', get_stylesheet_directory_uri().'/js/team.js', array('jquery'), '0.1.0', true);
-
-	wp_enqueue_style('google-fonts-arvo', 'https://fonts.googleapis.com/css?family=Arvo:400,700,400italic');
-	wp_enqueue_style('parent-style', get_template_directory_uri().'/style.css');
+	wp_enqueue_style('tru-theme-style', get_stylesheet_uri());
 }
 add_action('wp_enqueue_scripts', 'tru_scripts_styles');
 
