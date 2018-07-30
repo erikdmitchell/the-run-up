@@ -617,7 +617,7 @@ function tru_theme_setup() {
 	/**
 	 * include bootstrap mobile nav walker
 	 */
-	include_once(get_template_directory().'/inc/mobile_nav_walker.php');
+	include_once(get_template_directory().'/inc/mobile-nav-walker.php');
 
 	// register our navigation area
 	register_nav_menus( array(
@@ -828,8 +828,8 @@ function tru_mobile_navigation_setup() {
 			'container_class' => 'panel-group navbar-nav',
 			'container_id' => 'accordion',
 			'echo' => false,
-			'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-			'walker' => new koksijdeMobileNavWalker()
+			'fallback_cb' => 'tru_wp_bootstrap_navwalker::fallback',
+			'walker' => new truMobileNavWalker()
 		));
 
 	$html.='</div><!-- .tru-theme-mobile-menu -->';
@@ -857,8 +857,8 @@ function tru_secondary_navigation_setup() {
 			'container' => false,
 			'menu_class' => 'nav navbar-nav pull-right secondary',
 			'echo' => false,
-			'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-			'walker' => new wp_bootstrap_navwalker()
+			'fallback_cb' => 'tru_wp_bootstrap_navwalker::fallback',
+			'walker' => new tru_wp_bootstrap_navwalker()
 		));
 	$html.='</div> <!-- .secondary-menu -->';
 
