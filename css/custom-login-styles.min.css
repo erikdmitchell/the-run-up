@@ -1,0 +1,6 @@
+body.login{background-color:#fff}.login h1 a{background-image:url('../images/logos/logo-sm.png');background-size:auto;height:93px;width:204px}
+.login label{font-size:14px;color:#333}.login input[type="text"],.login input[type="password"],.login input[type="email"]{background-color:#fff;color:#000;-webkit-border-radius:4px}
+.login .button-primary{background-color:#18a9e1;background:-webkit-gradient(linear,left top,left bottom,from(#18a9e1),to(#18a9e1));background:-webkit-linear-gradient(top,#18a9e1,#18a9e1);background:-moz-linear-gradient(top,#18a9e1,#18a9e1);background:-ms-linear-gradient(top,#18a9e1,#18a9e1);background:-o-linear-gradient(top,#18a9e1,#18a9e1);background-image:-ms-linear-gradient(top,#18a9e1 0,#18a9e1 100%);-webkit-border-radius:0;color:#fff;color:1px solid #1a84e1;padding:5px 10px}
+p#backtoblog{display:none}.login #nav{color:#000}.login #nav a{color:#337ab7;text-decoration:none}
+.login #nav a:hover,.login #nav a:active{color:#23527c;text-decoration:underline}
+.login #are_you_human{width:35px;margin-left:10px}
