@@ -27,7 +27,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logos/logo-sm.png " height="93" width="204" alt="the run up logo" /></a>
+			<a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/inc/images/logos/logo-sm.png " height="93" width="204" alt="the run up logo" /></a>
 		</div>
 		<?php tru_secondary_navigation_setup(); ?>
 		<div class="collapse navbar-collapse primary-menu">
