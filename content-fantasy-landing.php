@@ -13,9 +13,9 @@ $teams=fantasy_cycling_standings(array(
 <article id="post-<?php the_ID(); ?>" <?php post_class('tru-fantasy-main'); ?>>
 
 	<div class="col-xs-12 col-md-8 main">
-		<?php get_template_part('fantasy-home/user-team'); ?>
-		<?php get_template_part('fantasy-home/overall-standings'); ?>
-		<?php get_template_part('fantasy-home/recent-results'); ?>
+		<?php get_template_part('template-parts/fantasy-home/user', 'team'); ?>
+		<?php get_template_part('fantasy-home/overall', 'standings'); ?>
+		<?php get_template_part('fantasy-home/recent', 'results'); ?>
 	</div>
 
 	<div class="col-xs-12 col-md-4 right">
