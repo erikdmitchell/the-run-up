@@ -21,7 +21,7 @@
 	<nav class="navbar navbar-default <?php tru_navbar_classes(); ?>" role="navigation">
 		<div class="container">
 		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".koksijde-theme-mobile-menu">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".tru-theme-mobile-menu">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
