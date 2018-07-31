@@ -5,11 +5,11 @@
  * Used to display archive-type pages if nothing more specific matches a query.
  * For example, puts together date-based pages if no date.php file exists.
  *
- * @subpackage koksijde
- * @since koksijde 1.0.0
+ * @subpackage the-run-up
+ * @since the-run-up 1.0.0
  */
-?>
-<?php get_header(); ?>
+
+get_header(); ?>
 
 <div class="container">
 	<div class="row">
@@ -31,7 +31,7 @@
 				?>
 
 			<?php else : ?>
-				<?php get_template_part( 'content', 'none' ); ?>
+				<?php get_template_part( 'template-parts/content', 'none' ); ?>
 			<?php endif; ?>
 
 		</div>
@@ -41,4 +41,4 @@
 	</div>
 </div><!-- .container -->
 
-<?php get_footer(); ?>
+<?php get_footer();

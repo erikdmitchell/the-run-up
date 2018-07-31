@@ -29,18 +29,18 @@
 			</button>
 			<a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logos/logo-sm.png " height="93" width="204" alt="the run up logo" /></a>
 		</div>
-		<?php koksijde_secondary_navigation_setup(); ?>
+		<?php tru_secondary_navigation_setup(); ?>
 		<div class="collapse navbar-collapse primary-menu">
 			<?php
 			wp_nav_menu(array(
 				'theme_location' => 'primary',
 				'container' => false,
 				'menu_class' => 'nav navbar-nav pull-right',
-				'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-				'walker' => new koksijde_wp_bootstrap_navwalker()
+				'fallback_cb' => 'tru_wp_bootstrap_navwalker::fallback',
+				'walker' => new tru_wp_bootstrap_navwalker()
 			));
 			?>
 		</div> <!-- .primary-menu -->
-		<?php koksijde_mobile_navigation_setup(); ?>
+		<?php tru_mobile_navigation_setup(); ?>
 		</div>
 	</nav>

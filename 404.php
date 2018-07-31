@@ -2,11 +2,11 @@
 /**
  * The template for displaying 404 pages (Not Found)
  *
- * @subpackage koksijde
- * @since koksijde 1.1.0
+ * @subpackage the-run-up
+ * @since the-run-up 1.1.0
  */
-?>
-<?php get_header(); ?>
+
+get_header(); ?>
 
 <div class="container">
 	<div class="row">
@@ -30,4 +30,4 @@
 	</div>
 </div>
 
-<?php get_footer(); ?>
+<?php get_footer();

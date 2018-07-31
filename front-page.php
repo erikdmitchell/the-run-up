@@ -55,7 +55,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<?php get_template_part('content-home', 'about'); ?>
+			<?php get_template_part('template-parts/content-home', 'about'); ?>
 		</div>
 	</div>
 </div>

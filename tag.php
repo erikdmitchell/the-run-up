@@ -4,8 +4,8 @@
  *
  * Used to display archive-type pages for posts in a tag.
  *
- * @subpackage koksijde
- * @since koksijde 1.0.0
+ * @subpackage the-run-up
+ * @since the-run-up 1.0.0
  */
 ?>
 <?php get_header(); ?>
@@ -34,7 +34,7 @@
 				?>
 
 			<?php else : ?>
-				<?php get_template_part( 'content', 'none' ); ?>
+				<?php get_template_part( 'template-parts/content', 'none' ); ?>
 			<?php endif; ?>
 
 		</div>

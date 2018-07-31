@@ -5,9 +5,8 @@
  * @subpackage koksijde
  * @since koksijde 1.0.0
  */
-?>
 
-<?php get_header(); ?>
+get_header(); ?>
 
 <div class="container">
 	<div class="row">
@@ -36,4 +35,4 @@
 	</div>
 </div><!-- .container -->
 
-<?php get_footer(); ?>
+<?php get_footer();

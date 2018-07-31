@@ -4,8 +4,8 @@
  *
  * The area of the page that contains comments and the comment form.
  *
- * @subpackage koksijde
- * @since koksijde 1.0.0
+ * @subpackage the-run-up
+ * @since the-run-up 1.0.0
  */
 
 /*
@@ -55,7 +55,7 @@ if ( post_password_required() ) {
 	<?php endif; // Check for comment navigation. ?>
 
 	<?php if ( ! comments_open() ) : ?>
-	<p class="no-comments"><?php _e( 'Comments are closed.', 'the-run-up' ); ?></p>
+	    <p class="no-comments"><?php _e( 'Comments are closed.', 'the-run-up' ); ?></p>
 	<?php endif; ?>
 
 	<?php endif; // have_comments() ?>
