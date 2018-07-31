@@ -275,18 +275,6 @@ function tru_user_register($user_id) {
 add_action('user_register', 'tru_user_register');
 
 /**
- * tru_theme_setup function.
- *
- * @access public
- * @return void
- */
-function tru_theme_setup() {
-    add_image_size('single', 1400, 480, true ); // (cropped)
-    add_image_size('blog-landing', 1200, 400, true);
-}
-add_action('after_setup_theme', 'tru_theme_setup');
-
-/**
  * tru_loginout_menu_link function.
  *
  * @access public
@@ -608,6 +596,8 @@ function tru_theme_setup() {
 	 */
 	add_image_size('tru-home-image', 9999, 400, true);
 	add_image_size('tru-home-blog-post-image', 555, 225, true);
+    add_image_size('single', 1400, 480, true ); // (cropped)
+    add_image_size('blog-landing', 1200, 400, true);	
 
 	/**
 	 * include bootstrap nav walker
