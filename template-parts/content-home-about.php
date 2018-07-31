@@ -2,9 +2,7 @@
 /**
  * Home page - about section
  */
-?>
 
-<?php
 $home_about_query=new WP_Query(array(
 	'nopaging' => true,
 	'post_type' => 'homeabout',
@@ -26,6 +24,6 @@ $home_about_query=new WP_Query(array(
 
 	<?php endwhile; ?>
 
-	<?php	wp_reset_postdata(); ?>
+	<?php wp_reset_postdata(); ?>
 
-<?php endif; ?>
+<?php endif;

@@ -32,13 +32,3 @@
 
 	</div><!-- .page-content -->
 </div><!-- .not-found -->
-
-
-
-
-
-
-
-
-
-

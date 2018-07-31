@@ -5,8 +5,8 @@
  * Used for both single and index/archive/search. -- Currently page.php and index.php
  *
  * @package WordPress
- * @subpackage koksijde
- * @since koksijde 1.0.0
+ * @subpackage the-run-up
+ * @since the-run-up 1.0.0
  */
 ?>
 
