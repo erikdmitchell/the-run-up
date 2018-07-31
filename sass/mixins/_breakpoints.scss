@@ -1,0 +1,54 @@
+@mixin breakpoint($class) {
+    @if $class == sm {
+      @media (max-width: 767px) { @content; }
+    }
+  
+    @else if $class == md {
+      @media (min-width: 768px) { @content; }
+    }
+  
+    @else if $class == lg {
+      @media (min-width: 992px) { @content; }
+    }
+
+    @else if $class == xl {
+      @media (min-width: 1151px) { @content; }
+    }
+
+/*
+    @else if $class == desktopwide {
+      @media (min-width: 1535px) { @content; }
+    }
+*/
+
+/*
+    @else if $class == desktoplarge {
+      @media (min-width: 1680px) { @content; }
+    }
+*/
+  
+/*
+    @else {
+      @warn "Breakpoint mixin supports: mobile, tablet, desktop";
+    }
+*/
+  }
+
+  @mixin heightbreakpoint($class) {
+
+    @if $class == sm {
+      @media (min-height: 700px) { @content; }
+    }
+
+    @else if $class == md {
+      @media (min-height: 874px) { @content; }
+    }
+
+    @else if $class == lg {
+      @media (min-height: 1150px) { @content; }
+    }
+  
+    @else {
+      @warn "Breakpoint mixin supports: sm, md, lg";
+    }
+  }
