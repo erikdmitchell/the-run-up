@@ -16,14 +16,14 @@
 @import "back-to-top";
 
 body.home {
-	padding-top: 150px;
+	//padding-top: 150px;
 }
 
 /* front page */
 .jumbotron.home {
   background: #333;
   text-align: center;
-  background-image: radial-gradient(circle closest-corner at 50% 50%, rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.85)), url('images/crowds.jpg');
+  background-image: radial-gradient(circle closest-corner at 50% 50%, rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.85)), url('inc/images/crowds.jpg');
   background-position: 0% 0%, 50% 50%;
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
