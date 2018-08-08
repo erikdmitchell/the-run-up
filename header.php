@@ -19,17 +19,17 @@
   <body <?php body_class('tru'); ?>>
 
 	<nav class="navbar navbar-default <?php tru_navbar_classes(); ?>" role="navigation">
-		<div class="container">
+		
 		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".tru-theme-mobile-menu">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
 			<a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/inc/images/logos/logo-sm.png " height="93" width="204" alt="the run up logo" /></a>
 		</div>
+		
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".tru-mobile-menu">
+			<i class="fa fa-bars fa-1x"></i>
+		</button>		
+		
 		<?php tru_secondary_navigation_setup(); ?>
+		
 		<div class="collapse navbar-collapse primary-menu">
 			<?php
 			wp_nav_menu(array(
@@ -41,6 +41,7 @@
 			));
 			?>
 		</div> <!-- .primary-menu -->
+		
 		<?php tru_mobile_navigation_setup(); ?>
-		</div>
+		
 	</nav>
