@@ -1,20 +1,48 @@
-.home .navbar-default {
-	background-color: #fff;
+.home .navbar {
+	background-color: $white;
 }
-.tru-header-nav {
-	margin-top: 4px;
-}
+
 .navbar {
-	margin-top: 0;
-}
-.navbar-default .navbar-nav>li>a {
-	color: #000;
-}
-.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
-  color: #B3B4B4;
-  background-color: transparent;
-}
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-  color: #000;
-  background-color: #18A9E1;
+    .navbar-toggler {
+        background-color: $dark_gray;
+        
+        &:hover {
+            padding: 0.25rem 0.75rem;
+            border-color: $light_gray;
+            
+            .fa-bars {
+                color: $light_gray;
+            }
+        }
+    }
+    
+    .primary-menu {
+        .navbar-nav {
+            > li > a {
+    	        color: $black;
+    	    
+                &:focus,
+                &:hover {
+                    color: $dark_gray;
+                    background-color: transparent;
+                    text-decoration: none;    	    
+                }
+            }
+            
+            > .active > a {
+                color: $black;
+                background-color: #18A9E1; 
+                
+                &:focus,
+                &:hover {
+                    color: $black;
+                    background-color: #18A9E1;    	    
+                }                       
+            }
+            
+            .menu-item {
+                margin-right: 15px;
+            }
+        }
+    }   
 }

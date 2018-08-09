@@ -21,16 +21,17 @@ body.home {
 
 /* front page */
 .jumbotron.home {
-  background: #333;
-  text-align: center;
-  background-image: radial-gradient(circle closest-corner at 50% 50%, rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.85)), url('inc/images/crowds.jpg');
-  background-position: 0% 0%, 50% 50%;
-  background-size: auto, cover;
-  background-repeat: repeat, no-repeat;
-  background-attachment: scroll, scroll;
-  color: #fff;
-	padding-top: 78px;
-	padding-bottom: 78px;
+    background: #333;
+    text-align: center;
+    background-image: radial-gradient(circle closest-corner at 50% 50%, rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.85)), url('inc/images/crowds.jpg');
+    background-position: 0% 0%, 50% 50%;
+    background-size: auto, cover;
+    background-repeat: repeat, no-repeat;
+    background-attachment: scroll, scroll;
+    color: #fff;
+    padding-top: 78px;
+    padding-bottom: 78px;
+    border-radius: 0;
 }
 .home .title {
 	font-family: 'Arvo', serif;
