@@ -18,7 +18,7 @@
 
   <body <?php body_class('tru'); ?>>
 
-	<nav class="navbar<?php tru_navbar_classes(); ?>">
+	<nav class="navbar navbar-expand-md<?php tru_navbar_classes(); ?>">
         
         <a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/inc/images/logos/logo-sm.png " height="93" width="204" alt="the run up logo" /></a>
       
