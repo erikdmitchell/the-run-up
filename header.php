@@ -28,7 +28,7 @@
         
         <?php //tru_secondary_navigation_setup(); ?>
 
-        <div class="navbar-collapse collapse primary-menu show" id="primary-menu">
+        <div class="navbar-collapse collapse primary-menu" id="primary-menu">
 			<?php
 			wp_nav_menu(array(
 				'theme_location' => 'primary',
