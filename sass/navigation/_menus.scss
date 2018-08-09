@@ -20,6 +20,7 @@
         .navbar-nav {
             > li > a {
     	        color: $black;
+    	        padding: 0.25rem 0.75rem;
     	    
                 &:focus,
                 &:hover {
@@ -30,13 +31,13 @@
             }
             
             > .active > a {
-                color: $black;
-                background-color: #18A9E1; 
+                color: $dark_gray;
+                //background-color: $light_gray; 
                 
                 &:focus,
                 &:hover {
-                    color: $black;
-                    background-color: #18A9E1;    	    
+                    color: $dark_gray;
+                    //background-color: $light_gray;    	    
                 }                       
             }
             
