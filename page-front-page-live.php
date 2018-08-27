@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: TRU Front Page
+ * Template Name: TRU Front Page Live
 **/
 ?>
 <?php get_header(); ?>

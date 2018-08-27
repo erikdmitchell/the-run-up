@@ -12,6 +12,9 @@
 /* posts */
 @import "posts";
 
+/* newsletter */
+@import "newsletter";
+
 /* back to top button */
 @import "back-to-top";
 
@@ -29,9 +32,10 @@ body.home {
     background-repeat: repeat, no-repeat;
     background-attachment: scroll, scroll;
     color: #fff;
-    padding-top: 78px;
-    padding-bottom: 78px;
+    //padding-top: 78px;
+    //padding-bottom: 78px;
     border-radius: 0;
+    margin-bottom: 0;
 }
 .home .title {
 	font-family: 'Arvo', serif;
@@ -475,24 +479,8 @@ body.home {
 	background: #eee;
 }
 
-/* blog landing */
-.tru-blog-landing .title h2 {
-	font-size: 25px;
-}
-.tru-blog-landing .excerpt {
-	margin-top: 15px;
-	margin-bottom: 25px;
-}
-
-footer.entry-meta {
-	margin-top: 0;
-	padding: 5px 10px;
-}
-
-/* blog single */
-.tru-blog-single .entry-meta {
-	margin-bottom: 15px;
-}
+/* blog */
+@import "blog";
 
 /*--------------------------------------------------------------
 ## Footer

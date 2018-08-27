@@ -1,0 +1,61 @@
+.home .newsletter {
+	color: #fff;
+	background-color: #18A9E1;
+	border-color: #1a84e1;
+	padding: 15px 30px;
+	text-align: center;
+}
+.newsletter .section-title {
+	font-family: 'Arvo', serif;
+    font-size: 40px;
+    font-weight: 700;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.newsletter .section-details {
+	
+}
+.newsletter .section-content {
+	text-align: left;
+	margin-bottom: 30px;
+	font-size: 16px;
+}
+.newsletter {
+    .row.form {
+        a,
+        a:visited {
+            color: $black;
+        }
+    }
+}
+.newsletter form {
+	text-align: left;
+	margin-bottom: 30px;	
+	width: 100%;
+	text-align: center;
+}
+.newsletter form label {
+	display: none;
+}
+.newsletter form input {
+	width: 100%;
+	padding: 5px;
+}
+.newsletter form input[type="submit"] {
+	height: 30px;
+	line-height: 28px;
+	padding: 0 12px 2px;
+	background-color: #fff;
+	color: #008ec2;
+	border-color: #fff;
+    width: 50%;
+    border-width: 1px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+.newsletter form input[type="submit"]:hover,
+.newsletter form input[type="submit"]:active {
+	background: #008ec2;
+    border-color: #008ec2;	
+    color: #fff;
+}
