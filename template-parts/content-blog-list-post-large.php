@@ -1,11 +1,7 @@
-<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('blog-landing'); ?></a>
+<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('blog-landing-large'); ?></a>
 
 <div class="title">
 	<a href="<?php the_permalink(); ?>"><?php the_title('<h2>', '</h2>'); ?></a>
-</div>
-
-<div class="author">
-	<?php the_author(); ?>
 </div>
 
 <div class="excerpt">

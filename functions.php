@@ -226,8 +226,10 @@ function tru_theme_setup() {
 	 */
 	add_image_size('tru-home-image', 9999, 400, true);
 	add_image_size('tru-home-blog-post-image', 555, 225, true);
-    add_image_size('single', 1400, 480, true ); // (cropped)
+    add_image_size('single', 1400, 480, true );
     add_image_size('blog-landing', 1200, 400, true);	
+    add_image_size('blog-landing-large', 1200, 800, true);
+    add_image_size('blog-landing-right', 1200, 600, true);    	    
 
 	/**
 	 * include bootstrap nav walker
@@ -376,48 +378,6 @@ function tru_display_meta_description() {
 
 	return false;
 }
-
-/**
- * koksijde_header_markup function.
- * 
- * @access public
- * @return void
- */
-/*
-function koksijde_header_markup() {
-	$html=null;
-	
-	if (get_header_image()) :
-		$html.='<div class="koksijde-header-image">';
-			$html.='<img src="'.esc_url(get_header_image()).'" height="'.absint(get_custom_header()->height).'" width="'.absint(get_custom_header()->width).'" alt="" />';
-		$html.='</div>';
-	endif;
-	
-	echo $html;
-}
-*/
-
-/**
- * koksijde_theme_special_nav_classes function.
- *
- * allows us to add more specific classes to the wp nav menu
- * more specifically, we can add a logo class depending on theme options
- *
- * @access public
- * @param mixed $args
- * @return void
- */
-/*
-function koksijde_theme_special_nav_classes($args) {
-	global $koksijde_theme_options;
-
-	if (isset($koksijde_theme_options['default']['logo']['image']) && $koksijde_theme_options['default']['logo']['image']!='')
-		$args['menu_class'].=' logo';
-
-	return $args;
-}
-add_filter('wp_nav_menu_args', 'koksijde_theme_special_nav_classes', 10, 1);
-*/
 
 /**
  * tru_mobile_navigation_setup function.
