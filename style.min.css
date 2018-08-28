@@ -78,12 +78,19 @@ img{max-width:100%;height:auto}.wp-caption{background:#fff;border:1px solid #f0f
 .entry-header .entry-meta>span{margin-right:15px}.entry-header .entry-meta span.glyphicon{margin-right:3px}
 .posts-navigation,.post-navigation{overflow:hidden;padding:15px 0}.posts-navigation .nav-links>div{float:left;width:50%}
 .posts-navigation .nav-next{text-align:right}.posts-navigation .nav-links .nav-subtitle{color:#000}
-.posts-navigation .nav-links a:hover{text-decoration:none}.koksijde-back-to-top{display:inline-block;height:40px;width:40px;position:fixed;bottom:40px;right:10px;-webkit-box-shadow:0 0 10px rgba(0,0,0,0.05);box-shadow:0 0 10px rgba(0,0,0,0.05);overflow:hidden;text-indent:100%;white-space:nowrap;background:#048dfd url(inc/images/cd-top-arrow.svg) no-repeat center 50%;visibility:hidden;opacity:0;-webkit-transition:opacity .3s 0s,visibility 0s .3s;transition:opacity .3s 0s,visibility 0s .3s}
+.posts-navigation .nav-links a:hover{text-decoration:none}.home .newsletter{color:#fff;background-color:#18a9e1;border-color:#1a84e1;padding:15px 30px;text-align:center}
+.newsletter .section-title{font-family:'Arvo',serif;font-size:40px;font-weight:700;padding-bottom:30px;text-align:center}
+.newsletter .section-content{text-align:left;margin-bottom:30px;font-size:16px}.newsletter .row.form a,.newsletter .row.form a:visited{color:#000}
+.newsletter form{text-align:left;margin-bottom:30px;width:100%;text-align:center}
+.newsletter form label{display:none}.newsletter form input{width:100%;padding:5px}
+.newsletter form input[type="submit"]{height:30px;line-height:28px;padding:0 12px 2px;background-color:#fff;color:#008ec2;border-color:#fff;width:50%;border-width:1px;border-radius:5px;margin-top:15px}
+.newsletter form input[type="submit"]:hover,.newsletter form input[type="submit"]:active{background:#008ec2;border-color:#008ec2;color:#fff}
+.koksijde-back-to-top{display:inline-block;height:40px;width:40px;position:fixed;bottom:40px;right:10px;-webkit-box-shadow:0 0 10px rgba(0,0,0,0.05);box-shadow:0 0 10px rgba(0,0,0,0.05);overflow:hidden;text-indent:100%;white-space:nowrap;background:#048dfd url(inc/images/cd-top-arrow.svg) no-repeat center 50%;visibility:hidden;opacity:0;-webkit-transition:opacity .3s 0s,visibility 0s .3s;transition:opacity .3s 0s,visibility 0s .3s}
 .koksijde-back-to-top.btt-is-visible,.koksijde-back-to-top.btt-fade-out,.no-touch .koksijde-back-to-top:hover{-webkit-transition:opacity .3s 0s,visibility 0s 0s;transition:opacity .3s 0s,visibility 0s 0s}
 .koksijde-back-to-top.btt-is-visible{visibility:visible;opacity:1}.koksijde-back-to-top.btt-fade-out{opacity:.5}
 .no-touch .koksijde-back-to-top:hover{background-color:#e86256;opacity:1}@media only screen and (min-width:768px){.koksijde-back-to-top{right:20px;bottom:20px}
 }@media only screen and (min-width:1024px){.koksijde-back-to-top{height:60px;width:60px;right:30px;bottom:30px}
-}.jumbotron.home{background:#333;text-align:center;background-image:radial-gradient(circle closest-corner at 50% 50%,rgba(0,0,0,0.54),rgba(0,0,0,0.85)),url("inc/images/crowds.jpg");background-position:0 0,50% 50%;background-size:auto,cover;background-repeat:repeat,no-repeat;background-attachment:scroll,scroll;color:#fff;padding-top:78px;padding-bottom:78px;border-radius:0}
+}.jumbotron.home{background:#333;text-align:center;background-image:radial-gradient(circle closest-corner at 50% 50%,rgba(0,0,0,0.54),rgba(0,0,0,0.85)),url("inc/images/crowds.jpg");background-position:0 0,50% 50%;background-size:auto,cover;background-repeat:repeat,no-repeat;background-attachment:scroll,scroll;color:#fff;border-radius:0;margin-bottom:0}
 .home .title{font-family:'Arvo',serif;font-size:50px;font-weight:700;padding-bottom:30px}
 .home .slogan{font-size:22px;font-style:italic;padding-bottom:30px}.home .join-now,.home .my-team{color:#fff;background-color:#18a9e1;border-color:#1a84e1;padding:15px 30px;text-transform:uppercase;font-size:20px;font-weight:bold}
 .how-to-play{text-align:center;margin-bottom:30px}.how-to-play .title{font-family:'Arvo',serif;font-size:40px;font-weight:700;padding-bottom:30px;text-align:center}
@@ -141,13 +148,13 @@ img{max-width:100%;height:auto}.wp-caption{background:#fff;border:1px solid #f0f
 .fantasy-cycling-rider .rider-results .race-class,.fantasy-cycling-rider .rider-results .rider-place,.fantasy-cycling-rider .rider-results .rider-points{text-align:center}
 .fantasy-cycling-standings .fc-standings .row:nth-child(even){background:#eee}.fantasy-cycling-roster .active-roster-list .row:nth-child(odd),.fantasy-cycling-roster .fc-roster .fc-results .row:nth-child(even){background:#eee}
 .fantasy-cycling-roster .race-details{margin-top:15px;margin-bottom:15px}.fantasy-cycling-roster .fc-results{margin-bottom:15px}
-.fantasy-cycling-schedule .fc-races .row:nth-child(even){background:#eee}.tru-blog-landing .title h2{font-size:25px}
-.tru-blog-landing .excerpt{margin-top:15px;margin-bottom:25px}footer.entry-meta{margin-top:0;padding:5px 10px}
-.tru-blog-single .entry-meta{margin-bottom:15px}footer .footer-col{margin-bottom:1.2em}
-footer{margin-top:30px;padding-top:30px;background-color:#eee}.home footer{margin-top:0}
-footer h3{margin-top:0}footer .footer-social{text-align:center}footer .footer-widgets .social{overflow:hidden;display:inline-block}
-footer .social>li{float:left}footer .social>li>i{font-size:30px;margin-right:15px}
-footer .primary-copyright{text-align:center}footer{border-top:0;background:#e7e7e7;margin-top:30px}
-footer .footer-widgets{padding:10px 0 20px 0}footer .footer-widgets ul{list-style-type:none;padding:0;margin:0}
-footer .copyright{padding:10px 0;text-align:center}.infinite-scroll .posts-navigation,.infinite-scroll.neverending .site-footer{display:none}
+.fantasy-cycling-schedule .fc-races .row:nth-child(even){background:#eee}.tru-blog-landing .title h2{font-size:1.5rem}
+.tru-blog-landing .excerpt{margin-top:1rem;margin-bottom:2rem}.tru-blog-single .entry-meta{margin-bottom:15px}
+footer .footer-col{margin-bottom:1.2em}footer{margin-top:30px;padding-top:30px;background-color:#eee}
+.home footer{margin-top:0}footer h3{margin-top:0}footer .footer-social{text-align:center}
+footer .footer-widgets .social{overflow:hidden;display:inline-block}footer .social>li{float:left}
+footer .social>li>i{font-size:30px;margin-right:15px}footer .primary-copyright{text-align:center}
+footer{border-top:0;background:#e7e7e7;margin-top:30px}footer .footer-widgets{padding:10px 0 20px 0}
+footer .footer-widgets ul{list-style-type:none;padding:0;margin:0}footer .copyright{padding:10px 0;text-align:center}
+.infinite-scroll .posts-navigation,.infinite-scroll.neverending .site-footer{display:none}
 .infinity-end.neverending .site-footer{display:block}

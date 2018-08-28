@@ -1,3 +1,4 @@
+/* posts navigation (not used?) */
 .posts-navigation,
 .post-navigation { 
 	overflow: hidden;
@@ -23,4 +24,31 @@
     }
 
 	.nav-links .nav-title {}
+}
+
+/* single post */
+.single-post {
+    .entry-header {
+        margin-bottom: 15px;
+
+        .entry-meta {
+            .entry-date {
+                font-style: italic;
+            }
+        }        
+    }
+    
+    footer.entry-meta {
+        background: $extra_light_gray;
+        margin-top: 0;
+        padding: 10px 15px;
+        
+        .tag-links {
+            a {
+                &:not(:first-child):before {
+                    content: ', ';
+                }
+            }
+        }
+    }
 }
