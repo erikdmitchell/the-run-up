@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: TRU Front Page
+ * Template Name: TRU Front Page Live
 **/
 ?>
 <?php get_header(); ?>
@@ -49,16 +49,22 @@
 
 <div class="container-fluid home-about">
 	<div class="container">
+    	
 		<div class="row section-title">
-			<div class="col-xs-12">
+			<div class="col">
 				<h1>About The Run Up</h1>
 			</div>
 		</div>
-		<div class="row">
-			<?php get_template_part('content-home', 'about'); ?>
+		
+		<div class="row justify-content-center">
+			<?php get_template_part('template-parts/content-home', 'about'); ?>
 		</div>
+		
 	</div>
 </div>
+
+<?php if (have_posts()) : ?>
+<!--
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -66,7 +72,9 @@
 					<?php the_content(); ?>
 				<?php endwhile; ?>
 			</div>
-		</div><!-- .row -->
-	</div><!-- .container -->
+		</div>
+	</div>
+-->
+<?php endif; ?>
 
 <?php get_footer(); ?>

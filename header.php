@@ -18,29 +18,27 @@
 
   <body <?php body_class('tru'); ?>>
 
-	<nav class="navbar navbar-default <?php tru_navbar_classes(); ?>" role="navigation">
-		<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".koksijde-theme-mobile-menu">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logos/logo-sm.png " height="93" width="204" alt="the run up logo" /></a>
-		</div>
-		<?php koksijde_secondary_navigation_setup(); ?>
-		<div class="collapse navbar-collapse primary-menu">
+	<nav class="navbar navbar-expand-md<?php tru_navbar_classes(); ?>">
+        
+        <a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/inc/images/logos/logo-sm.png " height="93" width="204" alt="the run up logo" /></a>
+      
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primary-menu" aria-controls="primary-menu" aria-expanded="true" aria-label="Toggle navigation">
+            <i class="fa fa-bars fa-1x"></i>
+        </button>
+        
+        <?php //tru_secondary_navigation_setup(); ?>
+
+        <div class="navbar-collapse collapse primary-menu" id="primary-menu">
 			<?php
 			wp_nav_menu(array(
 				'theme_location' => 'primary',
 				'container' => false,
-				'menu_class' => 'nav navbar-nav pull-right',
-				'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-				'walker' => new koksijde_wp_bootstrap_navwalker()
+				'menu_class' => 'navbar-nav ml-auto',
+				'fallback_cb' => 'tru_wp_bootstrap_navwalker::fallback',
+				'walker' => new tru_wp_bootstrap_navwalker()
 			));
-			?>
-		</div> <!-- .primary-menu -->
-		<?php koksijde_mobile_navigation_setup(); ?>
-		</div>
-	</nav>
+			?> 
+        </div>
+        
+        <?php //tru_mobile_navigation_setup(); ?>
+    </nav>

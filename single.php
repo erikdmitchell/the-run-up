@@ -2,9 +2,9 @@
 
 	<?php
 	if (in_category('blog')) :
-		get_template_part('content', 'single-blog');	
+		get_template_part('template-parts/content', 'single-blog');	
 	else :
-		get_template_part('content', 'single');
+		get_template_part('template-parts/content', 'single');
 	endif;	
 	?>
 
