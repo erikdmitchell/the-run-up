@@ -3,7 +3,7 @@
  * Main page template
  *
  * @subpackage the-run-up
- * @since the-run-up 1.0.0
+ * @since 1.0.0
  */
 
 get_header(); ?>
