@@ -239,9 +239,7 @@ function tru_theme_setup() {
 	/**
 	 * include bootstrap mobile nav walker
 	 */
-	include_once(get_stylesheet_directory().'/inc/mobile-nav-walker.php');
-	
-	include_once(get_stylesheet_directory().'/inc/custom-login.php');	
+	include_once(get_stylesheet_directory().'/inc/mobile-nav-walker.php');	
 
 	// register our navigation area
 	register_nav_menus( array(
