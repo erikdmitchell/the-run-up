@@ -78,7 +78,10 @@ img{max-width:100%;height:auto}.wp-caption{background:#fff;border:1px solid #f0f
 .entry-header .entry-meta>span{margin-right:15px}.entry-header .entry-meta span.glyphicon{margin-right:3px}
 .posts-navigation,.post-navigation{overflow:hidden;padding:15px 0}.posts-navigation .nav-links>div{float:left;width:50%}
 .posts-navigation .nav-next{text-align:right}.posts-navigation .nav-links .nav-subtitle{color:#000}
-.posts-navigation .nav-links a:hover{text-decoration:none}.home .newsletter{color:#fff;background-color:#18a9e1;border-color:#1a84e1;padding:15px 30px;text-align:center}
+.posts-navigation .nav-links a:hover{text-decoration:none}.single-post .entry-header{margin-bottom:15px}
+.single-post .entry-header .entry-meta .entry-date{font-style:italic}.single-post footer.entry-meta{background:#f8f8f8;margin-top:0;padding:10px 15px}
+.single-post footer.entry-meta .tag-links a:not(:first-child):before{content:', '}
+.home .newsletter{color:#fff;background-color:#18a9e1;border-color:#1a84e1;padding:15px 30px;text-align:center}
 .newsletter .section-title{font-family:'Arvo',serif;font-size:40px;font-weight:700;padding-bottom:30px;text-align:center}
 .newsletter .section-content{text-align:left;margin-bottom:30px;font-size:16px}.newsletter .row.form a,.newsletter .row.form a:visited{color:#000}
 .newsletter form{text-align:left;margin-bottom:30px;width:100%;text-align:center}

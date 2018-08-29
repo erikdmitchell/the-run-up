@@ -172,6 +172,10 @@ body.home {
 	font-weight: bold;
 	font-size: 1.25em;
 	margin-top: 5px;
+	
+	&.hidden {
+    	display: none;
+	}
 }
 .fantasy-cycling-my-team .my-team-list .rider span.add-remove {
 	padding-left: 0;
