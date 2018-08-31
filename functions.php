@@ -39,7 +39,7 @@ function tru_scripts_styles() {
 
 	// enqueue stylesheets
 	wp_enqueue_style('google-fonts-arvo', 'https://fonts.googleapis.com/css?family=Arvo:400,700,400italic');
-	wp_enqueue_style('bootstrap-style', get_stylesheet_directory_uri().'/inc/css/bootstrap.min.css', array(), '4.1.3');	
+	wp_enqueue_style('bootstrap-grid-style', get_stylesheet_directory_uri().'/inc/css/bootstrap-grid.min.css', array(), '4.1.3');	
 	wp_enqueue_style('tru-theme-style', get_stylesheet_uri());
 }
 add_action('wp_enqueue_scripts', 'tru_scripts_styles');
