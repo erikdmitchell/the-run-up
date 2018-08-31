@@ -31,18 +31,18 @@
 
 .dropdown-submenu > li > a:hover,
 .dropdown-submenu > li > a:focus { 
-	color: $gray_15;
+	color: $extra_dark_gray;
 	text-decoration: none;
-	background-color: $white_smoke;
+	background-color: $white;
 }
 
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus { 
-	background-color: $gray_91;
-	background-image: -webkit-gradient(linear, left 0%, left 100%, from($white_smoke), to($gray_91));
-	background-image: -webkit-linear-gradient(top, $white_smoke 0%, $gray_91 100%);
-	background-image: -moz-linear-gradient(top, $white_smoke 0%, $gray_91 100%);
-	background-image: linear-gradient(to bottom, $white_smoke 0%, $gray_91 100%);
+	background-color: $light_gray;
+	background-image: -webkit-gradient(linear, left 0%, left 100%, from($white), to($light_gray));
+	background-image: -webkit-linear-gradient(top, $white 0%, $light_gray 100%);
+	background-image: -moz-linear-gradient(top, $white 0%, $light_gray 100%);
+	background-image: linear-gradient(to bottom, $white 0%, $light_gray 100%);
 	background-repeat: repeat-x;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);
 }
