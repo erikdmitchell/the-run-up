@@ -17,7 +17,6 @@ function tru_scripts_styles() {
 
 	// enqueue our scripts for theme
 	wp_enqueue_script('jquery');
-	wp_enqueue_script('bootstrap-script', get_stylesheet_directory_uri().'/inc/js/bootstrap.min.js', array('jquery'), '4.1.3', true);
 	wp_enqueue_script('tru-theme-script', get_stylesheet_directory_uri().'/inc/js/tru-theme.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('tru-front-page-script', get_stylesheet_directory_uri().'/inc/js/front-page.js', array('jquery'), '0.1.0', true);
 	wp_enqueue_script('tru-team-script', get_stylesheet_directory_uri().'/inc/js/team.js', array('jquery'), '0.1.0', true);	
