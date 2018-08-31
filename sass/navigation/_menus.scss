@@ -1,35 +1,48 @@
 .navbar {
-    background-color: $white;
+    //background-color: $white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
     
     .header-logo {
         float: left;
-        margin-right: 30px;
+        margin-right: auto;
         margin-left: 15px;    
     }
     
     .navbar-toggler {
-        background-color: $dark_gray;
+        //background-color: $dark_gray;
         margin-right: 15px;
         float: right;
         
         &:hover {
-            padding: 0.25rem 0.75rem;
-            border-color: $light_gray;
+            //padding: 0.25rem 0.75rem;
+            //border-color: $light_gray;
             
             .fa-bars {
-                color: $light_gray;
+                //color: $light_gray;
             }
         }        
     }
     
     .primary-menu {
         .navbar-nav {
-            .menu-item {
+            list-style-type: none;
+            overflow: hidden;
+            
+            li {
                 margin-right: 15px;
-                
+                float: left;
+                    
                 a {
         	        color: $black;
         	        padding: 0.25rem 0.75rem;
+        	        text-decoration: none;
+        	        
+        	        &:visited {
+            	        color: $black;
+        	        }
         	    
                     &:focus,
                     &:hover {
@@ -49,5 +62,13 @@
                 }
             }
         }   
+    }
+    
+    &:after {
+        content: " "; /* Older browser do not support empty content */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
     }
 }
