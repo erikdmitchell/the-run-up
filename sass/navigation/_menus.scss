@@ -1,18 +1,17 @@
 .navbar {
-    //background-color: $white;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    
+
     .header-logo {
-        float: left;
-        margin-right: auto;
-        margin-left: 15px;    
+        margin-left: 15px; 
+        
+        @media (min-width: 768px) {
+            float: left;
+        }           
     }
     
     .navbar-toggler {
-        margin-right: 15px;
+        position: absolute;
+        top: 15px;
+        right: 15px;
         
         &:hover {}   
         
@@ -20,56 +19,52 @@
             display: none;
         }     
     }
-    
-    .primary-menu {
+
+    .navbar-nav {
+        list-style-type: none;
+        flex-direction: column;
         display: none;
         
-        @media (min-width: 768px) {
-            display: block;
-        } 
+        li {
+            text-align: center;
+            margin: 15px auto;
+                
+            a {
+    	        color: $black;
+    	        padding: 0.25rem 0.75rem;
+    	        text-decoration: none;
+    	        
+    	        &:visited {
+        	        color: $black;
+    	        }
+    	    
+                &:focus,
+                &:hover {
+                    color: $dark_gray;
+                    background-color: transparent;
+                    text-decoration: none;    	    
+                }                    
+            }
         
-        .navbar-nav {
-            list-style-type: none;
-            overflow: hidden;
+            &.active {
+                color: $dark_gray;
+                
+                &:focus,
+                &:hover {
+                    color: $dark_gray;    	    
+                }     
+            }
+        }
+        
+        @media (min-width: 768px) {
+            display: inline-block !important;
+            float: right;
+            margin-right: 15px;
             
             li {
-                margin-right: 15px;
                 float: left;
-                    
-                a {
-        	        color: $black;
-        	        padding: 0.25rem 0.75rem;
-        	        text-decoration: none;
-        	        
-        	        &:visited {
-            	        color: $black;
-        	        }
-        	    
-                    &:focus,
-                    &:hover {
-                        color: $dark_gray;
-                        background-color: transparent;
-                        text-decoration: none;    	    
-                    }                    
-                }
-            
-                &.active {
-                    color: $dark_gray;
-                    
-                    &:focus,
-                    &:hover {
-                        color: $dark_gray;    	    
-                    }     
-                }
             }
-        }   
-    }
-    
-    &:after {
-        content: " "; /* Older browser do not support empty content */
-        visibility: hidden;
-        display: block;
-        height: 0;
-        clear: both;
-    }
+        } 
+    }   
+
 }
