@@ -35,12 +35,14 @@ jQuery(document).ready(function($) {
 });
 
 /**
- * hamburger nav
+ * nav functions
  */
 jQuery(document).ready(function($) {
+    var $window = $(window);
     var $navbar = $('.navbar-nav');
     var $navbarToggle = $('.navbar-toggler');
     
+    // hamburger nav.
     $navbarToggle.on('click', function() {        
         if ($navbar.hasClass('active')) {
             $navbar.css('display', 'none');
@@ -50,5 +52,19 @@ jQuery(document).ready(function($) {
             $navbar.addClass('active');            
         }
     });
+    
+    // sets up menu based on window size.
+    function checkWidth() {
+        var windowSize = $window.width();
+        
+        if (windowSize > 768) {
+            $navbar.css('display', 'inline-block');    
+        } else {
+            $navbar.css('display', 'none');
+        }
+    }
 
+    checkWidth();
+    
+    $(window).resize(checkWidth);
 });

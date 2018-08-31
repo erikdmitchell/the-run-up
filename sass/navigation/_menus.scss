@@ -24,10 +24,11 @@
         list-style-type: none;
         flex-direction: column;
         display: none;
+        padding: 0;
         
         li {
             text-align: center;
-            margin: 15px auto;
+            margin: 15px auto 0;
                 
             a {
     	        color: $black;
@@ -57,7 +58,6 @@
         }
         
         @media (min-width: 768px) {
-            display: inline-block !important;
             float: right;
             margin-right: 15px;
             
