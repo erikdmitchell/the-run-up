@@ -29,6 +29,40 @@
 							) );
 						?>
 					</div><!-- .entry-content -->
+										
+                    <?php if ( have_rows('rider') ): ?>
+                        <?php $counter = count( get_field('rider') ); ?>
+                        <!-- power rankings -->
+                    	
+                    	<ul class="power-rankings">
+                        	<?php while( have_rows('rider') ): the_row(); 
+                        
+                        		// vars
+                        		$name = get_sub_field('name');
+                        		$content = get_sub_field('details');
+                        		$image = get_sub_field('image');
+                        
+                        		?>
+                        
+                        		<li class="rider">
+                                    <div class="rider-rank"><?php echo $counter; ?></div>
+                                    
+                        			<?php if ( $image ): ?>
+                        				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+                        			<?php endif; ?>
+                        
+                                    <div class="rider-name"><?php echo $name; ?></div>
+                                    
+                                    <?php echo $content; ?>
+                        		</li>
+                        		
+                        		<?php $counter--; ?>
+                        
+                        	<?php endwhile; ?>
+                    
+                    	</ul>
+                    
+                    <?php endif; ?>					
 				
 					<?php the_tags( '<footer class="entry-meta"><span class="tag-links">', ' ', '</span></footer>' ); ?>
 				</article><!-- #post-## -->
