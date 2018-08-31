@@ -26,23 +26,26 @@
 		<div class="col-md-12 title">
 			How to Play
 		</div>
-		<div class="col-md-2 step-1">
-			<i class="fa fa-pencil-square-o icon" aria-hidden="true"></i>
-			<div class="text">Sign up for Free</div>
-		</div>
-		<div class="col-md-3 arrow">
-			<i class="fa fa-chevron-right icon" aria-hidden="true"></i>
-		</div>
-		<div class="col-md-2 step-2">
-			<i class="fa fa-users icon" aria-hidden="true"></i>
-			<div class="text">Select riders for your team</div>
-		</div>
-		<div class="col-md-3 arrow">
-			<i class="fa fa-chevron-right icon" aria-hidden="true"></i>
-		</div>
-		<div class="col-md-2 step-3">
-			<i class="fa fa-trophy icon" aria-hidden="true"></i>
-			<div class="text">Win and brag to your friends</div>
+		
+		<div class="icons-wrapper">
+    		<div class="col-md-2 step-1">
+                <i class="material-icons">create</i>
+    			<div class="text">Sign up for Free</div>
+    		</div>
+    		<div class="col-md-3 arrow">
+                <i class="material-icons">chevron_right</i>
+    		</div>
+    		<div class="col-md-2 step-2">
+                <i class="material-icons">people</i>
+    			<div class="text">Select riders for your team</div>
+    		</div>
+    		<div class="col-md-3 arrow">
+    			<i class="material-icons">chevron_right</i>
+    		</div>
+    		<div class="col-md-2 step-3">
+    			<i class="material-icons">mood</i>
+    			<div class="text">Win and brag to your friends</div>
+    		</div>
 		</div>
 	</div>
 </div>

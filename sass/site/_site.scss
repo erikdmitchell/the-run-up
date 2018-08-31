@@ -69,25 +69,32 @@
 .how-to-play {
 	text-align: center;
 	margin-bottom: 30px;
-}
-.how-to-play .title {
-	font-family: 'Arvo', serif;
-	font-size: 40px;
-	font-weight: 700;
-	padding-bottom: 30px;
-	text-align: center;
-}
-.how-to-play .text {
-	font-size: 16px;
-}
-.how-to-play .icon {
-	font-size: 8em;
-	margin-bottom: 15px;
-}
-.how-to-play .arrow .icon {
-	font-size: 6em;
-	margin-bottom: 0;
-	margin-top: 20px;
+    
+    .title {
+	    font-family: 'Arvo', serif;
+    	font-size: 40px;
+    	font-weight: 700;
+    	padding-bottom: 30px;
+    	text-align: center;
+    }
+    
+    .icons-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    .text {
+	    font-size: 16px;
+    }
+    
+    i {
+	    font-size: 6em;
+    }
+
+    .arrow i {
+	    font-size: 8em;
+    }
 }
 .home-about {
 	background-color: #18A9E1;
