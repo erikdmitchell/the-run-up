@@ -1,37 +1,39 @@
-// general colors
-$font-color: #000;
-$font-color-light: #fff;
+// palette.
 $white: #fff;
 $black: #000;
-$dark_gray: #777;
-$light_gray: #ccc;
-$extra_dark_gray: #333;
-$extra_light_gray: #f8f8f8;
+$blue: #0C97FF;
+$green: #30BB5E;
+$yellow: #FFCB4D;
+$light-gray: #D3D3D3;
+$gray: #808080;
+$dark-gray: #585858;
 
-$color__background-body: #fff;
-$color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
-$color__background-pre: #eee;
-$color__background-ins: #fff9c0;
+// font color.
+$font-color: #000;
+$font-color-light: #fff;
 
-$color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link: royalblue;
-$color__link-visited: purple;
-$color__link-hover: midnightblue;
-$color__text-main: #404040;
+// background colors.
+$color__background-body: $white;
+$color__background-screen: $light-gray;
+$color__background-hr: $gray;
+$color__background-button: $light-gray;
+$color__background-pre: $light-gray;
+$color__background-ins: $yellow;
 
-$color__border-button: #ccc #ccc #bbb;
-$color__border-button-hover: #ccc #bbb #aaa;
-$color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: #ccc;
-$color__border-abbr: #666;
+// text colors.
+$color__text-screen: $blue;
+$color__text-input: $dark-gray;
+$color__text-input-focus: $black;
+$color__text-main: $font-color;
 
-// to be updated
-$blue: #4286f4;
-$nav-blue: #4286f4;
-$nav-light-blue: #84b3ff;
-$bright-blue: #84b3ff;
-$light-red: #dd6363;
+// link colors.
+$color__link: $black;
+$color__link-visited: $black;
+$color__link-hover: $gray;
+
+// border colors.
+$color__border-button: $gray $gray $dark-gray;
+$color__border-button-hover: $gray $dark-gray $gray;
+$color__border-button-focus: $gray $dark-gray $dark-gray;
+$color__border-input: $gray;
+$color__border-abbr: $dark-gray;

@@ -1,4 +1,4 @@
-.koksijde-back-to-top {
+.tru-back-to-top {
 	display: inline-block;
 	height: 40px;
 	width: 40px;
@@ -10,7 +10,7 @@
 	overflow: hidden;
 	text-indent: 100%;
 	white-space: nowrap;
-	background: $bright_blue url(inc/images/cd-top-arrow.svg) no-repeat center 50%;
+	background: $blue url(inc/images/cd-top-arrow.svg) no-repeat center 50%;
 	visibility: hidden;
 	opacity: 0;
 	-webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
@@ -18,37 +18,37 @@
 	transition: opacity 0.3s 0s, visibility 0s 0.3s ;
 }
 
-.koksijde-back-to-top.btt-is-visible,
-.koksijde-back-to-top.btt-fade-out,
-.no-touch .koksijde-back-to-top:hover {
+.tru-back-to-top.btt-is-visible,
+.tru-back-to-top.btt-fade-out,
+.no-touch .tru-back-to-top:hover {
 	transition: opacity 0.3s 0s, visibility 0s 0s;
 }
 
-.koksijde-back-to-top.btt-is-visible { 
+.tru-back-to-top.btt-is-visible { 
 	/* the button becomes visible */
 	visibility: visible;
 	opacity: 1;
 }
 
-.koksijde-back-to-top.btt-fade-out { 
+.tru-back-to-top.btt-fade-out { 
 	/* if the user keeps scrolling down, the button is out of focus and becomes less visible */
 	opacity: .5;
 }
 
-.no-touch .koksijde-back-to-top:hover { 
-	background-color: $light_red;
+.no-touch .tru-back-to-top:hover { 
+	background-color: $blue;
 	opacity: 1;
 }
 
 @media only screen and (min-width: 768px) { 
-	.koksijde-back-to-top { 
+	.tru-back-to-top { 
 		right: 20px;
 		bottom: 20px;  
     }
 }
 
 @media only screen and (min-width: 1024px) { 
-	.koksijde-back-to-top { 
+	.tru-back-to-top { 
 		height: 60px;
 		width: 60px;
 		right: 30px;
