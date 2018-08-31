@@ -34,7 +34,7 @@
                         <?php $counter = count( get_field('rider') ); ?>
                         <!-- power rankings -->
                     	
-                    	<ul class="power-rankings">
+                    	<div class="container power-rankings">
                         	<?php while( have_rows('rider') ): the_row(); 
                         
                         		// vars
@@ -44,23 +44,29 @@
                         
                         		?>
                         
-                        		<li class="rider">
-                                    <div class="rider-rank"><?php echo $counter; ?></div>
+                        		<div class="row rider">
+                            		
+                            		<div class="image-wrap col-2">
+                            			<?php if ( $image ): ?>
+                            				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+                                        <?php endif; ?>
+                    			    </div>
+                    			                            			
+                        			<div class="col-10">
+                                        <div class="rider-rank">
+                                            <?php echo $counter; ?>. 
+                                            <span class="rider-name"><?php echo $name; ?></span>
+                                        </div>
                                     
-                        			<?php if ( $image ): ?>
-                        				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
-                        			<?php endif; ?>
-                        
-                                    <div class="rider-name"><?php echo $name; ?></div>
-                                    
-                                    <?php echo $content; ?>
-                        		</li>
+                                        <?php echo $content; ?>
+                        			</div>
+                        		</div>
                         		
                         		<?php $counter--; ?>
                         
                         	<?php endwhile; ?>
                     
-                    	</ul>
+                    	</div>
                     
                     <?php endif; ?>					
 				

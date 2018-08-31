@@ -13,7 +13,27 @@
 }
 
 /* blog single */
-.tru-blog-single footer.entry-meta {
-	margin-bottom: 15px;
-	background: $whitesmoke;
+.tru-blog-single { 
+    footer.entry-meta {
+	    margin-bottom: 15px;
+        background: $whitesmoke;
+    }
+	
+	.power-rankings {
+    	list-style-type: none;
+    	
+    	.rider {
+        	.rider-rank {}
+        	.image-wrap {
+            	display: flex;
+            	flex-wrap: wrap;
+            	align-items: center;
+        	}
+        	.rider-name {
+            	font-weight: bold;
+            	margin-left: 5px;
+        	}
+        	p {}
+    	}
+	}
 }
