@@ -97,23 +97,6 @@ function tru_primary_nav_menu_args( $args = '' ) {
 add_filter('wp_nav_menu_args', 'tru_primary_nav_menu_args');
 
 /**
- * tru_navbar_classes function.
- *
- * @access public
- * @param string $classes (default: '')
- * @return void
- */
-function tru_navbar_classes($classes='') {
-	if (is_front_page()) :
-		$classes.=' navbar-fixed-top';
-	else :
-		$classes.=' tru-header-nav';
-	endif;
-
-	echo $classes;
-}
-
-/**
  * tru_theme_posted_on function.
  *
  * @access public
