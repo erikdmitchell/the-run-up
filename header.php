@@ -19,26 +19,26 @@
         <?php wp_head(); ?>
     </head>
 
-  <body <?php body_class('tru'); ?>>
+    <body <?php body_class('tru'); ?>>
 
-	<nav class="navbar tru-header-nav">
-        
-        <div class="header-logo">
-            <a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/inc/images/logos/logo-sm.png " height="93" width="204" alt="the run up logo" /></a>
-        </div>
-      
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primary-menu" aria-controls="primary-menu" aria-expanded="true" aria-label="Toggle navigation">
-            <i class="fa fa-bars fa-1x"></i>
-        </button>
-
-        <div class="primary-menu" id="primary-menu">
-			<?php
-			wp_nav_menu(array(
-				'theme_location' => 'primary',
-				'container' => false,
-				'menu_class' => 'navbar-nav',
-			));
-			?> 
-        </div>
-
-    </nav>
+    	<nav class="navbar tru-header-nav">
+            
+            <div class="header-logo">
+                <a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/inc/images/logos/logo-sm.png " height="93" width="204" alt="the run up logo" /></a>
+            </div>
+    
+            <div class="primary-menu" id="primary-menu">
+    			<?php
+    			wp_nav_menu(array(
+    				'theme_location' => 'primary',
+    				'container' => false,
+    				'menu_class' => 'navbar-nav',
+    			));
+    			?> 
+            </div>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primary-menu" aria-controls="primary-menu" aria-expanded="true" aria-label="Toggle navigation">
+                <i class="material-icons">menu</i>
+            </button>
+    
+        </nav>
