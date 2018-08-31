@@ -12,21 +12,22 @@
     }
     
     .navbar-toggler {
-        //background-color: $dark_gray;
         margin-right: 15px;
-        float: right;
         
-        &:hover {
-            //padding: 0.25rem 0.75rem;
-            //border-color: $light_gray;
-            
-            .fa-bars {
-                //color: $light_gray;
-            }
-        }        
+        &:hover {}   
+        
+        @media (min-width: 768px) {
+            display: none;
+        }     
     }
     
     .primary-menu {
+        display: none;
+        
+        @media (min-width: 768px) {
+            display: block;
+        } 
+        
         .navbar-nav {
             list-style-type: none;
             overflow: hidden;
