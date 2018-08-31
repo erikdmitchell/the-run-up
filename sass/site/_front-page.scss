@@ -34,9 +34,11 @@
   font-size: 20px;
   font-weight: bold;
 }
+
 .how-to-play {
 	text-align: center;
-	margin-bottom: 30px;
+	padding-bottom: 30px;
+	padding-top: 30px;
     
     .title {
 	    font-family: 'Arvo', serif;
@@ -50,20 +52,46 @@
         display: flex;
         flex-wrap: wrap;
         align-content: center;
-    }
-
-    .text {
-	    font-size: 16px;
-    }
     
-    i {
-	    font-size: 6em;
-    }
-
-    .arrow i {
-	    font-size: 8em;
-    }
+        .text {
+    	    font-size: 16px;
+        }
+        
+        i {
+    	    font-size: 6em;
+        }
+    
+        .arrow i {
+    	    font-size: 8em;
+    	    color: $gray;
+        }
+    
+        .step-1 {
+            color: $green;
+            
+            .text {
+                color: $font-color;
+            }
+        }
+        
+        .step-2 {
+            color: $blue;
+            
+            .text {
+                color: $font-color;
+            }
+        }
+        
+        .step-3 {
+            color: $font-color;
+            
+            .text {
+                color: $font-color;
+            }
+        } 
+    }     
 }
+
 .home-about {
 	background-color: #18A9E1;
 	padding-top: 30px;

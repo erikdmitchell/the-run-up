@@ -1,8 +1,8 @@
 .home .newsletter {
 	color: #fff;
-	background-color: #18A9E1;
-	border-color: #1a84e1;
-	padding: 15px 30px;
+	background-color: $blue;
+	padding-top: 30px;
+	padding-bottom: 30px;
 	text-align: center;
 }
 .newsletter .section-title {
@@ -24,7 +24,7 @@
     .row.form {
         a,
         a:visited {
-            color: $black;
+            color: $dark-gray;
         }
     }
 }
