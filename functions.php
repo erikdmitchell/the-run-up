@@ -22,7 +22,7 @@ function tru_scripts_styles() {
 	// enqueue our scripts for theme
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('bootstrap-script', get_stylesheet_directory_uri().'/inc/js/bootstrap.min.js', array('jquery'), '4.1.3', true);
-	wp_enqueue_script('koksijde-theme-script', get_stylesheet_directory_uri().'/inc/js/tru-theme.js', array('jquery'), '1.0.0', true);
+	wp_enqueue_script('tru-theme-script', get_stylesheet_directory_uri().'/inc/js/tru-theme.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script('tru-front-page-script', get_stylesheet_directory_uri().'/inc/js/front-page.js', array('jquery'), '0.1.0', true);
 	wp_enqueue_script('tru-team-script', get_stylesheet_directory_uri().'/inc/js/team.js', array('jquery'), '0.1.0', true);	
 
@@ -101,36 +101,6 @@ function tru_primary_nav_menu_args( $args = '' ) {
 	return $args;
 }
 add_filter('wp_nav_menu_args', 'tru_primary_nav_menu_args');
-
-/**
- * tru_faqs_shortcode function.
- *
- * @access public
- * @param string $atts (default: '')
- * @return void
- */
-function tru_faqs_shortcode($atts='') {
-	$html='';
-	$posts=get_posts(array(
-		'posts_per_page' => -1,
-		'post_type' => 'faq',
-		'orderby' => 'menu_order',
-	));
-
-	$html.='<div class="tru-faqs">';
-		$html.='<ul class="tru-faqs-list">';
-			foreach ($posts as $post) :
-				$html.='<li id="faq-'.$post->ID.'" class="faq">';
-					$html.='<h2 class="faq-title">'.$post->post_title.'</h2>';
-					$html.='<div class="faq-content">'.apply_filters('the_content', $post->post_content).'</div>';
-				$html.='</li>';
-			endforeach;
-		$html.='</ul>';
-	$html.='</div>';
-
-	return $html;
-}
-add_shortcode('tru_faqs', 'tru_faqs_shortcode');
 
 /**
  * tru_navbar_classes function.
