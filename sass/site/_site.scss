@@ -18,6 +18,14 @@
 /* back to top button */
 @import "back-to-top";
 
+.clearfix:after {
+    content: " "; /* Older browser do not support empty content */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
 .jumbotron {
     padding: 4rem;
 }
