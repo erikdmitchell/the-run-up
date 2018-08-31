@@ -23,7 +23,9 @@
 
 	<nav class="navbar navbar-expand-md<?php tru_navbar_classes(); ?>">
         
-        <a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/inc/images/logos/logo-sm.png " height="93" width="204" alt="the run up logo" /></a>
+        <div class="header-logo">
+            <a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/inc/images/logos/logo-sm.png " height="93" width="204" alt="the run up logo" /></a>
+        </div>
       
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primary-menu" aria-controls="primary-menu" aria-expanded="true" aria-label="Toggle navigation">
             <i class="fa fa-bars fa-1x"></i>

@@ -1,10 +1,16 @@
-.home .navbar {
-	background-color: $white;
-}
-
 .navbar {
+    background-color: $white;
+    
+    .header-logo {
+        float: left;
+        margin-right: 30px;
+        margin-left: 15px;    
+    }
+    
     .navbar-toggler {
         background-color: $dark_gray;
+        margin-right: 15px;
+        float: right;
         
         &:hover {
             padding: 0.25rem 0.75rem;
@@ -13,49 +19,35 @@
             .fa-bars {
                 color: $light_gray;
             }
-        }
+        }        
     }
     
     .primary-menu {
         .navbar-nav {
-            > li > a {
-    	        color: $black;
-    	        padding: 0.25rem 0.75rem;
-    	    
-                &:focus,
-                &:hover {
-                    color: $dark_gray;
-                    background-color: transparent;
-                    text-decoration: none;    	    
-                }
-            }
-            
-            > .active > a {
-                color: $dark_gray;
-                //background-color: $light_gray; 
-                
-                &:focus,
-                &:hover {
-                    color: $dark_gray;
-                    //background-color: $light_gray;    	    
-                }                       
-            }
-            
             .menu-item {
                 margin-right: 15px;
-            }
-        }
-
-        /* mobile */
-        &.show {
-            //background: $light_gray;
-            //margin: 0.5rem -1rem -0.5rem -1rem;
-            //padding: 0.5rem 1rem;
-            .navbar-nav {
-                .menu-item {
-                    a {}
+                
+                a {
+        	        color: $black;
+        	        padding: 0.25rem 0.75rem;
+        	    
+                    &:focus,
+                    &:hover {
+                        color: $dark_gray;
+                        background-color: transparent;
+                        text-decoration: none;    	    
+                    }                    
+                }
+            
+                &.active {
+                    color: $dark_gray;
+                    
+                    &:focus,
+                    &:hover {
+                        color: $dark_gray;    	    
+                    }     
                 }
             }
-        }        
-    }   
+        }   
+    }
 }
