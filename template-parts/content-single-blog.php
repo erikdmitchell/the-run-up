@@ -41,18 +41,17 @@
                         		$name = get_sub_field('name');
                         		$content = get_sub_field('details');
                         		$image = get_sub_field('image');
-                        
                         		?>
                         
                         		<div class="row rider">
                             		
-                            		<div class="image-wrap col-2">
+                            		<div class="image-wrap col-3">
                             			<?php if ( $image ): ?>
-                            				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+                            				<img src="<?php echo $image['sizes']['blog-power-ranking']; ?>" alt="<?php echo $image['alt'] ?>" />
                                         <?php endif; ?>
                     			    </div>
                     			                            			
-                        			<div class="col-10">
+                        			<div class="col-9">
                                         <div class="rider-rank">
                                             <?php echo $counter; ?>. 
                                             <span class="rider-name"><?php echo $name; ?></span>

@@ -174,11 +174,12 @@ function tru_theme_setup() {
 	 * add our image size(s)
 	 */
 	add_image_size('tru-home-image', 9999, 400, true);
-	add_image_size('tru-home-blog-post-image', 555, 225, true);
+	//add_image_size('tru-home-blog-post-image', 555, 225, true);
     add_image_size('single', 1400, 480, true );
     add_image_size('blog-landing', 1200, 400, true);	
     add_image_size('blog-landing-large', 1200, 800, true);
-    add_image_size('blog-landing-right', 1200, 600, true);    	    
+    add_image_size('blog-landing-right', 1200, 600, true);    	 
+    add_image_size('blog-power-ranking', 280, 160, true);       
 
 	/**
 	 * include bootstrap nav walker
