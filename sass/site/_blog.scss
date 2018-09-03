@@ -23,11 +23,17 @@
     	list-style-type: none;
     	
     	.rider {
-        	.rider-rank {}
+        	.rider-rank {
+            	margin-top: 1em;
+        	}
         	.image-wrap {
             	display: flex;
             	flex-wrap: wrap;
             	align-items: center;
+            	
+            	img {
+                    border-radius: 5px;
+            	}
         	}
         	.rider-name {
             	font-weight: bold;
