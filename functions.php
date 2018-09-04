@@ -436,13 +436,28 @@ function tru_wp_parse_args(&$a,$b) {
 	return $result;
 }
 
+/**
+ * PCL force login whitelist urls.
+ * 
+ * @access public
+ * @param mixed $array
+ * @return void
+ */
 function tru_pcl_force_login_whitelist($array) {
     $array[] = site_url( 'faq' );
+    $array[] = site_url();
         
     return $array;
 }
 add_filter('pcl_force_login_whitelist', 'tru_pcl_force_login_whitelist');
 
+/**
+ * PCL force login regex.
+ * 
+ * @access public
+ * @param mixed $regex
+ * @return void
+ */
 function tru_pcl_force_login_regex($regex) {
     $regex[] =  '/\/blog\/?.*/m';
     
