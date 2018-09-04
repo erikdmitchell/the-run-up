@@ -2,6 +2,7 @@
 $white: #fff;
 $black: #000;
 $blue: #0C97FF;
+$dark-blue: #0a67ad;
 $green: #30BB5E;
 $yellow: #FFCB4D;
 $light-gray: #D3D3D3;
@@ -17,7 +18,7 @@ $font-color-light: #fff;
 $color__background-body: $white;
 $color__background-screen: $light-gray;
 $color__background-hr: $gray;
-$color__background-button: $light-gray;
+$color__background-button: $blue; // button
 $color__background-pre: $light-gray;
 $color__background-ins: $yellow;
 
@@ -33,8 +34,8 @@ $color__link-visited: $black;
 $color__link-hover: $gray;
 
 // border colors.
-$color__border-button: $gray $gray $dark-gray;
-$color__border-button-hover: $gray $dark-gray $gray;
-$color__border-button-focus: $gray $dark-gray $dark-gray;
+$color__border-button: $dark-blue; // button
+$color__border-button-hover: $dark-blue; // button
+$color__border-button-focus: $dark-blue; // button
 $color__border-input: $gray;
 $color__border-abbr: $dark-gray;
