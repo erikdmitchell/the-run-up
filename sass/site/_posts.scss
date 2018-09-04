@@ -42,13 +42,5 @@
         background: $light-gray;
         margin-top: 0;
         padding: 10px 15px;
-        
-        .tag-links {
-            a {
-                &:not(:first-child):before {
-                    content: ', ';
-                }
-            }
-        }
     }
 }
