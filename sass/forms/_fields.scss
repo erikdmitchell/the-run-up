@@ -1,3 +1,7 @@
+fieldset {
+    margin: 0 0 1em 0;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -22,6 +26,12 @@ textarea {
 	&:focus {
 		color: $color__text-input-focus;
 	}
+}
+
+label {
+    font-weight: 800;
+    margin-bottom: 0.5em;
+    display: block;    
 }
 
 select {
