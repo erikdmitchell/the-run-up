@@ -1,0 +1,25 @@
+.uci-results-rider .label {
+	color: #000;
+	padding: 0;
+	font-size: 100%;
+	border-radius: 0;
+}
+.uci-results .flag .flag-icon,
+.uci-results span.nat {
+	margin-left: 5px;
+}
+.uci-results-race .race-details {
+	margin-bottom: 1em;
+}
+.uci-results-rider .top-results,
+.uci-results-rider .championships {
+  margin-top: 1em;
+}
+.uci-results-main .uci-results-races .row:nth-child(odd),
+.uci-results-main .uci-results-riders .row:nth-child(odd),
+.uci-results-rider-rankings .rider-rankings .row:nth-child(even),
+.uci-results-race .single-race .row:nth-child(even),
+.uci-results-races .row:nth-child(even),
+.uci-results-rider .single-rider-results .row:nth-child(odd) {
+    background: #eee;
+}
