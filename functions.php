@@ -437,9 +437,17 @@ function tru_wp_parse_args(&$a,$b) {
 }
 
 function tru_pcl_force_login_whitelist($array) {
-    $array[] = site_url( 'blog' );
     $array[] = site_url( 'faq' );
         
     return $array;
 }
 add_filter('pcl_force_login_whitelist', 'tru_pcl_force_login_whitelist');
+
+function tru_pcl_force_login_regex($regex) {
+    $regex[] =  '/\/blog\/?.*/m';
+    
+    return $regex;
+}
+add_filter('pcl_force_login_regex', 'tru_pcl_force_login_regex');
+
+
