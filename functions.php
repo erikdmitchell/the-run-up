@@ -465,4 +465,16 @@ function tru_pcl_force_login_regex($regex) {
 }
 add_filter('pcl_force_login_regex', 'tru_pcl_force_login_regex');
 
-
+/**
+ * After registration, add team name.
+ * 
+ * @access public
+ * @param mixed $new_user_id
+ * @param mixed $fields
+ * @param mixed $post_data
+ * @return void
+ */
+function tru_pcl_after_user_registration($new_user_id, $fields, $post_data) {
+    fc_create_team( $new_user_id, $fields['team_name'] );
+}
+add_action('pcl_after_user_registration', 'tru_pcl_after_user_registration', 11, 3);

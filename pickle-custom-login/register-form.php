@@ -19,6 +19,11 @@
                 </p>
                 
                 <p>
+                    <label for="team_name" class="required">Team Name</label>
+                    <input name="pcl_registration[team_name]" id="team_name" class="" type="text"/>
+                </p>
+                
+                <p>
                     <?php pickle_custom_login()->registration->form_email_field(); ?>
                 </p>
                 
