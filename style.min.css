@@ -22,16 +22,16 @@ code,kbd,tt,var{font-family:Monaco,Consolas,"Andale Mono","DejaVu Sans Mono",mon
 abbr,acronym{border-bottom:1px dotted #585858;cursor:help}mark,ins{background:#ffcb4d;text-decoration:none}
 big{font-size:125%}@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:url("inc/fonts/MaterialIcons-Regular.eot");src:local("Material Icons"),local("MaterialIcons-Regular"),url("inc/fonts/MaterialIcons-Regular.woff2") format("woff2"),url("inc/fonts/MaterialIcons-Regular.woff") format("woff"),url("inc/fonts/MaterialIcons-Regular.ttf") format("truetype")}
 .material-icons{font-family:'Material Icons';font-weight:normal;font-style:normal;font-size:24px;display:inline-block;line-height:1;text-transform:none;letter-spacing:normal;word-wrap:normal;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;-moz-osx-font-smoothing:grayscale;-webkit-font-feature-settings:'liga';font-feature-settings:'liga'}
-button,input[type="button"],input[type="reset"],input[type="submit"]{border:1px solid;border-color:#808080 #808080 #585858;border-radius:3px;background:#d3d3d3;color:rgba(0,0,0,0.8);font-size:12px;font-size:.75rem;line-height:1;padding:.6em 1em .4em}
-button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover{border-color:#808080 #585858 gray}
-button:active,button:focus,input[type="button"]:active,input[type="button"]:focus,input[type="reset"]:active,input[type="reset"]:focus,input[type="submit"]:active,input[type="submit"]:focus{border-color:#808080 #585858 #585858}
-input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="number"],input[type="tel"],input[type="range"],input[type="date"],input[type="month"],input[type="week"],input[type="time"],input[type="datetime"],input[type="datetime-local"],input[type="color"],textarea{color:#585858;border:1px solid gray;border-radius:3px;padding:3px}
+button,input[type="button"],input[type="reset"],input[type="submit"]{border:1px solid;border-color:#0a67ad;border-radius:3px;background:#0c97ff;color:#fff;font-size:15.2px;font-size:.95rem;line-height:1;padding:.6em 1em}
+button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover{border-color:#0a67ad;color:#0c97ff;background:#fff}
+button:active,button:focus,input[type="button"]:active,input[type="button"]:focus,input[type="reset"]:active,input[type="reset"]:focus,input[type="submit"]:active,input[type="submit"]:focus{border-color:#0a67ad}
+fieldset{margin:0 0 1em 0;border-color:#d3d3d3}input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="number"],input[type="tel"],input[type="range"],input[type="date"],input[type="month"],input[type="week"],input[type="time"],input[type="datetime"],input[type="datetime-local"],input[type="color"],textarea{color:#585858;border:1px solid gray;border-radius:3px;padding:3px}
 input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="number"]:focus,input[type="tel"]:focus,input[type="range"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,input[type="color"]:focus,textarea:focus{color:#000}
-select{border:1px solid gray}textarea{width:100%}a{color:#000;text-decoration:none}
-a:visited{color:#000}a:hover,a:focus,a:active{color:gray}a:focus{outline:thin dotted}
-a:hover,a:active{outline:0}.navbar .header-logo{margin-left:15px}@media(min-width:768px){.navbar .header-logo{float:left}
-}.navbar .navbar-toggler{position:absolute;top:15px;right:15px}@media(min-width:768px){.navbar .navbar-toggler{display:none}
-}.navbar .navbar-nav{list-style-type:none;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;display:none;padding:0}
+label{font-weight:800;margin-bottom:.5em;display:block}select{border:1px solid gray}
+textarea{width:100%}a{color:#000;text-decoration:none}a:visited{color:#000}a:hover,a:focus,a:active{color:gray}
+a:focus{outline:thin dotted}a:hover,a:active{outline:0}.navbar .header-logo{margin-left:15px}
+@media(min-width:768px){.navbar .header-logo{float:left}}.navbar .navbar-toggler{position:absolute;top:15px;right:15px}
+@media(min-width:768px){.navbar .navbar-toggler{display:none}}.navbar .navbar-nav{list-style-type:none;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;display:none;padding:0}
 .navbar .navbar-nav li{text-align:center;margin:15px auto 0}.navbar .navbar-nav li a{color:#000;padding:.25rem .75rem;text-decoration:none}
 .navbar .navbar-nav li a:visited{color:#000}.navbar .navbar-nav li a:focus,.navbar .navbar-nav li a:hover{color:#585858;background-color:transparent;text-decoration:none}
 .navbar .navbar-nav li.active{color:#585858}.navbar .navbar-nav li.active:focus,.navbar .navbar-nav li.active:hover{color:#585858}
@@ -85,9 +85,7 @@ img{max-width:100%;height:auto}.wp-caption{background:#fff;border:1px solid #585
 .how-to-play .icons-wrapper .step-3 .text{color:#000}.home-about{background-color:#18a9e1;padding-top:30px;padding-bottom:30px}
 .home-about .section-title{text-align:center}.home-about h1{font-size:24px;font-weight:400;padding:0 0 15px 0;margin:0 auto;text-transform:uppercase}
 .home-about .blurb h2{font-size:16px;font-weight:800;text-transform:uppercase;margin:25px 0 10px}
-.home-about .blurb p{font-size:1.2em;line-height:1.6em}.emcl-login-form .custom-login-extras{padding:0}
-.emcl-login-form label,.emcl-registration label,.em-lost-password label{display:inline-block;width:120px}
-.em-lost-password input[type="text"],.emcl-registration input[type="text"],.emcl-registration input[type="email"],.emcl-registration input[type="password"]{width:200px}
+.home-about .blurb p{font-size:1.2em;line-height:1.6em}#pcl-registration-form input[type="submit"]{float:right}
 .uci-results-rider .label{color:#000;padding:0;font-size:100%;border-radius:0}.uci-results .flag .flag-icon,.uci-results span.nat{margin-left:5px}
 .uci-results-race .race-details{margin-bottom:1em}.uci-results-rider .top-results,.uci-results-rider .championships{margin-top:1em}
 .uci-results-main .uci-results-races .row:nth-child(odd),.uci-results-main .uci-results-riders .row:nth-child(odd),.uci-results-rider-rankings .rider-rankings .row:nth-child(even),.uci-results-race .single-race .row:nth-child(even),.uci-results-races .row:nth-child(even),.uci-results-rider .single-rider-results .row:nth-child(odd){background:#eee}
