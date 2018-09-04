@@ -9,46 +9,47 @@
 ?>
 
 <div class="pcl-registration row">
-    <div class="col-8 offset-2">
-    <form id="pcl-registration-form" class="pcl-custom-form" action="" method="POST">       
-        
-        <fieldset>
-            <p>
-                <?php pickle_custom_login()->registration->form_username_field(); ?>
-            </p>
-            
-            <p>
-                <?php pickle_custom_login()->registration->form_email_field(); ?>
-            </p>
-            
-            <p>
-                <?php pickle_custom_login()->registration->form_name_field(); ?>
-            </p>
+    <div class="col-6 offset-3">
+        <form id="pcl-registration-form" class="pcl-custom-form" action="" method="POST">       
+            <fieldset>
+                <h3>Register</h3>
                 
-            <p>
-                <?php pickle_custom_login()->registration->form_password_field(); ?>
-            </p>
-
-            <p>
-                <?php pickle_custom_login()->registration->form_recaptcha_field(); ?>
-            </p>
-            
-            <p>
-                <?php pickle_custom_login()->registration->form_register_button(); ?>
-            </p>
-
-        </fieldset>
-    </form>
+                <p>
+                    <?php pickle_custom_login()->registration->form_username_field(); ?>
+                </p>
+                
+                <p>
+                    <?php pickle_custom_login()->registration->form_email_field(); ?>
+                </p>
+                
+                <p>
+                    <?php pickle_custom_login()->registration->form_name_field(); ?>
+                </p>
+                    
+                <p>
+                    <?php pickle_custom_login()->registration->form_password_field(); ?>
+                </p>
     
-    <?php
-    pcl_login_extras(
-        array(
-            'loginout' => true,
-            'register' => false,
-            'password' => false,
-        )
-    );
-    ?>
+                <p>
+                    <?php pickle_custom_login()->registration->form_recaptcha_field(); ?>
+                </p>
+                
+                <p>
+                    <?php pickle_custom_login()->registration->form_register_button(); ?>
+                </p>
+    
+            </fieldset>
+        </form>
+        
+        <?php
+        pcl_login_extras(
+            array(
+                'loginout' => true,
+                'register' => false,
+                'password' => false,
+            )
+        );
+        ?>
     </div>
     
 </div>
