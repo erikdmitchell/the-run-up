@@ -435,3 +435,11 @@ function tru_wp_parse_args(&$a,$b) {
 
 	return $result;
 }
+
+function tru_pcl_force_login_whitelist($array) {
+    $array[] = site_url( 'blog' );
+    $array[] = site_url( 'faq' );
+        
+    return $array;
+}
+add_filter('pcl_force_login_whitelist', 'tru_pcl_force_login_whitelist');
