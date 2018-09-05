@@ -31,12 +31,12 @@
                         
                         <?php foreach ( fc_get_races() as $race ) : ?>
                         
-                            <li id="race-<?php echo $race->ID; ?>">
+                            <li id="race-<?php echo $race->ID; ?>" class="row">
                                 <div class="col-8">
                                     <div class="race-date"><?php fc_date( $race->start ); ?></div>
                                     <div class="race-name"><a href="<?php echo get_permalink( $race->ID ); ?>"><?php fc_race_title( $race->ID ); ?></a></div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-4 button-wrap">
                                     <?php fc_join_button( $race->ID, $team->id ); ?>
                                 </div>                              
                             </li>
