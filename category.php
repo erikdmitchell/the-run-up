@@ -13,14 +13,14 @@ get_header(); ?>
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-12">
 			<?php if ( have_posts() ) : ?>
 				<header class="archive-header">
 					<h1 class="archive-title"><?php echo single_cat_title( '', false ); ?></h1>
 				</header><!-- .archive-header -->
 
 				<?php while ( have_posts() ) : the_post(); ?>
-					<?php get_template_part('template-parts/', 'content'); ?>
+					<?php get_template_part('template-parts/content', 'category'); ?>
 				<?php endwhile; ?>
 
 				<?php
@@ -35,9 +35,6 @@ get_header(); ?>
 			<?php endif; ?>
 
 		</div>
-		<div class="col-md-4">
-			<?php get_sidebar(); ?>
-		</div
 	</div>
 </div><!-- .container -->
 
