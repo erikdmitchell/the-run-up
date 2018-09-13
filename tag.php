@@ -12,7 +12,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-12">
 			<?php if ( have_posts() ) : ?>
 				<header class="archive-header">
 					<h1 class="archive-title"><?php printf( __( 'Tag Archives: %s', 'the-run-up' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?></h1>
@@ -23,7 +23,7 @@
 				</header><!-- .archive-header -->
 
 				<?php while ( have_posts() ) : the_post(); ?>
-					<?php get_template_part( 'content', get_post_format() ); ?>
+					<?php get_template_part( 'template-parts/content', 'tag' ); ?>
 				<?php endwhile; ?>
 
 				<?php
@@ -37,9 +37,6 @@
 				<?php get_template_part( 'template-parts/content', 'none' ); ?>
 			<?php endif; ?>
 
-		</div>
-		<div class="col-md-4">
-			<?php get_sidebar(); ?>
 		</div>
 	</div>
 </div><!-- .container -->
