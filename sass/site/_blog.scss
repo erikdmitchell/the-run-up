@@ -13,7 +13,22 @@
 }
 
 /* blog single */
-.tru-blog-single { 	
+.tru-blog-single { 
+    /* sharing */
+    .sharedaddy {
+        .sd-title {
+            display: none;
+        }
+        
+        .sd-content {
+            ul {
+                li {
+                    margin: 0 10px 5px 0;
+                }
+            }
+        }
+    }	
+    
 	.power-rankings {
     	list-style-type: none;
     	
