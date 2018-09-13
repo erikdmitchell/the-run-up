@@ -69,7 +69,19 @@
                     
                     <?php endif; ?>					
 				
-					<?php the_tags( '<footer class="entry-meta"><span class="tag-links">', ', ', '</span></footer>' ); ?>
+                    <footer class="entry-meta">
+                        <div class="tags-list">
+                            <div class="tags-title">Tags</div>
+                            
+    					    <?php the_tags( '<div class="tag-links">', ' ', '</div>' ); ?>
+                        </div>
+                        
+                        <div class="categories-list">
+                            <div class="categories-title">Categories</div>
+                            
+    					    <div class="categories-link"><?php the_category(' '); ?></div>
+                        </div>
+                    </footer>
 				</article><!-- #post-## -->
 								
 			<?php endwhile; ?>

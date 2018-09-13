@@ -25,6 +25,9 @@ big{font-size:125%}@font-face{font-family:'Material Icons';font-style:normal;fon
 button,input[type="button"],input[type="reset"],input[type="submit"]{border:1px solid;border-color:#0a67ad;border-radius:3px;background:#0c97ff;color:#fff;font-size:15.2px;font-size:.95rem;line-height:1;padding:.6em 1em}
 button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover{border-color:#0a67ad;color:#0c97ff;background:#fff}
 button:active,button:focus,input[type="button"]:active,input[type="button"]:focus,input[type="reset"]:active,input[type="reset"]:focus,input[type="submit"]:active,input[type="submit"]:focus{border-color:#0a67ad}
+button.alt,input[type="button"].alt,input[type="reset"].alt,input[type="submit"].alt{border:1px solid;border-color:#006400;border-radius:3px;background:#30bb5e;color:#fff;font-size:15.2px;font-size:.95rem;line-height:1;padding:.6em 1em}
+button.alt:hover,input[type="button"].alt:hover,input[type="reset"].alt:hover,input[type="submit"].alt:hover{border-color:#006400;color:#30bb5e;background:#fff}
+button.alt:active,button.alt:focus,input[type="button"].alt:active,input[type="button"].alt:focus,input[type="reset"].alt:active,input[type="reset"].alt:focus,input[type="submit"].alt:active,input[type="submit"].alt:focus{border-color:#006400}
 fieldset{margin:0 0 1em 0;border-color:#d3d3d3}input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="number"],input[type="tel"],input[type="range"],input[type="date"],input[type="month"],input[type="week"],input[type="time"],input[type="datetime"],input[type="datetime-local"],input[type="color"],textarea{color:#585858;border:1px solid gray;border-radius:3px;padding:3px}
 input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="number"]:focus,input[type="tel"]:focus,input[type="range"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,input[type="color"]:focus,textarea:focus{color:#000}
 label{font-weight:800;margin-bottom:.5em;display:block}select{border:1px solid gray}
@@ -94,6 +97,14 @@ img{max-width:100%;height:auto}.wp-caption{background:#fff;border:1px solid #585
 .uci-results .flag .flag-icon,.uci-results span.nat{margin-left:5px}.uci-results-race .race-details{margin-bottom:1em}
 .uci-results-rider .top-results,.uci-results-rider .championships{margin-top:1em}
 .uci-results-main .uci-results-races .row:nth-child(odd),.uci-results-main .uci-results-riders .row:nth-child(odd),.uci-results-rider-rankings .rider-rankings .row:nth-child(even),.uci-results-race .single-race .row:nth-child(even),.uci-results-races .row:nth-child(even),.uci-results-rider .single-rider-results .row:nth-child(odd){background:#eee}
+.fc-template .hidden{display:none}.fantasy-cycling-landing .schedule .upcoming-races li{padding-top:15px;padding-bottom:15px;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.fantasy-cycling-landing .schedule .upcoming-races li .button-wrap{padding-left:0}
+.fantasy-cycling-landing .schedule .upcoming-races li .button-wrap .btn-join-race{border:1px solid;border-color:#006400;border-radius:3px;background:#30bb5e;color:#fff;font-size:15.2px;font-size:.95rem;line-height:1;padding:.6em 1em}
+.fantasy-cycling-landing .schedule .upcoming-races li .button-wrap .btn-join-race:hover{border-color:#006400;color:#30bb5e;background:#fff}
+.fantasy-cycling-landing .schedule .upcoming-races li .button-wrap .btn-join-race:active,.fantasy-cycling-landing .schedule .upcoming-races li .button-wrap .btn-join-race:focus{border-color:#006400}
+.fantasy-cycling-add-riders .actions #rider-list-filter{overflow:hidden}.fantasy-cycling-add-riders .actions #rider-list-filter #search-rider{width:50%}
+.fantasy-cycling-add-riders .actions #rider-list-filter #search-rider-btn{margin-left:10px}
+.fantasy-cycling-add-riders .actions #rider-list-filter button.clear-search{margin-left:10px}
 .fantasy-cycling-my-team .my-team-list{margin-top:1em}.fantasy-cycling-my-team .my-team-list .add-rider{font-weight:bold;font-size:1.25em;margin-top:5px}
 .fantasy-cycling-my-team .my-team-list .add-rider.hidden{display:none}.fantasy-cycling-my-team .my-team-list .rider span.add-remove{padding-left:0}
 #fc-add-rider-modal .actions{margin-bottom:0}#fc-add-rider-modal .modal-header{padding-top:20px}
@@ -111,8 +122,7 @@ img{max-width:100%;height:auto}.wp-caption{background:#fff;border:1px solid #585
 .fc-add-riders-modal-content .rider .name,.fc-add-riders-modal-content .rider .cost{margin-top:8px;padding-bottom:8px}
 .fc-add-riders-modal-content .startlist,.fc-add-riders-modal-content .rider .name .startlist,.fantasy-cycling-my-team .rider .startlist{color:green}
 .fc-add-riders-modal-content .rider .smplus>div{margin-top:8px}.fc-add-riders-modal-content .rider .smplus>div:first-child{margin-top:0}
-.fc-btn{color:#fff;background-color:#18a9e1;border-color:#1a84e1;padding:2px 5px}
-#rider-list-filter>div{margin-bottom:5px}.tru-add-riders-btn{color:#fff;background-color:#18a9e1;border-color:#1a84e1;padding:5px 10px}
+.tru-add-riders-btn{color:#fff;background-color:#18a9e1;border-color:#1a84e1;padding:5px 10px}
 .tru-add-riders-btn:focus{outline:0}.tru-social-media-share{padding-top:15px;padding-bottom:15px;overflow:hidden}
 .info .tru-social-media-share{padding-top:0;padding-bottom:0}.tru-social-media-share .share-title{font-weight:bold}
 .fantasy-cycling-my-team .my-team-list .header{text-align:center}.fantasy-cycling-my-team .rider .proj,.fantasy-cycling-my-team .rider .rank,.fantasy-cycling-my-team .rider .year,.fantasy-cycling-my-team .rider .last-year,.fantasy-cycling-my-team .rider .cost,.fantasy-cycling-my-team .rider .value,.fantasy-cycling-my-team .rider .fantasy-points,.fantasy-cycling-my-team .rider .uci-points,.fantasy-cycling-my-team .rider .last-race,.fantasy-cycling-my-team .rider .perc-owned{text-align:center}
@@ -138,11 +148,12 @@ img{max-width:100%;height:auto}.wp-caption{background:#fff;border:1px solid #585
 .fantasy-cycling-standings .fc-standings .row:nth-child(even){background:#eee}.fantasy-cycling-roster .active-roster-list .row:nth-child(odd),.fantasy-cycling-roster .fc-roster .fc-results .row:nth-child(even){background:#eee}
 .fantasy-cycling-roster .race-details{margin-top:15px;margin-bottom:15px}.fantasy-cycling-roster .fc-results{margin-bottom:15px}
 .fantasy-cycling-schedule .fc-races .row:nth-child(even){background:#eee}.tru-blog-landing .excerpt{margin-top:1rem;margin-bottom:2rem}
-.tru-blog-single footer.entry-meta{margin-bottom:15px;background:#f5f5f5;margin-top:30px}
-.tru-blog-single .power-rankings{list-style-type:none}.tru-blog-single .power-rankings .rider{margin-top:15px;margin-bottom:15px}
-.tru-blog-single .power-rankings .rider .rider-rank{margin-top:1em}.tru-blog-single .power-rankings .rider .image-wrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.tru-blog-single footer.entry-meta{margin-bottom:15px;margin-top:30px}.tru-blog-single .power-rankings{list-style-type:none}
+.tru-blog-single .power-rankings .rider{margin-top:15px;margin-bottom:15px}.tru-blog-single .power-rankings .rider .rider-rank{margin-top:1em}
+.tru-blog-single .power-rankings .rider .image-wrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .tru-blog-single .power-rankings .rider .image-wrap img{border-radius:5px}.tru-blog-single .power-rankings .rider .rider-name{font-weight:bold;margin-left:5px}
-footer{border-top:0;background:#d3d3d3;background-color:#d3d3d3;margin-top:30px;margin-bottom:30px;padding-top:30px}
+.archive.tag .tag-row{margin-bottom:15px;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.archive.tag .tag-row .post-thumbnail img{border-radius:5px}footer{border-top:0;background:#d3d3d3;background-color:#d3d3d3;margin-top:30px;margin-bottom:30px;padding-top:30px}
 footer .footer-widgets{padding:10px 0 20px 0}footer .footer-widgets ul{list-style-type:none;padding:0;margin:0}
 footer .footer-widgets .social{overflow:hidden;display:inline-block}footer .footer-widgets .social li{float:left}
 footer .footer-widgets .social li i{font-size:30px;margin-right:15px}footer .footer-col{margin-bottom:1.2em}
