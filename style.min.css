@@ -148,10 +148,15 @@ img{max-width:100%;height:auto}.wp-caption{background:#fff;border:1px solid #585
 .fantasy-cycling-standings .fc-standings .row:nth-child(even){background:#eee}.fantasy-cycling-roster .active-roster-list .row:nth-child(odd),.fantasy-cycling-roster .fc-roster .fc-results .row:nth-child(even){background:#eee}
 .fantasy-cycling-roster .race-details{margin-top:15px;margin-bottom:15px}.fantasy-cycling-roster .fc-results{margin-bottom:15px}
 .fantasy-cycling-schedule .fc-races .row:nth-child(even){background:#eee}.tru-blog-landing .excerpt{margin-top:1rem;margin-bottom:2rem}
-.tru-blog-single footer.entry-meta{margin-bottom:15px;margin-top:30px}.tru-blog-single .power-rankings{list-style-type:none}
-.tru-blog-single .power-rankings .rider{margin-top:15px;margin-bottom:15px}.tru-blog-single .power-rankings .rider .rider-rank{margin-top:1em}
-.tru-blog-single .power-rankings .rider .image-wrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.tru-blog-single .sharedaddy .sd-title{display:none}.tru-blog-single .sharedaddy .sd-content ul li{margin:0 10px 5px 0}
+.tru-blog-single .power-rankings{list-style-type:none}.tru-blog-single .power-rankings .rider{margin-top:15px;margin-bottom:15px}
+.tru-blog-single .power-rankings .rider .rider-rank{margin-top:1em}.tru-blog-single .power-rankings .rider .image-wrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .tru-blog-single .power-rankings .rider .image-wrap img{border-radius:5px}.tru-blog-single .power-rankings .rider .rider-name{font-weight:bold;margin-left:5px}
+.tru-blog-single footer.entry-meta{margin-bottom:15px;background:transparent;margin-top:30px}
+.tru-blog-single footer.entry-meta .tags-list .tags-title{text-transform:uppercase;font-weight:600}
+.tru-blog-single footer.entry-meta .tags-list .tag-links a{padding:5px;background:#f5f5f5}
+.tru-blog-single footer.entry-meta .categories-list{margin-top:15px}.tru-blog-single footer.entry-meta .categories-list .categories-title{text-transform:uppercase;font-weight:600}
+.tru-blog-single footer.entry-meta .categories-list .categories-link a{padding:5px;background:#f5f5f5}
 .archive.tag .tag-row{margin-bottom:15px;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .archive.tag .tag-row .post-thumbnail img{border-radius:5px}footer{border-top:0;background:#d3d3d3;background-color:#d3d3d3;margin-top:30px;margin-bottom:30px;padding-top:30px}
 footer .footer-widgets{padding:10px 0 20px 0}footer .footer-widgets ul{list-style-type:none;padding:0;margin:0}
