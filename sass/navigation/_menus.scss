@@ -1,3 +1,7 @@
+.primary-nav {
+    overflow: hidden;
+}
+
 .navbar {
 
     .header-logo {
@@ -67,4 +71,29 @@
         } 
     }   
 
+}
+
+.secondary-nav {
+    background: $light-gray;
+    overflow: hidden;
+    
+    .menu {
+        padding: 10px 0;
+        margin: 0 15px 0 0;
+        list-style-type: none;
+        float: right;
+        
+        li {
+            float: left;
+            
+            a {
+                padding: 0.25rem 0.75rem;
+                color: $dark-gray;
+                
+                &:hover {
+                    color: $gray;
+                }
+            }    
+        }
+    }
 }

@@ -59,7 +59,7 @@ function tru_loginout_menu_link( $items, $args ) {
       if (is_user_logged_in()) {
          $items .= '<li class="logout"><a href="'. wp_logout_url() .'">'. __("Log Out") .'</a></li>';
       } else {
-         $items .= '<li class="sign-in"><a href="'. wp_login_url() .'">'. __("Sign In") .'</a></li>';
+         $items .= '<li class="sign-in"><a href="'. wp_login_url() .'">'. __("Log In") .'</a></li>';
       }
    }
 
@@ -69,34 +69,13 @@ function tru_loginout_menu_link( $items, $args ) {
   		$items.='<li class="logout"><a href="'. wp_logout_url() .'">'. __("Log Out") .'</a></li>';
   	else :
   		$items.='<li class="logout"><a href="'. wp_registration_url() .'">'. __("Sign Up") .'</a></li>';
-  		$items.='<li class="logout"><a href="'. wp_login_url() .'">'. __("Sign In") .'</a></li>';
+  		$items.='<li class="logout"><a href="'. wp_login_url() .'">'. __("Log In") .'</a></li>';
   	endif;
   endif;
 
    return $items;
 }
 add_filter('wp_nav_menu_items', 'tru_loginout_menu_link', 10, 2);
-
-/**
- * tru_primary_nav_menu_args function.
- *
- * @access public
- * @param string $args (default: '')
- * @return void
- */
-function tru_primary_nav_menu_args( $args = '' ) {
-	if ($args['theme_location']!='primary')
-		return $args;
-
-	if ( is_user_logged_in() ) {
-		$args['menu'] = 'Primary Nav Logged In';
-	} else {
-		$args['menu'] = 'Primary Nav Logged Out';
-	}
-
-	return $args;
-}
-add_filter('wp_nav_menu_args', 'tru_primary_nav_menu_args');
 
 /**
  * tru_theme_posted_on function.
