@@ -61,6 +61,8 @@ function tru_loginout_menu_link( $items, $args ) {
       } else {
          $items .= '<li class="sign-in"><a href="'. wp_login_url() .'">'. __("Log In") .'</a></li>';
       }
+      
+      $items .= '<li class="faq"><a href="/faq"><i class="material-icons">help_outline</i></a></li>';
    }
 
   // footer 1 nav //
