@@ -20,9 +20,9 @@
 				
 					<div class="entry-content">
 						<?php
-							the_content( __( 'Continue reading <span class="meta-nav">&raquo;</span>', 'koksijde' ) );
+							the_content( __( 'Continue reading <span class="meta-nav">&raquo;</span>', 'the-run-up' ) );
 							wp_link_pages( array(
-								'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'koksijde' ) . '</span>',
+								'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'the-run-up' ) . '</span>',
 								'after'       => '</div>',
 								'link_before' => '<span>',
 								'link_after'  => '</span>',
@@ -47,7 +47,7 @@
                             		
                             		<div class="image-wrap col-3">
                             			<?php if ( $image ): ?>
-                            				<img src="<?php echo $image['sizes']['blog-power-ranking']; ?>" alt="<?php echo $image['alt'] ?>" />
+                            				<img src="<?php echo $image['sizes']['blog-power-ranking']; ?>" alt="<?php echo empty($image['alt']) ? $image['name'] : $image['alt']; ?>" />
                                         <?php endif; ?>
                     			    </div>
                     			                            			
