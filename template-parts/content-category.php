@@ -12,23 +12,24 @@
     <div class="container">
         <div class="row tag-row">
             <div class="col-3">
-                <?php tru_post_thumbnail('medium'); ?>
+                <?php tru_post_thumbnail( 'medium' ); ?>
             </div>
             <div class="col-9">
                 
                 <header class="entry-header">
-                    <?php the_title( '<h1 class="entry-title"><a href="'.get_permalink().'">', '</a></h1>' );	?>
+                    <?php the_title( '<h1 class="entry-title"><a href="' . get_permalink() . '">', '</a></h1>' ); ?>
 
                     <div class="entry-meta">
                         <?php
-                            if ( 'post' == get_post_type() )
-                                tru_theme_posted_on();
+                        if ( 'post' == get_post_type() ) {
+                            tru_theme_posted_on();
+                        }
                         ?>
                     </div><!-- .entry-meta -->
                 </header><!-- .entry-header -->
 
                 <div class="entry-content">
-                    <?php echo tru_excerpt_by_id(get_the_ID(), 35, '<a><em><strong>', '... <a href="'.get_permalink().'">read more</a>'); ?>
+                    <?php echo tru_excerpt_by_id( get_the_ID(), 35, '<a><em><strong>', '... <a href="' . get_permalink() . '">read more</a>' ); ?>
                 </div><!-- .entry-content -->
             </div>
         </div>
