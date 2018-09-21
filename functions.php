@@ -464,7 +464,8 @@ function tru_move_jp_sharing( $content ) {
 	
 	if ( is_singular( 'post' ) && function_exists( 'sharing_display' ) ) {
 		remove_filter( 'the_content', 'sharing_display', 19 );
-		$content = sharing_display() . $content;
+		
+		$content = sharing_display() . $content . sharing_display();
 	}
 	
 	return $content;
