@@ -108,8 +108,7 @@ function tru_theme_posted_on() {
  */
 function tru_excerpt_by_id($post, $length=25, $tags='<a><em><strong>', $extra='...') {
 	if (is_int($post)) {
-		// get the post object of the passed ID
-		$post = get_post($post);
+		$post = get_post($post); // get the post object of the passed ID.
 	} elseif(!is_object($post)) {
 		return false;
 	}
@@ -126,7 +125,10 @@ function tru_excerpt_by_id($post, $length=25, $tags='<a><em><strong>', $extra='.
 	$excerpt_waste = array_pop($the_excerpt);
 	$the_excerpt = implode($the_excerpt);
 	$the_excerpt .= $extra;
- 
+	
+	// remove jetpack sharing.
+	remove_filter( 'the_content', 'sharing_display', 19 );
+	
 	return apply_filters('the_content', $the_excerpt);
 }
 
