@@ -46,24 +46,24 @@
                             $public_display = array();
                             $public_display['display_nickname']  = $current_user->nickname;
                             $public_display['display_username']  = $current_user->user_login;
-            
+
                             if ( ! empty( $current_user->first_name ) ) {
                                 $public_display['display_firstname'] = $current_user->first_name;
                             }
-            
+
                             if ( ! empty( $current_user->last_name ) ) {
                                 $public_display['display_lastname'] = $current_user->last_name;
                             }
-            
+
                             if ( ! empty( $current_user->first_name ) && ! empty( $current_user->last_name ) ) {
                                 $public_display['display_firstlast'] = $current_user->first_name . ' ' . $current_user->last_name;
                                 $public_display['display_lastfirst'] = $current_user->last_name . ' ' . $current_user->first_name;
                             }
-            
+
                             if ( ! in_array( $current_user->display_name, $public_display ) ) { // Only add this if it isn't duplicated elsewhere
                                 $public_display = array( 'display_displayname' => $current_user->display_name ) + $public_display;
                             }
-            
+
                             $public_display = array_map( 'trim', $public_display );
                             $public_display = array_unique( $public_display );
                             ?>

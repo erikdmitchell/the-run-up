@@ -13,15 +13,15 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
-		<link rel="profile" href="http://gmpg.org/xfn/11" />
-		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+        <link rel="profile" href="http://gmpg.org/xfn/11" />
+        <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
         <?php wp_head(); ?>
     </head>
 
-    <body <?php body_class('tru'); ?>>
+    <body <?php body_class( 'tru' ); ?>>
 
-    	<nav class="navbar tru-header-nav clearfix">
+        <nav class="navbar tru-header-nav clearfix">
             
             <div class="primary-nav">
                 <div class="header-logo">
@@ -32,23 +32,29 @@
                     <i class="material-icons">menu</i>
                 </button>
         
-    			<?php
-    			wp_nav_menu(array(
-    				'theme_location' => 'primary',
-    				'container' => false,
-    				'menu_class' => 'navbar-nav',
-    			));
-    			?> 
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'primary',
+                        'container' => false,
+                        'menu_class' => 'navbar-nav',
+                    )
+                );
+                ?>
+                 
             </div>
-			
-			<?php if (is_user_logged_in()) : ?>
-    			<div class="secondary-nav">
-        			<?php
-        			wp_nav_menu(array(
-        				'theme_location' => 'secondary',
-        				'container' => false,
-        			));
-        			?> 
-    			</div>
+            
+            <?php if ( is_user_logged_in() ) : ?>
+                <div class="secondary-nav">
+                    <?php
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'secondary',
+                            'container' => false,
+                        )
+                    );
+                    ?>
+                     
+                </div>
             <?php endif; ?>
         </nav>
