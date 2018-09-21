@@ -462,6 +462,13 @@ function tru_pcl_after_user_registration($new_user_id, $fields, $post_data) {
 }
 add_action('pcl_after_user_registration', 'tru_pcl_after_user_registration', 11, 3);
 
+/**
+ * Move JP sharing to before and after post.
+ * 
+ * @access public
+ * @param mixed $content string.
+ * @return html
+ */
 function tru_move_jp_sharing( $content ) {
 	
 	if ( is_singular( 'post' ) && function_exists( 'sharing_display' ) ) {
@@ -474,6 +481,12 @@ function tru_move_jp_sharing( $content ) {
 }
 add_filter( 'the_content', 'tru_move_jp_sharing' );
 
+/**
+ * Remove JP sharing from excerpt.
+ * 
+ * @access public
+ * @return void
+ */
 function tru_remove_excerpt_jp_sharing() {
     remove_filter( 'the_excerpt', 'sharing_display', 19 );
 }
