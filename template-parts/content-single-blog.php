@@ -86,7 +86,9 @@
                         <div class="categories-list">
                             <div class="categories-title">Categories</div>
                             
-                            <div class="categories-link"><?php the_category( ' ' ); ?></div>
+                            <div class="categories-link">
+                                <?php tru_post_categories(' ', 1); ?>
+                            </div>
                         </div>
                     </footer>
                 </article><!-- #post-## -->
