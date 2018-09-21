@@ -459,3 +459,14 @@ function tru_pcl_after_user_registration($new_user_id, $fields, $post_data) {
     fc_create_team( $new_user_id, $fields['team_name'] );
 }
 add_action('pcl_after_user_registration', 'tru_pcl_after_user_registration', 11, 3);
+
+function tru_move_jp_sharing( $content ) {
+	
+	if ( is_singular( 'post' ) && function_exists( 'sharing_display' ) ) {
+		remove_filter( 'the_content', 'sharing_display', 19 );
+		$content = sharing_display() . $content;
+	}
+	
+	return $content;
+}
+add_filter( 'the_content', 'tru_move_jp_sharing' );
