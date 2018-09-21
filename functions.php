@@ -471,3 +471,9 @@ function tru_move_jp_sharing( $content ) {
 	return $content;
 }
 add_filter( 'the_content', 'tru_move_jp_sharing' );
+
+function tru_remove_excerpt_jp_sharing() {
+    remove_filter( 'the_excerpt', 'sharing_display', 19 );
+}
+ 
+add_action( 'loop_start', 'tru_remove_excerpt_jp_sharing' );
