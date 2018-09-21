@@ -509,3 +509,32 @@ function tru_remove_excerpt_jp_sharing() {
 }
 
 add_action( 'loop_start', 'tru_remove_excerpt_jp_sharing' );
+
+function tru_post_categories($spacer=' ', $excl = '') {
+    global $post;
+    
+    $categories = get_the_category($post->ID);
+     
+    if (!empty($categories)) :
+        $exclude = $excl;
+        $exclude = explode(",", $exclude);
+        $thecount = count(get_the_category()) - count($exclude);
+        
+        foreach ($categories as $cat) :
+            $html = '';
+
+            if (!in_array($cat->cat_ID, $exclude)) {
+                $html .= '<a href="' . get_category_link($cat->cat_ID) . '" ';
+                $html .= 'title="' . $cat->cat_name . '">' . $cat->cat_name . '</a>';
+                
+                if ($thecount > 0) {
+                    $html .= $spacer;
+                }
+
+                $thecount--;
+                
+                echo $html;
+            }
+        endforeach;
+    endif;
+}
