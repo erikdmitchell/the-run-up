@@ -52,13 +52,13 @@
                         
                                 <div class="row rider">
                                     
-                                    <div class="image-wrap col-3">
+                                    <div class="image-wrap col-xs-12 col-sm-3">
                                         <?php if ( $image ) : ?>
                                             <img src="<?php echo $image['sizes']['blog-power-ranking']; ?>" alt="<?php echo empty( $image['alt'] ) ? $image['name'] : $image['alt']; ?>" />
                                         <?php endif; ?>
                                     </div>
                                                                         
-                                    <div class="col-9">
+                                    <div class="col-xs-12 col-sm-9">
                                         <div class="rider-rank">
                                             <?php echo $counter; ?>. 
                                             <span class="rider-name"><?php echo $name; ?></span>
