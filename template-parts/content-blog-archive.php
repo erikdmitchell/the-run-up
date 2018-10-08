@@ -20,7 +20,7 @@ $blog_query = new WP_Query(
                     $blog_query->the_post();
                     ?>
                 
-                    <div class="col-xs-12 col-sm-6">
+                    <div class="col-xs-12 col-md-6">
                         <?php get_template_part( 'template-parts/content-blog-list', 'post' ); ?>
                     </div>
                                 

@@ -34,11 +34,11 @@ $blog_query = new WP_Query(
                     $featured_blog_query->the_post();
                     ?>
                 
-                    <div class="col-xs-12 col-sm-7">
+                    <div class="col-xs-12 col-sm-6 col-lg-7">
                         <?php get_template_part( 'template-parts/content-blog-list-post', 'large' ); ?>
                     </div>
         
-                    <div class="col-xs-12 col-sm-5">
+                    <div class="col-xs-12 col-sm-6 col-lg-5">
                         <?php if ( $blog_right_query->have_posts() ) : ?>
                             <div class="row">
                                 <?php

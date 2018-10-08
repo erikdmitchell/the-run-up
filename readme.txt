@@ -31,6 +31,11 @@ Coming soon...
 Coming soon...
 
 == Changelog ==
+
+= 1.2.1 =
+
+ * Updated responsive layout and styles for blog.
+
 = 1.2.0 =
 
  * Fixed font size of headers in blog.
