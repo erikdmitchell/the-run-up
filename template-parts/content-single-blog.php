@@ -92,13 +92,13 @@
                                     <?php $row = 0; ?>
                                     
                                     <div class="row">                                                
-                                        <div class="col-4 col-sm-4 pred">
+                                        <div class="col-6 col-sm-4 pred">
                                             Prediction
                                         </div>
-                                        <div class="col-2 col-sm-2 place">
+                                        <div class="col-3 col-sm-2 place">
                                             Place
                                         </div>
-                                        <div class="col-2 col-sm-2 place">
+                                        <div class="col-3 col-sm-2 place">
                                             Points
                                         </div>
                                     </div>
@@ -107,7 +107,7 @@
                                         <?php $row++; ?>
                                     
                                         <div class="row">
-                                            <div class="col-3 pred">
+                                            <div class="col-4 pred">
                                                 <?php if (4 === $row) : ?>
                                                     DH: <?php the_sub_field('rider_name'); ?>                                           
                                                 <?php else : ?>
@@ -115,11 +115,11 @@
                                                 <?php endif; ?>
                                             </div>
                                             
-                                            <div class="col-2 place">
+                                            <div class="col-3 place">
                                                 <?php the_sub_field('place'); ?>
                                             </div>
                                             
-                                            <div class="col-2 place">
+                                            <div class="col-3 place">
                                                 <?php the_sub_field('points'); ?>
                                             </div>
                                         </div>                                    
