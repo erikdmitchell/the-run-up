@@ -1,14 +1,16 @@
 /* blog landing */
-.tru-blog-landing {
-    .title {
-        h2 {
-
-        }
-    }
-    
+.tru-blog-landing {    
     .excerpt {
 	    margin-top: 1rem;
         margin-bottom: 2rem;
+    }
+    
+    h2.blog-post-right {
+        font-size: 1.2em;
+    }
+    
+    h2.blog-list-post {
+        font-size: 1.4em;
     }
 }
 
