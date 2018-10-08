@@ -39,7 +39,7 @@
                         <?php $counter = count( get_field( 'rider' ) ); ?>
                         <!-- power rankings -->
                         
-                        <div class="container power-rankings">
+                        <div class="power-rankings">
                             <?php
                             while ( have_rows( 'rider' ) ) :
                                 the_row();
@@ -52,13 +52,13 @@
                         
                                 <div class="row rider">
                                     
-                                    <div class="image-wrap col-xs-12 col-sm-3">
+                                    <div class="image-wrap col-12 col-sm-3">
                                         <?php if ( $image ) : ?>
                                             <img src="<?php echo $image['sizes']['blog-power-ranking']; ?>" alt="<?php echo empty( $image['alt'] ) ? $image['name'] : $image['alt']; ?>" />
                                         <?php endif; ?>
                                     </div>
                                                                         
-                                    <div class="col-xs-12 col-sm-9">
+                                    <div class="col-12 col-sm-9">
                                         <div class="rider-rank">
                                             <?php echo $counter; ?>. 
                                             <span class="rider-name"><?php echo $name; ?></span>
@@ -74,7 +74,64 @@
                     
                         </div>
                     
-                    <?php endif; ?>                 
+                    <?php endif; ?>
+                    
+                    <?php if ( have_rows( 'race' ) ) : ?>
+                        <!-- predictions -->
+                        
+                        <div class="predictions">
+                            <?php while ( have_rows( 'race' ) ) : the_row(); ?>
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h3><?php the_sub_field('race_name'); ?></h3>
+                                    </div>
+                                </div>
+                                    
+                                <?php if ( have_rows( 'predictions' ) ) : ?>
+                                    <?php $row = 0; ?>
+                                    
+                                    <div class="row">                                                
+                                        <div class="col-4 col-sm-4 pred">
+                                            Prediction
+                                        </div>
+                                        <div class="col-2 col-sm-2 place">
+                                            Place
+                                        </div>
+                                        <div class="col-2 col-sm-2 place">
+                                            Points
+                                        </div>
+                                    </div>
+
+                                    <?php while ( have_rows( 'predictions' ) ) : the_row(); ?>
+                                        <?php $row++; ?>
+                                    
+                                        <div class="row">
+                                            <div class="col-3 pred">
+                                                <?php if (4 === $row) : ?>
+                                                    DH: <?php the_sub_field('rider_name'); ?>                                           
+                                                <?php else : ?>
+                                                    <?php echo $row; ?>. <?php the_sub_field('rider_name'); ?>
+                                                <?php endif; ?>
+                                            </div>
+                                            
+                                            <div class="col-2 place">
+                                                <?php the_sub_field('place'); ?>
+                                            </div>
+                                            
+                                            <div class="col-2 place">
+                                                <?php the_sub_field('points'); ?>
+                                            </div>
+                                        </div>                                    
+                                    <?php endwhile; ?>                                    
+                                    
+                                <?php endif; ?>
+
+                            <?php endwhile; ?>
+                    
+                        </div>
+                    
+                    <?php endif; ?>                                      
                 
                     <footer class="entry-meta">
                         <div class="tags-list">
