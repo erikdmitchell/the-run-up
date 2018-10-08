@@ -1,18 +1,73 @@
 /* general */
+$mobile-font-size-h2: 0.95em;
+$mobil-font-size: 0.9em;
+$tablet-font-size-h2: 1em;
+
 h2.blog-list-post {
-    font-size: 1.4em;
+    font-size: $mobile-font-size-h2;
+    
+    @media (min-width: 576px) { 
+        font-size: $tablet-font-size-h2;
+    }
+
+    @media (min-width: 768px) { 
+        font-size: 1.4em;
+    }
 }
     
 /* blog landing */
-.tru-blog-landing {    
+.tru-blog-landing {
+    font-size: $mobil-font-size;
+
+    @media (min-width: 768px) { 
+        font-size: 1em;
+    }
+       
     .excerpt {
 	    margin-top: 1rem;
         margin-bottom: 2rem;
     }
     
-    h2.blog-post-right {
-        font-size: 1.2em;
+    h2.blog-landing-large {
+        font-size: $mobile-font-size-h2;
+        
+        @media (min-width: 768px) { 
+            font-size: 1em;
+        }
+        
+        @media (min-width: 576px) { 
+            font-size: $tablet-font-size-h2;
+        }
+
+        @media (min-width: 768px) { 
+            font-size: 1.5em;
+        }
     }
+    
+    h2.blog-post-right {
+        font-size: $mobile-font-size-h2;
+
+        @media (min-width: 768px) { 
+            font-size: 1em;
+        }
+        
+        @media (min-width: 576px) { 
+            font-size: $tablet-font-size-h2;
+        }
+
+        @media (min-width: 768px) { 
+            font-size: 1.1em;
+        }
+
+        @media (min-width: 992px) { 
+            font-size: 1.2em;
+        }
+    }
+}
+
+/* blog archive */
+.tru-blog-archive {
+    
 }
 
 /* blog single */
@@ -42,6 +97,7 @@ h2.blog-list-post {
         	.rider-rank {
             	margin-top: 1em;
         	}
+        	
         	.image-wrap {
             	display: flex;
             	flex-wrap: wrap;
@@ -51,6 +107,7 @@ h2.blog-list-post {
                     border-radius: 5px;
             	}
         	}
+        	
         	.rider-name {
             	font-weight: bold;
             	margin-left: 5px;
@@ -60,7 +117,6 @@ h2.blog-list-post {
 	
     footer.entry-meta {
 	    margin-bottom: 15px;
-        //background: $whitesmoke;
         background: transparent;
         margin-top: 30px;
         
