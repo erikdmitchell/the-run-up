@@ -206,7 +206,7 @@ gulp.task('phpcbf', function () {
 gulp.task('zip', function () {
   return gulp.src(buildInclude)
     .pipe(zip('the-run-up.zip'))
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest('./../'));
 });
 
 // Package Distributable
