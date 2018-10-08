@@ -20,7 +20,7 @@ $home_about_query = new WP_Query(
         $home_about_query->the_post();
         ?>
 
-        <article id="post-<?php the_ID(); ?>" <?php post_class( 'blurb col-xs-12 col-sm-6 col-md-4' ); ?>>
+        <article id="post-<?php the_ID(); ?>" <?php post_class( 'blurb col-12 col-sm-6 col-md-4' ); ?>>
             <?php	the_title( '<h2>', '</h2>' ); ?>
 
             <?php	the_content(); ?>
