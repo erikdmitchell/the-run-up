@@ -13,14 +13,14 @@
             <?php if ( have_rows( 'predictions' ) ) : ?>
                 <?php $row = 0; ?>
                 
-                <div class="row">                                                
-                    <div class="col-6 col-sm-4 pred">
+                <div class="row header">                                                
+                    <div class="col-6 col-sm-4 col-lg-3 pred">
                         Prediction
                     </div>
-                    <div class="col-3 col-sm-2 place">
+                    <div class="col-3 col-sm-2 col-lg-1 place">
                         Place
                     </div>
-                    <div class="col-3 col-sm-2 place">
+                    <div class="col-3 col-sm-2 col-lg-1 points">
                         Points
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                     <?php $row++; ?>
                 
                     <div class="row">
-                        <div class="col-4 pred">
+                        <div class="col-6 col-sm-4 col-lg-3 pred">
                             <?php if (4 === $row) : ?>
                                 DH: <?php the_sub_field('rider_name'); ?>                                           
                             <?php else : ?>
@@ -37,11 +37,11 @@
                             <?php endif; ?>
                         </div>
                         
-                        <div class="col-3 place">
+                        <div class="col-3 col-sm-2 col-lg-1 place">
                             <?php the_sub_field('place'); ?>
                         </div>
                         
-                        <div class="col-3 place">
+                        <div class="col-3 col-sm-2 col-lg-1 points">
                             <?php the_sub_field('points'); ?>
                         </div>
                     </div>                                    
