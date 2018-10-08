@@ -18,7 +18,7 @@
                         Prediction
                     </div>
                     <div class="col-3 col-sm-2 col-lg-1 place">
-                        Place
+                        Result
                     </div>
                     <div class="col-3 col-sm-2 col-lg-1 points">
                         Points
