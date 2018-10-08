@@ -32,6 +32,12 @@ Coming soon...
 
 == Changelog ==
 
+= 1.2.2 =
+
+ * Fixed bad bootstrap col-xs layout.
+ 
+ * Updated responsive layout and styles for blog.
+
 = 1.2.1 =
 
  * Updated responsive layout and styles for blog.

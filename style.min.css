@@ -33,7 +33,7 @@ input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input
 label{font-weight:800;margin-bottom:.5em;display:block}select{border:1px solid gray}
 textarea{width:100%}a{color:#000;text-decoration:none}a:visited{color:#000}a:hover,a:focus,a:active{color:gray}
 a:focus{outline:thin dotted}a:hover,a:active{outline:0}.primary-nav{overflow:hidden}
-.navbar{margin-bottom:30px}.navbar .header-logo{margin-left:15px}@media(min-width:768px){.navbar .header-logo{float:left}
+.navbar .header-logo{margin-left:15px}@media(min-width:768px){.navbar .header-logo{float:left}
 }.navbar .navbar-toggler{position:absolute;top:15px;right:15px}@media(min-width:768px){.navbar .navbar-toggler{display:none}
 }.navbar .navbar-nav{list-style-type:none;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;display:none;padding:0}
 .navbar .navbar-nav li{text-align:center;margin:15px auto 0}.navbar .navbar-nav li a{color:#000;padding:.25rem .75rem;text-decoration:none}
@@ -163,7 +163,8 @@ img{max-width:100%;height:auto}.wp-caption{background:#fff;border:1px solid #585
 .tru-blog-single .power-rankings .rider{margin-top:15px;margin-bottom:15px}.tru-blog-single .power-rankings .rider .rider-rank{margin-top:1em}
 .tru-blog-single .power-rankings .rider .image-wrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .tru-blog-single .power-rankings .rider .image-wrap img{border-radius:5px}.tru-blog-single .power-rankings .rider .rider-name{font-weight:bold;margin-left:5px}
-.tru-blog-single footer.entry-meta{margin-bottom:15px;background:transparent;margin-top:30px}
+.tru-blog-single .predictions .header{font-weight:bold}.tru-blog-single .predictions .place{text-align:center}
+.tru-blog-single .predictions .points{text-align:center}.tru-blog-single footer.entry-meta{margin-bottom:15px;background:transparent;margin-top:30px}
 .tru-blog-single footer.entry-meta .tags-list .tags-title{text-transform:uppercase;font-weight:600}
 .tru-blog-single footer.entry-meta .tags-list .tag-links a{padding:5px;background:#f5f5f5}
 .tru-blog-single footer.entry-meta .categories-list{margin-top:15px}.tru-blog-single footer.entry-meta .categories-list .categories-title{text-transform:uppercase;font-weight:600}
