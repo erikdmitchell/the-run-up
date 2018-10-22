@@ -20,9 +20,9 @@
 
                         <div class="col-12 col-sm-3 footer-co footer-social">
                             <ul class="social">
-                                <li><i class="fab fa-twitter-square"></i></li>
-                                <li><i class="fab fa-facebook-square"></i></li>
-                                <li><i class="fab fa-instagram"></i></li>
+                                <li><a href="https://twitter.com/therunupcx"><i class="fab fa-twitter-square"></i></a></li>
+                                <li><a href="https://www.facebook.com/therunupcx"><i class="fab fa-facebook-square"></i></a></li>
+                                <li><a href="https://www.instagram.com/therunupcx/"><i class="fab fa-instagram"></i></a></li>
                             </ul>
                         </div>
 
