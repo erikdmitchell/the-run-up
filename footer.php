@@ -20,8 +20,9 @@
 
                         <div class="col-12 col-sm-3 footer-co footer-social">
                             <ul class="social">
-                                <li><i class="fa fa-twitter-square" aria-hidden="true"></i></li>
-                                <li><i class="fa fa-facebook-square" aria-hidden="true"></i></li>
+                                <li><i class="fab fa-twitter-square"></i></li>
+                                <li><i class="fab fa-facebook-square"></i></li>
+                                <li><i class="fab fa-instagram"></i></li>
                             </ul>
                         </div>
 
@@ -40,7 +41,6 @@
 
           ga('create', 'UA-11805581-1', 'auto');
           ga('send', 'pageview');
-
         </script>
 
     </body>

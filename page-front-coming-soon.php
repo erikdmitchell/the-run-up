@@ -48,21 +48,21 @@
         
         <div class="icons-wrapper">
             <div class="col-12 col-md-2 step-1">
-                <i class="material-icons">create</i>
+                <i class="fas fa-pen"></i>
                 <div class="text">Sign up for Free</div>
             </div>
             <div class="col-md-3 d-none d-md-block arrow">
-                <i class="material-icons">chevron_right</i>
+                <i class="fas fa-chevron-right"></i>
             </div>
             <div class="col-12 col-md-2 step-2">
-                <i class="material-icons">people</i>
+                <i class="fas fa-users"></i>
                 <div class="text">Select riders for your team</div>
             </div>
             <div class="col-md-3 d-none d-md-block arrow">
-                <i class="material-icons">chevron_right</i>
+                <i class="fas fa-chevron-right"></i>
             </div>
             <div class="col-12 col-md-2 step-3">
-                <i class="material-icons">mood</i>
+                <i class="fas fa-trophy"></i>
                 <div class="text">Win and brag to your friends</div>
             </div>
         </div>

@@ -41,7 +41,8 @@ function tru_scripts_styles() {
 
     // enqueue stylesheets
     wp_enqueue_style( 'google-fonts-arvo', 'https://fonts.googleapis.com/css?family=Arvo:400,700,400italic' );
-    wp_enqueue_style( 'bootstrap-grid-style', get_stylesheet_directory_uri() . '/inc/css/bootstrap-grid.min.css', array(), '4.1.3' );
+    wp_enqueue_style( 'bootstrap-grid-style', get_stylesheet_directory_uri() . '/inc/css/bootstrap-grid.min.css', array(), '5.4.1' );
+    wp_enqueue_style( 'fa-style', get_stylesheet_directory_uri() . '/inc/css/main.min.css', array(), '4.1.3' );
     wp_enqueue_style( 'tru-theme-style', get_stylesheet_uri(), array(), $theme->Version );
 }
 add_action( 'wp_enqueue_scripts', 'tru_scripts_styles' );
@@ -63,7 +64,7 @@ function tru_loginout_menu_link( $items, $args ) {
             $items .= '<li class="sign-in"><a href="' . wp_login_url() . '">' . __( 'Log In' ) . '</a></li>';
         }
 
-        $items .= '<li class="faq"><a href="/faq"><i class="material-icons">help_outline</i></a></li>';
+        $items .= '<li class="faq"><a href="/faq"><i class="far fa-question-circle"></i></a></li>';
     }
 
     // footer 1 nav //
