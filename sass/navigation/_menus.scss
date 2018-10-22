@@ -58,6 +58,12 @@
                     color: $dark_gray;    	    
                 }     
             }
+            
+            &.separator {
+                &:after {
+                    content: "|";
+                }
+            }
         }
         
         @media (min-width: 768px) {
