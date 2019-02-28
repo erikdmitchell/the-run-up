@@ -50,7 +50,7 @@
                             <div class="categories-title">Categories</div>
                         
                             <div class="categories-link">
-                                <?php tru_post_categories(' ', 1); ?>
+                                <?php tru_post_categories( ' ', 1 ); ?>
                             </div>
                         </div>
                     </footer>

@@ -42,7 +42,7 @@ function tru_scripts_styles() {
     // enqueue stylesheets
     wp_enqueue_style( 'google-fonts-arvo', 'https://fonts.googleapis.com/css?family=Arvo:400,700,400italic' );
     wp_enqueue_style( 'bootstrap-grid-style', get_stylesheet_directory_uri() . '/inc/css/bootstrap-grid.min.css', array(), '5.4.1' );
-    wp_enqueue_style( 'fa-style', get_stylesheet_directory_uri() . '/inc/css/main.min.css', array(), '4.1.3' );
+    wp_enqueue_style( 'fa-style', get_stylesheet_directory_uri() . '/inc/css/all.min.css', array(), '5.4.1' );
     wp_enqueue_style( 'tru-theme-style', get_stylesheet_uri(), array(), $theme->Version );
 }
 add_action( 'wp_enqueue_scripts', 'tru_scripts_styles' );
@@ -511,29 +511,29 @@ function tru_remove_excerpt_jp_sharing() {
 
 add_action( 'loop_start', 'tru_remove_excerpt_jp_sharing' );
 
-function tru_post_categories($spacer=' ', $excl = '') {
+function tru_post_categories( $spacer = ' ', $excl = '' ) {
     global $post;
-    
-    $categories = get_the_category($post->ID);
-     
-    if (!empty($categories)) :
+
+    $categories = get_the_category( $post->ID );
+
+    if ( ! empty( $categories ) ) :
         $exclude = $excl;
-        $exclude = explode(",", $exclude);
-        $thecount = count(get_the_category()) - count($exclude);
-        
-        foreach ($categories as $cat) :
+        $exclude = explode( ',', $exclude );
+        $thecount = count( get_the_category() ) - count( $exclude );
+
+        foreach ( $categories as $cat ) :
             $html = '';
 
-            if (!in_array($cat->cat_ID, $exclude)) {
-                $html .= '<a href="' . get_category_link($cat->cat_ID) . '" ';
+            if ( ! in_array( $cat->cat_ID, $exclude ) ) {
+                $html .= '<a href="' . get_category_link( $cat->cat_ID ) . '" ';
                 $html .= 'title="' . $cat->cat_name . '">' . $cat->cat_name . '</a>';
-                
-                if ($thecount > 0) {
+
+                if ( $thecount > 0 ) {
                     $html .= $spacer;
                 }
 
                 $thecount--;
-                
+
                 echo $html;
             }
         endforeach;
