@@ -1,6 +1,6 @@
 {
   "name": "the-run-up",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "WordPress Theme for TRU.",
   "main": "gulpfile.js",
   "scripts": {
