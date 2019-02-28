@@ -7,9 +7,9 @@
 
 <div class="jumbotron home">
     <div class="container">
-        <div class="title">Fantasy Cyclocross Cycling</div>
+        <div class="title">Fantasy Cyclocross</div>
 
-        <div class="slogan">Create the Ultimate Cyclocross Cycling Team</div>
+        <div class="slogan">Create the Ultimate Cyclocross Team</div>
     </div>
 </div>
 
