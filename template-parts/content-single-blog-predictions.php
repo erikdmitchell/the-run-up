@@ -2,11 +2,14 @@
     <!-- predictions -->
     
     <div class="predictions">
-        <?php while ( have_rows( 'race' ) ) : the_row(); ?>
+        <?php
+        while ( have_rows( 'race' ) ) :
+            the_row();
+            ?>
 
             <div class="row">
                 <div class="col-12">
-                    <h3><?php the_sub_field('race_name'); ?></h3>
+                    <h3><?php the_sub_field( 'race_name' ); ?></h3>
                 </div>
             </div>
                 
@@ -25,24 +28,27 @@
                     </div>
                 </div>
 
-                <?php while ( have_rows( 'predictions' ) ) : the_row(); ?>
+                <?php
+                while ( have_rows( 'predictions' ) ) :
+                    the_row();
+                    ?>
                     <?php $row++; ?>
                 
                     <div class="row">
                         <div class="col-6 col-sm-4 col-lg-3 pred">
-                            <?php if (4 === $row) : ?>
-                                DH: <?php the_sub_field('rider_name'); ?>                                           
+                            <?php if ( 4 === $row ) : ?>
+                                DH: <?php the_sub_field( 'rider_name' ); ?>                                           
                             <?php else : ?>
-                                <?php echo $row; ?>. <?php the_sub_field('rider_name'); ?>
+                                <?php echo $row; ?>. <?php the_sub_field( 'rider_name' ); ?>
                             <?php endif; ?>
                         </div>
                         
                         <div class="col-3 col-sm-2 col-lg-1 place">
-                            <?php the_sub_field('place'); ?>
+                            <?php the_sub_field( 'place' ); ?>
                         </div>
                         
                         <div class="col-3 col-sm-2 col-lg-1 points">
-                            <?php the_sub_field('points'); ?>
+                            <?php the_sub_field( 'points' ); ?>
                         </div>
                     </div>                                    
                 <?php endwhile; ?>                                    
