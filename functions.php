@@ -19,9 +19,9 @@ function tru_scripts_styles() {
 
     // enqueue our scripts for theme
     wp_enqueue_script( 'jquery' );
-    wp_enqueue_script( 'tru-theme-script', get_stylesheet_directory_uri() . '/inc/js/tru-theme.js', array( 'jquery' ), $theme->Version, true );
-    wp_enqueue_script( 'tru-front-page-script', get_stylesheet_directory_uri() . '/inc/js/front-page.js', array( 'jquery' ), $theme->Version, true );
-    wp_enqueue_script( 'tru-team-script', get_stylesheet_directory_uri() . '/inc/js/team.js', array( 'jquery' ), $theme->Version, true );
+    wp_enqueue_script( 'tru-theme-script', get_stylesheet_directory_uri() . '/inc/js/tru-theme.min.js', array( 'jquery' ), $theme->Version, true );
+    wp_enqueue_script( 'tru-front-page-script', get_stylesheet_directory_uri() . '/inc/js/front-page.min.js', array( 'jquery' ), $theme->Version, true );
+    wp_enqueue_script( 'tru-team-script', get_stylesheet_directory_uri() . '/inc/js/team.min.js', array( 'jquery' ), $theme->Version, true );
 
     if ( is_singular() ) {
         wp_enqueue_script( 'comment-reply' );
