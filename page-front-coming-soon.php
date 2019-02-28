@@ -40,6 +40,20 @@
     </div>
 </div>
 
+<div class="container-fluid from-the-blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 title">
+                From the Blog
+            </div>
+        </div>
+        <div class="row">
+            BLOG
+        </div>
+    </div>
+</div>
+
+<!--
 <div class="container how-to-play">
     <div class="row justify-content-md-center">
         <div class="col-md-12 title">
@@ -68,6 +82,7 @@
         </div>
     </div>
 </div>
+-->
 
 <div class="container">
     <div class="row">
