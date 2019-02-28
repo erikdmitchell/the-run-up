@@ -48,7 +48,32 @@
             </div>
         </div>
         <div class="row">
-            BLOG
+            <?php $blog_query = new WP_Query( array( 'posts_per_page' => 3 ) ); ?>
+
+            <?php if ( $blog_query->have_posts() ) : ?>
+                <div class="row">
+                    <?php
+                    while ( $blog_query->have_posts() ) :
+                        $blog_query->the_post();
+                        ?>
+                    
+                        <div class="col-12 col-sm-4 blog-post">
+                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'blog-landing' ); ?></a>
+
+                            <a href="<?php the_permalink(); ?>"><?php the_title( '<h3>', '</h3>' ); ?></a>
+                            
+                            <div class="excerpt">
+                                <?php echo tru_excerpt_by_id( get_the_ID(), 30, '', '<a href="' . get_permalink( get_the_ID() ) . '">...more</a>' ); ?>
+                            </div>
+                        </div>
+                                    
+                    <?php endwhile; ?>
+                </div>
+            <?php endif; ?>
+    </div>
+
+
+  
         </div>
     </div>
 </div>
