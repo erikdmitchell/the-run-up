@@ -117,3 +117,22 @@
 	font-size: 1.2em;
 	line-height: 1.6em;
 }
+
+.home .from-the-blog {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+    .title {
+	    font-family: 'Arvo', serif;
+    	font-size: 40px;
+    	font-weight: 700;
+    	padding-bottom: 30px;
+    	text-align: center;        
+    }
+    
+    .blog-post {
+        h3 {
+            font-size: 1.1em;
+        }
+    }
+}

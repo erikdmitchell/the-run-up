@@ -7,9 +7,9 @@
 
 <div class="jumbotron home">
     <div class="container">
-        <div class="title">Fantasy Cyclocross Cycling</div>
+        <div class="title">Fantasy Cyclocross</div>
 
-        <div class="slogan">Create the Ultimate Cyclocross Cycling Team</div>
+        <div class="slogan">Create the Ultimate Cyclocross Team</div>
     </div>
 </div>
 
@@ -40,6 +40,45 @@
     </div>
 </div>
 
+<div class="container-fluid from-the-blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 title">
+                From the Blog
+            </div>
+        </div>
+        <div class="row">
+            <?php $blog_query = new WP_Query( array( 'posts_per_page' => 3 ) ); ?>
+
+            <?php if ( $blog_query->have_posts() ) : ?>
+                <div class="row">
+                    <?php
+                    while ( $blog_query->have_posts() ) :
+                        $blog_query->the_post();
+                        ?>
+                    
+                        <div class="col-12 col-sm-4 blog-post">
+                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'blog-landing' ); ?></a>
+
+                            <a href="<?php the_permalink(); ?>"><?php the_title( '<h3>', '</h3>' ); ?></a>
+                            
+                            <div class="excerpt">
+                                <?php echo tru_excerpt_by_id( get_the_ID(), 30, '', '<a href="' . get_permalink( get_the_ID() ) . '">...more</a>' ); ?>
+                            </div>
+                        </div>
+                                    
+                    <?php endwhile; ?>
+                </div>
+            <?php endif; ?>
+    </div>
+
+
+  
+        </div>
+    </div>
+</div>
+
+<!--
 <div class="container how-to-play">
     <div class="row justify-content-md-center">
         <div class="col-md-12 title">
@@ -68,6 +107,7 @@
         </div>
     </div>
 </div>
+-->
 
 <div class="container">
     <div class="row">
