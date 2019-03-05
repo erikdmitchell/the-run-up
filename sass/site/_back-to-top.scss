@@ -13,8 +13,6 @@
 	background: $blue url(inc/images/cd-top-arrow.svg) no-repeat center 50%;
 	visibility: hidden;
 	opacity: 0;
-	-webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
-	-moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
 	transition: opacity 0.3s 0s, visibility 0s 0.3s ;
 }
 

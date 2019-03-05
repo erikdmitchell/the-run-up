@@ -1,8 +1,4 @@
 /**
- * mobile navigation function
- */
-
-/**
  * back to top button function
  */
 jQuery(document).ready(function($) {
@@ -13,7 +9,7 @@ jQuery(document).ready(function($) {
 	//duration of the top scrolling animation (in ms)
 	var scroll_top_duration = 700;
 	//grab the "back to top" link
-	$back_to_top = $('.koksijde-back-to-top');
+	$back_to_top = $('.tru-back-to-top');
 
 	//hide or show the "back to top" link
 	$(window).scroll(function(){
