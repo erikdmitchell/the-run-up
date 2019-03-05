@@ -166,6 +166,23 @@ gulp.task('lintjs', function() {
     .pipe(jshint.reporter(stylish));
 });
 
+// combine scripts into one file and min it.
+gulp.task('scriptscombine', function () {
+    return gulp.src(jsInclude)
+        .pipe(concat('scripts.js'))
+        .pipe(gulp.dest('./inc/js'))
+        .pipe(rename({
+            basename: "scripts",
+            suffix: '.min'
+        }))
+        .pipe(uglify())
+        .pipe(gulp.dest('./inc/js/'))
+        .pipe(notify({
+            message: 'Scripts combined',
+            onLast: true
+        }));
+});
+
 /**
  * PHP
  */
@@ -195,12 +212,6 @@ gulp.task('phpcbf', function () {
 });
 
 // ==== TASKS ==== //
-/**
- * Gulp Default Task
- *
- * Compiles styles, watches js and php files.
- *
- */
 
 // gulp zip
 gulp.task('zip', function () {
