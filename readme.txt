@@ -34,6 +34,8 @@ Coming soon...
 
 = 1.3.0 =
 
+ * Combined scripts into single file.
+
 = 1.2.4 =
 
  * Added blog posts to coming soon front page.
