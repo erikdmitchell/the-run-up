@@ -1,4 +1,5 @@
 <?php
+$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 $featured_blog_query = new WP_Query(
     array(
         'posts_per_page' => 1,
@@ -9,6 +10,7 @@ $blog_query = new WP_Query(
     array(
         'posts_per_page' => 6,
         'offset' => 1,
+        'page' => $paged
     )
 );
 ?>
@@ -64,7 +66,6 @@ $blog_query = new WP_Query(
 
     
         <div class="nav-previous alignleft"><?php next_posts_link( 'Older posts', $blog_query->max_num_pages ); ?></div>
-        <div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
 
     </div>
 
