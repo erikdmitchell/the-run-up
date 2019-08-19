@@ -220,7 +220,7 @@ function phpcs(done) {
             standard: './phpcs.ruleset.xml',
             warningSeverity: 0
         }))
-        .pipe(phpcs.reporter('log')) // Log all problems that was found
+        .pipe(gulpphpcs.reporter('log')) // Log all problems that was found
   );
   done();
 }
@@ -270,6 +270,7 @@ exports.sass = sass;
 exports.mincss = mincss;
 exports.lintcss = lintcss;
 exports.beautifycss = beautifycss;
+exports.styles = styles;
 exports.js = js;
 exports.lintjs = lintjs;
 exports.beautifyjs = beautifyjs;
@@ -277,3 +278,4 @@ exports.phpcs = phpcs;
 exports.phpcbf = phpcbf;
 exports.zip = zip;
 exports.build = build;
+exports.watch = watch;
