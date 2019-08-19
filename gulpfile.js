@@ -251,12 +251,7 @@ gulp.task('zip', function () {
 });
 */  
 
-// Package Distributable
-/*
-gulp.task('build', function (cb) {
-    runSequence('styles', 'scripts', 'zip', cb);
-});
-*/
+
 
 // Styles task
 /*
@@ -273,7 +268,8 @@ gulp.task('styles', function (cb) {
 //});
 
 // define complex tasks
-const js = gulp.series(scripts);
+const js = gulp.series(scripts); // compile and minimize js
+const build = gulp.series(gulp.parallel(styles, scripts, zip)); // Package Distributable
 //const build = gulp.series(clean, gulp.parallel(css, images, js));
 //const watch = gulp.parallel(build, watchFiles, browserSync);
 
