@@ -24,7 +24,7 @@ $blog_query = new WP_Query(
                     ?>
                 
                     <div class="col-12">
-                        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'blog-landing-large' ); ?></a>
+                        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'blog-landing' ); ?></a>
                         
                         <div class="title">
                             <a href="<?php the_permalink(); ?>"><?php the_title( '<h2 class="blog-landing-large">', '</h2>' ); ?></a>
