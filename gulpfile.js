@@ -96,6 +96,7 @@ var gulp = require('gulp'),
  */
  
 // compile sass
+/*
 gulp.task('sass', function () {
     gulp.src('./sass/*.scss')
         .pipe(plumber())
@@ -116,8 +117,10 @@ gulp.task('sass', function () {
         .pipe(plumber.stop())
         .pipe(gulp.dest('./'))
 });
+*/
 
 // minify all css
+/*
 gulp.task('mincss', function () {
     gulp.src(cssInclude)
         .pipe(plumber())
@@ -138,8 +141,10 @@ gulp.task('mincss', function () {
         }))
         .pipe(gulp.dest('./'))
 });
+*/
 
 // css linting with Stylelint.
+/*
 gulp.task('lintcss', function lintCssTask() {
   return gulp.src(cssInclude)
     .pipe(stylelint({
@@ -148,19 +153,23 @@ gulp.task('lintcss', function lintCssTask() {
       ]
     }));
 });
+*/
 
 // make pretty
+/*
 gulp.task('beautifycss', () =>
     gulp.src(cssInclude)
         .pipe(cssbeautify())
         .pipe(gulp.dest('./'))
-);	
+);
+*/	
 
 /**
  * Scripts
  */
 
 // min all js files
+/*
 gulp.task('scripts', function () {
     return gulp.src(jsInclude)
         .pipe(rename({
@@ -169,15 +178,48 @@ gulp.task('scripts', function () {
         .pipe(uglify())
         .pipe(gulp.dest('./'))
 });
+*/
+
+// Transpile, concatenate and minify scripts
+function scripts() {
+  return (
+    gulp
+      .src(jsInclude)
+      .pipe(rename({
+          suffix: '.min'
+      }))
+      .pipe(uglify())
+      .pipe(gulp.dest("./"))
+  );
+}
+
+
+// define complex tasks
+const js = gulp.series(scripts);
+//const build = gulp.series(clean, gulp.parallel(css, images, js));
+//const watch = gulp.parallel(build, watchFiles, browserSync);
+
+
+// export tasks
+//exports.images = images;
+//exports.css = css;
+exports.js = js;
+//exports.clean = clean;
+//exports.build = build;
+//exports.watch = watch;
+//exports.default = watch;
 
 // js linting with JSHint.
+/*
 gulp.task('lintjs', function() {
   return gulp.src(jsInclude)
     .pipe(jshint())
     .pipe(jshint.reporter(stylish));
 });
+*/
 
 // combine scripts into one file and min it.
+/*
 gulp.task('scriptscombine', function () {
     return gulp.src(jsInclude)
         .pipe(concat('scripts.js'))
@@ -193,19 +235,23 @@ gulp.task('scriptscombine', function () {
             onLast: true
         }));
 });
+*/
 
 // make pretty
+/*
 gulp.task('beautifyjs', () =>
     gulp.src(jsInclude)
         .pipe(beautify())
         .pipe(gulp.dest('./'))
 );
+*/
 
 /**
  * PHP
  */
 
 // PHP Code Sniffer.
+/*
 gulp.task('phpcs', function () {
     return gulp.src(phpSrc)
         // Validate files using PHP Code Sniffer
@@ -216,8 +262,10 @@ gulp.task('phpcs', function () {
         }))
         .pipe(phpcs.reporter('log')); // Log all problems that was found
 });
+*/
 
 // PHP Code Beautifier.
+/*
 gulp.task('phpcbf', function () {
     return gulp.src(phpSrc)
         .pipe(phpcbf({
@@ -228,29 +276,84 @@ gulp.task('phpcbf', function () {
         .on('error', gutil.log)
         .pipe(gulp.dest('./'));
 });
+*/
 
 // ==== TASKS ==== //
 
 // gulp zip
+/*
 gulp.task('zip', function () {
   return gulp.src(buildInclude)
     .pipe(zip('the-run-up.zip'))
     .pipe(gulp.dest('./../'));
-});  
+});
+*/  
 
 // Package Distributable
+/*
 gulp.task('build', function (cb) {
     runSequence('styles', 'scripts', 'zip', cb);
 });
+*/
 
 // Styles task
+/*
 gulp.task('styles', function (cb) {
     runSequence('sass', 'mincss', cb);
 });
+*/
 
 
 // Watch Task
-gulp.task('default', ['styles', 'scripts'], function () {
-    gulp.watch('./sass/**/*', ['sass']);
-    gulp.watch('./js/**/*.js', ['scripts']);
-});
+//gulp.task('default', ['styles', 'scripts'], function () {
+//    gulp.watch('./sass/**/*', ['sass']);
+//    gulp.watch('./js/**/*.js', ['scripts']);
+//});
+
+
+/*
+  
+  
+  
+"use strict";
+
+// Load plugins
+const autoprefixer = require("autoprefixer");
+
+
+// Transpile, concatenate and minify scripts
+function scripts() {
+  return (
+    gulp
+      .src(["./js/*.js"])
+      .pipe(plumber())
+      .pipe(concat('custom.js'))
+      .pipe(rename({
+          basename: "custom",
+          suffix: '.min'
+      }))
+      .pipe(uglify())
+      .pipe(gulp.dest("./_site/assets/js/"))
+      .pipe(browsersync.stream())
+  );
+}
+
+
+// define complex tasks
+const js = gulp.series(scripts);
+const build = gulp.series(clean, gulp.parallel(css, images, js));
+const watch = gulp.parallel(build, watchFiles, browserSync);
+
+
+// export tasks
+exports.images = images;
+exports.css = css;
+exports.js = js;
+exports.clean = clean;
+exports.build = build;
+exports.watch = watch;
+exports.default = watch;
+  
+  
+    
+*/
