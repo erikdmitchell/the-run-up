@@ -2,7 +2,7 @@
 
 <div class="container">
     <div class="row content">
-        <?php get_template_part( 'template-parts/content', 'blog' ); ?>
+        <?php get_template_part( 'template-parts/content', 'landing' ); ?>
     </div>
 </div><!-- .container -->
 
