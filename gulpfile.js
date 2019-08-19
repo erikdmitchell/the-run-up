@@ -186,6 +186,26 @@ function scripts() {
   );
 }
 
+// js linting with JSHint.
+function lintjs(done) {
+  return (
+    gulp.src(jsInclude)
+        .pipe(jshint())
+        .pipe(jshint.reporter(stylish));
+  );
+  done();
+}
+
+// make pretty
+function beautifyjs(done) {
+  return (
+    gulp.src(jsInclude)
+        .pipe(beautify())
+        .pipe(gulp.dest('./'))
+  );
+  done();
+}
+
 
 // define complex tasks
 const js = gulp.series(scripts);
@@ -199,43 +219,10 @@ exports.mincss = mincss;
 exports.lintcss = lintcss;
 exports.beautifycss = beautifycss;
 exports.js = js;
+exports.lintjs = lintjs;
+exports.beautifyjs = beautifyjs;
 
-// js linting with JSHint.
-/*
-gulp.task('lintjs', function() {
-  return gulp.src(jsInclude)
-    .pipe(jshint())
-    .pipe(jshint.reporter(stylish));
-});
-*/
 
-// combine scripts into one file and min it.
-/*
-gulp.task('scriptscombine', function () {
-    return gulp.src(jsInclude)
-        .pipe(concat('scripts.js'))
-        .pipe(gulp.dest('./inc/js'))
-        .pipe(rename({
-            basename: "scripts",
-            suffix: '.min'
-        }))
-        .pipe(uglify())
-        .pipe(gulp.dest('./inc/js/'))
-        .pipe(notify({
-            message: 'Scripts combined',
-            onLast: true
-        }));
-});
-*/
-
-// make pretty
-/*
-gulp.task('beautifyjs', () =>
-    gulp.src(jsInclude)
-        .pipe(beautify())
-        .pipe(gulp.dest('./'))
-);
-*/
 
 /**
  * PHP
