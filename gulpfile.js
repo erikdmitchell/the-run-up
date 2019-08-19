@@ -240,6 +240,13 @@ function phpcbf(done) {
   done();
 }
 
+// general functions
+// Watch files
+function watchFiles() {
+  gulp.watch('./sass/**/*', sass);
+  gulp.watch('./js/**/*.js', js);
+}
+
 // ==== TASKS ==== //
 
 // gulp zip
@@ -260,18 +267,10 @@ gulp.task('styles', function (cb) {
 });
 */
 
-
-// Watch Task
-//gulp.task('default', ['styles', 'scripts'], function () {
-//    gulp.watch('./sass/**/*', ['sass']);
-//    gulp.watch('./js/**/*.js', ['scripts']);
-//});
-
 // define complex tasks
 const js = gulp.series(scripts); // compile and minimize js
 const build = gulp.series(gulp.parallel(styles, scripts, zip)); // Package Distributable
-//const build = gulp.series(clean, gulp.parallel(css, images, js));
-//const watch = gulp.parallel(build, watchFiles, browserSync);
+const default = gulp.parallel(stlyes, scripts, watchFiles); // Watch Task
 
 
 // export tasks
@@ -284,3 +283,5 @@ exports.lintjs = lintjs;
 exports.beautifyjs = beautifyjs;
 exports.phpcs = phpcs;
 exports.phpcbf = phpcbf;
+
+exports.build - build;
