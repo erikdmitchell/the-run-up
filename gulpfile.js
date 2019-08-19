@@ -94,7 +94,7 @@ var gulp = require('gulp'),
  
 // compile sass
 gulp.task('sass', function () {
-    gulp.src('/sass/*.scss')
+    gulp.src('./sass/*.scss')
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass({
