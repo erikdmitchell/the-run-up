@@ -71,25 +71,30 @@ function tru_theme_posted_on() {
  * @return void
  */
 function tru_excerpt_by_id( $post, $length = 25, $tags = '<a><em><strong>', $extra = '...' ) {
+echo "a";
     if ( is_int( $post ) ) {
         $post = get_post( $post ); // get the post object of the passed ID.
     } elseif ( ! is_object( $post ) ) {
         return false;
     }
-
-    if ( has_excerpt( $post->ID ) ) {
+echo "b";
+echo $post->ID;
+    if ( has_excerpt( $post->ID ) && '' !== $post->post_excerpt ) {
+echo "b1";        
+print_r($post->post_excerpt);
         $the_excerpt = $post->post_excerpt;
         return apply_filters( 'the_content', $the_excerpt );
     } else {
+echo "b2";        
         $the_excerpt = $post->post_content;
     }
-
+echo "c";
     $the_excerpt = strip_shortcodes( strip_tags( $the_excerpt ), $tags );
     $the_excerpt = preg_split( '/\b/', $the_excerpt, $length * 2 + 1 );
     $excerpt_waste = array_pop( $the_excerpt );
     $the_excerpt = implode( $the_excerpt );
     $the_excerpt .= $extra;
-
+echo "d";
     // remove jetpack sharing.
     remove_filter( 'the_content', 'sharing_display', 19 );
 
@@ -120,11 +125,8 @@ function tru_theme_setup() {
     /**
      * add our image size(s)
      */
-    add_image_size( 'tru-home-image', 9999, 400, true );
-    // add_image_size('tru-home-blog-post-image', 555, 225, true);
     add_image_size( 'single', 1400, 480, true );
     add_image_size( 'blog-landing', 1200, 400, true );
-    add_image_size( 'blog-landing-large', 1200, 800, true );
     add_image_size( 'blog-landing-right', 1200, 600, true );
     add_image_size( 'blog-power-ranking', 280, 160, true );
     
