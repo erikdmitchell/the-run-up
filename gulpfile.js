@@ -121,12 +121,9 @@ function sass(done) {
   done();
 }
 
-
-//exports.default = callbackTask;
-
 // minify all css
-/*
-gulp.task('mincss', function () {
+function mincss(done) {
+  return (
     gulp.src(cssInclude)
         .pipe(plumber())
         .pipe(sourcemaps.init())
@@ -145,29 +142,33 @@ gulp.task('mincss', function () {
             maxLineLen: 80
         }))
         .pipe(gulp.dest('./'))
-});
-*/
+        
+  );
+  done();
+}
 
 // css linting with Stylelint.
-/*
-gulp.task('lintcss', function lintCssTask() {
-  return gulp.src(cssInclude)
-    .pipe(stylelint({
-      reporters: [
-        {formatter: 'string', console: true}
-      ]
-    }));
-});
-*/
+function lintcss(done) {
+  return (
+    gulp.src(cssInclude)
+        .pipe(stylelint({
+          reporters: [
+            {formatter: 'string', console: true}
+          ]
+        }));
+  );
+  done();
+}
 
 // make pretty
-/*
-gulp.task('beautifycss', () =>
+function beautifycss(done) {
+  return (
     gulp.src(cssInclude)
         .pipe(cssbeautify())
         .pipe(gulp.dest('./'))
-);
-*/	
+  );
+  done();
+}
 
 /**
  * Scripts
@@ -188,19 +189,16 @@ function scripts() {
 
 // define complex tasks
 const js = gulp.series(scripts);
-//const sass = gulp.series(sass);
 //const build = gulp.series(clean, gulp.parallel(css, images, js));
 //const watch = gulp.parallel(build, watchFiles, browserSync);
 
 
 // export tasks
-//exports.images = images;
 exports.sass = sass;
+exports.mincss = mincss;
+exports.lintcss = lintcss;
+exports.beautifycss = beautifycss;
 exports.js = js;
-//exports.clean = clean;
-//exports.build = build;
-//exports.watch = watch;
-//exports.default = watch;
 
 // js linting with JSHint.
 /*
