@@ -31,7 +31,7 @@ $blog_query = new WP_Query(
                         </div>
                         
                         <div class="excerpt">
-                            <?php echo tru_excerpt_by_id( get_the_ID(), 30, '', '<a href="' . get_permalink( get_the_ID() ) . '">... read more</a>' ); ?>
+                            <?php echo tru_excerpt_by_id( get_the_ID(), 60, '', '<a href="' . get_permalink( get_the_ID() ) . '">... read more</a>' ); ?>
                         </div>
                     </div>
                 
