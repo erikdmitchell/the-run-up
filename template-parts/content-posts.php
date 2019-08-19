@@ -20,8 +20,16 @@ $blog_query = new WP_Query(
                     $blog_query->the_post();
                     ?>
                 
-                    <div class="col-12 col-md-6">
-                        <?php get_template_part( 'template-parts/content-blog-list', 'post' ); ?>
+                    <div class="col-12 col-sm-6">
+                        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'blog-single' ); ?></a>
+                        
+                        <div class="title">
+                            <a href="<?php the_permalink(); ?>"><?php the_title( '<h2 class="blog-list-post">', '</h2>' ); ?></a>
+                        </div>
+                        
+                        <div class="excerpt">
+                            <?php echo tru_excerpt_by_id( get_the_ID(), 30, '', '<a href="' . get_permalink( get_the_ID() ) . '">... read more</a>' ); ?>
+                        </div>
                     </div>
                                 
                 <?php endwhile; ?>

@@ -1,138 +1,162 @@
 /* front page */
-.jumbotron.home {
-    background: #333;
-    text-align: center;
-    background-image: radial-gradient(circle closest-corner at 50% 50%, rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.85)), url('inc/images/crowds.jpg');
-    background-position: 0% 0%, 50% 50%;
-    background-size: auto, cover;
-    background-repeat: repeat, no-repeat;
-    background-attachment: scroll, scroll;
-    color: #fff;
-    //padding-top: 78px;
-    //padding-bottom: 78px;
-    border-radius: 0;
-    margin-bottom: 0;
-}
-.home .title {
-	font-family: 'Arvo', serif;
-	font-size: 50px;
-	font-weight: 700;
-	padding-bottom: 30px;
-}
-.home .slogan {
-	font-size: 22px;
-	font-style: italic;
-	padding-bottom: 30px;
-}
-.home .join-now,
-.home .my-team {
-	color: #fff;
-  background-color: #18A9E1;
-  border-color: #1a84e1;
-  padding: 15px 30px;
-  text-transform: uppercase;
-  font-size: 20px;
-  font-weight: bold;
+$mobile-font-size-h2: 0.95rem;
+$mobil-font-size: 0.9rem;
+$tablet-font-size-h2: 1rem;
+
+h2.blog-list-post {
+    font-size: $mobile-font-size-h2;
+    
+    @media (min-width: 576px) { 
+        font-size: $tablet-font-size-h2;
+    }
+
+    @media (min-width: 768px) { 
+        font-size: 1.4rem;
+    }
 }
 
-.how-to-play {
-	text-align: center;
-	padding-bottom: 30px;
-	padding-top: 30px;
-    
-    .title {
-	    font-family: 'Arvo', serif;
-    	font-size: 40px;
-    	font-weight: 700;
-    	padding-bottom: 30px;
-    	text-align: center;
+.home {
+    font-size: $mobil-font-size;
+
+    @media (min-width: 768px) { 
+        font-size: 1rem;
+    }
+       
+    .excerpt {
+	    margin-top: 1rem;
+        margin-bottom: 2rem;
     }
     
-    .icons-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        align-content: center;
-    
-        .text {
-    	    font-size: 16px;
+    h2.blog-landing-large {
+        font-size: $mobile-font-size-h2;
+        
+        @media (min-width: 768px) { 
+            font-size: 1rem;
         }
         
-        i {
-    	    font-size: 6em;
+        @media (min-width: 576px) { 
+            font-size: $tablet-font-size-h2;
         }
-    
-        .arrow i {
-    	    font-size: 8em;
-    	    color: $gray;
+
+        @media (min-width: 768px) { 
+            font-size: 1.5rem;
         }
+    }
     
-        .step-1 {
-            color: $green;
-            
-            .text {
-                color: $font-color;
-            }
+    h2.blog-post-right {
+        font-size: $mobile-font-size-h2;
+
+        @media (min-width: 768px) { 
+            font-size: 1rem;
         }
         
-        .step-2 {
-            color: $blue;
-            
-            .text {
-                color: $font-color;
-            }
+        @media (min-width: 576px) { 
+            font-size: $tablet-font-size-h2;
         }
-        
-        .step-3 {
-            color: $yellow;
-            
-            .text {
-                color: $font-color;
-            }
-        } 
-    }     
+
+        @media (min-width: 768px) { 
+            font-size: 1.1rem;
+        }
+
+        @media (min-width: 992px) { 
+            font-size: 1.2rem;
+        }
+    }
 }
 
-.home-about {
-	background-color: #18A9E1;
-	padding-top: 30px;
-	padding-bottom: 30px;
-}
-.home-about .section-title {
-	text-align: center;
-}
-.home-about h1 {
-	font-size: 24px;
-	font-weight: 400;
-	padding: 0 0 15px 0;
-	margin: 0 auto;
-	text-transform: uppercase;
-}
-.home-about .blurb h2 {
-  font-size: 16px;
-  font-weight: 800;
-  text-transform: uppercase;
-  margin: 25px 0 10px;
-}
-.home-about .blurb p {
-	font-size: 1.2em;
-	line-height: 1.6em;
-}
+/* blog archive */
+.tru-blog-archive {}
 
-.home .from-the-blog {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    
-    .title {
-	    font-family: 'Arvo', serif;
-    	font-size: 40px;
-    	font-weight: 700;
-    	padding-bottom: 30px;
-    	text-align: center;        
-    }
-    
-    .blog-post {
-        h3 {
-            font-size: 1.1em;
+/* blog single */
+.tru-blog-single { 
+    /* sharing */
+    .sharedaddy {
+        .sd-title {
+            display: none;
         }
-    }
+        
+        .sd-content {
+            ul {
+                li {
+                    margin: 0 10px 5px 0;
+                }
+            }
+        }
+    }	
+    
+	.power-rankings {
+    	list-style-type: none;
+    	
+    	.rider {
+        	margin-top: 15px;
+        	margin-bottom: 15px;
+        	
+        	.rider-rank {
+            	margin-top: 1rem;
+        	}
+        	
+        	.image-wrap {
+            	display: flex;
+            	flex-wrap: wrap;
+            	align-items: center;
+            	
+            	img {
+                    border-radius: 5px;
+            	}
+        	}
+        	
+        	.rider-name {
+            	font-weight: bold;
+            	margin-left: 5px;
+        	}
+    	}
+	}
+
+	.predictions {
+        .header {
+            font-weight: bold;
+        }
+        
+        .place {
+            text-align: center;
+        }
+        
+        .points {
+            text-align: center;
+        }
+	}
+	
+    footer.entry-meta {
+	    margin-bottom: 15px;
+        background: transparent;
+        margin-top: 30px;
+        
+        .tags-list {
+            .tags-title {
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+            .tag-links {
+                a {
+                    padding: 5px;
+                    background: $whitesmoke;
+                }
+            }
+        }
+
+        .categories-list {
+            margin-top: 15px;
+            
+            .categories-title {
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+            .categories-link {
+                a {
+                    padding: 5px;
+                    background: $whitesmoke;
+                }
+            }
+        }
+    }	
 }
