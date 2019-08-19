@@ -123,7 +123,6 @@ function tru_theme_setup() {
      */
     add_image_size( 'single', 1400, 480, true );
     add_image_size( 'blog-landing', 1200, 400, true );
-    add_image_size( 'blog-landing-right', 1200, 600, true );
     add_image_size( 'blog-power-ranking', 280, 160, true );
 
     /**
