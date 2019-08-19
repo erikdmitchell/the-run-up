@@ -250,15 +250,14 @@ function watchFiles() {
 // ==== TASKS ==== //
 
 // gulp zip
-/*
-gulp.task('zip', function () {
-  return gulp.src(buildInclude)
-    .pipe(zip('the-run-up.zip'))
-    .pipe(gulp.dest('./../'));
-});
-*/  
-
-
+function zip(done) {
+  return (
+    gulp.src(buildInclude)
+        .pipe(zip('the-run-up.zip'))
+        .pipe(gulp.dest('./../'));
+  );
+  done();
+}
 
 // Styles task
 /*
@@ -283,5 +282,5 @@ exports.lintjs = lintjs;
 exports.beautifyjs = beautifyjs;
 exports.phpcs = phpcs;
 exports.phpcbf = phpcbf;
-
-exports.build - build;
+exports.zip = zip;
+exports.build = build;
