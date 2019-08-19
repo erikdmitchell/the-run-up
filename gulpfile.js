@@ -62,7 +62,7 @@ var jsInclude = [
     ];    
 
 // Load plugins
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'), // Autoprefixing magic
     minifycss = require('gulp-uglifycss'),
     filter = require('gulp-filter'),
@@ -73,7 +73,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
     runSequence = require('run-sequence'),
-    sass = require('gulp-sass'),
+    gulpsass = require('gulp-sass'),
     plugins = require('gulp-load-plugins')({
         camelize: true
     }),
@@ -96,12 +96,12 @@ var gulp = require('gulp'),
  */
  
 // compile sass
-/*
-gulp.task('sass', function () {
+function sass(done) {
+  return (
     gulp.src('./sass/*.scss')
         .pipe(plumber())
         .pipe(sourcemaps.init())
-        .pipe(sass({
+        .pipe(gulpsass({
             errLogToConsole: true,
             outputStyle: 'nested',
             precision: 10
@@ -116,8 +116,13 @@ gulp.task('sass', function () {
         .pipe(sourcemaps.write('.'))
         .pipe(plumber.stop())
         .pipe(gulp.dest('./'))
-});
-*/
+        
+  );
+  done();
+}
+
+
+//exports.default = callbackTask;
 
 // minify all css
 /*
@@ -169,22 +174,9 @@ gulp.task('beautifycss', () =>
  */
 
 // min all js files
-/*
-gulp.task('scripts', function () {
-    return gulp.src(jsInclude)
-        .pipe(rename({
-            suffix: '.min'
-        }))
-        .pipe(uglify())
-        .pipe(gulp.dest('./'))
-});
-*/
-
-// Transpile, concatenate and minify scripts
 function scripts() {
   return (
-    gulp
-      .src(jsInclude)
+    gulp.src(jsInclude)
       .pipe(rename({
           suffix: '.min'
       }))
@@ -196,13 +188,14 @@ function scripts() {
 
 // define complex tasks
 const js = gulp.series(scripts);
+//const sass = gulp.series(sass);
 //const build = gulp.series(clean, gulp.parallel(css, images, js));
 //const watch = gulp.parallel(build, watchFiles, browserSync);
 
 
 // export tasks
 //exports.images = images;
-//exports.css = css;
+exports.sass = sass;
 exports.js = js;
 //exports.clean = clean;
 //exports.build = build;
@@ -309,51 +302,3 @@ gulp.task('styles', function (cb) {
 //    gulp.watch('./sass/**/*', ['sass']);
 //    gulp.watch('./js/**/*.js', ['scripts']);
 //});
-
-
-/*
-  
-  
-  
-"use strict";
-
-// Load plugins
-const autoprefixer = require("autoprefixer");
-
-
-// Transpile, concatenate and minify scripts
-function scripts() {
-  return (
-    gulp
-      .src(["./js/*.js"])
-      .pipe(plumber())
-      .pipe(concat('custom.js'))
-      .pipe(rename({
-          basename: "custom",
-          suffix: '.min'
-      }))
-      .pipe(uglify())
-      .pipe(gulp.dest("./_site/assets/js/"))
-      .pipe(browsersync.stream())
-  );
-}
-
-
-// define complex tasks
-const js = gulp.series(scripts);
-const build = gulp.series(clean, gulp.parallel(css, images, js));
-const watch = gulp.parallel(build, watchFiles, browserSync);
-
-
-// export tasks
-exports.images = images;
-exports.css = css;
-exports.js = js;
-exports.clean = clean;
-exports.build = build;
-exports.watch = watch;
-exports.default = watch;
-  
-  
-    
-*/
