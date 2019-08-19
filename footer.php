@@ -10,14 +10,6 @@
                             </div>
                         </div>
 
-                        <div class="col-6 col-sm-3 footer-col">
-                            <?php dynamic_sidebar( 'footer-1' ); ?>
-                        </div>
-
-                        <div class="col-6 col-sm-3 footer-col">
-                            <?php dynamic_sidebar( 'footer-2' ); ?>
-                        </div>
-
                         <div class="col-12 col-sm-3 footer-co footer-social">
                             <ul class="social">
                                 <li><a href="https://twitter.com/therunupcx"><i class="fab fa-twitter-square"></i></a></li>
