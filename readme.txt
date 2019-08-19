@@ -2,8 +2,8 @@
 Contributors: Erik Mitchell
 Tags:
 Requires at least: 3.5
-Tested up to: 5.1
-Stable tag: 1.3.0
+Tested up to: 5.2.2
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,10 @@ Coming soon...
 Coming soon...
 
 == Changelog ==
+
+= 2.0.0 =
+
+ * Changed the layout and structure of theme since the site is now a blog only site.
 
 = 1.3.0 =
 
