@@ -85,7 +85,7 @@ const gulp = require('gulp'),
     stylish = require('jshint-stylish'), // JSHint Stylish plugin
     stylelint = require('gulp-stylelint'), // stylelint plugin
     gulpphpcs = require('gulp-phpcs'), // Gulp plugin for running PHP Code Sniffer.
-    gulpphpcbf = require('gulp-phpcbf'), // PHP Code Beautifier
+    gphpcbf = require('gulp-phpcbf'), // PHP Code Beautifier
     gutil = require('gulp-util'), // gulp util
     gzip = require('gulp-zip'), // gulp zip
     beautify = require('gulp-jsbeautifier'),
@@ -214,13 +214,12 @@ function beautifyjs(done) {
 function phpcs(done) {
   return (
     gulp.src(phpSrc)
-        // Validate files using PHP Code Sniffer
         .pipe(gulpphpcs({
             bin: 'vendor/bin/phpcs',
             standard: './phpcs.ruleset.xml',
             warningSeverity: 0
         }))
-        .pipe(gulpphpcs.reporter('log')) // Log all problems that was found
+        .pipe(gulpphpcs.reporter('log'))
   );
   done();
 }
@@ -228,8 +227,8 @@ function phpcs(done) {
 // PHP Code Beautifier.
 function phpcbf(done) {
   return (
-    gulp.src(phpcbf)
-        .pipe(gulpphpcbf({
+    gulp.src(phpSrc)
+        .pipe(gphpcbf({
             bin: 'vendor/bin/phpcbf',
             standard: './phpcs.ruleset.xml',
             warningSeverity: 0
@@ -240,14 +239,13 @@ function phpcbf(done) {
   done();
 }
 
-// general functions
+/**/
+
 // Watch files
 function watchFiles() {
   gulp.watch('./sass/**/*', sass);
   gulp.watch('./js/**/*.js', js);
 }
-
-// ==== TASKS ==== //
 
 // gulp zip
 function zip(done) {
