@@ -84,10 +84,10 @@ const gulp = require('gulp'),
     jshint = require('gulp-jshint'), // JSHint plugin
     stylish = require('jshint-stylish'), // JSHint Stylish plugin
     stylelint = require('gulp-stylelint'), // stylelint plugin
-    phpcs = require('gulp-phpcs'), // Gulp plugin for running PHP Code Sniffer.
-    phpcbf = require('gulp-phpcbf'), // PHP Code Beautifier
+    gulpphpcs = require('gulp-phpcs'), // Gulp plugin for running PHP Code Sniffer.
+    gulpphpcbf = require('gulp-phpcbf'), // PHP Code Beautifier
     gutil = require('gulp-util'), // gulp util
-    zip = require('gulp-zip'), // gulp zip
+    gzip = require('gulp-zip'), // gulp zip
     beautify = require('gulp-jsbeautifier'),
     cssbeautify = require('gulp-cssbeautify');
 
@@ -155,7 +155,7 @@ function lintcss(done) {
           reporters: [
             {formatter: 'string', console: true}
           ]
-        }));
+        }))
   );
   done();
 }
@@ -191,7 +191,7 @@ function lintjs(done) {
   return (
     gulp.src(jsInclude)
         .pipe(jshint())
-        .pipe(jshint.reporter(stylish));
+        .pipe(jshint.reporter(stylish))
   );
   done();
 }
@@ -215,12 +215,12 @@ function phpcs(done) {
   return (
     gulp.src(phpSrc)
         // Validate files using PHP Code Sniffer
-        .pipe(phpcs({
+        .pipe(gulpphpcs({
             bin: 'vendor/bin/phpcs',
             standard: './phpcs.ruleset.xml',
             warningSeverity: 0
         }))
-        .pipe(phpcs.reporter('log')); // Log all problems that was found
+        .pipe(phpcs.reporter('log')) // Log all problems that was found
   );
   done();
 }
@@ -229,13 +229,13 @@ function phpcs(done) {
 function phpcbf(done) {
   return (
     gulp.src(phpcbf)
-        .pipe(phpcbf({
+        .pipe(gulpphpcbf({
             bin: 'vendor/bin/phpcbf',
             standard: './phpcs.ruleset.xml',
             warningSeverity: 0
         }))       
         .on('error', gutil.log)
-        .pipe(gulp.dest('./'));
+        .pipe(gulp.dest('./'))
   );
   done();
 }
@@ -253,8 +253,8 @@ function watchFiles() {
 function zip(done) {
   return (
     gulp.src(buildInclude)
-        .pipe(zip('the-run-up.zip'))
-        .pipe(gulp.dest('./../'));
+        .pipe(gzip('the-run-up.zip'))
+        .pipe(gulp.dest('./../'))
   );
   done();
 }
@@ -262,7 +262,7 @@ function zip(done) {
 // define complex tasks
 const js = gulp.series(scripts); // compile and minimize js
 const build = gulp.series(gulp.parallel(styles, scripts, zip)); // Package Distributable
-const default = gulp.parallel(stlyes, scripts, watchFiles); // Watch Task
+const watch = gulp.parallel(styles, scripts, watchFiles); // Watch Task
 const styles = gulp.series(gulp.parallel(sass, mincss)); // Styles task
 
 // export tasks
