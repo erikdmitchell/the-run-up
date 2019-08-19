@@ -206,32 +206,14 @@ function beautifyjs(done) {
   done();
 }
 
-
-// define complex tasks
-const js = gulp.series(scripts);
-//const build = gulp.series(clean, gulp.parallel(css, images, js));
-//const watch = gulp.parallel(build, watchFiles, browserSync);
-
-
-// export tasks
-exports.sass = sass;
-exports.mincss = mincss;
-exports.lintcss = lintcss;
-exports.beautifycss = beautifycss;
-exports.js = js;
-exports.lintjs = lintjs;
-exports.beautifyjs = beautifyjs;
-
-
-
 /**
  * PHP
  */
 
 // PHP Code Sniffer.
-/*
-gulp.task('phpcs', function () {
-    return gulp.src(phpSrc)
+function phpcs(done) {
+  return (
+    gulp.src(phpSrc)
         // Validate files using PHP Code Sniffer
         .pipe(phpcs({
             bin: 'vendor/bin/phpcs',
@@ -239,13 +221,14 @@ gulp.task('phpcs', function () {
             warningSeverity: 0
         }))
         .pipe(phpcs.reporter('log')); // Log all problems that was found
-});
-*/
+  );
+  done();
+}
 
 // PHP Code Beautifier.
-/*
-gulp.task('phpcbf', function () {
-    return gulp.src(phpSrc)
+function phpcbf(done) {
+  return (
+    gulp.src(phpcbf)
         .pipe(phpcbf({
             bin: 'vendor/bin/phpcbf',
             standard: './phpcs.ruleset.xml',
@@ -253,8 +236,9 @@ gulp.task('phpcbf', function () {
         }))       
         .on('error', gutil.log)
         .pipe(gulp.dest('./'));
-});
-*/
+  );
+  done();
+}
 
 // ==== TASKS ==== //
 
@@ -287,3 +271,20 @@ gulp.task('styles', function (cb) {
 //    gulp.watch('./sass/**/*', ['sass']);
 //    gulp.watch('./js/**/*.js', ['scripts']);
 //});
+
+// define complex tasks
+const js = gulp.series(scripts);
+//const build = gulp.series(clean, gulp.parallel(css, images, js));
+//const watch = gulp.parallel(build, watchFiles, browserSync);
+
+
+// export tasks
+exports.sass = sass;
+exports.mincss = mincss;
+exports.lintcss = lintcss;
+exports.beautifycss = beautifycss;
+exports.js = js;
+exports.lintjs = lintjs;
+exports.beautifyjs = beautifyjs;
+exports.phpcs = phpcs;
+exports.phpcbf = phpcbf;
