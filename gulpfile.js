@@ -1,20 +1,21 @@
 // Project configuration
 var buildInclude = [
         // include common file types
-        //'**/*.php',
-        //'**/*.html',
-        //'**/*.css',
-        //'**/*.js',
-        //'**/*.svg',
-        //'**/*.ttf',
-        //'**/*.otf',
-        //'**/*.eot',
-        //'**/*.woff',
-        //'**/*.woff2',
-        
-        './**/*',
+        '**/*.php',
+        '**/*.html',
+        '**/*.css',
+        '**/*.js',
+        '**/*.svg',
+        '**/*.ttf',
+        '**/*.otf',
+        '**/*.eot',
+        '**/*.woff',
+        '**/*.woff2',
+        '**/*.png',
         
         // include specific files and folders
+        'screenshot.png',
+        'readme.txt',
 
         // exclude files and folders
         '!./composer.json', 
@@ -26,12 +27,13 @@ var buildInclude = [
         '!./{sass,sass/**/*}',
         '!./.stylelintrc',
         '!./{vendor,vendor/**/*}',
+        '!svn/**'
     ];
     
 var phpSrc = [
         '**/*.php', // Include all files    
-        '!node_modules/**/*', // Exclude node_modules/
-        '!vendor/**' // Exclude vendor/    
+        '!node_modules/**/*', // Exclude node_modules
+        '!vendor/**' // Exclude vendor   
     ];
 
 var cssInclude = [
@@ -42,7 +44,6 @@ var cssInclude = [
         '!**/*.min.css',
         '!node_modules/**/*',
         '!style.css.map',
-        '!inc/css/**',
         '!vendor/**'
     ];
     
@@ -54,9 +55,7 @@ var jsInclude = [
         '!**/*.min.js',
         '!node_modules/**/*',
         '!vendor/**',
-        '!**/gulpfile.js',
-        '!inc/js/html5shiv.js',
-        '!inc/js/respond.js',        
+        '!**/gulpfile.js'       
     ];    
 
 // Load plugins
@@ -70,7 +69,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-    runSequence = require('gulp-run-sequence'),
+    runSequence = require('run-sequence'),
     sass = require('gulp-sass'),
     plugins = require('gulp-load-plugins')({
         camelize: true
@@ -82,10 +81,12 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'), // JSHint plugin
     stylish = require('jshint-stylish'), // JSHint Stylish plugin
     stylelint = require('gulp-stylelint'), // stylelint plugin
-    phpcs = require('gulp-phpcs'); // Gulp plugin for running PHP Code Sniffer.
-    phpcbf = require('gulp-phpcbf'); // PHP Code Beautifier
-    gutil = require('gulp-util'); // gulp util
-    zip = require('gulp-zip'); // gulp zip
+    phpcs = require('gulp-phpcs'), // Gulp plugin for running PHP Code Sniffer.
+    phpcbf = require('gulp-phpcbf'), // PHP Code Beautifier
+    gutil = require('gulp-util'), // gulp util
+    zip = require('gulp-zip'), // gulp zip
+    beautify = require('gulp-jsbeautifier'),
+    cssbeautify = require('gulp-cssbeautify');
 
 /**
  * Styles
@@ -93,7 +94,7 @@ var gulp = require('gulp'),
  
 // compile sass
 gulp.task('sass', function () {
-    gulp.src('./sass/*.scss')
+    gulp.src('**/sass/*.scss')
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass({
@@ -143,7 +144,14 @@ gulp.task('lintcss', function lintCssTask() {
         {formatter: 'string', console: true}
       ]
     }));
-});	
+});
+
+// make pretty
+gulp.task('beautifycss', () =>
+    gulp.src(cssInclude)
+        .pipe(cssbeautify())
+        .pipe(gulp.dest('./'))
+);	
 
 /**
  * Scripts
@@ -183,6 +191,13 @@ gulp.task('scriptscombine', function () {
         }));
 });
 
+// make pretty
+gulp.task('beautifyjs', () =>
+    gulp.src(jsInclude)
+        .pipe(beautify())
+        .pipe(gulp.dest('./'))
+);
+
 /**
  * PHP
  */
@@ -218,7 +233,7 @@ gulp.task('zip', function () {
   return gulp.src(buildInclude)
     .pipe(zip('the-run-up.zip'))
     .pipe(gulp.dest('./../'));
-});
+});  
 
 // Package Distributable
 gulp.task('build', function (cb) {
