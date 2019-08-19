@@ -19,7 +19,6 @@ function tru_scripts_styles() {
 
     // enqueue our scripts for theme
     wp_enqueue_script( 'jquery' );
-    wp_enqueue_script( 'tru-theme-script', get_stylesheet_directory_uri() . '/inc/js/scripts.min.js', array( 'jquery' ), $theme->Version, true );
 
     if ( is_singular() ) {
         wp_enqueue_script( 'comment-reply' );
@@ -40,44 +39,9 @@ function tru_scripts_styles() {
     // enqueue stylesheets
     wp_enqueue_style( 'google-fonts-arvo', 'https://fonts.googleapis.com/css?family=Arvo:400,700,400italic' );
     wp_enqueue_style( 'bootstrap-grid-style', get_stylesheet_directory_uri() . '/inc/css/bootstrap-grid.min.css', array(), '5.4.1' );
-    wp_enqueue_style( 'fa-style', get_stylesheet_directory_uri() . '/inc/css/all.min.css', array(), '5.4.1' );
     wp_enqueue_style( 'tru-theme-style', get_stylesheet_uri(), array(), $theme->Version );
 }
 add_action( 'wp_enqueue_scripts', 'tru_scripts_styles' );
-
-/**
- * tru_loginout_menu_link function.
- *
- * @access public
- * @param mixed $items
- * @param mixed $args
- * @return void
- */
-function tru_loginout_menu_link( $items, $args ) {
-    // primary nav //
-    if ( $args->theme_location == 'primary' ) {
-        if ( is_user_logged_in() ) {
-            $items .= '<li class="logout"><a href="' . wp_logout_url() . '">' . __( 'Log Out' ) . '</a></li>';
-        } else {
-            $items .= '<li class="sign-in"><a href="' . wp_login_url() . '">' . __( 'Log In' ) . '</a></li>';
-        }
-
-        $items .= '<li class="faq"><a href="/faq"><i class="far fa-question-circle"></i></a></li>';
-    }
-
-    // footer 1 nav //
-    if ( isset( $args->menu->slug ) && $args->menu->slug == 'footer-1' ) :
-        if ( is_user_logged_in() ) :
-            $items .= '<li class="logout"><a href="' . wp_logout_url() . '">' . __( 'Log Out' ) . '</a></li>';
-      else :
-            $items .= '<li class="logout"><a href="' . wp_registration_url() . '">' . __( 'Sign Up' ) . '</a></li>';
-            $items .= '<li class="logout"><a href="' . wp_login_url() . '">' . __( 'Log In' ) . '</a></li>';
-      endif;
-  endif;
-
-    return $items;
-}
-add_filter( 'wp_nav_menu_items', 'tru_loginout_menu_link', 10, 2 );
 
 /**
  * tru_theme_posted_on function.
@@ -163,26 +127,7 @@ function tru_theme_setup() {
     add_image_size( 'blog-landing-large', 1200, 800, true );
     add_image_size( 'blog-landing-right', 1200, 600, true );
     add_image_size( 'blog-power-ranking', 280, 160, true );
-
-    /**
-     * include bootstrap nav walker
-     */
-    include_once( get_stylesheet_directory() . '/inc/wp-bootstrap-navwalker.php' );
-
-    /**
-     * include bootstrap mobile nav walker
-     */
-    include_once( get_stylesheet_directory() . '/inc/mobile-nav-walker.php' );
-
-    // register our navigation area
-    register_nav_menus(
-        array(
-            'primary' => __( 'Primary Menu', 'the-run-up' ),
-            'mobile' => __( 'Mobile Menu', 'the-run-up' ),
-            'secondary' => __( 'Secondary Menu', 'the-run-up' ),
-        )
-    );
-
+    
     /**
      * This theme styles the visual editor to resemble the theme style
      */
@@ -190,49 +135,6 @@ function tru_theme_setup() {
 
 }
 add_action( 'after_setup_theme', 'tru_theme_setup' );
-
-/**
- * Register widget area.
- *
- * @since the-run-up 1.0.0
- */
-function tru_theme_widgets_init() {
-
-    register_sidebar(
-        array(
-            'name' => 'Footer 1',
-            'id' => 'footer-1',
-            'before_widget' => '',
-            'after_widget' => '',
-            'before_title' => '<h3>',
-            'after_title' => '</h3>',
-        )
-    );
-
-    register_sidebar(
-        array(
-            'name' => 'Footer 2',
-            'id' => 'footer-2',
-            'before_widget' => '',
-            'after_widget' => '',
-            'before_title' => '<h3>',
-            'after_title' => '</h3>',
-        )
-    );
-
-    register_sidebar(
-        array(
-            'name' => 'Footer 3',
-            'id' => 'footer-3',
-            'before_widget' => '',
-            'after_widget' => '',
-            'before_title' => '<h3>',
-            'after_title' => '</h3>',
-        )
-    );
-
-}
-add_action( 'widgets_init', 'tru_theme_widgets_init' );
 
 /**
  * Display an optional post thumbnail.
@@ -321,80 +223,6 @@ function tru_display_meta_description() {
 }
 
 /**
- * tru_mobile_navigation_setup function.
- *
- * checks if we have an active mobile menu
- * if active mobile, sets it, if not, default to primary
- *
- * @access public
- * @return void
- */
-function tru_mobile_navigation_setup() {
-    $html = null;
-
-    if ( has_nav_menu( 'mobile' ) ) :
-        $location = 'mobile';
-    else :
-        $location = 'primary';
-    endif;
-
-    $location = apply_filters( 'tru_mobile_navigation_setup_location', $location );
-
-    if ( $location == 'primary' && ! has_nav_menu( $location ) ) {
-        return false;
-    }
-
-    $html .= '<div id="tru-mobile-nav" class="collapse tru-mobile-menu hidden-sm hidden-md hidden-lg">';
-
-        $html .= wp_nav_menu(
-            array(
-                'theme_location' => $location,
-                'container' => 'div',
-                'container_class' => 'panel-group navbar-nav',
-                'container_id' => 'accordion',
-                'echo' => false,
-                'fallback_cb' => 'tru_wp_bootstrap_navwalker::fallback',
-                'walker' => new truMobileNavWalker(),
-            )
-        );
-
-    $html .= '</div><!-- .tru-theme-mobile-menu -->';
-
-    echo apply_filters( 'tru_mobile_navigation', $html );
-}
-
-/**
- * tru_secondary_navigation_setup function.
- *
- * if our secondary menu is set, this shows it
- *
- * @access public
- * @return void
- */
-function tru_secondary_navigation_setup() {
-    $html = null;
-
-    if ( ! has_nav_menu( 'secondary' ) ) {
-        return false;
-    }
-
-    $html .= '<div class="collapse navbar-collapse secondary-menu">';
-        $html .= wp_nav_menu(
-            array(
-                'theme_location' => 'secondary',
-                'container' => false,
-                'menu_class' => 'nav navbar-nav pull-right secondary',
-                'echo' => false,
-                'fallback_cb' => 'tru_wp_bootstrap_navwalker::fallback',
-                'walker' => new tru_wp_bootstrap_navwalker(),
-            )
-        );
-    $html .= '</div> <!-- .secondary-menu -->';
-
-    echo apply_filters( 'tru_secondary_navigation', $html );
-}
-
-/**
  * tru_back_to_top function.
  *
  * @access public
@@ -434,49 +262,6 @@ function tru_wp_parse_args( &$a, $b ) {
 
     return $result;
 }
-
-/**
- * PCL force login whitelist urls.
- *
- * @access public
- * @param mixed $array
- * @return void
- */
-function tru_pcl_force_login_whitelist( $array ) {
-    $array[] = site_url( 'faq' );
-    $array[] = site_url();
-
-    return $array;
-}
-add_filter( 'pcl_force_login_whitelist', 'tru_pcl_force_login_whitelist' );
-
-/**
- * PCL force login regex.
- *
- * @access public
- * @param mixed $regex
- * @return void
- */
-function tru_pcl_force_login_regex( $regex ) {
-    $regex[] = '/\/blog\/?.*/m';
-
-    return $regex;
-}
-add_filter( 'pcl_force_login_regex', 'tru_pcl_force_login_regex' );
-
-/**
- * After registration, add team name.
- *
- * @access public
- * @param mixed $new_user_id
- * @param mixed $fields
- * @param mixed $post_data
- * @return void
- */
-function tru_pcl_after_user_registration( $new_user_id, $fields, $post_data ) {
-    fc_create_team( $new_user_id, $fields['team_name'] );
-}
-add_action( 'pcl_after_user_registration', 'tru_pcl_after_user_registration', 11, 3 );
 
 /**
  * Move JP sharing to before and after post.
