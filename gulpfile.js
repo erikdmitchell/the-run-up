@@ -259,18 +259,11 @@ function zip(done) {
   done();
 }
 
-// Styles task
-/*
-gulp.task('styles', function (cb) {
-    runSequence('sass', 'mincss', cb);
-});
-*/
-
 // define complex tasks
 const js = gulp.series(scripts); // compile and minimize js
 const build = gulp.series(gulp.parallel(styles, scripts, zip)); // Package Distributable
 const default = gulp.parallel(stlyes, scripts, watchFiles); // Watch Task
-
+const styles = gulp.series(gulp.parallel(sass, mincss)); // Styles task
 
 // export tasks
 exports.sass = sass;
