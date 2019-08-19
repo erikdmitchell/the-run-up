@@ -1,7 +1,7 @@
 /* front page */
-$mobile-font-size-h2: 0.95em;
-$mobil-font-size: 0.9em;
-$tablet-font-size-h2: 1em;
+$mobile-font-size-h2: 0.95rem;
+$mobil-font-size: 0.9rem;
+$tablet-font-size-h2: 1rem;
 
 h2.blog-list-post {
     font-size: $mobile-font-size-h2;
@@ -11,15 +11,15 @@ h2.blog-list-post {
     }
 
     @media (min-width: 768px) { 
-        font-size: 1.4em;
+        font-size: 1.4rem;
     }
 }
 
-.tru-blog-landing {
+.home {
     font-size: $mobil-font-size;
 
     @media (min-width: 768px) { 
-        font-size: 1em;
+        font-size: 1rem;
     }
        
     .excerpt {
@@ -31,7 +31,7 @@ h2.blog-list-post {
         font-size: $mobile-font-size-h2;
         
         @media (min-width: 768px) { 
-            font-size: 1em;
+            font-size: 1rem;
         }
         
         @media (min-width: 576px) { 
@@ -39,7 +39,7 @@ h2.blog-list-post {
         }
 
         @media (min-width: 768px) { 
-            font-size: 1.5em;
+            font-size: 1.5rem;
         }
     }
     
@@ -47,7 +47,7 @@ h2.blog-list-post {
         font-size: $mobile-font-size-h2;
 
         @media (min-width: 768px) { 
-            font-size: 1em;
+            font-size: 1rem;
         }
         
         @media (min-width: 576px) { 
@@ -55,19 +55,17 @@ h2.blog-list-post {
         }
 
         @media (min-width: 768px) { 
-            font-size: 1.1em;
+            font-size: 1.1rem;
         }
 
         @media (min-width: 992px) { 
-            font-size: 1.2em;
+            font-size: 1.2rem;
         }
     }
 }
 
 /* blog archive */
-.tru-blog-archive {
-    
-}
+.tru-blog-archive {}
 
 /* blog single */
 .tru-blog-single { 
@@ -94,7 +92,7 @@ h2.blog-list-post {
         	margin-bottom: 15px;
         	
         	.rider-rank {
-            	margin-top: 1em;
+            	margin-top: 1rem;
         	}
         	
         	.image-wrap {
