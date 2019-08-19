@@ -39,7 +39,7 @@ function tru_scripts_styles() {
     // enqueue stylesheets
     wp_enqueue_style( 'google-fonts-arvo', 'https://fonts.googleapis.com/css?family=Arvo:400,700,400italic' );
     wp_enqueue_style( 'bootstrap-grid-style', get_stylesheet_directory_uri() . '/inc/css/bootstrap-grid.min.css', array(), '5.4.1' );
-    wp_enqueue_style( 'fontawesome-style', get_stylesheet_directory_uri() . '/inc/css/fa.min.css', array(), '5.10.1' );    
+    wp_enqueue_style( 'fontawesome-style', get_stylesheet_directory_uri() . '/inc/css/fa.min.css', array(), '5.10.1' );
     wp_enqueue_style( 'tru-theme-style', get_stylesheet_uri(), array(), $theme->Version );
 }
 add_action( 'wp_enqueue_scripts', 'tru_scripts_styles' );
@@ -78,7 +78,7 @@ function tru_excerpt_by_id( $post, $length = 25, $tags = '<a><em><strong>', $ext
         return false;
     }
 
-    if ( has_excerpt( $post ) && !empty( trim($post->post_excerpt) ) ) {
+    if ( has_excerpt( $post ) && ! empty( trim( $post->post_excerpt ) ) ) {
         $the_excerpt = $post->post_excerpt;
         return apply_filters( 'the_content', $the_excerpt );
     } else {
@@ -125,7 +125,7 @@ function tru_theme_setup() {
     add_image_size( 'blog-landing', 1200, 400, true );
     add_image_size( 'blog-landing-right', 1200, 600, true );
     add_image_size( 'blog-power-ranking', 280, 160, true );
-    
+
     /**
      * This theme styles the visual editor to resemble the theme style
      */
