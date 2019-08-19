@@ -62,7 +62,7 @@ var jsInclude = [
     ];    
 
 // Load plugins
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'), // Autoprefixing magic
     minifycss = require('gulp-uglifycss'),
     filter = require('gulp-filter'),
@@ -73,7 +73,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
     runSequence = require('run-sequence'),
-    sass = require('gulp-sass'),
+    gulpsass = require('gulp-sass'),
     plugins = require('gulp-load-plugins')({
         camelize: true
     }),
@@ -84,10 +84,10 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'), // JSHint plugin
     stylish = require('jshint-stylish'), // JSHint Stylish plugin
     stylelint = require('gulp-stylelint'), // stylelint plugin
-    phpcs = require('gulp-phpcs'), // Gulp plugin for running PHP Code Sniffer.
-    phpcbf = require('gulp-phpcbf'), // PHP Code Beautifier
+    gulpphpcs = require('gulp-phpcs'), // Gulp plugin for running PHP Code Sniffer.
+    gphpcbf = require('gulp-phpcbf'), // PHP Code Beautifier
     gutil = require('gulp-util'), // gulp util
-    zip = require('gulp-zip'), // gulp zip
+    gzip = require('gulp-zip'), // gulp zip
     beautify = require('gulp-jsbeautifier'),
     cssbeautify = require('gulp-cssbeautify');
 
@@ -96,11 +96,12 @@ var gulp = require('gulp'),
  */
  
 // compile sass
-gulp.task('sass', function () {
+function sass(done) {
+  return (
     gulp.src('./sass/*.scss')
         .pipe(plumber())
         .pipe(sourcemaps.init())
-        .pipe(sass({
+        .pipe(gulpsass({
             errLogToConsole: true,
             outputStyle: 'nested',
             precision: 10
@@ -115,10 +116,14 @@ gulp.task('sass', function () {
         .pipe(sourcemaps.write('.'))
         .pipe(plumber.stop())
         .pipe(gulp.dest('./'))
-});
+        
+  );
+  done();
+}
 
 // minify all css
-gulp.task('mincss', function () {
+function mincss(done) {
+  return (
     gulp.src(cssInclude)
         .pipe(plumber())
         .pipe(sourcemaps.init())
@@ -137,120 +142,138 @@ gulp.task('mincss', function () {
             maxLineLen: 80
         }))
         .pipe(gulp.dest('./'))
-});
+        
+  );
+  done();
+}
 
 // css linting with Stylelint.
-gulp.task('lintcss', function lintCssTask() {
-  return gulp.src(cssInclude)
-    .pipe(stylelint({
-      reporters: [
-        {formatter: 'string', console: true}
-      ]
-    }));
-});
+function lintcss(done) {
+  return (
+    gulp.src(cssInclude)
+        .pipe(stylelint({
+          reporters: [
+            {formatter: 'string', console: true}
+          ]
+        }))
+  );
+  done();
+}
 
 // make pretty
-gulp.task('beautifycss', () =>
+function beautifycss(done) {
+  return (
     gulp.src(cssInclude)
         .pipe(cssbeautify())
         .pipe(gulp.dest('./'))
-);	
+  );
+  done();
+}
 
 /**
  * Scripts
  */
 
 // min all js files
-gulp.task('scripts', function () {
-    return gulp.src(jsInclude)
-        .pipe(rename({
-            suffix: '.min'
-        }))
-        .pipe(uglify())
-        .pipe(gulp.dest('./'))
-});
+function scripts() {
+  return (
+    gulp.src(jsInclude)
+      .pipe(rename({
+          suffix: '.min'
+      }))
+      .pipe(uglify())
+      .pipe(gulp.dest("./"))
+  );
+}
 
 // js linting with JSHint.
-gulp.task('lintjs', function() {
-  return gulp.src(jsInclude)
-    .pipe(jshint())
-    .pipe(jshint.reporter(stylish));
-});
-
-// combine scripts into one file and min it.
-gulp.task('scriptscombine', function () {
-    return gulp.src(jsInclude)
-        .pipe(concat('scripts.js'))
-        .pipe(gulp.dest('./inc/js'))
-        .pipe(rename({
-            basename: "scripts",
-            suffix: '.min'
-        }))
-        .pipe(uglify())
-        .pipe(gulp.dest('./inc/js/'))
-        .pipe(notify({
-            message: 'Scripts combined',
-            onLast: true
-        }));
-});
+function lintjs(done) {
+  return (
+    gulp.src(jsInclude)
+        .pipe(jshint())
+        .pipe(jshint.reporter(stylish))
+  );
+  done();
+}
 
 // make pretty
-gulp.task('beautifyjs', () =>
+function beautifyjs(done) {
+  return (
     gulp.src(jsInclude)
         .pipe(beautify())
         .pipe(gulp.dest('./'))
-);
+  );
+  done();
+}
 
 /**
  * PHP
  */
 
 // PHP Code Sniffer.
-gulp.task('phpcs', function () {
-    return gulp.src(phpSrc)
-        // Validate files using PHP Code Sniffer
-        .pipe(phpcs({
+function phpcs(done) {
+  return (
+    gulp.src(phpSrc)
+        .pipe(gulpphpcs({
             bin: 'vendor/bin/phpcs',
             standard: './phpcs.ruleset.xml',
             warningSeverity: 0
         }))
-        .pipe(phpcs.reporter('log')); // Log all problems that was found
-});
+        .pipe(gulpphpcs.reporter('log'))
+  );
+  done();
+}
 
 // PHP Code Beautifier.
-gulp.task('phpcbf', function () {
-    return gulp.src(phpSrc)
-        .pipe(phpcbf({
+function phpcbf(done) {
+  return (
+    gulp.src(phpSrc)
+        .pipe(gphpcbf({
             bin: 'vendor/bin/phpcbf',
             standard: './phpcs.ruleset.xml',
             warningSeverity: 0
         }))       
         .on('error', gutil.log)
-        .pipe(gulp.dest('./'));
-});
+        .pipe(gulp.dest('./'))
+  );
+  done();
+}
 
-// ==== TASKS ==== //
+/**/
+
+// Watch files
+function watchFiles() {
+  gulp.watch('./sass/**/*', sass);
+  gulp.watch('./js/**/*.js', js);
+}
 
 // gulp zip
-gulp.task('zip', function () {
-  return gulp.src(buildInclude)
-    .pipe(zip('the-run-up.zip'))
-    .pipe(gulp.dest('./../'));
-});  
+function zip(done) {
+  return (
+    gulp.src(buildInclude)
+        .pipe(gzip('the-run-up.zip'))
+        .pipe(gulp.dest('./../'))
+  );
+  done();
+}
 
-// Package Distributable
-gulp.task('build', function (cb) {
-    runSequence('styles', 'scripts', 'zip', cb);
-});
+// define complex tasks
+const styles = gulp.series(sass, mincss); // Styles task
+const js = gulp.series(scripts); // compile and minimize js
+const build = gulp.series(styles, scripts, zip); // Package Distributable
+const watch = gulp.parallel(styles, scripts, watchFiles); // Watch Task
 
-// Styles task
-gulp.task('styles', function (cb) {
-    runSequence('sass', 'mincss', cb);
-});
-
-
-// Watch Task
-gulp.task('default', ['styles', 'scripts'], function () {
-    gulp.watch('./sass/**/*', ['sass']);
-    gulp.watch('./js/**/*.js', ['scripts']);
-});
+// export tasks
+exports.sass = sass;
+exports.mincss = mincss;
+exports.lintcss = lintcss;
+exports.beautifycss = beautifycss;
+exports.styles = styles;
+exports.js = js;
+exports.lintjs = lintjs;
+exports.beautifyjs = beautifyjs;
+exports.phpcs = phpcs;
+exports.phpcbf = phpcbf;
+exports.zip = zip;
+exports.build = build;
+exports.watch = watch;
