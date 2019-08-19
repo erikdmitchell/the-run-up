@@ -71,30 +71,25 @@ function tru_theme_posted_on() {
  * @return void
  */
 function tru_excerpt_by_id( $post, $length = 25, $tags = '<a><em><strong>', $extra = '...' ) {
-echo "a";
     if ( is_int( $post ) ) {
         $post = get_post( $post ); // get the post object of the passed ID.
     } elseif ( ! is_object( $post ) ) {
         return false;
     }
-echo "b";
-echo $post->ID;
-    if ( has_excerpt( $post->ID ) && '' !== $post->post_excerpt ) {
-echo "b1";        
-print_r($post->post_excerpt);
+
+    if ( has_excerpt( $post ) && !empty( trim($post->post_excerpt) ) ) {
         $the_excerpt = $post->post_excerpt;
         return apply_filters( 'the_content', $the_excerpt );
     } else {
-echo "b2";        
         $the_excerpt = $post->post_content;
     }
-echo "c";
+
     $the_excerpt = strip_shortcodes( strip_tags( $the_excerpt ), $tags );
     $the_excerpt = preg_split( '/\b/', $the_excerpt, $length * 2 + 1 );
     $excerpt_waste = array_pop( $the_excerpt );
     $the_excerpt = implode( $the_excerpt );
     $the_excerpt .= $extra;
-echo "d";
+
     // remove jetpack sharing.
     remove_filter( 'the_content', 'sharing_display', 19 );
 
