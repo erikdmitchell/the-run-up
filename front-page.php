@@ -1,9 +1,4 @@
-<?php
-/**
- * Template Name: Blog
- **/
-
-get_header(); ?>
+<?php get_header(); ?>
 
 <div class="container">
     <div class="row content">
