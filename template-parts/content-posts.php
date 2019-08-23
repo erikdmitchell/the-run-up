@@ -21,7 +21,9 @@ $blog_query = new WP_Query(
                     ?>
                 
                     <div class="col-12 col-sm-6">
-                        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'blog-single' ); ?></a>
+                        <div class="blog-single-thumbnail">
+                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'blog-single' ); ?></a>
+                        </div>
                         
                         <div class="title">
                             <a href="<?php the_permalink(); ?>"><?php the_title( '<h2 class="blog-list-post">', '</h2>' ); ?></a>

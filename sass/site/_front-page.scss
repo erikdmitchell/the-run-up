@@ -64,8 +64,12 @@ h2.blog-list-post {
     }
 }
 
-/* blog archive */
-.tru-blog-archive {}
+/* blog archive */ /* change this */
+.tru-blog-archive {   
+    .blog-single-thumbnail {
+        text-align: center;
+    }
+}
 
 /* blog single */
 .tru-blog-single { 
