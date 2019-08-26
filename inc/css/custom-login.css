@@ -1,0 +1,21 @@
+/*
+body.login	The page background
+body.login div#login form#loginform	The white box that contains the form
+body.login div#login form#loginform p label	The username and password field labels
+body.login div#login form#loginform input	Both input fields (username and password)
+body.login div#login form#loginform input#user_login	Just the username input field
+body.login div#login form#loginform input#user_pass	Just the password input field
+body.login div#login form#loginform p.forgetmenot	The Remember Me field
+body.login div#login form#loginform p.submit input#wp-submit	The Submit button
+body.login div#login p#nav a	The Lost Your Password link
+*/
+
+body.login div#login h1 a {
+    background-image: url('../images/logos/logo-sm.png');
+    width: 100%;
+    background-size: auto;
+}
+
+body.login div#login p#backtoblog {
+    display: none;
+}

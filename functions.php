@@ -130,7 +130,11 @@ function tru_theme_setup() {
      * This theme styles the visual editor to resemble the theme style
      */
     add_editor_style( 'inc/css/editor-style.css' );
-
+    
+    /**
+     * Include files
+     */
+    include_once(get_stylesheet_directory() . '/inc/custom-login.php');
 }
 add_action( 'after_setup_theme', 'tru_theme_setup' );
 
