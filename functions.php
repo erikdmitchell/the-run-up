@@ -292,6 +292,14 @@ function tru_remove_excerpt_jp_sharing() {
 
 add_action( 'loop_start', 'tru_remove_excerpt_jp_sharing' );
 
+/**
+ * Post categories.
+ * 
+ * @access public
+ * @param string $spacer (default: ' ').
+ * @param string $excl (default: '').
+ * @return void
+ */
 function tru_post_categories( $spacer = ' ', $excl = '' ) {
     global $post;
 
@@ -319,4 +327,34 @@ function tru_post_categories( $spacer = ' ', $excl = '' ) {
             }
         endforeach;
     endif;
+}
+
+/**
+ * Has categories.
+ * 
+ * @access public
+ * @param string $excl (default: '').
+ * @return voi
+ */
+function tru_has_categories( $excl = '' ) {
+    global $post;
+
+    $categories = get_the_category( $post->ID );
+
+    if ( ! empty( $categories ) ) :
+        $exclude = $excl;
+        $exclude = explode( ',', $exclude );
+        
+        foreach ( $categories as $key => $cat ) :
+            if ( in_array( $cat->cat_ID, $exclude ) ) :
+                unset($categories[$key]);
+            endif;
+        endforeach;
+        
+        if (count($categories) >= 1) :
+            return true;
+        endif;
+    endif;
+    
+    return false;
 }

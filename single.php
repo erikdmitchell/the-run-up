@@ -42,19 +42,22 @@
                     <?php get_template_part( 'template-parts/content-single-blog', 'predictions' ); ?>                                      
                 
                     <footer class="container entry-meta">
-                        <div class="row tags-list">
-                            <div class="tags-title">Tags</div>
-                            
-                            <?php the_tags( '<div class="tag-links">', ' ', '</div>' ); ?>
-                        </div>
-                        
-                        <div class="row categories-list">
-                            <div class="categories-title">Categories</div>
-                        
-                            <div class="categories-link">
-                                <?php tru_post_categories( ' ', 1 ); ?>
+                        <?php if ( has_tag() ) : ?>
+                            <div class="row tags-list">
+                                <div class="tags-title">Tags</div>
+                                
+                                <?php the_tags( '<div class="tag-links">', ' ', '</div>' ); ?>
                             </div>
-                        </div>
+                        <?php endif; ?>
+                        <?php if ( tru_has_categories(1) ) : ?>
+                            <div class="row categories-list">
+                                <div class="categories-title">Categories</div>
+                            
+                                <div class="categories-link">
+                                    <?php tru_post_categories( ' ', 1 ); ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
                     </footer>
                 </article><!-- #post-## -->
                                 
