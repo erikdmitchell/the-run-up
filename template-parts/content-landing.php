@@ -1,4 +1,12 @@
 <?php
+/**
+ * The template for displaying the landing page
+ *
+ * @package WordPress
+ * @subpackage the-run-up
+ * @since 1.0.0
+ */
+
 $featured_blog_query = new WP_Query(
     array(
         'posts_per_page' => 1,
@@ -31,7 +39,7 @@ $blog_query = new WP_Query(
                         </div>
                         
                         <div class="excerpt">
-                            <?php echo tru_excerpt_by_id( get_the_ID(), 60, '', '<a href="' . get_permalink( get_the_ID() ) . '">... read more</a>' ); ?>
+                            <?php tru_show_excerpt_by_id( get_the_ID(), 60, '', '<a href="' . get_permalink( get_the_ID() ) . '">... read more</a>' ); ?>
                         </div>
                     </div>
                 
@@ -54,7 +62,7 @@ $blog_query = new WP_Query(
                         </div>
                         
                         <div class="excerpt">
-                            <?php echo tru_excerpt_by_id( get_the_ID(), 30, '', '<a href="' . get_permalink( get_the_ID() ) . '">... read more</a>' ); ?>
+                            <?php tru_show_excerpt_by_id( get_the_ID(), 30, '', '<a href="' . get_permalink( get_the_ID() ) . '">... read more</a>' ); ?>
                         </div>
                     </div>
                                 

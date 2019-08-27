@@ -8,6 +8,7 @@
  * @subpackage the-run-up
  * @since 1.0.0
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -25,10 +26,10 @@
     
     <div class="entry-content">
         <?php
-            the_content( __( 'Continue reading <span class="meta-nav">&raquo;</span>', 'koksijde' ) );
+            the_content( __( 'Continue reading <span class="meta-nav">&raquo;</span>', 'the-run-up' ) );
             wp_link_pages(
                 array(
-                    'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'koksijde' ) . '</span>',
+                    'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'the-run-up' ) . '</span>',
                     'after'       => '</div>',
                     'link_before' => '<span>',
                     'link_after'  => '</span>',

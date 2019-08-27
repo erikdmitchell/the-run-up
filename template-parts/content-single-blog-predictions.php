@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for displaying race predictions
+ *
+ * @package WordPress
+ * @subpackage the-run-up
+ * @since 1.0.0
+ */
+
+?>
+
 <?php if ( have_rows( 'race' ) ) : ?>
     <!-- predictions -->
     
@@ -39,7 +50,7 @@
                             <?php if ( 4 === $row ) : ?>
                                 DH: <?php the_sub_field( 'rider_name' ); ?>                                           
                             <?php else : ?>
-                                <?php echo $row; ?>. <?php the_sub_field( 'rider_name' ); ?>
+                                <?php echo esc_attr( $row ); ?>. <?php the_sub_field( 'rider_name' ); ?>
                             <?php endif; ?>
                         </div>
                         

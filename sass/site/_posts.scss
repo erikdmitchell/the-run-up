@@ -26,7 +26,7 @@
 	.nav-links .nav-title {}
 }
 
-/* single post */
+/* single post */ /* check styles */
 .single-post {
     .entry-header {
         margin-bottom: 15px;
@@ -36,11 +36,16 @@
                 font-style: italic;
             }
         }        
-    }
+    } 
     
     footer.entry-meta {
         background: $light-gray;
         margin-top: 0;
         padding: 10px 15px;
+    }
+    
+    /* used */
+    .post-thumbnail {
+        text-align: center;
     }
 }

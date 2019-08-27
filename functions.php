@@ -65,11 +65,11 @@ function tru_theme_posted_on() {
  * tru_excerpt_by_id function.
  *
  * @access public
- * @param mixed  $post
- * @param int    $length (default: 25)
- * @param string $tags (default: '<a><em><strong>')
- * @param string $extra (default: '...')
- * @return void
+ * @param mixed  $post object or id.
+ * @param int    $length (default: 25).
+ * @param string $tags (default: '<a><em><strong>').
+ * @param string $extra (default: '...').
+ * @return html
  */
 function tru_excerpt_by_id( $post, $length = 25, $tags = '<a><em><strong>', $extra = '...' ) {
     if ( is_int( $post ) ) {
@@ -95,6 +95,20 @@ function tru_excerpt_by_id( $post, $length = 25, $tags = '<a><em><strong>', $ext
     remove_filter( 'the_content', 'sharing_display', 19 );
 
     return apply_filters( 'the_content', $the_excerpt );
+}
+
+/**
+ * Display excerpt by id.
+ *
+ * @access public
+ * @param mixed  $post object or id.
+ * @param int    $length (default: 25).
+ * @param string $tags (default: '<a><em><strong>').
+ * @param string $extra (default: '...').
+ * @return void
+ */
+function tru_show_excerpt_by_id( $post, $length = 25, $tags = '<a><em><strong>', $extra = '...' ) {
+    echo tru_excerpt_by_id( $post, $length, $tags, $extra );
 }
 
 /**
@@ -131,6 +145,10 @@ function tru_theme_setup() {
      */
     add_editor_style( 'inc/css/editor-style.css' );
 
+    /**
+     * Include files
+     */
+    include_once( get_stylesheet_directory() . '/inc/custom-login.php' );
 }
 add_action( 'after_setup_theme', 'tru_theme_setup' );
 
@@ -292,6 +310,14 @@ function tru_remove_excerpt_jp_sharing() {
 
 add_action( 'loop_start', 'tru_remove_excerpt_jp_sharing' );
 
+/**
+ * Post categories.
+ *
+ * @access public
+ * @param string $spacer (default: ' ').
+ * @param string $excl (default: '').
+ * @return void
+ */
 function tru_post_categories( $spacer = ' ', $excl = '' ) {
     global $post;
 
@@ -320,3 +346,50 @@ function tru_post_categories( $spacer = ' ', $excl = '' ) {
         endforeach;
     endif;
 }
+
+/**
+ * Has categories.
+ *
+ * @access public
+ * @param string $excl (default: '').
+ * @return voi
+ */
+function tru_has_categories( $excl = '' ) {
+    global $post;
+
+    $categories = get_the_category( $post->ID );
+
+    if ( ! empty( $categories ) ) :
+        $exclude = $excl;
+        $exclude = explode( ',', $exclude );
+
+        foreach ( $categories as $key => $cat ) :
+            if ( in_array( $cat->cat_ID, $exclude ) ) :
+                unset( $categories[ $key ] );
+            endif;
+        endforeach;
+
+        if ( count( $categories ) >= 1 ) :
+            return true;
+        endif;
+    endif;
+
+    return false;
+}
+
+/**
+ * Move comment field to bottom.
+ *
+ * @access public
+ * @param mixed $fields array.
+ * @return array
+ */
+function tru_move_comment_field_to_bottom( $fields ) {
+    $comment_field = $fields['comment'];
+    unset( $fields['comment'] );
+    $fields['comment'] = $comment_field;
+
+    return $fields;
+}
+
+add_filter( 'comment_form_fields', 'tru_move_comment_field_to_bottom' );

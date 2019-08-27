@@ -1,10 +1,19 @@
 <?php
-$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+/**
+ * The template for displaying posts list
+ *
+ * @package WordPress
+ * @subpackage the-run-up
+ * @since 1.0.0
+ */
+
+$query_page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+$offset = ( $page - 1 ) * 7;
 $blog_query = new WP_Query(
     array(
-        'posts_per_page' => 12,
-        'offset' => 7,
-        'page' => $paged,
+        'posts_per_page' => 10,
+        'offset' => $offset,
+        'page' => $query_page,
     )
 );
 ?>
@@ -30,15 +39,14 @@ $blog_query = new WP_Query(
                         </div>
                         
                         <div class="excerpt">
-                            <?php echo tru_excerpt_by_id( get_the_ID(), 30, '', '<a href="' . get_permalink( get_the_ID() ) . '">... read more</a>' ); ?>
+                            <?php tru_show_excerpt_by_id( get_the_ID(), 30, '', '<a href="' . get_permalink( get_the_ID() ) . '">... read more</a>' ); ?>
                         </div>
                     </div>
                                 
                 <?php endwhile; ?>
             </div>
         <?php endif; ?>
-
-    
+        
         <div class="nav-previous alignleft"><?php next_posts_link( 'Older posts', $blog_query->max_num_pages ); ?></div>
         <div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
 
