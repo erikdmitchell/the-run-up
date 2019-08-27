@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for displaying riders in power rankings
+ *
+ * @package WordPress
+ * @subpackage the-run-up
+ * @since 1.0.0
+ */
+
+?>
+
 <?php if ( have_rows( 'rider' ) ) : ?>
     <?php $counter = count( get_field( 'rider' ) ); ?>
     <!-- power rankings -->

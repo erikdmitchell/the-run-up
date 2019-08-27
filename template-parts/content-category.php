@@ -6,6 +6,7 @@
  * @subpackage the-run-up
  * @since 1.0.0
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -29,7 +30,7 @@
                 </header><!-- .entry-header -->
 
                 <div class="entry-content">
-                    <?php echo tru_excerpt_by_id( get_the_ID(), 35, '<a><em><strong>', '... <a href="' . get_permalink() . '">read more</a>' ); ?>
+                    <?php tru_show_excerpt_by_id( get_the_ID(), 35, '<a><em><strong>', '... <a href="' . get_permalink() . '">read more</a>' ); ?>
                 </div><!-- .entry-content -->
             </div>
         </div>

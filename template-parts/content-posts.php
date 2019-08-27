@@ -1,4 +1,12 @@
 <?php
+/**
+ * The template for displaying posts list
+ *
+ * @package WordPress
+ * @subpackage the-run-up
+ * @since 1.0.0
+ */
+
 $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 $blog_query = new WP_Query(
     array(
@@ -30,7 +38,7 @@ $blog_query = new WP_Query(
                         </div>
                         
                         <div class="excerpt">
-                            <?php echo tru_excerpt_by_id( get_the_ID(), 30, '', '<a href="' . get_permalink( get_the_ID() ) . '">... read more</a>' ); ?>
+                            <?php tru_show_excerpt_by_id( get_the_ID(), 30, '', '<a href="' . get_permalink( get_the_ID() ) . '">... read more</a>' ); ?>
                         </div>
                     </div>
                                 

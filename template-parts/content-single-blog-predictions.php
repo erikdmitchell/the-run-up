@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for displaying race predictions
+ *
+ * @package WordPress
+ * @subpackage the-run-up
+ * @since 1.0.0
+ */
+
+?>
+
 <?php if ( have_rows( 'race' ) ) : ?>
     <!-- predictions -->
     
