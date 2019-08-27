@@ -50,7 +50,7 @@
                             <?php if ( 4 === $row ) : ?>
                                 DH: <?php the_sub_field( 'rider_name' ); ?>                                           
                             <?php else : ?>
-                                <?php echo $row; ?>. <?php the_sub_field( 'rider_name' ); ?>
+                                <?php echo esc_attr( $row ); ?>. <?php the_sub_field( 'rider_name' ); ?>
                             <?php endif; ?>
                         </div>
                         
