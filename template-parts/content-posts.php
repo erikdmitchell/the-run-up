@@ -7,13 +7,13 @@
  * @since 1.0.0
  */
 
-$page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+$query_page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 $offset = ( $page - 1 ) * 7;
 $blog_query = new WP_Query(
     array(
         'posts_per_page' => 10,
         'offset' => $offset,
-        'page' => $page,
+        'page' => $query_page,
     )
 );
 ?>
