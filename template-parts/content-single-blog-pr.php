@@ -18,7 +18,7 @@
         while ( have_rows( 'rider' ) ) :
             the_row();
 
-            // vars
+            // vars.
             $name = get_sub_field( 'name' );
             $content = get_sub_field( 'details' );
             $image = get_sub_field( 'image' );
