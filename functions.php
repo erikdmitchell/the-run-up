@@ -130,11 +130,11 @@ function tru_theme_setup() {
      * This theme styles the visual editor to resemble the theme style
      */
     add_editor_style( 'inc/css/editor-style.css' );
-    
+
     /**
      * Include files
      */
-    include_once(get_stylesheet_directory() . '/inc/custom-login.php');
+    include_once( get_stylesheet_directory() . '/inc/custom-login.php' );
 }
 add_action( 'after_setup_theme', 'tru_theme_setup' );
 
@@ -298,7 +298,7 @@ add_action( 'loop_start', 'tru_remove_excerpt_jp_sharing' );
 
 /**
  * Post categories.
- * 
+ *
  * @access public
  * @param string $spacer (default: ' ').
  * @param string $excl (default: '').
@@ -335,7 +335,7 @@ function tru_post_categories( $spacer = ' ', $excl = '' ) {
 
 /**
  * Has categories.
- * 
+ *
  * @access public
  * @param string $excl (default: '').
  * @return voi
@@ -348,24 +348,24 @@ function tru_has_categories( $excl = '' ) {
     if ( ! empty( $categories ) ) :
         $exclude = $excl;
         $exclude = explode( ',', $exclude );
-        
+
         foreach ( $categories as $key => $cat ) :
             if ( in_array( $cat->cat_ID, $exclude ) ) :
-                unset($categories[$key]);
+                unset( $categories[ $key ] );
             endif;
         endforeach;
-        
-        if (count($categories) >= 1) :
+
+        if ( count( $categories ) >= 1 ) :
             return true;
         endif;
     endif;
-    
+
     return false;
 }
 
 /**
  * Move comment field to bottom.
- * 
+ *
  * @access public
  * @param mixed $fields array.
  * @return array
@@ -374,8 +374,8 @@ function tru_move_comment_field_to_bottom( $fields ) {
     $comment_field = $fields['comment'];
     unset( $fields['comment'] );
     $fields['comment'] = $comment_field;
-    
+
     return $fields;
 }
- 
+
 add_filter( 'comment_form_fields', 'tru_move_comment_field_to_bottom' );

@@ -1,8 +1,8 @@
-<?php 
+<?php
 
 /**
  * Load custom login stylesheet.
- * 
+ *
  * @access public
  * @return void
  */
@@ -13,12 +13,12 @@ add_action( 'login_enqueue_scripts', 'tru_custom_login_stylesheet' );
 
 /**
  * Login logo URL.
- * 
+ *
  * @access public
  * @param mixed $url string.
  * @return void
  */
-function tru_loginlogo_url($url) {
+function tru_loginlogo_url( $url ) {
     return site_url();
 }
 add_filter( 'login_headerurl', 'tru_loginlogo_url' );

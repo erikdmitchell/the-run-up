@@ -49,7 +49,7 @@
                                 <?php the_tags( '<div class="tag-links">', ' ', '</div>' ); ?>
                             </div>
                         <?php endif; ?>
-                        <?php if ( tru_has_categories(1) ) : ?>
+                        <?php if ( tru_has_categories( 1 ) ) : ?>
                             <div class="row categories-list">
                                 <div class="categories-title">Categories</div>
                             
@@ -63,9 +63,9 @@
                     <?php
                     // If comments are open or we have at least one comment, load up the comment template.
                     if ( comments_open() || get_comments_number() ) {
-					    comments_template();
-				    }
-				    ?>
+                        comments_template();
+                    }
+                    ?>
                 </article><!-- #post-## -->
                                 
             <?php endwhile; ?>
