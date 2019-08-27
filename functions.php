@@ -65,11 +65,11 @@ function tru_theme_posted_on() {
  * tru_excerpt_by_id function.
  *
  * @access public
- * @param mixed  $post
- * @param int    $length (default: 25)
- * @param string $tags (default: '<a><em><strong>')
- * @param string $extra (default: '...')
- * @return void
+ * @param mixed  $post object or id.
+ * @param int    $length (default: 25).
+ * @param string $tags (default: '<a><em><strong>').
+ * @param string $extra (default: '...').
+ * @return html
  */
 function tru_excerpt_by_id( $post, $length = 25, $tags = '<a><em><strong>', $extra = '...' ) {
     if ( is_int( $post ) ) {
@@ -95,6 +95,20 @@ function tru_excerpt_by_id( $post, $length = 25, $tags = '<a><em><strong>', $ext
     remove_filter( 'the_content', 'sharing_display', 19 );
 
     return apply_filters( 'the_content', $the_excerpt );
+}
+
+/**
+ * Display excerpt by id.
+ *
+ * @access public
+ * @param mixed  $post object or id.
+ * @param int    $length (default: 25).
+ * @param string $tags (default: '<a><em><strong>').
+ * @param string $extra (default: '...').
+ * @return void
+ */
+function tru_show_excerpt_by_id( $post, $length = 25, $tags = '<a><em><strong>', $extra = '...' ) {
+    echo tru_excerpt_by_id( $post, $length, $tags, $extra );
 }
 
 /**
