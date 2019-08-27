@@ -1,6 +1,47 @@
-.comments-area {
+#comments {
     margin-top: 30px;
     border-top: 1px solid $black;
+    
+    .comment-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        
+        ul.children {
+            list-style-type: none;
+        }
+        
+        .comment-body {
+            .comment-author {
+                .avatar {
+                    float: right;
+                }
+                cite.fn {
+                    font-style: normal;
+                }
+                .says {
+                    display: none;
+                }
+            }
+            
+            .comment-meta {
+                font-size: 0.9rem;
+                
+                a, a:visited {
+                    color: $gray;
+                }
+            }
+            
+            .reply {
+                font-size: 0.9rem;
+                margin-bottom: 1.5em;
+                
+                .comment-reply-link {
+                    color: $blue;
+                }    
+            }
+        }
+    }
 }
 .commentlist .bypostauthor {
 	background: $light-gray;
