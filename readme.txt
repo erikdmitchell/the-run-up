@@ -36,6 +36,8 @@ Coming soon...
 
  * Added check for categories and tags in single post
  * Added custom login functions and styles
+ * Added support for comments.
+ * Fixed pagination issue.
 
 = 2.0.0 =
 
