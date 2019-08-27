@@ -7,17 +7,26 @@
  * @since 1.0.0
  */
 
+$page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+$offset = ( $page - 1 ) * 7;
+$blog_query = new WP_Query(
+    array(
+        'posts_per_page' => 10,
+        'offset' => $offset,
+        'page' => $page,
+    )
+);
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'tru-blog-archive' ); ?>>
 
     <div class="content container">
 
-        <?php if ( have_posts() ) : ?>
+        <?php if ( $blog_query->have_posts() ) : ?>
             <div class="row">
                 <?php
-                while ( have_posts() ) :
-                    the_post();
+                while ( $blog_query->have_posts() ) :
+                    $blog_query->the_post();
                     ?>
                 
                     <div class="col-12 col-sm-6">
@@ -38,10 +47,8 @@
             </div>
         <?php endif; ?>
         
-        <div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
+        <div class="nav-previous alignleft"><?php next_posts_link( 'Older posts', $blog_query->max_num_pages ); ?></div>
         <div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
-
-        <?php //wp_reset_postdata(); ?>
 
     </div>
 
