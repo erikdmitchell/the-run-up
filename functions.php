@@ -362,3 +362,20 @@ function tru_has_categories( $excl = '' ) {
     
     return false;
 }
+
+/**
+ * Move comment field to bottom.
+ * 
+ * @access public
+ * @param mixed $fields array.
+ * @return array
+ */
+function tru_move_comment_field_to_bottom( $fields ) {
+    $comment_field = $fields['comment'];
+    unset( $fields['comment'] );
+    $fields['comment'] = $comment_field;
+    
+    return $fields;
+}
+ 
+add_filter( 'comment_form_fields', 'tru_move_comment_field_to_bottom' );
