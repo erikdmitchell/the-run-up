@@ -153,6 +153,27 @@ function tru_theme_setup() {
 add_action( 'after_setup_theme', 'tru_theme_setup' );
 
 /**
+ * Register widget area.
+ *
+ * @since the-run-up 1.0.0
+ */
+function tru_theme_widgets_init() {
+
+    register_sidebar(
+        array(
+            'name' => 'Footer 1',
+            'id' => 'footer-1',
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>',
+        )
+    );
+
+}
+add_action( 'widgets_init', 'tru_theme_widgets_init' );
+
+/**
  * Display an optional post thumbnail.
  *
  * Wraps the post thumbnail in an anchor element on index
