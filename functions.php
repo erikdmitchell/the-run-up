@@ -169,6 +169,17 @@ function tru_theme_widgets_init() {
             'after_title' => '</h3>',
         )
     );
+    
+    register_sidebar(
+        array(
+            'name' => 'Footer 2',
+            'id' => 'footer-2',
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>',
+        )
+    );    
 
 }
 add_action( 'widgets_init', 'tru_theme_widgets_init' );

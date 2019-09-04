@@ -3,8 +3,12 @@
                 <div class="container">
                     <div class="row">
 
-                        <div class="col-12 col-sm-6 footer-col">
+                        <div class="col-12 col-sm-6 footer-col footer1">
                             <?php dynamic_sidebar( 'footer-1' ); ?>
+                        </div> 
+                        
+                        <div class="col-12 col-sm-6 footer-col footer2">
+                            <?php dynamic_sidebar( 'footer-2' ); ?>
                         </div>                     
 
                         <div class="col-12 col-sm-6 footer-col footer-set">
