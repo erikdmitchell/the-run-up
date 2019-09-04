@@ -11,7 +11,7 @@
                             <?php dynamic_sidebar( 'footer-2' ); ?>
                         </div>                     
 
-                        <div class="col-12 col-sm-6 footer-col footer-set">
+                        <div class="col-12 footer-col footer-bottom">
                             <div class="footer-social">
                                 <ul class="social">
                                     <li><a href="https://twitter.com/therunupcx"><i class="fab fa-twitter-square"></i></a></li>
@@ -22,8 +22,7 @@
                             <div class="primary-copyright">
                                 <h3>The Run Up</h3>
                                 <div class="copy">
-                                    &copy <?php echo date( 'Y' ); ?> The Run Up<br />
-                                    All Rights Reserved.
+                                    &copy <?php echo date( 'Y' ); ?> The Run Up
                                 </div>
                             </div>                    
                         </div>
