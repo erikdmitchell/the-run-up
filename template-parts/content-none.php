@@ -2,7 +2,7 @@
 /**
  * The template part for displaying a message that posts cannot be found
  *
- * @package WordPress 
+ * @package WordPress
  * @subpackage the-run-up
  * @since the-run-up 1.0.0
  */

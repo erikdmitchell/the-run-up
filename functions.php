@@ -166,7 +166,7 @@ function tru_theme_widgets_init() {
             'after_title' => '</h3>',
         )
     );
-    
+
     register_sidebar(
         array(
             'name' => 'Footer 2',
@@ -176,7 +176,7 @@ function tru_theme_widgets_init() {
             'before_title' => '<h3>',
             'after_title' => '</h3>',
         )
-    );    
+    );
 
     register_sidebar(
         array(
@@ -435,9 +435,9 @@ add_filter( 'comment_form_fields', 'tru_move_comment_field_to_bottom' );
 
 $thumb_size = apply_filters( 'rp4wp_thumbnail_size', 'thumbnail' );
 
-function tru_rp4wp_thumbnail_size($size) {
+function tru_rp4wp_thumbnail_size( $size ) {
     return 'related_posts';
 }
-add_filter('rp4wp_thumbnail_size', 'tru_rp4wp_thumbnail_size', 10, 1);
+add_filter( 'rp4wp_thumbnail_size', 'tru_rp4wp_thumbnail_size', 10, 1 );
 
 add_filter( 'rp4wp_append_content', '__return_false' );
