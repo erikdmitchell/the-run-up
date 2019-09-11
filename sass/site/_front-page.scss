@@ -87,34 +87,6 @@ h2.blog-list-post {
             }
         }
     }	
-    
-	.power-rankings {
-    	list-style-type: none;
-    	
-    	.rider {
-        	margin-top: 15px;
-        	margin-bottom: 15px;
-        	
-        	.rider-rank {
-            	margin-top: 1rem;
-        	}
-        	
-        	.image-wrap {
-            	display: flex;
-            	flex-wrap: wrap;
-            	align-items: center;
-            	
-            	img {
-                    border-radius: 5px;
-            	}
-        	}
-        	
-        	.rider-name {
-            	font-weight: bold;
-            	margin-left: 5px;
-        	}
-    	}
-	}
 
 	.predictions {
         .header {
