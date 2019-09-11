@@ -103,8 +103,8 @@ function sass(done) {
         .pipe(sourcemaps.init())
         .pipe(gulpsass({
             errLogToConsole: true,
-            outputStyle: 'nested',
-            precision: 10
+            outputStyle: 'expanded',
+            //precision: 10
         }))
         .pipe(sourcemaps.write({
             includeContent: false
