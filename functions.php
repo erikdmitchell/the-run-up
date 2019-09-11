@@ -13,10 +13,6 @@
  * @return void
  */
 function tru_scripts_styles() {
-    global $wp_scripts;
-
-    $theme = wp_get_theme();
-
     // enqueue our scripts for theme
     wp_enqueue_script( 'jquery' );
 
@@ -40,7 +36,7 @@ function tru_scripts_styles() {
     wp_enqueue_style( 'google-fonts-arvo', 'https://fonts.googleapis.com/css?family=Arvo:400,700,400italic' );
     wp_enqueue_style( 'bootstrap-grid-style', get_stylesheet_directory_uri() . '/inc/css/bootstrap-grid.min.css', array(), '5.4.1' );
     wp_enqueue_style( 'fontawesome-style', get_stylesheet_directory_uri() . '/inc/css/fa.min.css', array(), '5.10.1' );
-    wp_enqueue_style( 'tru-theme-style', get_stylesheet_uri(), array(), $theme->Version );
+    wp_enqueue_style( 'the-run-up-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 }
 add_action( 'wp_enqueue_scripts', 'tru_scripts_styles' );
 
