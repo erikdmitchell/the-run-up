@@ -104,7 +104,6 @@ function sass(done) {
         .pipe(gulpsass({
             errLogToConsole: true,
             outputStyle: 'expanded',
-            //precision: 10
         }))
         .pipe(sourcemaps.write({
             includeContent: false
