@@ -135,6 +135,7 @@ function tru_theme_setup() {
     add_image_size( 'blog-landing', 1200, 400, true );
     add_image_size( 'blog-power-ranking', 280, 160, true );
     add_image_size( 'blog-single', 550, 240, true );
+    add_image_size( 'related_posts', 350, 200, true );
 
     /**
      * This theme styles the visual editor to resemble the theme style
@@ -421,3 +422,10 @@ function tru_move_comment_field_to_bottom( $fields ) {
 }
 
 add_filter( 'comment_form_fields', 'tru_move_comment_field_to_bottom' );
+
+$thumb_size = apply_filters( 'rp4wp_thumbnail_size', 'thumbnail' );
+
+function tru_rp4wp_thumbnail_size($size) {
+    return 'related_posts';
+}
+add_filter('rp4wp_thumbnail_size', 'tru_rp4wp_thumbnail_size', 10, 1);
