@@ -36,8 +36,6 @@
                             );
                         ?>
                     </div><!-- .entry-content -->
-                                        
-                    <?php get_template_part( 'template-parts/content-single-blog', 'pr' ); ?> 
                     
                     <?php get_template_part( 'template-parts/content-single-blog', 'predictions' ); ?>                                      
                 
