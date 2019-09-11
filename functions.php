@@ -178,6 +178,16 @@ function tru_theme_widgets_init() {
         )
     );    
 
+    register_sidebar(
+        array(
+            'name' => 'Single Post',
+            'id' => 'single-post',
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>',
+        )
+    );
 }
 add_action( 'widgets_init', 'tru_theme_widgets_init' );
 
@@ -429,3 +439,5 @@ function tru_rp4wp_thumbnail_size($size) {
     return 'related_posts';
 }
 add_filter('rp4wp_thumbnail_size', 'tru_rp4wp_thumbnail_size', 10, 1);
+
+add_filter( 'rp4wp_append_content', '__return_false' );
