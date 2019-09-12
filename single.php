@@ -36,9 +36,7 @@
                             );
                         ?>
                     </div><!-- .entry-content -->
-                    
-                    <?php get_template_part( 'template-parts/content-single-blog', 'predictions' ); ?>                                      
-                
+                                                         
                     <footer class="container entry-meta">
                         <?php if ( has_tag() ) : ?>
                             <div class="row tags-list">
