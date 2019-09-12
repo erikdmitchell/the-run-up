@@ -38,6 +38,16 @@
         }        
     } 
     
+    .entry-content {
+        a {
+            color: $gray;
+    
+            &:visited {
+                color: $gray;
+	        }
+	   }
+    }
+    
     footer.entry-meta {
         background: $light-gray;
         margin-top: 0;
