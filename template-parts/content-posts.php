@@ -32,7 +32,7 @@ $blog_query = new WP_Query(
                     ?>
                 
                     <div class="col-12 col-sm-6">
-                        <div class="blog-single-thumbnail">
+                        <div class="list-post-thumbnail">
                             <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'blog-single' ); ?></a>
                         </div>
                         
