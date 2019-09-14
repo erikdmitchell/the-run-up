@@ -14,7 +14,7 @@
                 the_post();
                 ?>
                     
-                <article id="post-<?php the_ID(); ?>" <?php post_class( 'tru-blog-single' ); ?>>
+                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <header class="entry-header">
                         <?php	the_title( '<h1 class="entry-title">', '</h1>' ); ?>
                 
@@ -36,11 +36,7 @@
                             );
                         ?>
                     </div><!-- .entry-content -->
-                                        
-                    <?php get_template_part( 'template-parts/content-single-blog', 'pr' ); ?> 
-                    
-                    <?php get_template_part( 'template-parts/content-single-blog', 'predictions' ); ?>                                      
-                
+                                                         
                     <footer class="container entry-meta">
                         <?php if ( has_tag() ) : ?>
                             <div class="row tags-list">
@@ -59,6 +55,10 @@
                             </div>
                         <?php endif; ?>
                     </footer>
+                    
+                    <div class="single-post-sidebar">
+                        <?php dynamic_sidebar( 'single-post' ); ?>
+                    </div> 
                     
                     <?php
                     // If comments are open or we have at least one comment, load up the comment template.

@@ -8,8 +8,8 @@
  */
 
 $query_page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-$os_multiplyer = (2===$query_page) ? 7 : 10;
-$os_diff = (2===$query_page) ? 0 : 3;
+$os_multiplyer = ( 2 === $query_page ) ? 7 : 10;
+$os_diff = ( 2 === $query_page ) ? 0 : 3;
 $offset = ( ( $query_page - 1 ) * $os_multiplyer ) - $os_diff;
 $blog_query = new WP_Query(
     array(
@@ -32,7 +32,7 @@ $blog_query = new WP_Query(
                     ?>
                 
                     <div class="col-12 col-sm-6">
-                        <div class="blog-single-thumbnail">
+                        <div class="list-post-thumbnail">
                             <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'blog-single' ); ?></a>
                         </div>
                         

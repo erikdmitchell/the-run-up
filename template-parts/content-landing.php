@@ -21,7 +21,7 @@ $blog_query = new WP_Query(
 );
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'tru-blog-landing' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
     <div class="content container">
         <?php if ( $featured_blog_query->have_posts() ) : ?>
@@ -32,10 +32,12 @@ $blog_query = new WP_Query(
                     ?>
                 
                     <div class="col-12">
-                        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'blog-landing' ); ?></a>
+                        <div class="list-post-thumbnail">
+                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'blog-landing' ); ?></a>
+                        </div>
                         
                         <div class="title">
-                            <a href="<?php the_permalink(); ?>"><?php the_title( '<h2 class="blog-landing-large">', '</h2>' ); ?></a>
+                            <a href="<?php the_permalink(); ?>"><?php the_title( '<h2>', '</h2>' ); ?></a>
                         </div>
                         
                         <div class="excerpt">
@@ -55,10 +57,12 @@ $blog_query = new WP_Query(
                     ?>
                 
                     <div class="col-12 col-sm-6">
-                        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'blog-single' ); ?></a>
+                        <div class="list-post-thumbnail">
+                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'blog-single' ); ?></a>
+                        </div>
                         
                         <div class="title">
-                            <a href="<?php the_permalink(); ?>"><?php the_title( '<h2 class="blog-list-post">', '</h2>' ); ?></a>
+                            <a href="<?php the_permalink(); ?>"><?php the_title( '<h2>', '</h2>' ); ?></a>
                         </div>
                         
                         <div class="excerpt">

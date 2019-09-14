@@ -32,6 +32,13 @@ Coming soon...
 
 == Changelog ==
 
+= 2.3.0 =
+
+ * Added styles for the related posts plugin
+ * Added widget on single.php
+ * Updated link colors in content.
+ * Removed power rankings and predictions as they are now blocks
+
 = 2.2.0 =
 
  * Added secondary footer sidebar.
@@ -46,15 +53,15 @@ Coming soon...
 
 = 2.0.0 =
 
- * Changed the layout and structure of theme since the site is now a blog only site.
+* Changed the layout and structure of theme since the site is now a blog only site.
 
 = 1.3.0 =
 
- * Combined scripts into single file.
+* Combined scripts into single file.
 
 = 1.2.4 =
 
- * Added blog posts to coming soon front page.
+* Added blog posts to coming soon front page.
 
 = 1.2.3 =
 
