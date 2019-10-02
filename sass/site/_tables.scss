@@ -1,0 +1,9 @@
+.brothers-riders-rankings {
+    tr {
+        td {
+            &:first-child {
+                text-decoration: underline;
+            }
+        }
+    }
+}
