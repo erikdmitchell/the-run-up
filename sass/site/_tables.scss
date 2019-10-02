@@ -1,9 +1,29 @@
 .brothers-riders-rankings {
     tr {
+        &:first-child {
+            font-weight: bold;
+        }
+        
         td {
+            padding: 5px;
+            
             &:first-child {
-                text-decoration: underline;
+                width: 5%;
             }
+            
+            &:nth-child(2) {
+                width: 20%;
+            }
+                        
+            &:nth-child(3) {
+                width: 12%;
+                text-align: center;
+            }
+            
+            &:nth-child(4) {
+                text-align: center;
+                width: 10%;
+            }            
         }
     }
 }
