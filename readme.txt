@@ -2,8 +2,8 @@
 Contributors: Erik Mitchell
 Tags:
 Requires at least: 3.5
-Tested up to: 5.2.2
-Stable tag: 2.3.1
+Tested up to: 5.3.2
+Stable tag: 2.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,10 @@ Coming soon...
 Coming soon...
 
 == Changelog ==
+
+= 2.4.0 =
+
+ * Added basic styles for tables
 
 = 2.3.1 =
 
