@@ -1,12 +1,11 @@
 <?php get_header(); ?>
 
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <?php tru_post_thumbnail( 'single' ); ?>
-        </div>
-    </div>
 
+<div class="main-image">
+    <?php tru_post_thumbnail( 'single' ); ?>
+</div>
+
+<div class="container">
     <div class="row">
         <div class="col-12">
             <?php
@@ -72,7 +71,6 @@
         </div>
     </div>
 </div><!-- .container -->
-
 
 <?php
 get_footer();
