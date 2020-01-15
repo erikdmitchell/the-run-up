@@ -131,7 +131,7 @@ function tru_theme_setup() {
     /**
      * add our image size(s)
      */
-    add_image_size( 'single', 1400, 480, true );
+    add_image_size( 'single', 9999, 480, true );
     add_image_size( 'blog-landing', 1200, 400, true );
     add_image_size( 'blog-power-ranking', 280, 160, true );
     add_image_size( 'blog-single', 550, 240, true );
