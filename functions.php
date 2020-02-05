@@ -430,14 +430,54 @@ function tru_move_comment_field_to_bottom( $fields ) {
 
     return $fields;
 }
-
 add_filter( 'comment_form_fields', 'tru_move_comment_field_to_bottom' );
 
 $thumb_size = apply_filters( 'rp4wp_thumbnail_size', 'thumbnail' );
 
+/**
+ * Thumbnail size for related posts plugin.
+ * 
+ * @access public
+ * @param mixed $size string.
+ * @return string
+ */
 function tru_rp4wp_thumbnail_size( $size ) {
     return 'related_posts';
 }
 add_filter( 'rp4wp_thumbnail_size', 'tru_rp4wp_thumbnail_size', 10, 1 );
 
 add_filter( 'rp4wp_append_content', '__return_false' );
+
+function tru_get_primary_category( $post_id = 0 ) {
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
+	}
+	
+	$category_display = '';
+	
+	// Get the categories for the post.
+	$category = get_the_category( $post_id );
+
+	// If post has a category assigned.
+	if ($category) {
+		if ( class_exists('WPSEO_Primary_Term') ) {
+			// Show the post's 'Primary' category, if this Yoast feature is available, & one is set.
+			$wpseo_primary_term = new WPSEO_Primary_Term( 'category', $post_id );
+			$wpseo_primary_term = $wpseo_primary_term->get_primary_term();
+			$term = get_term( $wpseo_primary_term );
+
+			if (is_wp_error($term)) {
+				// Default to first category (not Yoast) if an error is returned.
+				$category_display = $category[0]->name;
+			} else {
+				// Yoast Primary category goodness.
+				$category_display = $term->name;
+			}
+		} else {
+			// Default, display the first category in WP's list of assigned categories.
+			$category_display = $category[0]->name;
+	    }
+	}
+
+    return $category_display;
+}
