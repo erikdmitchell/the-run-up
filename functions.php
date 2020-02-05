@@ -194,7 +194,8 @@ add_action( 'widgets_init', 'tru_theme_widgets_init' );
 /**
  * Display an optional post thumbnail.
  *
- * Wraps the post thumbnail in an anchor element on index views, or a div element when on single views.
+ * Wraps the post thumbnail in an anchor element on index
+ * views, or a div element when on single views.
  *
  * @since the-run-up 1.0
  * @based on twentyfourteen
@@ -212,12 +213,13 @@ function tru_post_thumbnail( $size = 'full' ) {
     if ( post_password_required() || ! has_post_thumbnail() ) {
         return;
     }
-    $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size, $attr );
-    
+
     if ( is_singular() ) :
-        $html .= '<div class="post-thumbnail" style="background-image: url('. $featured_image[0] .')" data-width="'. $featured_image[1] .'" date-height="'. $featured_image[2] .'"></div>';
+        $html .= '<div class="post-thumbnail">';
+            $html .= get_the_post_thumbnail( $post->ID, $size, $attr );
+        $html .= '</div>';
     else :
-        $html .= '<a class="post-thumbnail" href="' . esc_url( get_permalink( $post->ID ) ) . '" style="background-image: url('. $featured_image[0] .')" data-width="'. $featured_image[1] .'" date-height="'. $featured_image[2] .'"></div>';
+        $html .= '<a class="post-thumbnail" href="' . esc_url( get_permalink( $post->ID ) ) . '">';
             $html .= get_the_post_thumbnail( $post->ID, $size, $attr );
         $html .= '</a>';
     endif;
