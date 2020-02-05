@@ -212,16 +212,12 @@ function tru_post_thumbnail( $size = 'full' ) {
     if ( post_password_required() || ! has_post_thumbnail() ) {
         return;
     }
-    
-    //$thumbnail = get_the_post_thumbnail_url( $post->ID, $size, $attr );
-    $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), $size, $attr);
+    $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size, $attr );
     
     if ( is_singular() ) :
-        $html .= '<div class="post-thumbnail" style="background-image: url( '. $featured_image[0] .' )" data-width="'. $featured_image[1] .'" date-height="'. $featured_image[2] .'">';
-            //$html .= get_the_post_thumbnail( $post->ID, $size, $attr );
-        $html .= '</div>';
+        $html .= '<div class="post-thumbnail" style="background-image: url('. $featured_image[0] .')" data-width="'. $featured_image[1] .'" date-height="'. $featured_image[2] .'"></div>';
     else :
-        $html .= '<a class="post-thumbnail" href="' . esc_url( get_permalink( $post->ID ) ) . '">';
+        $html .= '<a class="post-thumbnail" href="' . esc_url( get_permalink( $post->ID ) ) . '" style="background-image: url('. $featured_image[0] .')" data-width="'. $featured_image[1] .'" date-height="'. $featured_image[2] .'"></div>';
             $html .= get_the_post_thumbnail( $post->ID, $size, $attr );
         $html .= '</a>';
     endif;
