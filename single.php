@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-
 <div class="main-image">
     <?php tru_post_thumbnail( 'single' ); ?>
+    <div class="primary-category"><div class="pc-inner"><?php tru_primary_category(); ?></div></div>
 </div>
 
 <div class="container">
@@ -15,10 +15,10 @@
                     
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <header class="entry-header">
-                        <?php	the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+                        <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
                 
                         <div class="entry-meta">
-                            <?php the_time( 'F j, Y' ); ?>
+                            <div class="entry-date"><?php the_time( 'F j, Y' ); ?></div>
                         </div><!-- .entry-meta -->
                     </header><!-- .entry-header -->
                 

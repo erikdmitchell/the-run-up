@@ -42,13 +42,53 @@
             }
         }
     }
+    
+    .main-image {
+        position: relative;
+        z-index: 0;
+        height: 480px;
         
+        .post-thumbnail {
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  position:absolute;
+  top:0;right:0;bottom:0;left:0;
+  z-index:-1;
+        }
+        
+        .primary-category {
+            position: absolute;
+            color: $white;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;            
+           
+            .pc-inner {
+                position: relative;
+                width: 100%;
+                padding-right: 15px;
+                padding-left: 15px;
+                margin-right: auto;
+                margin-left: auto;
+                font-size: 3em;
+                text-transform: uppercase; 
+                font-weight: 700;
+                line-height: 1;
+                font-family: Arial, sans-serif;              
+            }
+        }       
+    }
+                
     .entry-header {
         margin-bottom: 15px;
 
         .entry-meta {
+            color: #9b9b9b;
+            
             .entry-date {
-                font-style: italic;
+                
             }
         }        
     } 
@@ -97,13 +137,53 @@
                 }
             }
         }                
-    }
-    
-    .post-thumbnail {
-        text-align: center;
-    }
-   
+    }   
 }
+
+@media (min-width: 576px) {
+    .single-post {
+        .main-image {
+            .primary-category {
+                .pc-inner { 
+                    max-width: 540px;             
+                }
+            }       
+        }             
+    }
+}
+@media (min-width: 768px) {
+    .single-post {
+        .main-image {
+            .primary-category {
+                .pc-inner { 
+                    max-width: 720px;             
+                }
+            }       
+        }             
+    }    
+} 
+@media (min-width: 992px) {
+    .single-post {
+        .main-image {
+            .primary-category {
+                .pc-inner { 
+                    max-width: 960px;             
+                }
+            }       
+        }             
+    }     
+}
+@media (min-width: 1200px) {
+    .single-post {
+        .main-image {
+            .primary-category {
+                .pc-inner { 
+                    max-width: 1140px;             
+                }
+            }       
+        }             
+    }     
+} 
 
 .single-post-sidebar {
     overflow: hidden;
