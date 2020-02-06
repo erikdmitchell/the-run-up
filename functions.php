@@ -436,7 +436,7 @@ $thumb_size = apply_filters( 'rp4wp_thumbnail_size', 'thumbnail' );
 
 /**
  * Thumbnail size for related posts plugin.
- * 
+ *
  * @access public
  * @param mixed $size string.
  * @return string
@@ -449,35 +449,35 @@ add_filter( 'rp4wp_thumbnail_size', 'tru_rp4wp_thumbnail_size', 10, 1 );
 add_filter( 'rp4wp_append_content', '__return_false' );
 
 function tru_get_primary_category( $post_id = 0 ) {
-	if ( ! $post_id ) {
-		$post_id = get_the_ID();
-	}
-	
-	$category_display = '';
-	
-	// Get the categories for the post.
-	$category = get_the_category( $post_id );
+    if ( ! $post_id ) {
+        $post_id = get_the_ID();
+    }
 
-	// If post has a category assigned.
-	if ($category) {
-		if ( class_exists('WPSEO_Primary_Term') ) {
-			// Show the post's 'Primary' category, if this Yoast feature is available, & one is set.
-			$wpseo_primary_term = new WPSEO_Primary_Term( 'category', $post_id );
-			$wpseo_primary_term = $wpseo_primary_term->get_primary_term();
-			$term = get_term( $wpseo_primary_term );
+    $category_display = '';
 
-			if (is_wp_error($term)) {
-				// Default to first category (not Yoast) if an error is returned.
-				$category_display = $category[0]->name;
-			} else {
-				// Yoast Primary category goodness.
-				$category_display = $term->name;
-			}
-		} else {
-			// Default, display the first category in WP's list of assigned categories.
-			$category_display = $category[0]->name;
-	    }
-	}
+    // Get the categories for the post.
+    $category = get_the_category( $post_id );
+
+    // If post has a category assigned.
+    if ( $category ) {
+        if ( class_exists( 'WPSEO_Primary_Term' ) ) {
+            // Show the post's 'Primary' category, if this Yoast feature is available, & one is set.
+            $wpseo_primary_term = new WPSEO_Primary_Term( 'category', $post_id );
+            $wpseo_primary_term = $wpseo_primary_term->get_primary_term();
+            $term = get_term( $wpseo_primary_term );
+
+            if ( is_wp_error( $term ) ) {
+                // Default to first category (not Yoast) if an error is returned.
+                $category_display = $category[0]->name;
+            } else {
+                // Yoast Primary category goodness.
+                $category_display = $term->name;
+            }
+        } else {
+            // Default, display the first category in WP's list of assigned categories.
+            $category_display = $category[0]->name;
+        }
+    }
 
     return $category_display;
 }
@@ -486,48 +486,48 @@ function tru_primary_category() {
     echo tru_get_primary_category( get_the_ID() );
 }
 
-function tru_add_photo_credit_fields($form_fields, $post) {
-	$form_fields['photo_credit'] = array(
-		'label' => __('Credit'),
-		'input' => 'text',
-		'value' => get_post_meta($post->ID, 'photo_credit', true),
-        'helps' => __('Credit the photographer'),
-	);
-	
-	$form_fields['photo_credit_url'] = array(
-		'label' => __('Credit URL'),
-		'input' => 'text',
-		'value' => get_post_meta($post->ID, 'photo_credit_url', true),
-        'helps' => __('Add the URL where the original image was posted'),
-	);
-	
- 	return $form_fields;
-}
-add_filter('attachment_fields_to_edit', 'tru_add_photo_credit_fields', 10, 2);
+function tru_add_photo_credit_fields( $form_fields, $post ) {
+    $form_fields['photo_credit'] = array(
+        'label' => __( 'Credit' ),
+        'input' => 'text',
+        'value' => get_post_meta( $post->ID, 'photo_credit', true ),
+        'helps' => __( 'Credit the photographer' ),
+    );
 
-function tru_save_photo_credit_fields($post, $attachment) {
-	if (isset($attachment['photo_credit'])) {
-		update_post_meta($post['ID'], 'photo_credit', $attachment['photo_credit']);
+    $form_fields['photo_credit_url'] = array(
+        'label' => __( 'Credit URL' ),
+        'input' => 'text',
+        'value' => get_post_meta( $post->ID, 'photo_credit_url', true ),
+        'helps' => __( 'Add the URL where the original image was posted' ),
+    );
+
+    return $form_fields;
+}
+add_filter( 'attachment_fields_to_edit', 'tru_add_photo_credit_fields', 10, 2 );
+
+function tru_save_photo_credit_fields( $post, $attachment ) {
+    if ( isset( $attachment['photo_credit'] ) ) {
+        update_post_meta( $post['ID'], 'photo_credit', $attachment['photo_credit'] );
     }
 
-	if (isset($attachment['photo_credit_url'])) {
-		update_post_meta($post['ID'], 'photo_credit_url', $attachment['photo_credit_url']);
+    if ( isset( $attachment['photo_credit_url'] ) ) {
+        update_post_meta( $post['ID'], 'photo_credit_url', $attachment['photo_credit_url'] );
     }
-		
-	return $post;
+
+    return $post;
 }
-add_filter('attachment_fields_to_save', 'tru_save_photo_credit_fields', 10 , 2);
+add_filter( 'attachment_fields_to_save', 'tru_save_photo_credit_fields', 10, 2 );
 
 function tru_photo_credit() {
     $post_id = get_the_ID();
-    $thumbnail_id = get_post_thumbnail_id($post_id);
-    $photo_credit = get_post_meta($thumbnail_id, 'photo_credit', true);
-    $phot_credit_url = get_post_meta($thumbnail_id, 'photo_credit_url', true);
+    $thumbnail_id = get_post_thumbnail_id( $post_id );
+    $photo_credit = get_post_meta( $thumbnail_id, 'photo_credit', true );
+    $phot_credit_url = get_post_meta( $thumbnail_id, 'photo_credit_url', true );
     $prefix = 'Photo credit: ';
-    
-    if (empty($phot_credit_url)) {
+
+    if ( empty( $phot_credit_url ) ) {
         echo $prefix . $photo_credit;
     } else {
-        echo $prefix . '<a href="' . $phot_credit_url. '" target="_blank">'.$photo_credit . '</a>';
+        echo $prefix . '<a href="' . $phot_credit_url . '" target="_blank">' . $photo_credit . '</a>';
     }
 }
