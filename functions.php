@@ -486,4 +486,35 @@ function tru_primary_category() {
     echo tru_get_primary_category( get_the_ID() );
 }
 
+function tru_add_photo_credit_fields($form_fields, $post) {
+	$form_fields['photo_credit'] = array(
+		'label' => __('Credit'),
+		'input' => 'text',
+		'value' => get_post_meta($post->ID, 'photo_credit', true),
+        'helps' => __('Credit the photographer'),
+	);
+	
+	$form_fields['photo_credit_url'] = array(
+		'label' => __('Credit URL'),
+		'input' => 'text',
+		'value' => get_post_meta($post->ID, 'photo_credit_url', true),
+        'helps' => __('Add the URL where the original image was posted'),
+	);
+	
+ 	return $form_fields;
+}
+add_filter('attachment_fields_to_edit', 'tru_add_photo_credit_fields', 10, 2);
+
+function tru_save_photo_credit_fields($post, $attachment) {
+	if (isset($attachment['photo_credit'])) {
+		update_post_meta($post['ID'], 'photo_credit', $attachment['photo_credit']);
+    }
+
+	if (isset($attachment['photo_credit_url'])) {
+		update_post_meta($post['ID'], 'photo_credit_url', $attachment['photo_credit_url']);
+    }
+		
+	return $post;
+}
+add_filter('attachment_fields_to_save', 'tru_save_photo_credit_fields', 10 , 2);
 
