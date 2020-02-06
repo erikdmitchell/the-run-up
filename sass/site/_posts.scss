@@ -42,13 +42,76 @@
             }
         }
     }
+    
+    .main-image {
+        position: relative;
         
+        .post-thumbnail { 
+            text-align: center;
+        }
+        
+        .primary-category {
+            position: absolute;
+            color: $white;
+            bottom: 4px;
+            left: 0;
+            right: 0;
+            margin: auto;            
+           
+            .pc-inner {
+                position: relative;
+                width: 100%;
+                padding-right: 15px;
+                padding-left: 15px;
+                margin-right: auto;
+                margin-left: auto;
+                font-size: 3em;
+                text-transform: uppercase; 
+                font-weight: 700;
+                line-height: 1;
+                font-family: Arial, sans-serif; 
+                text-shadow: 4px 4px 2px $black;             
+            }
+        } 
+        
+        .photo-credit {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: 2; 
+                        
+            .photo-credit-inner {
+                position: relative;
+                width: 100%;
+                padding-right: 15px;
+                padding-left: 15px;
+                margin-right: auto;
+                margin-left: auto; 
+                
+                .photo-credit-text {
+                    float: right;
+                    color: #60626e;
+                    font-size: 12px;
+                    line-height: 14px;
+                    letter-spacing: 1px;
+                    
+                    a, a:visited {
+                        color: #60626e;  
+                    }
+                }               
+            }
+        }
+    }
+                
     .entry-header {
         margin-bottom: 15px;
 
         .entry-meta {
+            color: #9b9b9b;
+            
             .entry-date {
-                font-style: italic;
+                
             }
         }        
     } 
@@ -97,13 +160,73 @@
                 }
             }
         }                
-    }
-    
-    .post-thumbnail {
-        text-align: center;
-    }
-   
+    }   
 }
+
+@media (min-width: 576px) {
+    .single-post {
+        .main-image {
+            .primary-category {
+                .pc-inner { 
+                    max-width: 540px;             
+                }
+            } 
+            .photo-credit {
+                .photo-credit-inner {
+                    max-width: 540px;                  
+                }
+            }
+        }             
+    }
+}
+@media (min-width: 768px) {
+    .single-post {
+        .main-image {
+            .primary-category {
+                .pc-inner { 
+                    max-width: 720px;             
+                }
+            }  
+            .photo-credit {
+                .photo-credit-inner {
+                    max-width: 720px;                  
+                }
+            }                 
+        }             
+    }    
+} 
+@media (min-width: 992px) {
+    .single-post {
+        .main-image {
+            .primary-category {
+                .pc-inner { 
+                    max-width: 960px;             
+                }
+            }       
+            .photo-credit {
+                .photo-credit-inner {
+                    max-width: 960px;                  
+                }
+            }            
+        }             
+    }     
+}
+@media (min-width: 1200px) {
+    .single-post {
+        .main-image {
+            .primary-category {
+                .pc-inner { 
+                    max-width: 1140px;             
+                }
+            } 
+            .photo-credit {
+                .photo-credit-inner {
+                    max-width: 1140px;                  
+                }
+            }                  
+        }             
+    }     
+} 
 
 .single-post-sidebar {
     overflow: hidden;

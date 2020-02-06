@@ -32,13 +32,19 @@ Coming soon...
 
 == Changelog ==
 
+= 2.5.0 =
+
+ * Make the featured image full width.
+ * Add the primary category to the bottom of the featured image.
+ * Add fields and output for image credit and url.
+
 = 2.4.0 =
 
  * Added basic styles for tables
 
 = 2.3.1 =
 
- * Added styles brothers tables
+ * Added styles for brothers tables
  
 = 2.3.0 =
 
