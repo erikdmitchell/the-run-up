@@ -46,7 +46,9 @@
     .main-image {
         position: relative;
         
-        .post-thumbnail { }
+        .post-thumbnail { 
+            text-align: center;
+        }
         
         .primary-category {
             position: absolute;
