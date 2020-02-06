@@ -3,6 +3,7 @@
 <div class="main-image">
     <?php tru_post_thumbnail( 'single' ); ?>
     <div class="primary-category"><div class="pc-inner"><?php tru_primary_category(); ?></div></div>
+    <div class="photo-credit"><div class="photo-credit-inner clearfix"><div class="photo-credit-text"><?php tru_photo_credit(); ?></div></div></div>    
 </div>
 
 <div class="container">

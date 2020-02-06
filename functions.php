@@ -518,3 +518,16 @@ function tru_save_photo_credit_fields($post, $attachment) {
 }
 add_filter('attachment_fields_to_save', 'tru_save_photo_credit_fields', 10 , 2);
 
+function tru_photo_credit() {
+    $post_id = get_the_ID();
+    $thumbnail_id = get_post_thumbnail_id($post_id);
+    $photo_credit = get_post_meta($thumbnail_id, 'photo_credit', true);
+    $phot_credit_url = get_post_meta($thumbnail_id, 'photo_credit_url', true);
+    $prefix = 'Photo credit: ';
+    
+    if (empty($phot_credit_url)) {
+        echo $prefix . $photo_credit;
+    } else {
+        echo $prefix . '<a href="' . $phot_credit_url. '" target="_blank">'.$photo_credit . '</a>';
+    }
+}
