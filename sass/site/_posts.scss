@@ -48,6 +48,8 @@
         
         .post-thumbnail { 
             text-align: center;
+            max-height: 480px;
+            overflow: hidden;
         }
         
         .primary-category {
